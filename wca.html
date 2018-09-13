@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>WOIN Character Assistant</title>
+	<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		font-family: "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+
+<!-- Tabs -->
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-overview">Overview</a></li>
+		<li><a href="#tabs-race">Race</a></li>
+        <li><a href="#tabs-homeworld">Homeworld</a></li>
+		<li><a href="#tabs-careers">Careers</a></li>
+		<li><a href="#tabs-exploits">Exploits</a></li>
+		<li><a href="#tabs-equipment">Equipment</a></li>
+	</ul>
+	<div id="tabs-overview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <fieldset>
+            <legend>Info</legend>
+            <!-- <label for="character_name">Name</label>
+            <input type="text" name="character_name" />
+            <div>Race</div>
+            <div name="race_value">unset race</div> -->
+
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="character_name" /></td>
+                </tr>
+                <tr>
+                    <td>Race</td>
+                    <td><button id="button_set_race" class="to_race">unset race</button></td>
+                </tr>
+                <tr>
+                    <td>Homeworld</td>
+                    <td><button id="button_set_homeworld" class="to_homeworld">unset homeworld</button></td>
+                </tr>
+                <tr>
+                    <td>Trait</td>
+                    <td><button id="button_set_trait">unset trait</button></td>
+                </tr>
+                <tr>
+                    <td>Hook</td>
+                    <td><input type="text" name="character_hook" /></td>
+                </tr>
+            </table>
+        </fieldset>
+
+    </div>
+	<div id="tabs-race">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+	<div id="tabs-homeworld">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+    <div id="tabs-careers">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div id="accordion">
+                    <h3>First</h3>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <h3>Second</h3>
+                    <div>Phasellus mattis tincidunt nibh.</div>
+                    <h3>Third</h3>
+                    <div>Nam dui erat, auctor a, dignissim quis.</div>
+            </div>
+    </div>
+	<div id="tabs-exploits">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+	<div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+
+</div>
+
+<!-- <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script> -->
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>        
+    <script>
+        $( "#tabs" ).tabs();
+        $( "#accordion").accordion();
+        $( "#button_set_race, #button_set_homeworld, #button_set_trait" ).button();
+        // var $tabs= $("#tabs").tabs(); 
+        $('.to_race').click(function(event) { // bind click event to link
+            var index = $("#tabs-race").index()-1;
+            $('#tabs').tabs("option", "active", index);
+            // $('#button_set_race').button('option', 'label', 'Some Race');
+        });
+        $('.to_homeworld').click(function(event) { // bind click event to link
+            var index = $("#tabs-homeworld").index()-1;
+            $('#tabs').tabs("option", "active", index);
+        });
+    </script>
+</body>
+
