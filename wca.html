@@ -3,120 +3,403 @@
 <head>
 	<meta charset="utf-8">
 	<title>WOIN Character Assistant</title>
-	<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+	<link href="js/jquery/jquery-ui.css" rel="stylesheet">
 	<style>
-	body{
-		font-family: "Trebuchet MS", sans-serif;
-		margin: 50px;
-	}
-	.demoHeaders {
-		margin-top: 2em;
-	}
-	#dialog-link {
-		padding: .4em 1em .4em 20px;
-		text-decoration: none;
-		position: relative;
-	}
-	#dialog-link span.ui-icon {
-		margin: 0 5px 0 0;
-		position: absolute;
-		left: .2em;
-		top: 50%;
-		margin-top: -8px;
-	}
-	#icons {
-		margin: 0;
-		padding: 0;
-	}
-	#icons li {
-		margin: 2px;
-		position: relative;
-		padding: 4px 0;
-		cursor: pointer;
-		float: left;
-		list-style: none;
-	}
-	#icons span.ui-icon {
-		float: left;
-		margin: 0 4px;
-	}
-	.fakewindowcontain .ui-widget-overlay {
-		position: absolute;
-	}
-	select {
-		width: 200px;
-	}
-	</style>
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            margin: 50px;
+        }
+        .demoHeaders {
+            margin-top: 2em;
+        }
+        #dialog-link {
+            padding: .4em 1em .4em 20px;
+            text-decoration: none;
+            position: relative;
+        }
+        #dialog-link span.ui-icon {
+            margin: 0 5px 0 0;
+            position: absolute;
+            left: .2em;
+            top: 50%;
+            margin-top: -8px;
+        }
+        #icons {
+            margin: 0;
+            padding: 0;
+        }
+        #icons li {
+            margin: 2px;
+            position: relative;
+            padding: 4px 0;
+            cursor: pointer;
+            float: left;
+            list-style: none;
+        }
+        #icons span.ui-icon {
+            float: left;
+            margin: 0 4px;
+        }
+        .fakewindowcontain .ui-widget-overlay {
+            position: absolute;
+        }
+        select {
+            width: 200px;
+        }
+    </style>
+    <script src="js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script src="js/character.js"></script>
 </head>
 <body>
+    <!-- Tabs -->
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-overview">Overview</a></li>
+            <li><a href="#tabs-race">Race</a></li>
+            <li><a href="#tabs-homeworld">Homeworld</a></li>
+            <li><a href="#tabs-careers">Careers</a></li>
+            <li><a href="#tabs-exploits">Exploits</a></li>
+            <li><a href="#tabs-equipment">Equipment</a></li>
+        </ul>
+        <div id="tabs-overview">
+            <!-- General Info -->
+            <fieldset>
+                <legend>Info</legend>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="character_name" id="character_name" title="Your character's name"/></td>
+                    </tr>
+                    <tr>
+                        <td>Race</td>
+                        <td><button id="button_jump_to_race" class="to_race" title="Click to jump to the Race tab">unset race</button></td>
+                    </tr>
+                    <tr>
+                        <td>Homeworld</td>
+                        <td><button id="button_jump_to_homeworld" class="to_homeworld" title="Click to jump to the Homeworld tab">unset homeworld</button></td>
+                    </tr>
+                    <tr>
+                        <td>Trait</td>
+                        <td><button id="button_set_trait" title="Click to set the character's trait">unset trait</button></td>
+                    </tr>
+                    <tr>
+                        <td>Hook</td>
+                        <td><input type="text" name="character_hook" title="Your hook is a single sentence which describes a hobby or quirk about your character, such as '... who collects antiques' or '... who cannot tell a lie'."/></td>
+                    </tr>
+                </table>
+            </fieldset>
 
-<!-- Tabs -->
-<div id="tabs">
-	<ul>
-		<li><a href="#tabs-overview">Overview</a></li>
-		<li><a href="#tabs-race">Race</a></li>
-        <li><a href="#tabs-homeworld">Homeworld</a></li>
-		<li><a href="#tabs-careers">Careers</a></li>
-		<li><a href="#tabs-exploits">Exploits</a></li>
-		<li><a href="#tabs-equipment">Equipment</a></li>
-	</ul>
-	<div id="tabs-overview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        <fieldset>
-            <legend>Info</legend>
-            <!-- <label for="character_name">Name</label>
-            <input type="text" name="character_name" />
-            <div>Race</div>
-            <div name="race_value">unset race</div> -->
+            <!-- Skills -->
+            <fieldset>
+                <legend>Skills</legend>
+                <ul>
+                    <li>Running (3)</li>
+                    <li>Pistols (1)</li>
+                </ul>
+            </fieldset>
 
-            <table>
-                <tr>
-                    <td>Name</td>
-                    <td><input type="text" name="character_name" /></td>
-                </tr>
-                <tr>
-                    <td>Race</td>
-                    <td><button id="button_set_race" class="to_race">unset race</button></td>
-                </tr>
-                <tr>
-                    <td>Homeworld</td>
-                    <td><button id="button_set_homeworld" class="to_homeworld">unset homeworld</button></td>
-                </tr>
-                <tr>
-                    <td>Trait</td>
-                    <td><button id="button_set_trait">unset trait</button></td>
-                </tr>
-                <tr>
-                    <td>Hook</td>
-                    <td><input type="text" name="character_hook" /></td>
-                </tr>
-            </table>
-        </fieldset>
+            <!-- Exploits -->
+            <fieldset>
+                <legend>Exploits</legend>
+                <ul>
+                    <li title="Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition.">Enduring</li>
+                    <li title="Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they stand on a planet new to them.">Explorers</li>
+                    <li title="Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above).">Varied</li>
+                </ul>
+            </fieldset>
 
+            <!-- Derived Statistics -->
+            <fieldset>
+                <legend>Derived Statistics</legend>
+                <fieldset>
+                    <legend>Health</legend>
+                    Roll END (2d6) + WIL (2d6) (average = 14)
+                </fieldset>
+                <fieldset>
+                    <legend>Initiative</legend>
+                    2d6
+                </fieldset>
+                <fieldset>
+                    <legend>Movement</legend>
+                    <table>
+                        <tr>
+                            <td>Speed</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Climb</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Swim</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Zero/Low/High-G</td>
+                            <td>2/2/2</td>
+                        </tr>
+                        <tr>
+                            <td>Vertical Jump (Running)</td>
+                            <td>3'(6')</td>
+                        </tr>
+                        <tr>
+                            <td>Horizontal Jump (Running)</td>
+                            <td>3'(6')</td>
+                        </tr>
+                        <tr>
+                            <td>Carry</td>
+                            <td>60 (before exploits)</td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Defenses</legend>
+                    <table>
+                        <tr>
+                            <td>Melee</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Ranged</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Mental</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Vital</td>
+                            <td>10</td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>Total Stats</legend>
+                <table>
+                    <tr>
+                        <td>STR</td>
+                        <td>AGI</td>
+                        <td>END</td>
+                        <td>INT</td>
+                        <td>LOG</td>
+                        <td>WIL</td>
+                        <td>CHA</td>
+                        <td>LUC</td>
+                        <td>REP</td>
+                        <td>MAG</td>
+                        <td>CHI</td>
+                        <td>PSI</td>
+                    </tr>
+                    <tr>
+                        <td id="total_str">3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                        <td>3 (2d6)</td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </div>
+        <div id="tabs-race">
+            <fieldset>
+                <legend>Race</legend>
+                <table>
+                    <tr>
+                        <td>Race Name</td>
+                        <td><button id="button_set_race" title="Human Fall Flat >|)">Human</button></td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>
+                            <select name="size_select" id="size">
+                                <option>Tiny</option>
+                                <option>Small</option>
+                                <option selected="selected">Medium</option>
+                                <option>Large</option>
+                                <option>Enormous</option>
+                                <option>Gigantic</option>
+                                <option>Colossal</option>
+                                <option>Titanic</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Selected Skills</legend>
+                <ul>
+                    <li>Running (1)</li>
+                    <li>Sneezing (1)</li>
+                </ul>
+                <button id="button_set_race_skills" title="Select the racial skills">Set Race Skills</button>
+            </fieldset>
+            <fieldset>
+                <legend>Exploits</legend>
+                <ul>
+                    <li title="Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition.">Enduring</li>
+                    <li title="Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they stand on a planet new to them.">Explorers</li>
+                    <li title="Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above).">Varied</li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Racial Stats</legend>
+                <table>
+                    <tr>
+                        <td>STR</td>
+                        <td>AGI</td>
+                        <td>END</td>
+                        <td>INT</td>
+                        <td>LOG</td>
+                        <td>WIL</td>
+                        <td>CHA</td>
+                        <td>LUC</td>
+                        <td>REP</td>
+                        <td>MAG</td>
+                        <td>CHI</td>
+                        <td>PSI</td>
+                    </tr>
+                    <tr>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div id="tabs-homeworld">
+            <fieldset>
+                <legend>Homeworld</legend>
+                <button id="button_set_homeworld" title="Select the character's homeworld (if any)">None</button>
+            </fieldset>
+            <fieldset>
+                    <legend>Selected Skills</legend>
+                    <ul>
+                        <li>Coughing (1)</li>
+                        <li>Sniffling (1)</li>
+                    </ul>
+                    <button id="button_set_homeworld_skills" title="Select the character's homeworld skills">Set Homeworld Skills</button>
+            </fieldset>
+            <fieldset>
+                <legend>Homeworld Stats</legend>
+                <table>
+                    <tr>
+                        <td>STR</td>
+                        <td>AGI</td>
+                        <td>END</td>
+                        <td>INT</td>
+                        <td>LOG</td>
+                        <td>WIL</td>
+                        <td>CHA</td>
+                        <td>LUC</td>
+                        <td>REP</td>
+                        <td>MAG</td>
+                        <td>CHI</td>
+                        <td>PSI</td>
+                    </tr>
+                    <tr>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                        <td>+0</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div id="tabs-careers">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div id="accordion">
+                    <div class="group">
+                        <h3>First</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    <div class="group">
+                        <h3>Second</h3>
+                        <div>Phasellus mattis tincidunt nibh.</div>
+                    </div>
+                    <div class="group">
+                        <h3>Third</h3>
+                        <div>Nam dui erat, auctor a, dignissim quis.</div>
+                    </div>
+                </div>
+        </div>
+        <div id="tabs-exploits">
+            
+        </div>
+        <div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
     </div>
-	<div id="tabs-race">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-	<div id="tabs-homeworld">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-    <div id="tabs-careers">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            <div id="accordion">
-                    <h3>First</h3>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    <h3>Second</h3>
-                    <div>Phasellus mattis tincidunt nibh.</div>
-                    <h3>Third</h3>
-                    <div>Nam dui erat, auctor a, dignissim quis.</div>
-            </div>
-    </div>
-	<div id="tabs-exploits">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-	<div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
-</div>
-
-<!-- <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script> -->
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>        
     <script>
         $( "#tabs" ).tabs();
-        $( "#accordion").accordion();
-        $( "#button_set_race, #button_set_homeworld, #button_set_trait" ).button();
+
+        // $( "#accordion" ).accordion({
+        //     heightStyle: "content",
+        //     event: "click",
+        //     autoHeight: false,
+        //     clearStyle: true,
+        //     active: false,
+        //     collapsible: true
+        // });
+
+        $( function() 
+        {
+            $( "#accordion" ).accordion(
+                {
+                    header: "> div > h3",
+                    autoHeight: false,
+                    clearStyle: true
+                }).sortable(
+                    {
+                        axis: "y",
+                        handle: "h3",
+                        stop: function( event, ui )
+                        {
+                            // IE doesn't register the blur when sorting
+                            // so trigger focusout handlers to remove .ui-state-focus
+                            ui.item.children( "h3" ).triggerHandler( "focusout" );
+                    
+                            // Refresh accordion to handle new order
+                            $( this ).accordion( "refresh" );
+                        }
+                    });
+        });
+
+        // $('#accordion').on('accordionactivate', function (event, ui) {
+        //     // Accordion is not collapsed
+        //     if (ui.newPanel.length) {
+        //         $('#accordion').sortable('disable');
+        //     // Accordion is collapsed
+        //     } else {
+        //         $('#accordion').sortable('enable');
+        //     }
+        // });
+
+        $( "#button_jump_to_race, #button_jump_to_homeworld, #button_set_trait, #button_set_race, #button_set_race_skills, #button_set_homeworld, #button_set_homeworld_skills" ).button();
         // var $tabs= $("#tabs").tabs(); 
         $('.to_race').click(function(event) { // bind click event to link
             var index = $("#tabs-race").index()-1;
@@ -127,6 +410,15 @@
             var index = $("#tabs-homeworld").index()-1;
             $('#tabs').tabs("option", "active", index);
         });
+        $("#size_select").selectmenu();
+        var woin_character = new Character();
+        function update_info() {
+            // document.getElementById("character_name").innerHTML(woin_character.name);
+            $("#character_name").val(woin_character.name);
+            $("#total_str").html(woin_character.stats['str']);
+        }
+        console.log(woin_character.stats['str'])
+        update_info();
     </script>
 </body>
 
