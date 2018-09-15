@@ -31,6 +31,34 @@ class Character
         this.defense_skills = defense_skills;
         this.equipment = equipment;
     }
+
+    calc_total_stats()
+    {
+        // Deep copy
+        stat_total = jQuery.extend(true, {}, this.stats);
+        
+        Object.entries(this.race.stats).forEach(
+            ([key, value]) => stat_total[key] += value
+        );
+        // let i;
+        // let j;
+        // for (i = 0; i < race.items; i++)
+        // {
+
+        // }
+        // for stat, value in self.race['Stats'].items():
+        //     stat_total[stat] += value
+
+        // for stat, value in self.homeworld['Homeworld'].stats.items():
+        //     stat_total[stat] += value
+
+        // for career in self.career_track:
+        //     for stat, value in career['Stats'].items():
+        //         stat_total[stat] += value
+
+        console.log(stat_total)
+        return stat_total;
+    }
 }
 
 class Race 
@@ -126,7 +154,7 @@ function calc_dice_pool_size(raw_score) {
         dice_pool_size += 1;
         score_comparison += comparison_increment;
         comparison_increment += 1;
-    }
+    };
 
     return dice_pool_size;
 }
@@ -134,36 +162,13 @@ function calc_dice_pool_size(raw_score) {
 function calc_max_dice_pool_size(career_grade) {
     var max_dice_pool_size = 5;
     var score_comparison = 5;
-    var comparison_increment = 3;
+    var comparison_increment = 2;
 
-    while (raw_score > score_comparison) {
+    while (career_grade > score_comparison) {
         max_dice_pool_size += 1;
         score_comparison += comparison_increment;
         comparison_increment += 1;
-    }
+    };
 
     return max_dice_pool_size;
 }
-
-// function calc_stat_total(character, race, homeworld, career) {
-//     // Deep copy
-//     stat_total = jQuery.extend(true, {}, character.stats);
-
-//     // let i;
-//     // let j;
-//     // for (i = 0; i < race.items; i++)
-//     // {
-
-//     // }
-//     // for stat, value in self.race['Stats'].items():
-//     //     stat_total[stat] += value
-
-//     // for stat, value in self.homeworld['Homeworld'].stats.items():
-//     //     stat_total[stat] += value
-
-//     // for career in self.career_track:
-//     //     for stat, value in career['Stats'].items():
-//     //         stat_total[stat] += value
-
-//     return stat_total
-// }
