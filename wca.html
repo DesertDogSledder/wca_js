@@ -48,9 +48,17 @@
             width: 200px;
         }
     </style>
+    <!-- <script data-main="js/app.js" src="js/require.js"></script> -->
     <script src="js/jquery/jquery-3.3.1.min.js"></script>
     <script src="js/jquery/jquery-ui.js"></script>
-    <script src="js/character.js"></script>
+    <script src="js/wca/lib/character.js"></script>
+    <script src="js/wca/lib/helpers.js"></script>
+    <script src="js/wca/data/careers/careers_martial_arts.js"></script>
+    <script src="js/wca/data/races/races_new.js"></script>
+    <script src="js/wca/data/races/races_now.js"></script>
+    <script src="js/wca/data/races/races_old.js"></script>
+    <script src="js/wca/data/homeworlds/homeworlds_new.js"></script>
+
 </head>
 <body>
     <!-- Tabs -->
@@ -74,15 +82,15 @@
                     </tr>
                     <tr>
                         <td>Race</td>
-                        <td><button id="button_jump_to_race" class="to_race" title="Click to jump to the Race tab">unset race</button></td>
+                        <td><button id="ovr_btn_jump_to_race" class="to_race" title="Click to jump to the Race tab">unset race</button></td>
                     </tr>
                     <tr>
                         <td>Homeworld</td>
-                        <td><button id="button_jump_to_homeworld" class="to_homeworld" title="Click to jump to the Homeworld tab">unset homeworld</button></td>
+                        <td><button id="ovr_btn_jump_to_homeworld" class="to_homeworld" title="Click to jump to the Homeworld tab">unset homeworld</button></td>
                     </tr>
                     <tr>
                         <td>Trait</td>
-                        <td><button id="button_set_trait" title="Click to set the character's trait">unset trait</button></td>
+                        <td><button id="ovr_btn_set_trait" title="Click to set the character's trait">unset trait</button></td>
                     </tr>
                     <tr>
                         <td>Hook</td>
@@ -217,12 +225,12 @@
                 <table>
                     <tr>
                         <td>Race Name</td>
-                        <td><button id="button_set_race" title="Human Fall Flat >|)">Human</button></td>
+                        <td><button id="rce_btn_set_race" title="Human Fall Flat >|)">Human</button></td>
                     </tr>
                     <tr>
                         <td>Size</td>
                         <td>
-                            <select name="size_select" id="size">
+                            <select name="rce_sm_size" id="rce_sm_size">
                                 <option>Tiny</option>
                                 <option>Small</option>
                                 <option selected="selected">Medium</option>
@@ -242,7 +250,7 @@
                     <li>Running (1)</li>
                     <li>Sneezing (1)</li>
                 </ul>
-                <button id="button_set_race_skills" title="Select the racial skills">Set Race Skills</button>
+                <button id="rce_btn_set_race_skills" title="Select the racial skills">Set Race Skills</button>
             </fieldset>
             <fieldset>
                 <legend>Exploits</legend>
@@ -289,7 +297,7 @@
         <div id="tabs-homeworld">
             <fieldset>
                 <legend>Homeworld</legend>
-                <button id="button_set_homeworld" title="Select the character's homeworld (if any)">None</button>
+                <button id="hmw_btn_set_homeworld" title="Select the character's homeworld (if any)">None</button>
             </fieldset>
             <fieldset>
                     <legend>Selected Skills</legend>
@@ -297,7 +305,7 @@
                         <li>Coughing (1)</li>
                         <li>Sniffling (1)</li>
                     </ul>
-                    <button id="button_set_homeworld_skills" title="Select the character's homeworld skills">Set Homeworld Skills</button>
+                    <button id="hmw_btn_set_homeworld_skills" title="Select the character's homeworld skills">Set Homeworld Skills</button>
             </fieldset>
             <fieldset>
                 <legend>Homeworld Stats</legend>
@@ -402,73 +410,63 @@
             
         </div>
         <div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+
+        <div id="dialog_race_select" title="Select a Race">
+            <select id="rce_sm_race_module" name="rce_sm_race_module">
+                <option value="races_old">OLD</option>
+                <option value="races_now">NOW</option>
+                <option value="races_new">NEW</option>
+            </select>
+            <br />
+            <select id="rce_sm_race_select">
+                <option>Blah</option>
+            </select>
+        </div>
     </div>
 
+    <script src="js/ui.js"></script>
     <script>
-        $( "#tabs" ).tabs();
-
-        // $( "#accordion" ).accordion({
-        //     heightStyle: "content",
-        //     event: "click",
-        //     autoHeight: false,
-        //     clearStyle: true,
-        //     active: false,
-        //     collapsible: true
-        // });
-
-        $( function() 
-        {
-            $( "#accordion" ).accordion(
-                {
-                    header: "> div > h3",
-                    autoHeight: false,
-                    clearStyle: true
-                }).sortable(
-                    {
-                        axis: "y",
-                        handle: "h3",
-                        stop: function( event, ui )
-                        {
-                            // IE doesn't register the blur when sorting
-                            // so trigger focusout handlers to remove .ui-state-focus
-                            ui.item.children( "h3" ).triggerHandler( "focusout" );
-                    
-                            // Refresh accordion to handle new order
-                            $( this ).accordion( "refresh" );
-                        }
-                    });
-        });
-
-        // $('#accordion').on('accordionactivate', function (event, ui) {
-        //     // Accordion is not collapsed
-        //     if (ui.newPanel.length) {
-        //         $('#accordion').sortable('disable');
-        //     // Accordion is collapsed
-        //     } else {
-        //         $('#accordion').sortable('enable');
-        //     }
-        // });
-
-        $( "#button_jump_to_race, #button_jump_to_homeworld, #button_set_trait, #button_set_race, #button_set_race_skills, #button_set_homeworld, #button_set_homeworld_skills" ).button();
-        // var $tabs= $("#tabs").tabs(); 
-        $('.to_race').click(function(event) { // bind click event to link
-            var index = $("#tabs-race").index()-1;
-            $('#tabs').tabs("option", "active", index);
-            // $('#button_set_race').button('option', 'label', 'Some Race');
-        });
-        $('.to_homeworld').click(function(event) { // bind click event to link
-            var index = $("#tabs-homeworld").index()-1;
-            $('#tabs').tabs("option", "active", index);
-        });
-        $("#size_select").selectmenu();
+        ////////
+        // UI //
+        ////////
         var woin_character = new Character();
+        woin_character.race = deep_copy(race_new_human)
+        woin_character.homeworld = deep_copy(homeworld_arctic)
+        calc_total_stats(woin_character)
+
         function update_info() {
             // document.getElementById("character_name").innerHTML(woin_character.name);
             $("#character_name").val(woin_character.name);
             $("#total_str").html(woin_character.stats['str']);
-        }
-        console.log(woin_character.stats['str'])
-        update_info();
+            $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race.name);
+        };
+
+
+        // dialog = $("#dialog_race_select").dialog({
+        //     autoOpen: false,
+        //     height: 400,
+        //     width: 350,
+        //     modal: false,
+        //     buttons: {
+        //         Cancel: function() {
+        //             dialog.dialog("close");
+        //         }
+        //     },
+        //     close: function() {
+
+        //     }
+        // });
+
+        // race_modules = {
+        //     "races_new": race_new_list,
+        //     "races_now": race_now_list,
+        //     "races_old": race_old_list
+        // };
+
+        $("#rce_sm_race_module").selectmenu({
+            change: select_race_module
+        });
+        $("#rce_sm_race_select").selectmenu();
     </script>
 </body>
 

@@ -1,17 +1,17 @@
-var career_old_alchemist = new Career(
-    name='Alchemist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='herbalism, alchemy',
-    logic=1, endurance=1, magic=1, reputation=1,
-    available_skills=['cooking', 'brewing', 'alchemy', 'concentration', 'healing', 'animal handling'],
-    description="Alchemists mix potions and substances, and transforms substances from one to another. Creating elixirs of " +
+var career_old_alchemist = new Career({
+    name: 'Alchemist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'herbalism, alchemy',
+    logic: 1, endurance: 1, magic: 1, reputation: 1,
+    available_skills: ['cooking', 'brewing', 'alchemy', 'concentration', 'healing', 'animal handling'],
+    description: "Alchemists mix potions and substances, and transforms substances from one to another. Creating elixirs of " +
          "life in bubbling cauldrons and seeking the secrets of magical chemistry, alchemists are true creators. Many " +
          "make a living selling their concoctions. Unlike herbalism, alchemy involves a touch of magic. For each " +
          "alchemical concoction, you should roll and note down an Alchemical Science result. This descriptionribes the " +
          "nature of the concoction, whether it requires you to dilute amber in a jade keg, or cool mercury in a ruby " +
          "flute.",
-    available_exploits=[{'Name': 'Explosive alchemy',
+    available_exploits: [{'Name': 'Explosive alchemy',
                          'Desc': "You can create an explosive concoction using your alchemy kit. This takes a full " +
                                  "round (two actions), and the concoction can be thrown (range increment 3, " +
                                  "radius 5', damage 3d6 fire). The concoction can only be stored for 5 minutes before " +
@@ -42,17 +42,17 @@ var career_old_alchemist = new Career(
                         {'Name': 'Protective oil',
                          'Desc': "You may spend 5 minutes to create a an oil which, when smeared over a creature, " +
                                  "grants it SOAK 2 against one damage type. This is enough to protect against " +
-                                 "climate-based effects."}]);
+                                 "climate-based effects."}]});
 
-var career_old_archer = new Career(
-    name='Archer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='AGI 3+',
-    strength=1, agility=1, luck=1, reputation=1,
-    available_skills=['bows', 'perception', 'carousing', 'survival'],
-    description="You joined the army as an archer, manning walls and front lines in times of war.",
-    available_exploits=[{'Name': 'Long shot',
+var career_old_archer = new Career({
+    name: 'Archer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'AGI 3+',
+    strength: 1, agility: 1, luck: 1, reputation: 1,
+    available_skills: ['bows', 'perception', 'carousing', 'survival'],
+    description: "You joined the army as an archer, manning walls and front lines in times of war.",
+    available_exploits: [{'Name': 'Long shot',
                          'Desc': "You have an eye for distance. You can double the range increment of a bow by taking " +
                                  "a -1d6 die penalty to damage."},
                         {'Name': 'Bowyer',
@@ -71,18 +71,18 @@ var career_old_archer = new Career(
                         {'Name': 'Intercepting shot',
                          'Desc': "(requires INT 8+; Rapid Shot) You can shoot another arrow out of the sky as a " +
                                  "reaction. Roll an opposed attack roll against that of the attacker's arrow; if you " +
-                                 "succeed, the arrow is split and falls harmlessly to the ground."}]);
+                                 "succeed, the arrow is split and falls harmlessly to the ground."}]});
 
-var career_old_assassin = new Career(
-    name='Assassin',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth',
-    agility=1, intuition=1, willpower=1, reputation=1,
-    available_skills=['stealth', 'thievery', 'perception', 'intimidate', 'disguise', '[melee weapon]',
+var career_old_assassin = new Career({
+    name: 'Assassin',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth',
+    agility: 1, intuition: 1, willpower: 1, reputation: 1,
+    available_skills: ['stealth', 'thievery', 'perception', 'intimidate', 'disguise', '[melee weapon]',
                       '[ranged weapon]', 'herbalism'],
-    description="A killer for hire, you mastered the skills of assassination.",
-    available_exploits=[{'Name': 'Surprise attack',
+    description: "A killer for hire, you mastered the skills of assassination.",
+    available_exploits: [{'Name': 'Surprise attack',
                          'Desc': "If you successfully hit a target before it becomes aware of you, you gain a +2d6 " +
                                  "damage bonus."},
                         {'Name': 'Death blow',
@@ -98,18 +98,18 @@ var career_old_assassin = new Career(
                                  "thereafter."},
                         {'Name': 'Weak point',
                          'Desc': "Once per enemy you may ignore any SOAK score it possesses by targeting a weak spot. " +
-                                 "You can never use this ability on the same enemy again."}]);
+                                 "You can never use this ability on the same enemy again."}]});
 
-var career_old_barbarian = new Career(
-    name='Barbarian',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, agility=1, intuition=1,
-    available_skills=['swords', 'axes', 'spears', '[physical]', '[outdoor]', 'hardy', 'herbalism'],
-    description="Tribal warriors from the very fringes of civilization, barbarians are wild and uncouth. Barbarians " +
+var career_old_barbarian = new Career({
+    name: 'Barbarian',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, agility: 1, intuition: 1,
+    available_skills: ['swords', 'axes', 'spears', '[physical]', '[outdoor]', 'hardy', 'herbalism'],
+    description: "Tribal warriors from the very fringes of civilization, barbarians are wild and uncouth. Barbarians " +
          "exemplify physical prowess and natural prowess, but can feel uncomfortable in enclosed spaces.",
-    available_exploits=[
+    available_exploits: [
         {'Name': 'Fleet of foot', 'Desc': "In an outdoor environment, you gain a +2 bonus to your SPEED."},
         {'Name': 'Mighty leap', 'Desc': "Your horizontal free jump distance increases by 5' (one square)."},
         {'Name': 'Set in the old ways', 'Desc': "You gain +5 to your MENTAL DEFENSE."},
@@ -145,17 +145,17 @@ var career_old_barbarian = new Career(
          'Desc': "You gain a bite attack; your natural damage increases by +1d6 and becomes piercing damage."},
         {'Name': 'Natural serenity',
          'Desc': "(requires Sacred Terrain) In your chosen sacred terrain, you may pause for five minutes once per " +
-                 "day, reflecting on nature and speaking to the Old Gods, to recover your full HEALTH."}]);
+                 "day, reflecting on nature and speaking to the Old Gods, to recover your full HEALTH."}]});
 
-var career_old_berserker = new Career(
-    name='Berserker',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='STR 6+, Feral exploit',
-    strength=1, endurance=1, charisma=1, luck=1,
-    available_skills=['sword', 'axe', 'spear', '[physical]', '[unarmed]', 'hardy'],
-    description="Some barbarians become berserkers – raging warriors of fury.",
-    available_exploits=[{'Name': 'Frenzy',
+var career_old_berserker = new Career({
+    name: 'Berserker',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'STR 6+, Feral exploit',
+    strength: 1, endurance: 1, charisma: 1, luck: 1,
+    available_skills: ['sword', 'axe', 'spear', '[physical]', '[unarmed]', 'hardy'],
+    description: "Some barbarians become berserkers – raging warriors of fury.",
+    available_exploits: [{'Name': 'Frenzy',
                          'Desc': "You can fly into a berserk rage. When berserk, you must attack the closest enemy, " +
                                  "and move on to the next closest thereafter. You gain SOAK +5 (even when wearing " +
                                  "armor) and +1d6 damage. Each round you rage for, you take 1d6 damage; you do not " +
@@ -168,20 +168,20 @@ var career_old_berserker = new Career(
                                  "HEALTH."},
                         {'Name': 'Fearless',
                          'Desc': "(requires Frenzy) While frenzied, you are completely immune to the Fear status " +
-                                 "track."}]);
+                                 "track."}]});
 
-var career_old_burglar = new Career(
-    name='Burglar',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth',
-    agility=1, intuition=1, luck=1, reputation=1,
-    available_skills=['climbing', 'jumping', 'acrobatics', 'escape artist', 'computers', 'stealth', 'thievery',
+var career_old_burglar = new Career({
+    name: 'Burglar',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth',
+    agility: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['climbing', 'jumping', 'acrobatics', 'escape artist', 'computers', 'stealth', 'thievery',
                       'appraisal'],
-    description="You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire " +
+    description: "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire " +
          "and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums " +
          "and high security vaults.",
-    available_exploits=[{'Name': 'Locksmith',
+    available_exploits: [{'Name': 'Locksmith',
                          'Desc': "You gain a exceptional quality lockpicking kit. You gain a +1d6 bonus to attempts " +
                                  "to pick locks, combinations, guess passwords, or access security panels."},
                         {'Name': 'Catburglar',
@@ -193,17 +193,17 @@ var career_old_burglar = new Career(
                          'Desc': "(requires Catburglar) Your climbing speed becomes equal to your regular SPEED."},
                         {'Name': 'Grand heist',
                          'Desc': "You achieve a great robbery that will be remembered for years to come. Gain a bonus " +
-                                 "3d6 x 100gc. You may repeat this exploit, gaining 3d6x100gc each time."}]);
+                                 "3d6 x 100gc. You may repeat this exploit, gaining 3d6x100gc each time."}]});
 
-var career_old_cleric = new Career(
-    name='Cleric',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion',
-    willpower=1, logic=1, charisma=1, magic=1,
-    available_skills=['healing', 'herbalism', 'religion', 'leadership', 'history', 'local knowledge', 'staves', 'maces',
+var career_old_cleric = new Career({
+    name: 'Cleric',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion',
+    willpower: 1, logic: 1, charisma: 1, magic: 1,
+    available_skills: ['healing', 'herbalism', 'religion', 'leadership', 'history', 'local knowledge', 'staves', 'maces',
                       '[magical]'],
-    description="The cleric devotes his or her life to a higher power, hoping to serve that power’s will. Whether the cleric " +
+    description: "The cleric devotes his or her life to a higher power, hoping to serve that power’s will. Whether the cleric " +
          "serves a noble god or a vicious demon lord, he or she gains power from faith, and learns to wield powerful " +
          "magic in the service of his or her deity. Clerics are also trained to be capable warriors, able to defend " +
          "themselves physically if their spells fail them. Since clerics deal more in abstract realms of the soul and " +
@@ -214,7 +214,7 @@ var career_old_cleric = new Career(
          "the realm of mortals, but it is folly to defy even enemy deities. Thus, though a cleric may choose to " +
          "change the deity he or she reveres, if the clerics truly abandons the pantheon, he or she will never be " +
          "accepted by any deity, being forced to rely on mortal magic alone.",
-    available_exploits=[{'Name': 'Beatification',
+    available_exploits: [{'Name': 'Beatification',
                          'Desc': "(requires religion 6) You gain the Virtue of your god. Additionally, all damage you " +
                                  "do is damage of that Virtue type, whatever the delivery instrument."},
                         {'Name': 'Blessing/curse',
@@ -236,20 +236,20 @@ var career_old_cleric = new Career(
                         {'Name': 'Sense virtue',
                          'Desc': "(requires Portfolio) You are able to sense the presence of (but not the location " +
                                  "of) any beings or objects within 60' with a Virtue opposite to that of the secret " +
-                                 "you chose."}]);
+                                 "you chose."}]});
 
-var career_old_diabolist = new Career(
-    name='Diabolist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion, secret of evil',
-    willpower=1, charisma=1, luck=1, magic=1,
-    available_skills=['[magical]', 'religion', 'alchemy', 'concentration', '[social]', 'linguistics', 'knives', 'law'],
-    description="A diabolist consorts with the infernal, and dabbles in the darkest and most dangerous of magical arts – he " +
+var career_old_diabolist = new Career({
+    name: 'Diabolist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion, secret of evil',
+    willpower: 1, charisma: 1, luck: 1, magic: 1,
+    available_skills: ['[magical]', 'religion', 'alchemy', 'concentration', '[social]', 'linguistics', 'knives', 'law'],
+    description: "A diabolist consorts with the infernal, and dabbles in the darkest and most dangerous of magical arts – he " +
          "deals with demons and devils, risking his very soul in the process. A diabolist needs a strong will, " +
          "for devils and demons know the powers of temptation, deceit, and the lure of pure evil. A diabolist knows " +
          "how to summon infernal creatures and bind them to his will.",
-    available_exploits=[{'Name': 'Blood magic',
+    available_exploits: [{'Name': 'Blood magic',
                          'Desc': "(requires Faustian Pact) You are now able to cast spells for fewer MP by spilling " +
                                  "your own blood. As an action, you may do either 1d6 or 2d6 damage to yourself; the " +
                                  "MP cost of the next spell cast within one minute is reduced by the number of d6s " +
@@ -272,19 +272,19 @@ var career_old_diabolist = new Career(
                         {'Name': 'Imp',
                          'Desc': "You gain an imp familiar which will do your bidding. It will undertake dangerous " +
                                  "tasks, but to persuade it to do something suicidal (or near-so) requires a " +
-                                 "Difficult [16] CHA check; if you fail, your imp betrays you."}]);
+                                 "Difficult [16] CHA check; if you fail, your imp betrays you."}]});
 
-var career_old_druid = new Career(
-    name='Druid',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='nature',
-    intuition=1, willpower=1, endurance=1, magic=1,
-    available_skills=['[outdoor]', 'nature', 'healing', 'staves', '[crafting]', 'herbalism', '[magical]'],
-    description="Guardians of nature, druids are attuned with the natural forces of the world. Plants and animals are their " +
+var career_old_druid = new Career({
+    name: 'Druid',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'nature',
+    intuition: 1, willpower: 1, endurance: 1, magic: 1,
+    available_skills: ['[outdoor]', 'nature', 'healing', 'staves', '[crafting]', 'herbalism', '[magical]'],
+    description: "Guardians of nature, druids are attuned with the natural forces of the world. Plants and animals are their " +
          "allies, and druids frequently live in the wild, deep within forests. A druid typically wields a staff or " +
          "sickle.",
-    available_exploits=[{'Name': 'Animal affinity',
+    available_exploits: [{'Name': 'Animal affinity',
                          'Desc': "(requires Speak With Animals) With a successful CHA vs. MENTAL DEFENSE check, " +
                                  "you can shift an animal one stage along the Charm status track for one hour."},
                         {'Name': 'Animal companion',
@@ -318,19 +318,19 @@ var career_old_druid = new Career(
                         {'Name': 'Poison immunity', 'Desc': "You become immune to all poisons and poison damage."},
                         {'Name': 'Speak with animals',
                          'Desc': "You may freely speak with animals, although they do not gain special intelligence " +
-                                 "or knowledge."}]);
+                                 "or knowledge."}]});
 
-var career_old_firemage = new Career(
-    name='Firemage',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='secret of fire.',
-    magic=1, agility=1, charisma=1, logic=1,
-    available_skills=['[magical]', '[lore]', '[crafting]', 'bluffing', 'perception', 'reactions', 'knives'],
-    description="Firemages are fascinated by fire. They love the way it flickers and dances; they excel at creating flames, " +
+var career_old_firemage = new Career({
+    name: 'Firemage',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'secret of fire.',
+    magic: 1, agility: 1, charisma: 1, logic: 1,
+    available_skills: ['[magical]', '[lore]', '[crafting]', 'bluffing', 'perception', 'reactions', 'knives'],
+    description: "Firemages are fascinated by fire. They love the way it flickers and dances; they excel at creating flames, " +
          "throwing fire, and delight in creating and controlling infernos and conflagrations. Firemages can sometimes " +
          "be identified by a slight sent of sulfur.",
-    available_exploits=[{'Name': 'Fiery affinity.',
+    available_exploits: [{'Name': 'Fiery affinity.',
                          'Desc': "Your focus on fire grants you +1d6 to any attribute which interacts with fire or " +
                                  "heat."},
                         {'Name': 'Firebolt',
@@ -358,17 +358,17 @@ var career_old_firemage = new Career(
                                  "damage beyond your natural damage."},
                         {'Name': 'Sticky fire',
                          'Desc': "Every time you damage a foe with fire, they are pushed one stage down the fire " +
-                                 "status track."}]);
+                                 "status track."}]});
 
-var career_old_gladiator = new Career(
-    name='Gladiator',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, endurance=1, reputation=1, charisma=1,
-    available_skills=['[combat]', 'reactions', 'storytelling', 'intimidation', 'dancing', 'acrobatics'],
-    description="You fought in an arena for money and fame with a flashy combat style and a few dirty tricks.",
-    available_exploits=[{'Name': "Gladiator's skills",
+var career_old_gladiator = new Career({
+    name: 'Gladiator',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, endurance: 1, reputation: 1, charisma: 1,
+    available_skills: ['[combat]', 'reactions', 'storytelling', 'intimidation', 'dancing', 'acrobatics'],
+    description: "You fought in an arena for money and fame with a flashy combat style and a few dirty tricks.",
+    available_exploits: [{'Name': "Gladiator's skills",
                          'Desc': "You gain two of the following universal exploits: Disarm, Trip, Achilles Heel, " +
                                  "Blinding Attack, Crippling Strike, Quickstand, Taunt. You may repeat this exploit " +
                                  "to gain two more from the list."},
@@ -402,21 +402,21 @@ var career_old_gladiator = new Career(
                          'Desc': "(requires Fake Wounds) After using your Fake Wounds ability, you may make a single " +
                                  "free melee attack at any point up until you make an actual regular melee attack. " +
                                  "The free attack must be your first melee attack since using the Fake Wounds " +
-                                 "ability."}]);
+                                 "ability."}]});
 
-var career_old_herbalist = new Career(
-    name='Herbalist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='INT 4+',
-    logic=1, intuition=1, willpower=1, luck=1,
-    available_skills=['cooking', 'brewing', 'herbalism', 'nature', 'perception', 'gardening', 'healing', 'survival'],
-    description="An herbalist knows how to gather, store, prepare, and administer herbs and herbal concoctions which have a " +
+var career_old_herbalist = new Career({
+    name: 'Herbalist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'INT 4+',
+    logic: 1, intuition: 1, willpower: 1, luck: 1,
+    available_skills: ['cooking', 'brewing', 'herbalism', 'nature', 'perception', 'gardening', 'healing', 'survival'],
+    description: "An herbalist knows how to gather, store, prepare, and administer herbs and herbal concoctions which have a " +
          "wide variety of effects. An expert herbalist can, merely from gathering resources found in nature, " +
          "create ointments and mixtures which protect, heal, or ward. For each herbal mixture, you should roll and " +
          "note down an Herbal Science result. This descriptionribes the nature of the mixture, whether it is soup of the " +
          "spirit-wood weed, or incense from the blue-vine nut.",
-    available_exploits=[{'Name': 'Healing herbs',
+    available_exploits: [{'Name': 'Healing herbs',
                          'Desc': "As long as you have your herbalism kit on you, you can heal an ally by 1d6 of " +
                                  "HEALTH as a single action. No creature can benefit from this healing more than once " +
                                  "per day."},
@@ -442,17 +442,17 @@ var career_old_herbalist = new Career(
                          'Desc': "You can create a herbal mixture which decreases the die pool of one attribute by " +
                                  "1d6 for five minutes. You must choose the attribute when you select this exploit; " +
                                  "you may select it multiple times and choose a different attribute each time. It " +
-                                 "takes one minute to create the mixture."}]);
+                                 "takes one minute to create the mixture."}]});
 
-var career_old_inquisitor = new Career(
-    name='Inquisitor',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='law, divination',
-    endurance=1, intuition=1, willpower=1, magic=1,
-    available_skills=['religion', 'law', 'interrogation', 'intimidation', 'tracking', 'divination', 'compulsion',
+var career_old_inquisitor = new Career({
+    name: 'Inquisitor',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'law, divination',
+    endurance: 1, intuition: 1, willpower: 1, magic: 1,
+    available_skills: ['religion', 'law', 'interrogation', 'intimidation', 'tracking', 'divination', 'compulsion',
                       'abjuration', 'knives'],
-    description="Inquisitors are magical bodyguards and interrogators skilled in uncovering plots and opposing enemy magic. " +
+    description: "Inquisitors are magical bodyguards and interrogators skilled in uncovering plots and opposing enemy magic. " +
          "Inquisitorial magic is subtle in its effects, with few sensory cues, but very distinctive with regard to " +
          "its caster. Inquisitors learn to use their force of will to intimidate foes, and so they typically growl " +
          "their spells loudly and gesture clearly at their spell’s targets. They use few directly offensive spells, " +
@@ -463,7 +463,7 @@ var career_old_inquisitor = new Career(
          "scribed by the founders of the Inquisitorial order centuries ago. These spellbooks are written in a " +
          "civilized form of Orcish, and are closely protected by the order that owns them. Experienced Inquisitors " +
          "also usually study the magic of other groups to be better able to counterspell it.",
-    available_exploits=[{'Name': 'Dispel magic',
+    available_exploits: [{'Name': 'Dispel magic',
                          'Desc': "(requires Sense Magic) You are able to dispel magic within 30' as a single action " +
                                  "by making a MAG vs. MAG check against the effect you are trying to dispel."},
                         {'Name': "Inquisitor's mask",
@@ -480,18 +480,18 @@ var career_old_inquisitor = new Career(
                         {'Name': 'Magic resistance',
                          'Desc': "You gain SOAK 5 (magic). This applies to any damage caused directly by magic; it " +
                                  "does not apply to indirect damage."},
-                        {'Name': 'Sense magic', 'Desc': "You are able to sniff out magic within 60'."}]);
+                        {'Name': 'Sense magic', 'Desc': "You are able to sniff out magic within 60'."}]});
 
-var career_old_knight = new Career(
-    name='Knight',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='heraldry',
-    strength=1, charisma=1, luck=1, reputation=1,
-    available_skills=['lances', 'swords', 'heraldry', 'animal handling', 'riding', 'bravery', 'leadership', 'tactics',
+var career_old_knight = new Career({
+    name: 'Knight',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'heraldry',
+    strength: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['lances', 'swords', 'heraldry', 'animal handling', 'riding', 'bravery', 'leadership', 'tactics',
                       'carousing', 'law'],
-    description="You became a knight – a mounted warrior proficient in lance, shield, and sword.",
-    available_exploits=[{'Name': 'Bonded mount',
+    description: "You became a knight – a mounted warrior proficient in lance, shield, and sword.",
+    available_exploits: [{'Name': 'Bonded mount',
                          'Desc': "You gain a loyal warhorse. The warhorse is bonded to you, and gains +2 SPEED while " +
                                  "you are riding it. If the warhorse dies, you can replace it after a week of " +
                                  "mourning."},
@@ -507,19 +507,19 @@ var career_old_knight = new Career(
                         {'Name': 'Squire',
                          'Desc': "(requires Bonded Mount) You gain a free squire. You must protect your squire; in " +
                                  "exchange, one weapon or one suit of armor you possess increases by one quality " +
-                                 "level (to a maximum of artisan). If your squire dies, he is replaced in one month."}]);
+                                 "level (to a maximum of artisan). If your squire dies, he is replaced in one month."}]});
 
-var career_old_loremaster = new Career(
-    name='Loremaster',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='INT 4+',
-    logic=2, willpower=1, magic=1,
-    available_skills=['[artistic]', '[lore]', '[gaming]', '[magical]'],
-    description="A loremaster is a scholar and academic expert; years spent in libraries studying ancient texts makes " +
+var career_old_loremaster = new Career({
+    name: 'Loremaster',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'INT 4+',
+    logic: 2, willpower: 1, magic: 1,
+    available_skills: ['[artistic]', '[lore]', '[gaming]', '[magical]'],
+    description: "A loremaster is a scholar and academic expert; years spent in libraries studying ancient texts makes " +
          "loremasters amongst the most knowledgeable in the world. Loremasters even pick up some minor magical spells " +
          "which help them in their studies.",
-    available_exploits=[{'Name': 'Secrets', 'Desc': "You learn four secrets."},
+    available_exploits: [{'Name': 'Secrets', 'Desc': "You learn four secrets."},
                         {'Name': 'Experienced',
                          'Desc': "Your knowledge and expertise borders on the prophetic. Your entire party gains a " +
                                  "+1d6 INITIATIVE bonus if they are within 30 feet of you when they make their check."},
@@ -543,19 +543,19 @@ var career_old_loremaster = new Career(
                                  "per MP, but costs no MP. Devise one spell and note it down. You may take this " +
                                  "exploit more than once, creating a new ritual each time."},
                         {'Name': 'Greater ritual',
-                         'Desc': "(requires Ritual) You can now cast spells of up to 5 MP or less as a ritual."}]);
+                         'Desc': "(requires Ritual) You can now cast spells of up to 5 MP or less as a ritual."}]});
 
-var career_old_mage = new Career(
-    name='Mage',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='one [magical] skill',
-    magic=1, logic=1, willpower=1, reputation=1,
-    available_skills=['[magical]', '[lore]', '[academic]', 'staves', 'prestidigitation'],
-    description="You are practiced in the arcane arts, able to wield spells with ease. A mage is a trained magic-user – " +
+var career_old_mage = new Career({
+    name: 'Mage',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'one [magical] skill',
+    magic: 1, logic: 1, willpower: 1, reputation: 1,
+    available_skills: ['[magical]', '[lore]', '[academic]', 'staves', 'prestidigitation'],
+    description: "You are practiced in the arcane arts, able to wield spells with ease. A mage is a trained magic-user – " +
          "sometimes known as a wizard, or sorcerer. Able to cast a variety of spells, and well-versed in a range of " +
          "lore, the mage is a generalist.",
-    available_exploits=[{'Name': 'Broad knowledge base',
+    available_exploits: [{'Name': 'Broad knowledge base',
                          'Desc': "(requires Arcane Knowledge Base) Choose two more [magical] skills and two elemental " +
                                  "or creature secrets. You gain these two skills at 1 rank (1d6). This does not " +
                                  "increase the rank of an existing skill."},
@@ -578,18 +578,18 @@ var career_old_mage = new Career(
                         {'Name': 'Specialization',
                          'Desc': "(requires Arcane Knowledge Base) Choose one secret that you already know. You are " +
                                  "specialized in that secret. You may exceed your MAG attribute by 2 points when " +
-                                 "using that secret. You may only ever specialize in one secret."}]);
+                                 "using that secret. You may only ever specialize in one secret."}]});
 
-var career_old_man_at_arms = new Career(
-    name='Man-at-Arms',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, willpower=1, luck=1,
-    available_skills=['spears', 'swords', '[unarmed fighting]', 'carrying', 'running', 'leadership', 'tactics',
+var career_old_man_at_arms = new Career({
+    name: 'Man-at-Arms',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, willpower: 1, luck: 1,
+    available_skills: ['spears', 'swords', '[unarmed fighting]', 'carrying', 'running', 'leadership', 'tactics',
                       'carousing', 'survival', 'healing'],
-    description="An infantryman, you fought in battle on the front lines.",
-    available_exploits=[
+    description: "An infantryman, you fought in battle on the front lines.",
+    available_exploits: [
         {'Name': 'Equipped', 'Desc': "You start play with a high quality sword, spear, or suit of chainmail."},
         {'Name': 'Hold the line', 'Desc': "When standing adjacent to an ally, you both gain a 1d6 cover bonus."},
         {'Name': 'Advance!',
@@ -597,17 +597,17 @@ var career_old_man_at_arms = new Career(
         {'Name': 'Shield-bearer', 'Desc': "Any shield you wear increases its DEFENSE bonus by +4."},
         {'Name': 'Shield wall',
          'Desc': "When standing between two allies, all three gain a +2d6 cover bonus. This does not stack with " +
-                 "itself or with Hold the Line."}]);
+                 "itself or with Hold the Line."}]});
 
-var career_old_minstrel = new Career(
-    name='Minstrel',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='CHA 4+',
-    intuition=1, willpower=1, charisma=1, reputation=1,
-    available_skills=['carousing', '[performance skills]', '[lore]', '[social]'],
-    description="You used the power of your music to earn a living.",
-    available_exploits=[{'Name': 'Instrument',
+var career_old_minstrel = new Career({
+    name: 'Minstrel',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'CHA 4+',
+    intuition: 1, willpower: 1, charisma: 1, reputation: 1,
+    available_skills: ['carousing', '[performance skills]', '[lore]', '[social]'],
+    description: "You used the power of your music to earn a living.",
+    available_exploits: [{'Name': 'Instrument',
                          'Desc': "You start play with a high quality musical instrument. You can make money by " +
                                  "playing at taverns and doing local performances. You can automatically make 1d6 x " +
                                  "10 gc per day by doing this. This ability cannot be used during downtime."},
@@ -622,17 +622,17 @@ var career_old_minstrel = new Career(
                          'Desc': "(requires Song) Select a song that you know. That song will now affect beasts."},
                         {'Name': 'Projection',
                          'Desc': "(requires Song) You use the power of your voice to increase the radius of your " +
-                                 "songs to 60'."}]);
+                                 "songs to 60'."}]});
 
-var career_old_musketeer = new Career(
-    name='Musketeer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='AGI or INT 5+',
-    agility=1, intuition=1, charisma=1, luck=1,
-    available_skills=['swords', 'muskets', 'heraldry', 'perception', 'intimidate', 'carousing'],
-    description="Wielding musket and sword, you became a swashbuckling musketeer.",
-    available_exploits=[{'Name': 'Cloak flourish',
+var career_old_musketeer = new Career({
+    name: 'Musketeer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'AGI or INT 5+',
+    agility: 1, intuition: 1, charisma: 1, luck: 1,
+    available_skills: ['swords', 'muskets', 'heraldry', 'perception', 'intimidate', 'carousing'],
+    description: "Wielding musket and sword, you became a swashbuckling musketeer.",
+    available_exploits: [{'Name': 'Cloak flourish',
                          'Desc': "You can use a cape or cloak with a flourish to distract your foes; the garment " +
                                  "counts as a small shield, but does not require a free hand to use it."},
                         {'Name': 'Musket charge',
@@ -649,19 +649,19 @@ var career_old_musketeer = new Career(
                                  "when you see the whites of their eyes. When charged by an opponent, you may fire a " +
                                  "free musket or pistol shot when they come within 10' of you."},
                         {'Name': 'Quick reload',
-                         'Desc': "You can fire your musket every action, rather than just once per turn."}]);
+                         'Desc': "You can fire your musket every action, rather than just once per turn."}]});
 
-var career_old_necromancer = new Career(
-    name='Necromancer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='secret of undead.',
-    logic=1, willpower=1, charisma=1, magic=1,
-    available_skills=['[magical]', 'religion', 'alchemy', 'healing', '[social]', 'knives'],
-    description="A master of the dark arts, a necromancer is able to summon, bind, and control the undead. Eventually, " +
+var career_old_necromancer = new Career({
+    name: 'Necromancer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'secret of undead.',
+    logic: 1, willpower: 1, charisma: 1, magic: 1,
+    available_skills: ['[magical]', 'religion', 'alchemy', 'healing', '[social]', 'knives'],
+    description: "A master of the dark arts, a necromancer is able to summon, bind, and control the undead. Eventually, " +
          "a necromancer turns into a terrifying lich, the most powerful of undead. A necromancer knows the ways of " +
          "disease, poison, and the power of fear.",
-    available_exploits=[{'Name': 'Corpse visage',
+    available_exploits: [{'Name': 'Corpse visage',
                          'Desc': "(requires Eyes of the Dead) Your skin and visage alter slightly, becoming more like " +
                                  "the undead you surround yourself with. You gain 5 natural SOAK, but become " +
                                  "Vulnerable 1d6 (Light) and your CHA attribute is reduced by 2 points (to a minimum " +
@@ -691,18 +691,18 @@ var career_old_necromancer = new Career(
                         {'Name': 'Vampiric touch',
                          'Desc': "(requires Touch of the Grave) You are able to steal the life essence of a victim " +
                                  "for yourself. When you use your Touch of the Grave to do damage to another " +
-                                 "creature, you gain that amount of HEALTH."}]);
+                                 "creature, you gain that amount of HEALTH."}]});
 
-var career_old_pirate = new Career(
-    name='Pirate',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='sailing',
-    agility=1, intuition=1, luck=1, reputation=1,
-    available_skills=['sailing', 'navigation', 'climbing', 'swimming', 'carousing', 'swords', 'knives', 'crossbows',
+var career_old_pirate = new Career({
+    name: 'Pirate',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'sailing',
+    agility: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['sailing', 'navigation', 'climbing', 'swimming', 'carousing', 'swords', 'knives', 'crossbows',
                       'leadership', 'appraisal', 'thievery', 'law'],
-    description="A scourge of the high seas, you plunder for loot and fame.",
-    available_exploits=[{'Name': 'Crows nest',
+    description: "A scourge of the high seas, you plunder for loot and fame.",
+    available_exploits: [{'Name': 'Crows nest',
                          'Desc': "You have spent many hours on the lookout. You can always access the ambush turn."},
                         {'Name': 'Hook',
                          'Desc': "One of your hands is now a hook. You are always considered to be carrying a knife. " +
@@ -720,36 +720,36 @@ var career_old_pirate = new Career(
                         {'Name': 'Fierce reputation',
                          'Desc': "(requires Fearsome Reputation) Your reputation is now so fierce that you can either " +
                                  "push one target two stages down the Fear status track, or all targets within 30' " +
-                                 "one stage down the track with a REP vs. MENTAL DEFENSE attack."}]);
+                                 "one stage down the track with a REP vs. MENTAL DEFENSE attack."}]});
 
-var career_old_prisoner = new Career(
-    name='Prisoner',
-    career_time='2d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, intuition=1, reputation=1,
-    available_skills=['intimidation', 'survival', '[subterfuge]', '[unarmed fighting]', 'knives'],
-    description="Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner " +
+var career_old_prisoner = new Career({
+    name: 'Prisoner',
+    career_time: '2d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, intuition: 1, reputation: 1,
+    available_skills: ['intimidation', 'survival', '[subterfuge]', '[unarmed fighting]', 'knives'],
+    description: "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner " +
          "or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to survive, " +
          "although you did make one or two lifelong contacts.",
-    available_exploits=[{'Name': 'Prison tough',
+    available_exploits: [{'Name': 'Prison tough',
                          'Desc': "You are mentally and physically toughened. Each time you take this exploit you gain " +
                                  "a permanent +1 bonus to your DEFENSE and MENTAL DEFENSE. You may repeat this " +
                                  "exploit."},
                         {'Name': 'Shiv',
                          'Desc': "You are easily able to improvise weapons using your surroundings – glasses, rocks, " +
-                                 "and so on. You always count as carrying a knife or club."}]);
+                                 "and so on. You always count as carrying a knife or club."}]});
 
-var career_old_ranger = new Career(
-    name='Ranger',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='WIL 3+',
-    agility=1, intuition=1, endurance=1, willpower=1,
-    available_skills=['[outdoor]', 'herbalism', 'local knowledge', 'swords', 'bows', 'climbing', 'swimming', 'running',
+var career_old_ranger = new Career({
+    name: 'Ranger',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'WIL 3+',
+    agility: 1, intuition: 1, endurance: 1, willpower: 1,
+    available_skills: ['[outdoor]', 'herbalism', 'local knowledge', 'swords', 'bows', 'climbing', 'swimming', 'running',
                       'stealth', 'navigation', 'tracking'],
-    description="Woodsman and hunter, you are a master of the outdoors. The ranger is the quintessential outdoorsman.",
-    available_exploits=[{'Name': 'Companion',
+    description: "Woodsman and hunter, you are a master of the outdoors. The ranger is the quintessential outdoorsman.",
+    available_exploits: [{'Name': 'Companion',
                          'Desc': "You gain an animal companion, much like the druid's. This companion will accompany " +
                                  "and defend you. If your companion dies, you attract a new companion in one month. " +
                                  "However, if you abuse your companion (for example by sending it ahead to set off " +
@@ -772,32 +772,32 @@ var career_old_ranger = new Career(
                         {'Name': 'Beast whisperer',
                          'Desc': "You can speak to animals. This does not grant them special knowledge or " +
                                  "intelligence, so the information you can gain is limited by their own capabilities. " +
-                                 "Neither does it guarantee friendship or cooperation."}]);
+                                 "Neither does it guarantee friendship or cooperation."}]});
 
-var career_old_ruffian = new Career(
-    name='Ruffian',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, charisma=1, luck=1,
-    available_skills=['intimidation', 'running', 'brawling', 'clubs', 'knives'],
-    description="You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for " +
+var career_old_ruffian = new Career({
+    name: 'Ruffian',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, charisma: 1, luck: 1,
+    available_skills: ['intimidation', 'running', 'brawling', 'clubs', 'knives'],
+    description: "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for " +
          "small amounts of money.",
-    available_exploits=[{'Name': 'The filth!',
+    available_exploits: [{'Name': 'The filth!',
                          'Desc': "You have developed an uncanny ability to detect the Watch. When attempting to sniff " +
                                  "out a watchman or similar authority figure, you gain a +1d6 bonus."},
-                        {'Name': 'Street tough', 'Desc': "Life on the streets is tough. You gain a natural +2 SOAK."}]);
+                        {'Name': 'Street tough', 'Desc': "Life on the streets is tough. You gain a natural +2 SOAK."}]});
 
-var career_old_sailor = new Career(
-    name='Sailor',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, luck=1, endurance=1,
-    available_skills=['sailing', 'navigation', 'fishing', 'climbing', 'swimming', 'carousing', 'clubs', 'knives',
+var career_old_sailor = new Career({
+    name: 'Sailor',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, luck: 1, endurance: 1,
+    available_skills: ['sailing', 'navigation', 'fishing', 'climbing', 'swimming', 'carousing', 'clubs', 'knives',
                       'crossbows', 'leadership'],
-    description="At home on the sea, you spent time aboard a ship mastering the art of sailing.",
-    available_exploits=[{'Name': 'Climb the rigging', 'Desc': "You can climb your SPEED instead of half your SPEED."},
+    description: "At home on the sea, you spent time aboard a ship mastering the art of sailing.",
+    available_exploits: [{'Name': 'Climb the rigging', 'Desc': "You can climb your SPEED instead of half your SPEED."},
                         {'Name': 'Sea legs',
                          'Desc': "You adapt to the motion of a ship; this makes you very hard to knock down. When you " +
                                  "are knocked prone, you may make a Challenging [13] AGI check; if you succeed, " +
@@ -823,19 +823,19 @@ var career_old_sailor = new Career(
                                  "perception checks."},
                         {'Name': 'Peg leg',
                          'Desc': "One of your legs is a wooden peg. You are used to it, so it does not negatively " +
-                                 "affect you; you gain a kick attack which increases your unarmed damage by 1d6."}]);
+                                 "affect you; you gain a kick attack which increases your unarmed damage by 1d6."}]});
 
-var career_old_smith = new Career(
-    name='Smith',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='STR 4+',
-    strength=1, endurance=1, logic=1, reputation=1,
-    available_skills=['[crafting]', '[artistic]', 'appraise'],
-    description="A smith is a master metalwork. Blacksmith, weaponsmith, armorer, a smith is able to create, maintain, " +
+var career_old_smith = new Career({
+    name: 'Smith',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'STR 4+',
+    strength: 1, endurance: 1, logic: 1, reputation: 1,
+    available_skills: ['[crafting]', '[artistic]', 'appraise'],
+    description: "A smith is a master metalwork. Blacksmith, weaponsmith, armorer, a smith is able to create, maintain, " +
          "and even enchant a warrior's tools. Many smiths combine traditions of smithing and alchemy to learn how to " +
          "make magical weapons and armor.",
-    available_exploits=[{'Name': 'Maintenance',
+    available_exploits: [{'Name': 'Maintenance',
                          'Desc': "You know how to maintain equipment. Designate one standard quality suit of armor or " +
                                  "a weapon; this item becomes high quality, as long as you spend an hour maintaining " +
                                  "it every day."},
@@ -881,19 +881,19 @@ var career_old_smith = new Career(
                          'Desc': "(requires Exceptional Forge, Protective Oil, MAG 2+) You combine the Protective Oil " +
                                  "ability from the Alchemist career and Exceptional Forge or greater from the Smith " +
                                  "career, the armor you created permanently gains the extra protection granted by the " +
-                                 "Protective Oil. You may repeat this exploit."}]);
+                                 "Protective Oil. You may repeat this exploit."}]});
 
-var career_old_squire = new Career(
-    name='Squire',
-    career_time='1',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, charisma=1, luck=1, reputation=1,
-    available_skills=['lances', 'swords', 'heraldry', 'carrying', 'healing', 'animal handling', 'riding', 'bravery'],
-    description="You spent time as a squire to a noble knight. While some move straight into knighthood, paying your dues as " +
+var career_old_squire = new Career({
+    name: 'Squire',
+    career_time: '1',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['lances', 'swords', 'heraldry', 'carrying', 'healing', 'animal handling', 'riding', 'bravery'],
+    description: "You spent time as a squire to a noble knight. While some move straight into knighthood, paying your dues as " +
          "a squire is the only way to truly rise to the top of the knightly tradition. You can always tell a knight " +
          "who wasn't a squire first, as he lacks some of the basics.",
-    available_exploits=[{'Name': 'Sword-sharpener',
+    available_exploits: [{'Name': 'Sword-sharpener',
                          'Desc': "You know how to maintain your (or your liege's) equipment. One standard quality " +
                                  "suit of armor and one standard quality melee weapon becomes high quality, " +
                                  "as long as you spend an hour maintaining it every day."},
@@ -911,18 +911,18 @@ var career_old_squire = new Career(
                                  "INITIATIVE checks."},
                         {'Name': 'Dress wounds',
                          'Desc': "You can heal 1d6 HEALTH using a basic healer's kit; this costs two actions. No " +
-                                 "recipient can benefit from this more than once per day."}]);
+                                 "recipient can benefit from this more than once per day."}]});
 
-var career_old_undead_hunter = new Career(
-    name='Undead Hunter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion',
-    logic=1, willpower=1, charisma=1, luck=1,
-    available_skills=['religion', 'abjuration', 'tracking', 'history', 'herbalism', 'linguistics', 'medicine'],
-    description="An expert on the undead, you have vowed to hunt and destroy them. Your academic research and knowledge are " +
+var career_old_undead_hunter = new Career({
+    name: 'Undead Hunter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion',
+    logic: 1, willpower: 1, charisma: 1, luck: 1,
+    available_skills: ['religion', 'abjuration', 'tracking', 'history', 'herbalism', 'linguistics', 'medicine'],
+    description: "An expert on the undead, you have vowed to hunt and destroy them. Your academic research and knowledge are " +
          "powerful weapons against your immortal foes. Many undead hunters choose to learn a little magic, also.",
-    available_exploits=[{'Name': 'Death Bane',
+    available_exploits: [{'Name': 'Death Bane',
                          'Desc': ". Using an herbalism kit, you can create a death bane—an ointment or natural amulet " +
                                  "(such as the stereotypical garlic vs. vampires). This grants<br />you +4 DEFENSE " +
                                  "vs. the undead. Death Ward. You learn the secret of undead."},
@@ -942,17 +942,17 @@ var career_old_undead_hunter = new Career(
                         {'Name': 'Turn Undead',
                          'Desc': "(requires Stalwart) You can make a CHA vs. Mental Defense attack which affects all " +
                                  "undead within 30' of you. Undead affected by this attack are moved one step along " +
-                                 "the Fear status track."}]);
+                                 "the Fear status track."}]});
 
-var career_old_warrior_monk = new Career(
-    name='Warrior-monk',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion or martial arts',
-    agility=1, endurance=1, intuition=1, willpower=1,
-    available_skills=['martial arts', 'acrobatics', 'religion', 'philosophy', 'dancing', '[artistic]', 'staves'],
-    description="You became a member of a militant monastic order, and were trained in philosophy and martial arts.",
-    available_exploits=[{'Name': 'Martial technique base',
+var career_old_warrior_monk = new Career({
+    name: 'Warrior-monk',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion or martial arts',
+    agility: 1, endurance: 1, intuition: 1, willpower: 1,
+    available_skills: ['martial arts', 'acrobatics', 'religion', 'philosophy', 'dancing', '[artistic]', 'staves'],
+    description: "You became a member of a militant monastic order, and were trained in philosophy and martial arts.",
+    available_exploits: [{'Name': 'Martial technique base',
                          'Desc': "You gain two of the following universal exploits: Trip, Throw, Sidestep, " +
                                  "Flying Kick. You may take this exploit again to gain the remaining two exploits."},
                         {'Name': 'Iron fist', 'Desc': "Your unarmed damage increases by 1d6."},
@@ -973,18 +973,18 @@ var career_old_warrior_monk = new Career(
                         {'Name': 'Mountain stance',
                          'Desc': "(requires Defensive Stance) You become as immobile as a mountain. No knockdown or " +
                                  "knockback attempt by a creature of your size or smaller will work against you."},
-                        {'Name': 'Zen mind', 'Desc': "You gain +4 to your MENTAL DEFENSE."}]);
+                        {'Name': 'Zen mind', 'Desc': "You gain +4 to your MENTAL DEFENSE."}]});
 
-var career_old_watchman = new Career(
-    name='Watchman',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    endurance=1, intuition=1, luck=1, reputation=1,
-    available_skills=['swords', 'clubs', 'perception', 'thievery', 'interrogation', 'tracking', 'intimidate', 'law',
+var career_old_watchman = new Career({
+    name: 'Watchman',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    endurance: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['swords', 'clubs', 'perception', 'thievery', 'interrogation', 'tracking', 'intimidate', 'law',
                       'local knowledge'],
-    description="A town guard or local police force, you enforce the law.",
-    available_exploits=[{'Name': 'Vigilant',
+    description: "A town guard or local police force, you enforce the law.",
+    available_exploits: [{'Name': 'Vigilant',
                          'Desc': "Constantly vigilant, you are hard to surprise. You gain a +1d6 die bonus to access " +
                                  "the ambush turn."},
                         {'Name': 'Chaser', 'Desc': "When chasing someone, your SPEED increases by +2."},
@@ -998,7 +998,7 @@ var career_old_watchman = new Career(
                                  "done."},
                         {'Name': 'Troublesense',
                          'Desc': "You are able to spot trouble before it happens. You gain a +1d6 bonus to INITIATIVE " +
-                                 "checks."}]);
+                                 "checks."}]});
 
 var career_old_list = [career_old_alchemist, career_old_archer, career_old_assassin, career_old_barbarian,
                    career_old_berserker, career_old_burglar, career_old_cleric, career_old_diabolist, career_old_druid,

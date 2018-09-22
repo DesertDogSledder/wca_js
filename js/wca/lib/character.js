@@ -1,147 +1,116 @@
 class Character 
 {
-    constructor(name='unnamed', strength=3, agility=3, endurance=3, willpower=3, intuition=3, logic=3,
-        charisma=3, luck=3, reputation=0, magic=0, chi=0, psionics=0, race=null,
-        homeworld=null, hook='unset', career_track=null, notes='', trait=null, misc_exploits=null,
-        age_descriptor='unset', defense_skills=null, equipment=null)
+    constructor(options)
     {
-        this.name = name;
+        if (options === undefined) options = {};
+        this.name = (options.name === undefined) ? 'Unnamed' : options.name;
         this.stats = {
-            str: strength,
-            agi: agility,
-            end: endurance,
-            int: intuition,
-            log: logic,
-            wil: willpower,
-            cha: charisma,
-            luc: luck,
-            rep: reputation,
-            mag: magic,
-            chi: chi,
-            psi: psionics
+            str: (options.strength === undefined) ? 3 : options.strength,
+            agi: (options.agility === undefined) ? 3 : options.agility,
+            end: (options.endurance === undefined) ? 3 : options.endurance,
+            int: (options.intuition === undefined) ? 3 : options.intution,
+            log: (options.logic === undefined) ? 3 : options.logic,
+            wil: (options.willpower === undefined) ? 3 : options.willpower,
+            cha: (options.charisma === undefined) ? 3 : options.charisma,
+            luc: (options.luck === undefined) ? 3 : options.luck,
+            rep: (options.reputation === undefined) ? 0 : options.reputation,
+            mag: (options.magic === undefined) ? 0 : options.magic,
+            chi: (options.chi === undefined) ? 0 : options.chi,
+            psi: (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.race = race;
-        this.homeworld = homeworld;
-        this.hook = hook;
-        this.career_track = career_track;
-        this.notes = notes;
-        this.trait = trait;
-        this.misc_exploits = misc_exploits;
-        this.age_descriptor = age_descriptor;
-        this.defense_skills = defense_skills;
-        this.equipment = equipment;
-    }
-
-    calc_total_stats()
-    {
-        // Deep copy
-        stat_total = jQuery.extend(true, {}, this.stats);
-        
-        Object.entries(this.race.stats).forEach(
-            ([key, value]) => stat_total[key] += value
-        );
-        // let i;
-        // let j;
-        // for (i = 0; i < race.items; i++)
-        // {
-
-        // }
-        // for stat, value in self.race['Stats'].items():
-        //     stat_total[stat] += value
-
-        // for stat, value in self.homeworld['Homeworld'].stats.items():
-        //     stat_total[stat] += value
-
-        // for career in self.career_track:
-        //     for stat, value in career['Stats'].items():
-        //         stat_total[stat] += value
-
-        console.log(stat_total)
-        return stat_total;
+        this.race = (options.race === undefined) ? null : options.race;
+        this.homeworld = (options.homeworld === undefined) ? null : options.homeworld;
+        this.hook = (options.hook === undefined) ? 'unset' : options.hook;
+        this.career_track = (options.career_track === undefined) ? [] : options.career_track;
+        this.notes = (options.notes === undefined) ? '' : options.notes;
+        this.trait = (options.trait === undefined) ? null : options.traits;
+        this.misc_exploits = (options.misc_exploits === undefined) ? null : options.misc_exploits;
+        this.age_descriptor = (options.age_descriptor === undefined) ? 'unset' : options.age_descriptor;
+        this.defense_skills = (options.defense_skills === undefined) ? null : options.defense_skills;
+        this.equipment = (options.equipment === undefined) ? null : options.equipment;
     }
 }
 
 class Race 
 {
-    constructor(name='Race', description='Description', strength=0, agility=0, endurance=0, willpower=0, intuition=0,
-        logic=0, charisma=0, luck=0, reputation=0, magic=0, chi=0, psionics=0, size='medium',
-        available_skills=null, exploits=null)
+    constructor(options)
     {
-        this.name = name;
-        this.description = description;
+        if (options === undefined) options = {};
+        this.name = (options.name === undefined) ? 'Race' : options.name;
+        this.description = (options.description === undefined) ? 'Description' : options.description;
         this.stats = {
-            str: strength,
-            agi: agility,
-            end: endurance,
-            int: intuition,
-            log: logic,
-            wil: willpower,
-            cha: charisma,
-            luc: luck,
-            rep: reputation,
-            mag: magic,
-            chi: chi,
-            psi: psionics
+            str: (options.strength === undefined) ? 0 : options.strength,
+            agi: (options.agility === undefined) ? 0 : options.agility,
+            end: (options.endurance === undefined) ? 0 : options.endurance,
+            int: (options.intuition === undefined) ? 0 : options.intution,
+            log: (options.logic === undefined) ? 0 : options.logic,
+            wil: (options.willpower === undefined) ? 0 : options.willpower,
+            cha: (options.charisma === undefined) ? 0 : options.charisma,
+            luc: (options.luck === undefined) ? 0 : options.luck,
+            rep: (options.reputation === undefined) ? 0 : options.reputation,
+            mag: (options.magic === undefined) ? 0 : options.magic,
+            chi: (options.chi === undefined) ? 0 : options.chi,
+            psi: (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.size = size;
-        this.available_skills = available_skills;
-        this.exploits = exploits;
+        this.size = (options.size === undefined) ? 'medium' : options.size;
+        this.available_skills = (options.available_skills === undefined) ? null : options.available_skills;
+        this.exploits = (options.exploits === undefined) ? null : options.exploits;
+
     }
 }
 
 class Homeworld 
 {
-    constructor(name='Homeworld', strength=0, agility=0, endurance=0, willpower=0, intuition=0, logic=0,
-        charisma=0, luck=0, reputation=0, magic=0, chi=0, psionics=0, available_skills=null)
+    constructor(options)
     {
-        this.name = name;
-        this.description = description;
+        if (options === undefined) options = {};
+        this.name = (options.name === undefined) ? 'Homeworld' : options.name;
+        this.description = (options.description === undefined) ? 'Description' : options.description;
         this.stats = {
-            str: strength,
-            agi: agility,
-            end: endurance,
-            int: intuition,
-            log: logic,
-            wil: willpower,
-            cha: charisma,
-            luc: luck,
-            rep: reputation,
-            mag: magic,
-            chi: chi,
-            psi: psionics
+            str: (options.strength === undefined) ? 0 : options.strength,
+            agi: (options.agility === undefined) ? 0 : options.agility,
+            end: (options.endurance === undefined) ? 0 : options.endurance,
+            int: (options.intuition === undefined) ? 0 : options.intution,
+            log: (options.logic === undefined) ? 0 : options.logic,
+            wil: (options.willpower === undefined) ? 0 : options.willpower,
+            cha: (options.charisma === undefined) ? 0 : options.charisma,
+            luc: (options.luck === undefined) ? 0 : options.luck,
+            rep: (options.reputation === undefined) ? 0 : options.reputation,
+            mag: (options.magic === undefined) ? 0 : options.magic,
+            chi: (options.chi === undefined) ? 0 : options.chi,
+            psi: (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.available_skills = available_skills;
+        this.available_skills = (options.available_skills === undefined) ? null : options.available_skills;
     }
 }
 
 class Career 
 {
-    constructor(name='Career', strength=0, agility=0, endurance=0, willpower=0, intuition=0, logic=0,
-        charisma=0, luck=0, reputation=0, magic=0, chi=0, psionics=0,
-        available_skills=null, available_exploits=null,
-        career_time='1d6', career_time_unit='years', description='Description', prerequisites=null)
+    constructor(options)
     {
-        this.name = name;
+        if (options === undefined) options = {};
+        this.name = (options.name === undefined) ? 'Career' : options.name;
         this.stats = {
-            str: strength,
-            agi: agility,
-            end: endurance,
-            int: intuition,
-            log: logic,
-            wil: willpower,
-            cha: charisma,
-            luc: luck,
-            rep: reputation,
-            mag: magic,
-            chi: chi,
-            psi: psionics
+            str: (options.strength === undefined) ? 0 : options.strength,
+            agi: (options.agility === undefined) ? 0 : options.agility,
+            end: (options.endurance === undefined) ? 0 : options.endurance,
+            int: (options.intuition === undefined) ? 0 : options.intution,
+            log: (options.logic === undefined) ? 0 : options.logic,
+            wil: (options.willpower === undefined) ? 0 : options.willpower,
+            cha: (options.charisma === undefined) ? 0 : options.charisma,
+            luc: (options.luck === undefined) ? 0 : options.luck,
+            rep: (options.reputation === undefined) ? 0 : options.reputation,
+            mag: (options.magic === undefined) ? 0 : options.magic,
+            chi: (options.chi === undefined) ? 0 : options.chi,
+            psi: (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.available_skills = available_skills;
-        this.available_exploits = available_exploits;
-        this.career_time = career_time;
-        this.career_time_unit = career_time_unit;
-        this.description = description;
-        this.prerequisites = prerequisites;
+
+        this.available_skills = (options.available_skills === undefined) ? null : options.available_skills;
+        this.available_exploits = (options.available_exploits === undefined) ? null : options.available_exploits;
+        this.career_time = (options.career_time === undefined) ? '1d6' : options.career_time;
+        this.career_time_unit = (options.career_time_unit === undefined) ? 'years' : options.career_time_unit;
+        this.description = (options.description === undefined) ? 'Description' : options.description;
+        this.prerequisites = (options.prerequisites === undefined) ? null : options.prerequisites;
     }
 }
 
@@ -171,4 +140,56 @@ function calc_max_dice_pool_size(career_grade) {
     };
 
     return max_dice_pool_size;
+}
+
+
+function calc_total_stats(character)
+{
+    // Deep copy
+    // stat_total = jQuery.extend(true, {}, this.stats);
+    var stat_total = deep_copy(character.stats);
+    
+    // Object.entries(this.race.stats).forEach(
+    //     ([key, value]) => stat_total[key] += value
+    // );
+    // let i;
+    // let j;
+    // for (i = 0; i < race.items; i++)
+    // {
+
+    // }
+    // for stat, value in self.race['Stats'].items():
+    //     stat_total[stat] += value
+
+    // for stat, value in self.homeworld['Homeworld'].stats.items():
+    //     stat_total[stat] += value
+
+    // for career in self.career_track:
+    //     for stat, value in career['Stats'].items():
+    //         stat_total[stat] += value
+
+    // console.log(character.race)
+
+    for (stat in character.race.stats)
+    {
+        stat_total[stat] += character.race.stats[stat]
+        // console.log(stat + character.race.stats[stat])
+    }
+
+    for (stat in character.homeworld.stats)
+    {
+        stat_total[stat] += character.homeworld.stats[stat]
+    }
+
+    for (career in character.career_track)
+    {
+        for (stat in character.career_track[career].stats)
+        {
+            stat_total[stat] += character.career_track[career].stats[stat]
+        }
+    }
+
+    console.log(stat_total)
+
+    return stat_total;
 }

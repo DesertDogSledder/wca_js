@@ -1,16 +1,16 @@
-var career_now_actor = new Career(
-    name='Actor',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    logic=1, intuition=1, charisma=1, reputation=1,
-    available_skills=['swords', 'acting', 'singing', 'dancing', 'flirtation', 'carousing', 'bluffing', 'linguistics',
+var career_now_actor = new Career({
+    name: 'Actor',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    logic: 1, intuition: 1, charisma: 1, reputation: 1,
+    available_skills: ['swords', 'acting', 'singing', 'dancing', 'flirtation', 'carousing', 'bluffing', 'linguistics',
                       'movie trivia', 'celebrity trivia', 'theater trivia', 'disguise'],
-    description="A star of screen or stage, you make your living pretending to be somebody else. Each time you take this " +
+    description: "A star of screen or stage, you make your living pretending to be somebody else. Each time you take this " +
          "career, roll 1d6. If you roll a 6, you win an award. Roll again: (1) BAFTA, (2) Emmy, (3) Tony, " +
          "(4) Soap Opera Digest, (5) Razzie, (6) Oscar. An award gives you +1 REP.",
-    available_exploits=[{'Name': 'Box-office star',
-                         'Desc': "(requires B-movie) You were in a blockbuster movie. You gain reputation=2 and begin " +
+    available_exploits: [{'Name': 'Box-office star',
+                         'Desc': "(requires B-movie) You were in a blockbuster movie. You gain reputation: 2 and begin " +
                                  "play with an extra $1,000. You also learned one new skill of your choice at 1 rank " +
                                  "(1d6). Name your movie."},
                         {'Name': 'Method actor',
@@ -21,23 +21,23 @@ var career_now_actor = new Career(
                         {'Name': 'Costumer',
                          'Desc': "You are used to wearing costumes in your roles. Gain the disguise skill at 6 ranks."},
                         {'Name': 'B-movie',
-                         'Desc': "You were in a classic B-movie. You gain reputation=1 and and begin play with an " +
+                         'Desc': "You were in a classic B-movie. You gain reputation: 1 and and begin play with an " +
                                  "extra $500. You also learned one new skill of your choice at 1 rank (1d6). Name " +
                                  "your movie."},
                         {'Name': 'Catchphrase',
                          'Desc': "You are associated with a catchphrase. Once per day you can use your catchphrase " +
-                                 "and gain +1d6 on any roll. Write down your catchphrase."}]);
+                                 "and gain +1d6 on any roll. Write down your catchphrase."}]});
 
-var career_now_archaeologist = new Career(
-    name='Archaeologist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    intuition=1, logic=1, willpower=1, luck=1,
-    available_skills=['literature', 'history', 'art', 'linguistics', 'theology', 'geography', 'climbing', 'archeology',
+var career_now_archaeologist = new Career({
+    name: 'Archaeologist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    intuition: 1, logic: 1, willpower: 1, luck: 1,
+    available_skills: ['literature', 'history', 'art', 'linguistics', 'theology', 'geography', 'climbing', 'archeology',
                       'cryptology', 'appraisal'],
-    description="As an archeologist, you explored dark caves, tracked down lost treasures, and dug a lot of holes.",
-    available_exploits=[{'Name': 'Not another trap', 'Desc': "You can spend a LUC die to automatically avoid a trap."},
+    description: "As an archeologist, you explored dark caves, tracked down lost treasures, and dug a lot of holes.",
+    available_exploits: [{'Name': 'Not another trap', 'Desc': "You can spend a LUC die to automatically avoid a trap."},
                         {'Name': 'Great discovery',
                          'Desc': "You discovered something incredible – the Holy Grail, the Ark of the Covenant, " +
                                  "or something equally impressive. You gain +2 REP."},
@@ -46,17 +46,17 @@ var career_now_archaeologist = new Career(
                         {'Name': 'Direction sense', 'Desc': "You always know where you are, and you never get lost."},
                         {'Name': 'Linguist.',
                          'Desc': "You can speak and understand any language, although it might sometimes take you a " +
-                                 "moment to figure it out."}]);
+                                 "moment to figure it out."}]});
 
-var career_now_assassin = new Career(
-    name='Assassin',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth, tracking, [combat]',
-    strength=1, agility=1, intuition=1, reputation=1,
-    available_skills=['[combat]', 'stealth', 'thievery', 'perception', 'intimidate', 'disguise'],
-    description="A killer for hire, you mastered the skills of assassination.",
-    available_exploits=[
+var career_now_assassin = new Career({
+    name: 'Assassin',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth, tracking, [combat]',
+    strength: 1, agility: 1, intuition: 1, reputation: 1,
+    available_skills: ['[combat]', 'stealth', 'thievery', 'perception', 'intimidate', 'disguise'],
+    description: "A killer for hire, you mastered the skills of assassination.",
+    available_exploits: [
         {'Name': 'Killing blow', 'Desc': "Any attack you make during the ambush turn gains a +2d6 bonus to attack."},
         {'Name': 'Ambush', 'Desc': "You gain +2d6 to rolls made to access the ambush turn."},
         {'Name': 'Weak point',
@@ -64,82 +64,82 @@ var career_now_assassin = new Career(
         {'Name': 'Sneak',
          'Desc': "If nobody is actively looking for you, you are able to move silently and unseen at half your normal " +
                  "speed. You are effectively invisible. However, if anybody is actually looking for you, " +
-                 "they may make INT checks as normal to spot you."}]);
+                 "they may make INT checks as normal to spot you."}]});
 
-var career_now_astronaut = new Career(
-    name='Astronaut',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[scientific] or piloting',
-    endurance=1, intuition=1, logic=1, reputation=1,
-    available_skills=['piloting', 'zero-g', 'engineering', 'physics', 'medicine', 'astronomy'],
-    description="You trained to become an astronaut and travelled into space, either into orbit or to the moon or a similar " +
+var career_now_astronaut = new Career({
+    name: 'Astronaut',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[scientific] or piloting',
+    endurance: 1, intuition: 1, logic: 1, reputation: 1,
+    available_skills: ['piloting', 'zero-g', 'engineering', 'physics', 'medicine', 'astronomy'],
+    description: "You trained to become an astronaut and travelled into space, either into orbit or to the moon or a similar " +
          "body.",
-    available_exploits=[
+    available_exploits: [
         {'Name': 'G-forces', 'Desc': "You are trained to resist g-forces. You gain SOAK 5 to crushing damage."},
         {'Name': 'Space sickness',
          'Desc': "Nearly every astronaut gets sick. You learn to ignore it. You become immune to sickness conditions."},
-        {'Name': 'Spacewalker', 'Desc': "You gain a zero-g SPEED equal to your regular speed."}]);
+        {'Name': 'Spacewalker', 'Desc': "You gain a zero-g SPEED equal to your regular speed."}]});
 
-var career_now_athlete = new Career(
-    name='Athlete',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[sport] or [physical]',
-    strength=1, agility=1, endurance=1, reputation=1,
-    available_skills=['[physical]', '[sporting]', 'carousing', 'flirtation', '[unarmed combat]'],
-    description="You are a professional athlete, whether that be in a team sport or a track and field event.",
-    available_exploits=[{'Name': 'Athletic',
+var career_now_athlete = new Career({
+    name: 'Athlete',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[sport] or [physical]',
+    strength: 1, agility: 1, endurance: 1, reputation: 1,
+    available_skills: ['[physical]', '[sporting]', 'carousing', 'flirtation', '[unarmed combat]'],
+    description: "You are a professional athlete, whether that be in a team sport or a track and field event.",
+    available_exploits: [{'Name': 'Athletic',
                          'Desc': "Choose four [physical] skills. You gain these four skills at 1 rank (1d6). This " +
                                  "does not increase the rank of an existing skill."},
                         {'Name': 'Runner', 'Desc': "You gain a +1 SPEED bonus."},
                         {'Name': 'Fit', 'Desc': "You gain a +5 HEALTH bonus."},
-                        {'Name': 'Signing bonus', 'Desc': "You are signed to a team and gain a $1,000 signing bonus."}]);
+                        {'Name': 'Signing bonus', 'Desc': "You are signed to a team and gain a $1,000 signing bonus."}]});
 
-var career_now_bartender = new Career(
-    name='Bartender',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    endurance=1, intuition=1, charisma=1, luck=1,
-    available_skills=['[social]', 'carousing', 'perception', 'brewing', 'cooking', 'brawling', 'clubs'],
-    description="Bartending is a great way to pay the bills. Some make a lifelong career of it.",
-    available_exploits=[{'Name': 'Bouncer', 'Desc': "You gain a +1d6 bonus to checks vs. an intoxicated creature."},
+var career_now_bartender = new Career({
+    name: 'Bartender',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    endurance: 1, intuition: 1, charisma: 1, luck: 1,
+    available_skills: ['[social]', 'carousing', 'perception', 'brewing', 'cooking', 'brawling', 'clubs'],
+    description: "Bartending is a great way to pay the bills. Some make a lifelong career of it.",
+    available_exploits: [{'Name': 'Bouncer', 'Desc': "You gain a +1d6 bonus to checks vs. an intoxicated creature."},
                         {'Name': 'Fake ID',
                          'Desc': "Years of checking for fake ID mean that you can spot the telltale signs. You gain a " +
                                  "+1d6 bonus to detect forgeries."},
                         {'Name': 'Gossip',
                          'Desc': "You can gather local gossip and information simply by spending an hour in a bar or " +
                                  "other watering hole, effectively giving you the local knowledge skill wherever you " +
-                                 "go as long as you are able to refresh your knowledge at a local bar weekly."}]);
+                                 "go as long as you are able to refresh your knowledge at a local bar weekly."}]});
 
-var career_now_boot_camp = new Career(
-    name='Boot Camp',
-    career_time='1',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, logic=1, willpower=1, charisma=1,
-    available_skills=['carrying', 'pistols', 'rifles', 'leadership', 'tactics', 'survival'],
-    description="You joined the military and completed basic military training. Some programs send recruits to college to " +
+var career_now_boot_camp = new Career({
+    name: 'Boot Camp',
+    career_time: '1',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, logic: 1, willpower: 1, charisma: 1,
+    available_skills: ['carrying', 'pistols', 'rifles', 'leadership', 'tactics', 'survival'],
+    description: "You joined the military and completed basic military training. Some programs send recruits to college to " +
          "gain degrees before returning to cadet assignments.",
-    available_exploits=[{'Name': 'Basic training',
+    available_exploits: [{'Name': 'Basic training',
                          'Desc': ". You gain a uniform which incorporates a kevlar vest. You also gain one rank in " +
                                  "tactics, law, rifles, and survival."},
                         {'Name': 'Officer training [requires Basic Training]',
                          'Desc': "A second stint in the Academy prepares you for command. You automatically gain a " +
                                  "military rank and the leadership skill at 1 rank if you do not already have it. You " +
                                  "gain +2 REP. Make a Challenging [13] CHA check before advancing any attributes. If " +
-                                 "you succeed, you automatically gain a second military rank."}]);
+                                 "you succeed, you automatically gain a second military rank."}]});
 
-var career_now_bouncer = new Career(
-    name='Bouncer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, intuition=1, charisma=1,
-    available_skills=['hardy', 'insight', 'perception', 'brawling', 'reactions', 'carousing', 'law'],
-    description="You stood guard at the door to a bar, club, or other private venue.",
-    available_exploits=[{'Name': 'Immovable object',
+var career_now_bouncer = new Career({
+    name: 'Bouncer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, intuition: 1, charisma: 1,
+    available_skills: ['hardy', 'insight', 'perception', 'brawling', 'reactions', 'carousing', 'law'],
+    description: "You stood guard at the door to a bar, club, or other private venue.",
+    available_exploits: [{'Name': 'Immovable object',
                          'Desc': "You know how to plant yourself in place and refuse to budge. You may spend a LUC " +
                                  "die to negate any forced movement from a creature of your size or smaller."},
                         {'Name': 'Quick-search',
@@ -154,35 +154,35 @@ var career_now_bouncer = new Career(
                                  "target your size or smaller. On a success, the target is pinned in place unless " +
                                  "they escape with a melee attack against you. You may move at half-speed, " +
                                  "taking your pinned target with you. A pinned target may not make any attacks other " +
-                                 "than an attempt to escape."}]);
+                                 "than an attempt to escape."}]});
 
-var career_now_bounty_hunter = new Career(
-    name='Bounty Hunter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, logic=1, reputation=1,
-    available_skills=['tracking', 'piloting', 'stealth', 'law', 'computers', 'perception', 'intimidate', '[combat]'],
-    description="As a bounty hunter you spent time tracking down and capturing wanted criminals.",
-    available_exploits=[{'Name': 'Prey',
+var career_now_bounty_hunter = new Career({
+    name: 'Bounty Hunter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, logic: 1, reputation: 1,
+    available_skills: ['tracking', 'piloting', 'stealth', 'law', 'computers', 'perception', 'intimidate', '[combat]'],
+    description: "As a bounty hunter you spent time tracking down and capturing wanted criminals.",
+    available_exploits: [{'Name': 'Prey',
                          'Desc': "You may choose a target species or heritage. You gain a +1d6 bonus to attempts to " +
                                  "track targets of that species."},
                         {'Name': 'Datamining',
                          'Desc': "You are able to locate a target's current location down to a specific city by " +
                                  "accessing credit, criminal, customs, and other records if you have access to a " +
-                                 "computer link."}]);
+                                 "computer link."}]});
 
-var career_now_boxer = new Career(
-    name='Boxer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='boxing',
-    strength=1, endurance=1, willpower=1, reputation=1,
-    available_skills=['boxing', 'hardy', 'reactions', 'intimidate'],
-    description="The ring is your king. You have been in scores of fights (both sanctioned and otherwise), endured countless " +
+var career_now_boxer = new Career({
+    name: 'Boxer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'boxing',
+    strength: 1, endurance: 1, willpower: 1, reputation: 1,
+    available_skills: ['boxing', 'hardy', 'reactions', 'intimidate'],
+    description: "The ring is your king. You have been in scores of fights (both sanctioned and otherwise), endured countless " +
          "days and nights of strenuous physical training, and your body is a shrine to thousands of jabs, hooks, " +
          "and hastily landed strikes.",
-    available_exploits=[{'Name': 'One-two',
+    available_exploits: [{'Name': 'One-two',
                          'Desc': "Once per turn, you may make a quick second boxing attack for free. This second " +
                                  "attack may not have any exploits attached to it."},
                         {'Name': 'Haymaker',
@@ -208,20 +208,20 @@ var career_now_boxer = new Career(
                                  "damage increases by 1d6 when not using gloves."},
                         {'Name': 'Battered',
                          'Desc': "Cauliflower ears and broken nose you may have, but you can take a hit without " +
-                                 "flinching. You gain SOAK 5 (blunt)."}]);
+                                 "flinching. You gain SOAK 5 (blunt)."}]});
 
-var career_now_burglar = new Career(
-    name='Burglar',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth',
-    agility=1, intuition=1, luck=1, reputation=1,
-    available_skills=['climbing', 'jumping', 'acrobatics', 'escape artist', 'computers', 'stealth', 'thievery',
+var career_now_burglar = new Career({
+    name: 'Burglar',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth',
+    agility: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['climbing', 'jumping', 'acrobatics', 'escape artist', 'computers', 'stealth', 'thievery',
                       'appraisal'],
-    description="You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire " +
+    description: "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire " +
          "and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums " +
          "and high security vaults.",
-    available_exploits=[{'Name': 'Locksmith', 'Desc': "You gain a exceptional quality lockpicking kit."},
+    available_exploits: [{'Name': 'Locksmith', 'Desc': "You gain a exceptional quality lockpicking kit."},
                         {'Name': 'Catburglar',
                          'Desc': "An expert at climbing, you do not take any die penalties in combat while climbing."},
                         {'Name': 'Sixth sense',
@@ -231,17 +231,17 @@ var career_now_burglar = new Career(
                          'Desc': "(requires Catburglar) Your climbing speed becomes equal to your regular SPEED."},
                         {'Name': 'Grand heist',
                          'Desc': "You achieve a great robbery that will be remembered for years to come. Gain a bonus " +
-                                 "3d6 x $100. You may repeat this exploit, gaining 3d6 x $100 each time."}]);
+                                 "3d6 x $100. You may repeat this exploit, gaining 3d6 x $100 each time."}]});
 
-var career_now_chef = new Career(
-    name='Chef',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='cooking',
-    agility=1, intuition=1, logic=1, reputation=1,
-    available_skills=['cooking', 'brewing', 'gardening', 'knives'],
-    description="You know how to cook, to prepare amazing meals, and to run a kitchen.",
-    available_exploits=[{'Name': 'Cooking knives',
+var career_now_chef = new Career({
+    name: 'Chef',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'cooking',
+    agility: 1, intuition: 1, logic: 1, reputation: 1,
+    available_skills: ['cooking', 'brewing', 'gardening', 'knives'],
+    description: "You know how to cook, to prepare amazing meals, and to run a kitchen.",
+    available_exploits: [{'Name': 'Cooking knives',
                          'Desc': "You are an expert at cutting flesh with a blade. When using a knife, you do +1d6 " +
                                  "damage."},
                         {'Name': 'Poison resistance',
@@ -257,19 +257,19 @@ var career_now_chef = new Career(
                         {'Name': 'A good meal',
                          'Desc': "Once per day you can spend an hour preparing a good meal for a number of people " +
                                  "equal to your LOG score. The meal restores 1d6 HEALTH to all who eat it, " +
-                                 "or it removes one stage of the Tiredness status track."}]);
+                                 "or it removes one stage of the Tiredness status track."}]});
 
-var career_now_college = new Career(
-    name='College',
-    career_time='4',
-    career_time_unit='years',
-    prerequisites='none',
-    logic=1, willpower=1, charisma=1, reputation=1,
-    available_skills=['computers', '[scientific]', '[artistic]', '[sporting]', '[social]', '[technical]'],
-    description="You attended a civilian college or university and gained formal qualifications in a chosen area of study. " +
+var career_now_college = new Career({
+    name: 'College',
+    career_time: '4',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    logic: 1, willpower: 1, charisma: 1, reputation: 1,
+    available_skills: ['computers', '[scientific]', '[artistic]', '[sporting]', '[social]', '[technical]'],
+    description: "You attended a civilian college or university and gained formal qualifications in a chosen area of study. " +
          "Choose a subject, which can be any skill, but is typically a [scientific], [technical], or [artistic] " +
          "skill. You can restart this career at any time to gain degrees in additional subjects.",
-    available_exploits=[{'Name': 'Bachelor',
+    available_exploits: [{'Name': 'Bachelor',
                          'Desc': "After a four-year course, you gained a Bachelor's degree or equivalent at " +
                                  "university. Improve your skill ranks in your chosen subject to 3. Your research " +
                                  "skills are developed. If you have access to a library or computer network, " +
@@ -289,18 +289,18 @@ var career_now_college = new Career(
                                  "Make a Demanding [21] LOG check before advancing any attributes. If you succeed, " +
                                  "you pass this degree with honors and have also made a minor breakthrough in your " +
                                  "chosen subject, and are known amongst peers for it, gaining you a bonus 2 points to " +
-                                 "your REP attribute. Choose the nature of your breakthrough."}]);
+                                 "your REP attribute. Choose the nature of your breakthrough."}]});
 
-var career_now_con_artist = new Career(
-    name='Con Artist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='bluffing',
-    intuition=1, logic=1, charisma=1, luck=1,
-    available_skills=['[social]', 'disguise', 'bribery', 'forgery', '[gaming]', 'appraisal'],
-    description="You honed your skills and learned how to trick others out of their money with charm, lies, bluffs, " +
+var career_now_con_artist = new Career({
+    name: 'Con Artist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'bluffing',
+    intuition: 1, logic: 1, charisma: 1, luck: 1,
+    available_skills: ['[social]', 'disguise', 'bribery', 'forgery', '[gaming]', 'appraisal'],
+    description: "You honed your skills and learned how to trick others out of their money with charm, lies, bluffs, " +
          "disguise, and more. Many career criminals combine the craft of the con man with the skills of the burglar.",
-    available_exploits=[{'Name': 'Grifter',
+    available_exploits: [{'Name': 'Grifter',
                          'Desc': "In a bar or other crowded social situation, you can automatically make money equal " +
                                  "to a CHA check x $10 in the space of an hour using only the gift of the gab. You " +
                                  "can only do this once per day. This exploit cannot be used during downtime."},
@@ -315,18 +315,18 @@ var career_now_con_artist = new Career(
                          'Desc': "You are able to temporarily beguile and captivate a target with your words as a CHA " +
                                  "vs. MENTAL DEFENSE check. A successful check charms the target until they shake off " +
                                  "the condition. The target must be able to understand you and have a LOGIC attribute " +
-                                 "of at least 3."}]);
+                                 "of at least 3."}]});
 
-var career_now_craftsman = new Career(
-    name='Craftsman',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[crafting] or [technical]',
-    strength=1, agility=1, logic=1, charisma=1,
-    available_skills=['[technical]', '[artistic]', '[crafting]'],
-    description="You made your living by practising your craft as a carpenter, electrician, mechanic, or other professional " +
+var career_now_craftsman = new Career({
+    name: 'Craftsman',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[crafting] or [technical]',
+    strength: 1, agility: 1, logic: 1, charisma: 1,
+    available_skills: ['[technical]', '[artistic]', '[crafting]'],
+    description: "You made your living by practising your craft as a carpenter, electrician, mechanic, or other professional " +
          "skilled worker.",
-    available_exploits=[{'Name': 'Handyman',
+    available_exploits: [{'Name': 'Handyman',
                          'Desc': "Choose four [crafting] skills. You gain these four skills at 1 rank (1d6). This " +
                                  "does not increase the rank of an existing skill."},
                         {'Name': 'Toolkit', 'Desc': "You gain a set of high quality tools."},
@@ -334,18 +334,18 @@ var career_now_craftsman = new Career(
                         {'Name': 'Builder',
                          'Desc': "Assuming raw materials are available, you can make an item of equipment in one day " +
                                  "by rolling a LOG check vs. the item's value (up to $20)."},
-                        {'Name': 'Fixer', 'Desc': "You gain a +1d6 bonus to any attempt to repair something."}]);
+                        {'Name': 'Fixer', 'Desc': "You gain a +1d6 bonus to any attempt to repair something."}]});
 
-var career_now_cultist = new Career(
-    name='Cultist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion',
-    agility=1, intuition=1, logic=1, charisma=1,
-    available_skills=['religion', 'history', 'politics', 'philosophy', 'knives', 'meditation', 'disguise', '[social]',
+var career_now_cultist = new Career({
+    name: 'Cultist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion',
+    agility: 1, intuition: 1, logic: 1, charisma: 1,
+    available_skills: ['religion', 'history', 'politics', 'philosophy', 'knives', 'meditation', 'disguise', '[social]',
                       'hypnotism', 'occult', 'astrology'],
-    description="You were either part of a cult, or you studied cults or the occult.",
-    available_exploits=[{'Name': 'Devotion',
+    description: "You were either part of a cult, or you studied cults or the occult.",
+    available_exploits: [{'Name': 'Devotion',
                          'Desc': "You are utterly devoted to your cause. Your single-mindedness grants you +4 MENTAL " +
                                  "DEFENSE."},
                         {'Name': 'Occultist',
@@ -356,19 +356,19 @@ var career_now_cultist = new Career(
                         {'Name': 'Poison resistance',
                          'Desc': "Part of your cult's observances involve drinking poison. You gain SOAK 5 (poison)."},
                         {'Name': 'Fanatic',
-                         'Desc': "You may be slightly unhinged; you are completely immune to the Fear status track."}]);
+                         'Desc': "You may be slightly unhinged; you are completely immune to the Fear status track."}]});
 
-var career_now_dark_crusader = new Career(
-    name='Dark Crusader',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth',
-    agility=1, intuition=1, willpower=1, reputation=1,
-    available_skills=['stealth', 'climbing', 'jumping', 'acrobatics', 'intimidation', 'thievery', '[combat]'],
-    description="You prowl the streets at night. More than just a vigilante, you are a symbol. You have learned how to " +
+var career_now_dark_crusader = new Career({
+    name: 'Dark Crusader',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth',
+    agility: 1, intuition: 1, willpower: 1, reputation: 1,
+    available_skills: ['stealth', 'climbing', 'jumping', 'acrobatics', 'intimidation', 'thievery', '[combat]'],
+    description: "You prowl the streets at night. More than just a vigilante, you are a symbol. You have learned how to " +
          "instill fear into the hearts of criminals, and the very mention of your name is enough to make the most " +
          "hardened of gangs look nervously over their shoulders.",
-    available_exploits=[{'Name': 'Dark knight',
+    available_exploits: [{'Name': 'Dark knight',
                          'Desc': "You operate best at night, knowing how to use the shadows to your advantage. Once " +
                                  "per day, during the hours of darkness, you gain a +1d6 bonus to all dice pools for " +
                                  "one minute."},
@@ -385,19 +385,19 @@ var career_now_dark_crusader = new Career(
                                  "require armor training to use effectively even when it is of high quality or " +
                                  "better, and can be upgraded one stage by taking this exploit again, become high " +
                                  "quality, exceptional, and so on. You may repeat this exploit up to five times, " +
-                                 "upgrading your costume each time."}]);
+                                 "upgrading your costume each time."}]});
 
-var career_now_detective = new Career(
-    name='Detective',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=2, charisma=1,
-    available_skills=['interrogation', 'pistols', 'driving', 'bureaucracy', 'perception', 'intimidate', 'stealth',
+var career_now_detective = new Career({
+    name: 'Detective',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 2, charisma: 1,
+    available_skills: ['interrogation', 'pistols', 'driving', 'bureaucracy', 'perception', 'intimidate', 'stealth',
                       'tracking', 'law'],
-    description="You become a detective, expert at spotting clues and finding your man. Even if you leave the profession, " +
+    description: "You become a detective, expert at spotting clues and finding your man. Even if you leave the profession, " +
          "you still retain enough contacts to call in favors and request information.",
-    available_exploits=[{'Name': 'Clues',
+    available_exploits: [{'Name': 'Clues',
                          'Desc': "If there are any clues to find at a crime scene, you automatically find them within " +
                                  "5 minutes."},
                         {'Name': 'Criminal record',
@@ -405,17 +405,17 @@ var career_now_detective = new Career(
                                  "held on file about a suspect."},
                         {'Name': 'Plate number',
                          'Desc': "You can request a registration plate number lookup, and automatically determine the " +
-                                 "registered owner and address of a vehicle."}]);
+                                 "registered owner and address of a vehicle."}]});
 
-var career_now_diplomat = new Career(
-    name='Diplomat',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[social]',
-    intuition=1, charisma=2, reputation=1,
-    available_skills=['[social]', 'bureaucracy', 'law', 'politics', 'local knowledge'],
-    description="You have represented your planet elsewhere.",
-    available_exploits=[{'Name': 'Diplomatic',
+var career_now_diplomat = new Career({
+    name: 'Diplomat',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[social]',
+    intuition: 1, charisma: 2, reputation: 1,
+    available_skills: ['[social]', 'bureaucracy', 'law', 'politics', 'local knowledge'],
+    description: "You have represented your planet elsewhere.",
+    available_exploits: [{'Name': 'Diplomatic',
                          'Desc': "Choose four [social] skills. You gain these four skills at 1 rank (1d6). This does " +
                                  "not increase the rank of an existing skill."},
                         {'Name': 'Diplomatic pouch',
@@ -427,49 +427,49 @@ var career_now_diplomat = new Career(
                                  "and medical care."},
                         {'Name': 'Diplomatic immunity',
                          'Desc': "You gain diplomatic immunity to very low-level and petty crimes in any country " +
-                                 "which contains an embassy for your country."}]);
+                                 "which contains an embassy for your country."}]});
 
-var career_now_diver = new Career(
-    name='Diver',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='swimming',
-    strength=1, agility=1, endurance=1, intuition=1,
-    available_skills=['swimming', 'perception', 'hardy', 'oceanography', 'sailing'],
-    description="Whether it was a commercial job, or for the military or police, you feel most at home in a wetsuit. You " +
+var career_now_diver = new Career({
+    name: 'Diver',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'swimming',
+    strength: 1, agility: 1, endurance: 1, intuition: 1,
+    available_skills: ['swimming', 'perception', 'hardy', 'oceanography', 'sailing'],
+    description: "Whether it was a commercial job, or for the military or police, you feel most at home in a wetsuit. You " +
          "became a diver, able to explore the ocean depths.",
-    available_exploits=[{'Name': 'Like a fish', 'Desc': "You gain a SWIM speed equal to your regular SPEED."},
+    available_exploits: [{'Name': 'Like a fish', 'Desc': "You gain a SWIM speed equal to your regular SPEED."},
                         {'Name': 'Hold breath',
                          'Desc': "You can hold your breath for a number of minutes equal to your END dice pool."},
                         {'Name': 'Murky depths',
                          'Desc': "You can see well underwater and in other dark environments, gaining darksight to a " +
                                  "distance of 5' per point of INT."},
                         {'Name': 'High diver',
-                         'Desc': "You never take damage when falling into water from any height."}]);
+                         'Desc': "You never take damage when falling into water from any height."}]});
 
-var career_now_drifter = new Career(
-    name='Drifter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    endurance=1, intuition=1, charisma=1, luck=1,
-    available_skills=['carousing', 'gaming', 'flirtation', 'performing', 'bluffing', 'appraisal', 'thievery'],
-    description="Somehow you lost your way. Drinking, gambling, with no clear objective, you drifted through the fringes of " +
+var career_now_drifter = new Career({
+    name: 'Drifter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    endurance: 1, intuition: 1, charisma: 1, luck: 1,
+    available_skills: ['carousing', 'gaming', 'flirtation', 'performing', 'bluffing', 'appraisal', 'thievery'],
+    description: "Somehow you lost your way. Drinking, gambling, with no clear objective, you drifted through the fringes of " +
          "society. Perhaps you never fitted in; or perhaps you are a war veteran who found home was no longer home.",
-    available_exploits=[{'Name': 'Unseen',
+    available_exploits: [{'Name': 'Unseen',
                          'Desc': "You know how to blend in so that nobody pays any attention to you. You gain a +1d6 " +
-                                 "bonus when attempting to do so."}]);
+                                 "bonus when attempting to do so."}]});
 
-var career_now_driver = new Career(
-    name='Driver',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='driving',
-    agility=1, intuition=1, luck=1, reputation=1,
-    available_skills=['driving', 'engineering', 'reactions'],
-    description="You became a driver. Either a racing driver, such as Formula 1 or NASCAR, or a getaway driver. You may even " +
+var career_now_driver = new Career({
+    name: 'Driver',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'driving',
+    agility: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['driving', 'engineering', 'reactions'],
+    description: "You became a driver. Either a racing driver, such as Formula 1 or NASCAR, or a getaway driver. You may even " +
          "have been a military driver.",
-    available_exploits=[{'Name': 'Getaway',
+    available_exploits: [{'Name': 'Getaway',
                          'Desc': "If a vehicle is within one move increment of you, you can move to it, " +
                                  "start the engine, and move away at the vehicle's SPEED all with just two actions (" +
                                  "one turn)."},
@@ -477,17 +477,17 @@ var career_now_driver = new Career(
                          'Desc': "You can push a vehicle to extreme speeds, increasing its SPEED by 2."},
                         {'Name': 'Evasive driving', 'Desc': " When you are driving a vehicle, it gains +4 DEFENSE."},
                         {'Name': 'Shoot n drive',
-                         'Desc': "While driving, you may take a free sidearm shot once per round."}]);
+                         'Desc': "While driving, you may take a free sidearm shot once per round."}]});
 
-var career_now_engineer = new Career(
-    name='Engineer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='engineering',
-    strength=1, agility=1, logic=1, luck=1,
-    available_skills=['computers', '[technical]', 'bureaucracy'],
-    description="You became an engineer, proficient at manipulating technology and repairing vehicles, devices and engines. ",
-    available_exploits=[{'Name': 'Technical knowledge base',
+var career_now_engineer = new Career({
+    name: 'Engineer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'engineering',
+    strength: 1, agility: 1, logic: 1, luck: 1,
+    available_skills: ['computers', '[technical]', 'bureaucracy'],
+    description: "You became an engineer, proficient at manipulating technology and repairing vehicles, devices and engines. ",
+    available_exploits: [{'Name': 'Technical knowledge base',
                          'Desc': "Choose four [technical] skills. You gain these four skills at 1 rank (1d6). This " +
                                  "does not increase the rank of an existing skill."},
                         {'Name': 'Jury-rig',
@@ -516,19 +516,19 @@ var career_now_engineer = new Career(
                          'Desc': "You are able to disable any mechanical or electronic device to which you have " +
                                  "access. This exploit does not open a locked door (disabling the lock just means it " +
                                  "remains stuck in whatever configuration it is currently in). This takes you five " +
-                                 "minutes."}]);
+                                 "minutes."}]});
 
-var career_now_explosives_expert = new Career(
-    name='Explosives Expert',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, logic=1, luck=1,
-    available_skills=['explosives', 'hardy', 'perception', 'reactions', 'electronics', 'thievery'],
-    description="You were either a bomb disposal or a demolitions expert.You just love the smell of napalm in the morning. " +
+var career_now_explosives_expert = new Career({
+    name: 'Explosives Expert',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, logic: 1, luck: 1,
+    available_skills: ['explosives', 'hardy', 'perception', 'reactions', 'electronics', 'thievery'],
+    description: "You were either a bomb disposal or a demolitions expert.You just love the smell of napalm in the morning. " +
          "Something about the smell of explosives, or maybe the very loud boom they make, is very pleasing to you. Of " +
          "course, you can't discount the whiz of shrapnel, oh, and the display, the coruscating fireballs...",
-    available_exploits=[{'Name': 'Home-cooking',
+    available_exploits: [{'Name': 'Home-cooking',
                          'Desc': "You can make an explosive out of regular household items (a minimum of 4 " +
                                  "components) with a minute of work. This explosive deals 2d6 heat damage to all " +
                                  "within 5'. The explosives can be stored, but only up to four hours."},
@@ -553,17 +553,17 @@ var career_now_explosives_expert = new Career(
                                  "damage from area of effect attacks."},
                         {'Name': "Don't step there!",
                          'Desc': "You always notice explosive devices and traps within 10' of you, even if an " +
-                                 "attribute check would normally be required."}]);
+                                 "attribute check would normally be required."}]});
 
-var career_now_firefighter = new Career(
-    name='Firefighter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, endurance=1, intuition=1, luck=1,
-    available_skills=['climbing', 'carrying', 'jumping', 'carousing', 'explosives', 'local knowledge'],
-    description="Fighting fires is a noble calling, putting yourself at risk to help others.",
-    available_exploits=[{'Name': 'Fire-resistant',
+var career_now_firefighter = new Career({
+    name: 'Firefighter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, endurance: 1, intuition: 1, luck: 1,
+    available_skills: ['climbing', 'carrying', 'jumping', 'carousing', 'explosives', 'local knowledge'],
+    description: "Fighting fires is a noble calling, putting yourself at risk to help others.",
+    available_exploits: [{'Name': 'Fire-resistant',
                          'Desc': "You've been through many fires, and have developed a resistance to it. You gain " +
                                  "natural SOAK 5 (heat)."},
                         {'Name': 'Ladder-climber',
@@ -580,49 +580,49 @@ var career_now_firefighter = new Career(
                          'Desc': "You can extinguish flames in an adjacent square by spending one action."},
                         {'Name': 'Drop and roll',
                          'Desc': "You can completely remove the Fire status track from yourself or an adjacent " +
-                                 "creature by spending two actions."}]);
+                                 "creature by spending two actions."}]});
 
-var career_now_gambler = new Career(
-    name='Gambler',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[gaming]',
-    intuition=1, charisma=1, luck=1, reputation=1,
-    available_skills=['[gaming]', '[social]', 'thievery'],
-    description="You became an expert gambler, proficient at games of skill and chance.",
-    available_exploits=[
+var career_now_gambler = new Career({
+    name: 'Gambler',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[gaming]',
+    intuition: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['[gaming]', '[social]', 'thievery'],
+    description: "You became an expert gambler, proficient at games of skill and chance.",
+    available_exploits: [
         {'Name': 'Good game', 'Desc': "Make a LUC attribute check and multiply by $100. You win that much money."},
         {'Name': 'Lucky streak', 'Desc': "You may replenish your LUCK attribute an extra time each day."},
         {'Name': 'Cheat',
-         'Desc': "You know a couple of tricks. In a game of chance, you may reroll any 1s in your dice pool."}]);
+         'Desc': "You know a couple of tricks. In a game of chance, you may reroll any 1s in your dice pool."}]});
 
-var career_now_gangster = new Career(
-    name='Gangster',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='intimidate',
-    strength=1, intuition=1, charisma=1, reputation=1,
-    available_skills=['intimidation', 'thievery', 'driving', 'pistols'],
-    description="Eventually your life of crime led you to better things as you fell into a gang or crew.",
-    available_exploits=[{'Name': 'Intimidating',
+var career_now_gangster = new Career({
+    name: 'Gangster',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'intimidate',
+    strength: 1, intuition: 1, charisma: 1, reputation: 1,
+    available_skills: ['intimidation', 'thievery', 'driving', 'pistols'],
+    description: "Eventually your life of crime led you to better things as you fell into a gang or crew.",
+    available_exploits: [{'Name': 'Intimidating',
                          'Desc': "Intimidation is your way of life, especially in the criminal underworld. When " +
                                  "attempting to intimidate a criminal, you gain a +1d6 bonus."},
                         {'Name': 'Protection racket',
                          'Desc': "A protection racket is a lucrative and steady stream of income. Within your REP " +
                                  "sphere you have a route. You gain your REP x $100 each week. This exploit cannot be " +
-                                 "used during downtime."}]);
+                                 "used during downtime."}]});
 
-var career_now_guerrilla_fighter = new Career(
-    name='Guerrilla Fighter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='survival',
-    endurance=1, intuition=1, luck=1, reputation=1,
-    available_skills=['bravery', 'pistols', 'rifles', 'stealth', 'tactics', 'survival', 'perception', 'disguise'],
-    description="Either as a dangerous lone wolf or as part of an organized resistance, you're experienced with waging war " +
+var career_now_guerrilla_fighter = new Career({
+    name: 'Guerrilla Fighter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'survival',
+    endurance: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['bravery', 'pistols', 'rifles', 'stealth', 'tactics', 'survival', 'perception', 'disguise'],
+    description: "Either as a dangerous lone wolf or as part of an organized resistance, you're experienced with waging war " +
          "on the go, mounting military strikes that melt away quickly afterward. After taking a grade in this career, " +
          "roll 1d6; on a 2 or less, the next career you take must be Prison.",
-    available_exploits=[{'Name': 'Ambush expert', 'Desc': "During an ambush turn you can take a second action."},
+    available_exploits: [{'Name': 'Ambush expert', 'Desc': "During an ambush turn you can take a second action."},
                         {'Name': 'Blend in',
                          'Desc': "If you are a wanted fugitive or actively being pursued by someone, " +
                                  "you can disappear into a crowd twice per day."},
@@ -635,18 +635,18 @@ var career_now_guerrilla_fighter = new Career(
                         {'Name': 'Sabotage',
                          'Desc': "You can prepare booby-traps using home-made devices as an explosives expert. There " +
                                  "is no duration for how long one of your home-cooked devices remains potent, " +
-                                 "and it may be rigged to go off at any time."}]);
+                                 "and it may be rigged to go off at any time."}]});
 
-var career_now_hacker = new Career(
-    name='Hacker',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='computers',
-    logic=1, intuition=1, luck=1, reputation=1,
-    available_skills=['computers', 'reactions', 'cryptology', 'appraisal', 'forgery', 'linguistics', 'electronics',
+var career_now_hacker = new Career({
+    name: 'Hacker',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'computers',
+    logic: 1, intuition: 1, luck: 1, reputation: 1,
+    available_skills: ['computers', 'reactions', 'cryptology', 'appraisal', 'forgery', 'linguistics', 'electronics',
                       'bureaucracy'],
-    description="Hacking into computer systems to find information or manipulate events comes easily to you.",
-    available_exploits=[{'Name': 'Hacking rig',
+    description: "Hacking into computer systems to find information or manipulate events comes easily to you.",
+    available_exploits: [{'Name': 'Hacking rig',
                          'Desc': "You gain a high quality laptop or portably computer designed for hacking on the " +
                                  "move."},
                         {'Name': 'Red lights',
@@ -661,19 +661,19 @@ var career_now_hacker = new Career(
                          'Desc': "You can remotely unlock an electronic lock for up to one minute."},
                         {'Name': 'CCTV',
                          'Desc': "You are able to access the CCTV cameras of a given location. This gives you poor " +
-                                 "quality video, and no audio."}]);
+                                 "quality video, and no audio."}]});
 
-var career_now_heavy_gunner = new Career(
-    name='Heavy Gunner',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='heavy weapons.',
-    strength=1, endurance=1, intuition=1, willpower=1,
-    available_skills=['carrying', 'hardy', 'heavy weapons', 'running', 'gunnery', 'engineering'],
-    description="A real weapon is the kind that requires a strap, and if it doesn't kick like a mule when you fire it, " +
+var career_now_heavy_gunner = new Career({
+    name: 'Heavy Gunner',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'heavy weapons.',
+    strength: 1, endurance: 1, intuition: 1, willpower: 1,
+    available_skills: ['carrying', 'hardy', 'heavy weapons', 'running', 'gunnery', 'engineering'],
+    description: "A real weapon is the kind that requires a strap, and if it doesn't kick like a mule when you fire it, " +
          "the gun just isn't for you. Whether a specialist for a security team or mercenary group, or party of a a " +
          "heavy weapons team in the military, you've spent plenty of time around big guns.",
-    available_exploits=[{'Name': 'Lay down fire',
+    available_exploits: [{'Name': 'Lay down fire',
                          'Desc': "You can spray an area 15'x15' (3 squares by 3 squares), doing 1d6 damage to every " +
                                  "target within that area when using a heavy weapon designated auto."},
                         {'Name': "This ain't heavy.",
@@ -682,37 +682,37 @@ var career_now_heavy_gunner = new Career(
                         {'Name': 'Long range', 'Desc': "Increase the range of heavy weapons you wield by 10'."},
                         {'Name': 'Heavy specialty',
                          'Desc': "You deal +1d6 damage with your chosen weapon for the This Ain't Heavy ability. You " +
-                                 "can repair it if broken (it takes 1 minute), and draw it as a free action."}]);
+                                 "can repair it if broken (it takes 1 minute), and draw it as a free action."}]});
 
-var career_now_infiltrator = new Career(
-    name='Infiltrator',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth, [combat]',
-    strength=1, agility=1, endurance=1, intuition=1,
-    available_skills=['[combat skills]', 'stealth', 'thievery', 'escape arts', 'acrobatics', 'climbing'],
-    description="The pinnacle of special operations, either police, military or freelance, the infiltrator aptly describes " +
+var career_now_infiltrator = new Career({
+    name: 'Infiltrator',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth, [combat]',
+    strength: 1, agility: 1, endurance: 1, intuition: 1,
+    available_skills: ['[combat skills]', 'stealth', 'thievery', 'escape arts', 'acrobatics', 'climbing'],
+    description: "The pinnacle of special operations, either police, military or freelance, the infiltrator aptly describes " +
          "the occupation of many men and women whose job it is to infiltrate enemy locations and accomplish dangerous " +
          "missions. An infiltrator needs a range of skills beyond the mere ability to kill that is the hallmark of " +
          "the assassin.",
-    available_exploits=[{'Name': 'Quick-hide',
+    available_exploits: [{'Name': 'Quick-hide',
                          'Desc': "You are able to disappear while in plain sight. You can make a stealth check even " +
                                  "while under observation to move your speed and become effectively invisible for a " +
                                  "round. You may then make regular stealth checks as normal, but cannot repeat this " +
-                                 "feat against the same observer."}]);
+                                 "feat against the same observer."}]});
 
-var career_now_laborer = new Career(
-    name='Laborer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, charisma=1, luck=1,
-    available_skills=['[crafting]', 'carousing', 'hardy', 'computers', '[outdoor]', 'bureacracy', 'engineering',
+var career_now_laborer = new Career({
+    name: 'Laborer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, charisma: 1, luck: 1,
+    available_skills: ['[crafting]', 'carousing', 'hardy', 'computers', '[outdoor]', 'bureacracy', 'engineering',
                       '[vehicle]'],
-    description="You did a regular physical job, whether skilled or unskilled, performing manual work for a fair wage. You " +
+    description: "You did a regular physical job, whether skilled or unskilled, performing manual work for a fair wage. You " +
          "may have been in construction, a gravedigger, even a street-sweeper or cleaner; or perhaps a delivery " +
          "person, baker, brewer or other worker.",
-    available_exploits=[{'Name': 'Jack-of-all-trades',
+    available_exploits: [{'Name': 'Jack-of-all-trades',
                          'Desc': "You gain three skills from your skill choices list above at rank 3 (2d6). This does " +
                                  "not increase a skill above 3 ranks."},
                         {'Name': 'Danger pay',
@@ -727,18 +727,18 @@ var career_now_laborer = new Career(
                                  "and so on. This constitutes light armor with a SOAK of 5, but is a custom piecemeal " +
                                  "outfit which can only be worn by you. The uniform also includes a engineer's " +
                                  "toolkit, hearing protection, a respirator, and it protects you from non-extreme " +
-                                 "environmental effects."}]);
+                                 "environmental effects."}]});
 
-var career_now_lawyer = new Career(
-    name='Lawyer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='law',
-    logic=1, willpower=1, charisma=1, reputation=1,
-    available_skills=['law', 'interrogation', 'bluffing', 'bureaucracy', 'local knowledge', 'negotiating'],
-    description="You became a lawyer, learning the complexities of the legal system, and how to get yourself and others out " +
+var career_now_lawyer = new Career({
+    name: 'Lawyer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'law',
+    logic: 1, willpower: 1, charisma: 1, reputation: 1,
+    available_skills: ['law', 'interrogation', 'bluffing', 'bureaucracy', 'local knowledge', 'negotiating'],
+    description: "You became a lawyer, learning the complexities of the legal system, and how to get yourself and others out " +
          "of (or into!) trouble.",
-    available_exploits=[{'Name': 'Get out of jail free',
+    available_exploits: [{'Name': 'Get out of jail free',
                          'Desc': "When arrested for a minor offence, you are able to use legal techniques to keep " +
                                  "yourself out of jail."},
                         {'Name': 'Court records',
@@ -757,18 +757,18 @@ var career_now_lawyer = new Career(
                          'Desc': "A principled public defender or prosecutor, you're in it for the ideals. You'll " +
                                  "make the world a better place using the power of law. You gain the following skills " +
                                  "at 1 rank (1d6): intimidation, bureaucracy, conviction. This does not increase a " +
-                                 "skill beyond one rank."}]);
+                                 "skill beyond one rank."}]});
 
-var career_now_medic = new Career(
-    name='Medic',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='medicine',
-    agility=1, intuition=1, logic=1, charisma=1,
-    available_skills=['computers', 'medicine', 'bureaucracy', 'psychology'],
-    description="You enter the medical profession. If you have gained a doctorate at college, you do so as a doctor; " +
+var career_now_medic = new Career({
+    name: 'Medic',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'medicine',
+    agility: 1, intuition: 1, logic: 1, charisma: 1,
+    available_skills: ['computers', 'medicine', 'bureaucracy', 'psychology'],
+    description: "You enter the medical profession. If you have gained a doctorate at college, you do so as a doctor; " +
          "otherwise you are referred to as a nurse or medic.",
-    available_exploits=[{'Name': 'Medical knowledge base',
+    available_exploits: [{'Name': 'Medical knowledge base',
                          'Desc': "Choose four [medical] skills. You gain these four skills at 1 rank (1d6). This does " +
                                  "not increase the rank of an existing skill."},
                         {'Name': 'Bedside manner',
@@ -799,18 +799,18 @@ var career_now_medic = new Career(
                         {'Name': 'Resuscitation [requires Exceptional Healing Hands].',
                          'Desc': "You can revive a seemingly dead creature with a LOG check. The creature must have " +
                                  "“died” within the last five minutes, and the difficulty value of the check is 20 + " +
-                                 "the damage of the attack that killed it. The creature wakes up with 1 HEALTH."}]);
+                                 "the damage of the attack that killed it. The creature wakes up with 1 HEALTH."}]});
 
-var career_now_miner = new Career(
-    name='Miner',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, willpower=1, luck=1,
-    available_skills=['carrying', 'climbing', 'survival', '[technical]', 'mining', 'appraising', 'carousing', 'picks',
+var career_now_miner = new Career({
+    name: 'Miner',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, willpower: 1, luck: 1,
+    available_skills: ['carrying', 'climbing', 'survival', '[technical]', 'mining', 'appraising', 'carousing', 'picks',
                       'hammers'],
-    description="There's nothing like a few years spent down a coalmine to build character.",
-    available_exploits=[{'Name': 'Underground sense',
+    description: "There's nothing like a few years spent down a coalmine to build character.",
+    available_exploits: [{'Name': 'Underground sense',
                          'Desc': "When underground you can always determine direction and depth and pick a route to " +
                                  "the surface."},
                         {'Name': 'Darksight',
@@ -822,19 +822,19 @@ var career_now_miner = new Career(
                          'Desc': "The underground is full of toxic fumes, and you've become used to them. You gain a " +
                                  "poison SOAK of 5."},
                         {'Name': 'Identify substance',
-                         'Desc': "You can identify by sight any mineral or metal based substance automatically."}]);
+                         'Desc': "You can identify by sight any mineral or metal based substance automatically."}]});
 
-var career_now_ninja = new Career(
-    name='Ninja',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, endurance=1, intuition=1, chi=1,
-    available_skills=['acrobatics', 'climbing', 'disguise', 'perception', 'stealth', 'martial arts'],
-    description="The skills and tactics of Japan's warriors of subterfuge, sabotage, and deception are known to you, " +
+var career_now_ninja = new Career({
+    name: 'Ninja',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, endurance: 1, intuition: 1, chi: 1,
+    available_skills: ['acrobatics', 'climbing', 'disguise', 'perception', 'stealth', 'martial arts'],
+    description: "The skills and tactics of Japan's warriors of subterfuge, sabotage, and deception are known to you, " +
          "either through a Ninja master that took you in as an apprentice, or by traveling to the ancestral homeland " +
          "and earning the right to train among those who still practice ninjutsu.",
-    available_exploits=[{'Name': 'Poison',
+    available_exploits: [{'Name': 'Poison',
                          'Desc': "With one minute of preparation, you can craft poison and apply it to one weapon; " +
                                  "for one minute, that weapon deals +1d6 poison damage; you must deal enough damage " +
                                  "to bypass a target's SOAK to deal this poison damage."},
@@ -852,17 +852,17 @@ var career_now_ninja = new Career(
                                  "using your CHI attribute; if you hit, you deal double damage."},
                         {'Name': 'Shadow warrior',
                          'Desc': "You may move at full SPEED while hidden if you succeed in your AGI (stealth) " +
-                                 "check."}]);
+                                 "check."}]});
 
-var career_now_performer = new Career(
-    name='Performer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[performance]',
-    charisma=2, luck=1, reputation=1,
-    available_skills=['carousing', '[performance]'],
-    description="You became a musician or other performer, and made your way working bars, clubs, and theaters.",
-    available_exploits=[{'Name': 'Triple-threat',
+var career_now_performer = new Career({
+    name: 'Performer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[performance]',
+    charisma: 2, luck: 1, reputation: 1,
+    available_skills: ['carousing', '[performance]'],
+    description: "You became a musician or other performer, and made your way working bars, clubs, and theaters.",
+    available_exploits: [{'Name': 'Triple-threat',
                          'Desc': "You gain the skills singing, dancing, and acting at 1 rank (1d6). This does not " +
                                  "increase the rank of an existing skill."},
                         {'Name': 'Gig',
@@ -883,17 +883,17 @@ var career_now_performer = new Career(
                          'Desc': "You can use voice or music to instill fear in those who hear it. While using your " +
                                  "musical instrument or voice, all those who can hear you become nervous (-1d6 to all " +
                                  "interactions with you or with a target or object of your choice) until you stop. " +
-                                 "This requires a CHA vs. MENTAL DEFENSE check and a full two actions each turn."}]);
+                                 "This requires a CHA vs. MENTAL DEFENSE check and a full two actions each turn."}]});
 
-var career_now_pilot = new Career(
-    name='Pilot',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='piloting',
-    agility=1, intuition=1, logic=1, luck=1,
-    available_skills=['reactions', 'piloting', 'computers', 'astronomy', 'gunnery', 'navigation'],
-    description="You became a pilot, learning to fly aircraft big or small.",
-    available_exploits=[{'Name': 'Push the limits', 'Desc': "You can exceed an aircraft's normal maximum SPEED by 2."},
+var career_now_pilot = new Career({
+    name: 'Pilot',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'piloting',
+    agility: 1, intuition: 1, logic: 1, luck: 1,
+    available_skills: ['reactions', 'piloting', 'computers', 'astronomy', 'gunnery', 'navigation'],
+    description: "You became a pilot, learning to fly aircraft big or small.",
+    available_exploits: [{'Name': 'Push the limits', 'Desc': "You can exceed an aircraft's normal maximum SPEED by 2."},
                         {'Name': 'Evasive flying',
                          'Desc': "An aircraft which you pilot gains a DEFENSE bonus equal to your AGI attribute dice " +
                                  "pool."},
@@ -904,17 +904,17 @@ var career_now_pilot = new Career(
                                  "additional +5 DEFENSE against it."},
                         {'Name': 'Stay on target [requires Evasive Flying]',
                          'Desc': "While in the rear arc of a target ship, you negate any bonus it gets from Evasive " +
-                                 "Flying."}]);
+                                 "Flying."}]});
 
-var career_now_police_officer = new Career(
-    name='Police Officer',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, logic=1, reputation=1,
-    available_skills=['interrogation', 'pistols', 'law', 'driving', 'bureaucracy', 'perception', 'intimidate'],
-    description="You join the police or other security force and begin a career as a uniformed officer.",
-    available_exploits=[{'Name': 'Troublesense',
+var career_now_police_officer = new Career({
+    name: 'Police Officer',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, logic: 1, reputation: 1,
+    available_skills: ['interrogation', 'pistols', 'law', 'driving', 'bureaucracy', 'perception', 'intimidate'],
+    description: "You join the police or other security force and begin a career as a uniformed officer.",
+    available_exploits: [{'Name': 'Troublesense',
                          'Desc': "You are easily able to spot trouble before it happens. You gain a +1d6 bonus to " +
                                  "INITIATIVE checks."},
                         {'Name': 'Out of place',
@@ -931,17 +931,17 @@ var career_now_police_officer = new Career(
                         {'Name': 'Anti-surveillance',
                          'Desc': "You are so familiar with surveillance devices, blind spots, and avoidance " +
                                  "techniques that, by moving half your speed, you can render yourself invisible to " +
-                                 "electronic monitoring equipment."}]);
+                                 "electronic monitoring equipment."}]});
 
-var career_now_politician = new Career(
-    name='Politician',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='local knowledge',
-    logic=1, willpower=1, charisma=1, reputation=1,
-    available_skills=['[social]', 'politics', 'economics', 'geography', 'history', 'local knowledge'],
-    description="You entered politics at a local level and started to rise through the ranks.",
-    available_exploits=[{'Name': 'Corruption',
+var career_now_politician = new Career({
+    name: 'Politician',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'local knowledge',
+    logic: 1, willpower: 1, charisma: 1, reputation: 1,
+    available_skills: ['[social]', 'politics', 'economics', 'geography', 'history', 'local knowledge'],
+    description: "You entered politics at a local level and started to rise through the ranks.",
+    available_exploits: [{'Name': 'Corruption',
                          'Desc': "Not all politicians are corrupt, but you succumbed to temptation. You start play " +
                                  "with $2,000 bonus money, but your next career much be the Prisoner career. You may " +
                                  "not return to the Politician career after taking this exploit. You may only take " +
@@ -961,18 +961,18 @@ var career_now_politician = new Career(
                          'Desc': "You are able to sway and influence crowds. You can spend 5 minutes talking to a " +
                                  "crowd and make a REP check equal to 1% the size of the crowd (so for a crowd of 2," +
                                  "000 you must beat 20 in your check). If successful, you influence the crowd in some " +
-                                 "manner, pushing it one stage along the Charm or Anger tracks."}]);
+                                 "manner, pushing it one stage along the Charm or Anger tracks."}]});
 
-var career_now_priest = new Career(
-    name='Priest',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion',
-    intuition=1, willpower=1, charisma=1, luck=1,
-    available_skills=['perception', 'crafting', 'bureaucracy', 'cryptology', 'linguistics', '[trivia]', 'meditation',
+var career_now_priest = new Career({
+    name: 'Priest',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion',
+    intuition: 1, willpower: 1, charisma: 1, luck: 1,
+    available_skills: ['perception', 'crafting', 'bureaucracy', 'cryptology', 'linguistics', '[trivia]', 'meditation',
                       'leadership', 'performing', 'religion'],
-    description="You joined the clergy and practised religion, tending to your flock.",
-    available_exploits=[{'Name': 'Confessional.',
+    description: "You joined the clergy and practised religion, tending to your flock.",
+    available_exploits: [{'Name': 'Confessional.',
                          'Desc': "Your insights into the morality of living things enables you to draw confessions " +
                                  "from others. Given an hour of conversation, you gain a +2d6 bonus to checks " +
                                  "designed to gain information from another creature."},
@@ -982,37 +982,37 @@ var career_now_priest = new Career(
                         {'Name': 'Respect',
                          'Desc': "Your position in the clergy grants you a certain reverence from others. Sentient " +
                                  "opponents take a -1d6 penalty to attack you on their first attack as long as you " +
-                                 "have not attacked them first."}]);
+                                 "have not attacked them first."}]});
 
-var career_now_prisoner = new Career(
-    name='Prisoner',
-    career_time='2d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, intuition=1, reputation=1,
-    available_skills=['intimidation', 'survival', '[subterfuge skills]', '[unarmed fighting]', 'knives'],
-    description="Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner, " +
+var career_now_prisoner = new Career({
+    name: 'Prisoner',
+    career_time: '2d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, intuition: 1, reputation: 1,
+    available_skills: ['intimidation', 'survival', '[subterfuge skills]', '[unarmed fighting]', 'knives'],
+    description: "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner, " +
          "a hostage, or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to " +
          "survive, although you did make one or two lifelong contacts.",
-    available_exploits=[{'Name': 'Prison tough',
+    available_exploits: [{'Name': 'Prison tough',
                          'Desc': "You are mentally and physically toughened. Each time you go to prison you gain a " +
                                  "permanent +1 bonus to your DEFENSE and MENTAL DEFENSE."},
                         {'Name': 'Shiv',
                          'Desc': "You are easily able to improvise weapons using your surroundings – glasses, rocks, " +
                                  "and so on. You always count as carrying a knife or club and can use the brawling " +
-                                 "skill with knives and clubs."}]);
+                                 "skill with knives and clubs."}]});
 
-var career_now_private_eye = new Career(
-    name='Private Eye',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    intuition=1, charisma=1, luck=1, reputation=1,
-    available_skills=['pistols', 'bluffing', 'bribery', 'perception', 'insight', 'tracking', 'intimidate',
+var career_now_private_eye = new Career({
+    name: 'Private Eye',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    intuition: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['pistols', 'bluffing', 'bribery', 'perception', 'insight', 'tracking', 'intimidate',
                       '[subterfuge]'],
-    description="You snoop, bribe, tail, and occasionally get socked a few times a month in order to pay the bills. You know " +
+    description: "You snoop, bribe, tail, and occasionally get socked a few times a month in order to pay the bills. You know " +
          "all the shady spots in town.",
-    available_exploits=[{'Name': 'Snoop',
+    available_exploits: [{'Name': 'Snoop',
                          'Desc': "You've got a good sense of when something just isn't quite right; once per day when " +
                                  "you roll a check to determine if someone is lying to you, reroll all results of 1 " +
                                  "and 2."},
@@ -1022,18 +1022,18 @@ var career_now_private_eye = new Career(
                         {'Name': 'Great detective',
                          'Desc': "You are used as an informal consultant by authorities who recognize your expertise. " +
                                  "You are permitted access to crime scenes and evidence, and are often called upon."},
-                        {'Name': 'Hardboiled', 'Desc': "Cynical and rumpled, you gain a+4 bonus to MENTAL DEFENSE."}]);
+                        {'Name': 'Hardboiled', 'Desc': "Cynical and rumpled, you gain a+4 bonus to MENTAL DEFENSE."}]});
 
-var career_now_reporter = new Career(
-    name='Reporter',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    intuition=1, logic=1, charisma=1, reputation=1,
-    available_skills=['insight', 'perception', 'linguistics', 'literature', 'law', 'politics', 'economics', 'geography',
+var career_now_reporter = new Career({
+    name: 'Reporter',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    intuition: 1, logic: 1, charisma: 1, reputation: 1,
+    available_skills: ['insight', 'perception', 'linguistics', 'literature', 'law', 'politics', 'economics', 'geography',
                       'journalism', 'interrogation', 'carousing'],
-    description="As an intrepid reporter, you are skilled at getting to the truth.",
-    available_exploits=[{'Name': 'Discern lie', 'Desc': "You always know when somebody is lying to you."},
+    description: "As an intrepid reporter, you are skilled at getting to the truth.",
+    available_exploits: [{'Name': 'Discern lie', 'Desc': "You always know when somebody is lying to you."},
                         {'Name': 'Ask the right question',
                          'Desc': "You may spend a LUC die to ask an NPC a yes/no question. The GM will answer " +
                                  "truthfully as the NPC gives away the answer either verbally or in some more subtle " +
@@ -1053,18 +1053,18 @@ var career_now_reporter = new Career(
                          'Desc': "You worked as the lowest of the low, a tabloid journalist interested only in " +
                                  "shocking your readers. Sadly, it's a profitable job, and you start play with $1," +
                                  "000 extra money. However, if you take this exploit, you lose any contacts you had " +
-                                 "from the Contact exploit, and may not take that exploit in future."}]);
+                                 "from the Contact exploit, and may not take that exploit in future."}]});
 
-var career_now_sailor = new Career(
-    name='Sailor',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, luck=1, endurance=1,
-    available_skills=['carousing', 'climbing', 'clubs', 'fishing', 'knives', 'leadership', 'navigation', 'sailing',
+var career_now_sailor = new Career({
+    name: 'Sailor',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, luck: 1, endurance: 1,
+    available_skills: ['carousing', 'climbing', 'clubs', 'fishing', 'knives', 'leadership', 'navigation', 'sailing',
                       'swimming'],
-    description="At home on the sea, you spent time aboard a ship mastering the art of sailing.",
-    available_exploits=[{'Name': 'Any Port',
+    description: "At home on the sea, you spent time aboard a ship mastering the art of sailing.",
+    available_exploits: [{'Name': 'Any Port',
                          'Desc': "You may take this exploit multiple times. Each time you take it, you may designate " +
                                  "an additional port town. At that location, you will have one contact upon whom you " +
                                  "can (generally) rely, and one bar at which you can drink for free."},
@@ -1083,19 +1083,19 @@ var career_now_sailor = new Career(
                         {'Name': 'Seasick', 'Desc': "You are immune to the Nausea status track."},
                         {'Name': 'Sea Weather',
                          'Desc': "You are able to ignore the effects of rain, wind, mist, and fog."},
-                        {'Name': 'Swimmer', 'Desc': "You gain a SWIM speed equal to your regular SPEED."}]);
+                        {'Name': 'Swimmer', 'Desc': "You gain a SWIM speed equal to your regular SPEED."}]});
 
-var career_now_scientist = new Career(
-    name='Scientist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='one [scientific] skill',
-    intuition=1, logic=1, willpower=1, reputation=1,
-    available_skills=['computers', '[scientific]', '[technical]', 'survival', 'perception'],
-    description="You take your science with you as investigate phenomena in strange locations. Field scientists are viewed " +
+var career_now_scientist = new Career({
+    name: 'Scientist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'one [scientific] skill',
+    intuition: 1, logic: 1, willpower: 1, reputation: 1,
+    available_skills: ['computers', '[scientific]', '[technical]', 'survival', 'perception'],
+    description: "You take your science with you as investigate phenomena in strange locations. Field scientists are viewed " +
          "by academia as adventurous types, and include archaeologists, meteorologists, zoologists, oceanographers, " +
          "geologists, botanists, astrophysicists, and much more.",
-    available_exploits=[{'Name': 'Scientific knowledge base',
+    available_exploits: [{'Name': 'Scientific knowledge base',
                          'Desc': "Choose four [scientific] skills. You gain these four skills at 1 rank (1d6). This " +
                                  "does not increase the rank of an existing skill."},
                         {'Name': 'Analytical eye',
@@ -1110,32 +1110,32 @@ var career_now_scientist = new Career(
                         {'Name': 'Experimental device',
                          'Desc': "You may produce an experimental device once per day which allows you to use your " +
                                  "LOG attribute in place of any other attribute for one attribute check. The device " +
-                                 "breaks permanently after use."}]);
+                                 "breaks permanently after use."}]});
 
-var career_now_scout = new Career(
-    name='Scout',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth, tracking',
-    agility=1, endurance=1, intuition=1, willpower=1,
-    available_skills=['stealth', 'perception', 'survival', 'tracking', 'climbing', 'running'],
-    description="You became a scout – a specialized special forces soldier able to operate alone and perform reconnaissance.",
-    available_exploits=[{'Name': 'Ambusher', 'Desc': "You gain a +1d6 bonus to access the ambush turn."},
+var career_now_scout = new Career({
+    name: 'Scout',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth, tracking',
+    agility: 1, endurance: 1, intuition: 1, willpower: 1,
+    available_skills: ['stealth', 'perception', 'survival', 'tracking', 'climbing', 'running'],
+    description: "You became a scout – a specialized special forces soldier able to operate alone and perform reconnaissance.",
+    available_exploits: [{'Name': 'Ambusher', 'Desc': "You gain a +1d6 bonus to access the ambush turn."},
                         {'Name': 'Hustle', 'Desc': "Your SPEED increases by 2."},
                         {'Name': 'Hostile terrain',
                          'Desc': "You do not suffer penalties for moving across difficult terrain."},
                         {'Name': 'Swimmer', 'Desc': "You gain a SWIM speed equal to your regular SPEED."},
-                        {'Name': 'Climber', 'Desc': "You gain a CLIMB speed equal to your regular SPEED."}]);
+                        {'Name': 'Climber', 'Desc': "You gain a CLIMB speed equal to your regular SPEED."}]});
 
-var career_now_sensei_sifu = new Career(
-    name='Sensei/Sifu',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts 3 ranks',
-    agility=1, intuition=1, willpower=1, reputation=1,
-    available_skills=['martial arts', 'philosophy', 'tactics', 'insight', 'leadership', 'teaching', 'local knowledge'],
-    description="You run a dojo, wu kwan, or kwoon, teaching others the martial arts.",
-    available_exploits=[{'Name': 'Inspiring',
+var career_now_sensei_sifu = new Career({
+    name: 'Sensei/Sifu',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts 3 ranks',
+    agility: 1, intuition: 1, willpower: 1, reputation: 1,
+    available_skills: ['martial arts', 'philosophy', 'tactics', 'insight', 'leadership', 'teaching', 'local knowledge'],
+    description: "You run a dojo, wu kwan, or kwoon, teaching others the martial arts.",
+    available_exploits: [{'Name': 'Inspiring',
                          'Desc': "You inspire respect in your students. Those within 30' of can claim a +1d6 bonus to " +
                                  "any attribute roll once per day."},
                         {'Name': 'Teacher',
@@ -1150,17 +1150,17 @@ var career_now_sensei_sifu = new Career(
                         {'Name': 'First-aid',
                          'Desc': "Used to injuries in the dojo, you are able to heal an adjacent ally 1d6 HEALTH by " +
                                  "using one action. Any given creature can only benefit from this ability once per " +
-                                 "day."}]);
+                                 "day."}]});
 
-var career_now_smuggler = new Career(
-    name='Smuggler',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='piloting or sailing',
-    agility=1, charisma=1, luck=1, reputation=1,
-    available_skills=['thievery', 'navigation', 'carousing', 'piloting', 'sailing', 'bluffing', 'appraisal', 'pistols'],
-    description="You spent time as a smuggler, moving stolen or illegal goods from one country to another.",
-    available_exploits=[{'Name': 'Smuggle',
+var career_now_smuggler = new Career({
+    name: 'Smuggler',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'piloting or sailing',
+    agility: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['thievery', 'navigation', 'carousing', 'piloting', 'sailing', 'bluffing', 'appraisal', 'pistols'],
+    description: "You spent time as a smuggler, moving stolen or illegal goods from one country to another.",
+    available_exploits: [{'Name': 'Smuggle',
                          'Desc': "You know how to hide objects, either about your person or in a location. You gain a " +
                                  "+2d6 bonus to attempts to hide items."},
                         {'Name': 'Haggler.',
@@ -1170,48 +1170,48 @@ var career_now_smuggler = new Career(
                          'Desc': "In an urban environment, you can sell goods for 75% of normal cost rather than 50%."},
                         {'Name': 'Seat of your pants',
                          'Desc': "Smugglers rely a lot on old-fashioned luck and bravado. They can recharge their " +
-                                 "LUCK pool an extra time per day."}]);
+                                 "LUCK pool an extra time per day."}]});
 
-var career_now_sniper = new Career(
-    name='Sniper',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='stealth, rifles',
-    endurance=1, intuition=1, willpower=1, luck=1,
-    available_skills=['rifles', 'stealth', 'perception', 'concentration', 'climbing'],
-    description="You mastered the art of lying very still for long periods of time and shooting people a long way away. " +
+var career_now_sniper = new Career({
+    name: 'Sniper',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'stealth, rifles',
+    endurance: 1, intuition: 1, willpower: 1, luck: 1,
+    available_skills: ['rifles', 'stealth', 'perception', 'concentration', 'climbing'],
+    description: "You mastered the art of lying very still for long periods of time and shooting people a long way away. " +
          "Sniping is a job which requires great endurance, patience, and accuracy.",
-    available_exploits=[{'Name': 'Vantage point',
+    available_exploits: [{'Name': 'Vantage point',
                          'Desc': "You gain an additional 1d6 to attack with a ranged weapon if you are at least 30' " +
                                  "higher than your target. This stacks with the regular bonus for high ground."},
                         {'Name': 'Steady eye', 'Desc': "All weapon range increments increase by 50%."},
-                        {'Name': 'Good position', 'Desc': "You cannot be pinned down in combat."}]);
+                        {'Name': 'Good position', 'Desc': "You cannot be pinned down in combat."}]});
 
-var career_now_socialite = new Career(
-    name='Socialite',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='[social]',
-    charisma=2, reputation=2,
-    available_skills=['[social]'],
-    description="You aim be famous for being famous, and mastered the art of networking.",
-    available_exploits=[{'Name': 'High class',
+var career_now_socialite = new Career({
+    name: 'Socialite',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: '[social]',
+    charisma: 2, reputation: 2,
+    available_skills: ['[social]'],
+    description: "You aim be famous for being famous, and mastered the art of networking.",
+    available_exploits: [{'Name': 'High class',
                          'Desc': "You are at home when in high-class social gatherings. In such environments, " +
                                  "you gain a +1d6 bonus to all attribute checks. Unfortunately, you are less " +
                                  "comfortable – or welcome - in lower-class environments, and suffer a -1d6 penalty " +
-                                 "to all social interactions in such situations."}]);
+                                 "to all social interactions in such situations."}]});
 
-var career_now_soldier = new Career(
-    name='Soldier',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='must have completed one year in Boot Camp',
-    strength=1, endurance=1, willpower=1, reputation=1,
-    available_skills=['carrying', '[combat]', 'hardy', 'survival', 'leadership', 'carousing', 'bravery', 'perception'],
-    description="A tour of duty in the army means a deployment to a probably dangerous environment where you engaged enemy " +
+var career_now_soldier = new Career({
+    name: 'Soldier',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'must have completed one year in Boot Camp',
+    strength: 1, endurance: 1, willpower: 1, reputation: 1,
+    available_skills: ['carrying', '[combat]', 'hardy', 'survival', 'leadership', 'carousing', 'bravery', 'perception'],
+    description: "A tour of duty in the army means a deployment to a probably dangerous environment where you engaged enemy " +
          "forces in infantry based ground battles. The army prides itself on their sense of duty and their courage. " +
          "With each tour, roll 1d6. On a roll of 6, you gain a medal and a bonus +1 REP.",
-    available_exploits=[{'Name': 'Battle scars',
+    available_exploits: [{'Name': 'Battle scars',
                          'Desc': "You've received so many battle scars that you sometimes don't notice injury. You " +
                                  "gain a natural SOAK bonus of 2."},
                         {'Name': 'Quick naps',
@@ -1224,18 +1224,18 @@ var career_now_soldier = new Career(
                          'Desc': "You gain a +1d6 bonus when attempting to shake off a condition."},
                         {'Name': 'Platoon leader',
                          'Desc': "You grant your entire party a +1d6 INITIATIVE bonus as long as they are within 30' " +
-                                 "of you."}]);
+                                 "of you."}]});
 
-var career_now_spy = new Career(
-    name='Spy',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, intuition=1, charisma=1, luck=1,
-    available_skills=['interrogation', 'law', '[subterfuge]', 'computers', 'pistols', '[social]', '[gaming]'],
-    description="You're a spy. This may be MI6, CIA, KGB, or some other force. You have a wide remit, dealing with both " +
+var career_now_spy = new Career({
+    name: 'Spy',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, intuition: 1, charisma: 1, luck: 1,
+    available_skills: ['interrogation', 'law', '[subterfuge]', 'computers', 'pistols', '[social]', '[gaming]'],
+    description: "You're a spy. This may be MI6, CIA, KGB, or some other force. You have a wide remit, dealing with both " +
          "domestic and external threats, and perform undercover investigations into military and civilian issues.",
-    available_exploits=[{'Name': 'False identify',
+    available_exploits: [{'Name': 'False identify',
                          'Desc': "You are able to create a false identity, complete with background records, " +
                                  "in one day. This identity is good enough that people can look you up on various " +
                                  "databases, and the details will match."},
@@ -1255,31 +1255,31 @@ var career_now_spy = new Career(
                          'Desc': "You start play with one gadget from the equipment chapter of your choice."},
                         {'Name': 'Golden Gun',
                          'Desc': "You gain a high quality pistol of your choice. This pistol already has the extra " +
-                                 "damage upgrade (+1d6 damage). It is not actually golden."}]);
+                                 "damage upgrade (+1d6 damage). It is not actually golden."}]});
 
-var career_now_street_thug = new Career(
-    name='Street Thug',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    strength=1, endurance=1, charisma=1, luck=1,
-    available_skills=['intimidation', 'running', 'brawling', 'clubs', 'knives', 'pistols'],
-    description="You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for " +
+var career_now_street_thug = new Career({
+    name: 'Street Thug',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    strength: 1, endurance: 1, charisma: 1, luck: 1,
+    available_skills: ['intimidation', 'running', 'brawling', 'clubs', 'knives', 'pistols'],
+    description: "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for " +
          "small amounts of money.",
-    available_exploits=[{'Name': 'The filth',
+    available_exploits: [{'Name': 'The filth',
                          'Desc': "You have developed an uncanny ability to detect cops. When attempting to sniff out " +
                                  "a police officer or similar authority figure, you gain a +1d6 bonus."},
-                        {'Name': 'Street tough', 'Desc': "Life on the streets is tough. You gain a natural +2 SOAK."}]);
+                        {'Name': 'Street tough', 'Desc': "Life on the streets is tough. You gain a natural +2 SOAK."}]});
 
-var career_now_student = new Career(
-    name='Student',
-    career_time='1',
-    career_time_unit='years',
-    prerequisites='18 years of age or under',
-    intuition=1, logic=1, charisma=1, luck=1,
-    available_skills=['[academic]', '[scientific]', '[sporting]'],
-    description="High School, or its equivalent, is a place of learning... and sometimes of adventure!",
-    available_exploits=[
+var career_now_student = new Career({
+    name: 'Student',
+    career_time: '1',
+    career_time_unit: 'years',
+    prerequisites: '18 years of age or under',
+    intuition: 1, logic: 1, charisma: 1, luck: 1,
+    available_skills: ['[academic]', '[scientific]', '[sporting]'],
+    description: "High School, or its equivalent, is a place of learning... and sometimes of adventure!",
+    available_exploits: [
         {'Name': 'Walker', 'Desc': "Before you learned to drive you had to walk everywhere. You gain SPEED +1."},
         {'Name': 'Mentor',
          'Desc': "One of your teachers is a mentor to you. Choose one skill. He or she has 10 ranks (4d6) in that " +
@@ -1288,22 +1288,22 @@ var career_now_student = new Career(
          'Desc': "You got in with the wrong crowd. You gain 1 rank (1d6) in carousing, intimidation, and thievery. " +
                  "This does not increase a skill beyond 1 rank."},
         {'Name': 'Chess club',
-         'Desc': "You joined the Chess Club, or a similar club. Gain logic=1, and 3 ranks (2d6) in chess (or a " +
+         'Desc': "You joined the Chess Club, or a similar club. Gain logic: 1, and 3 ranks (2d6) in chess (or a " +
                  "similar subject)."},
         {'Name': 'Wheels',
          'Desc': "You got given a car at an early age. It's not a great car, but it's a car. Gain a car with a value " +
-                 "of up to $1,000."}]);
+                 "of up to $1,000."}]});
 
-var career_now_stuntman = new Career(
-    name='Stuntman',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, endurance=1, luck=1, reputation=1,
-    available_skills=['[physical]', '[vehicle]', 'hardy'],
-    description="You've rolled cars, jumped off buildings, jumped open drawbridges, even set yourself on fire in the name of " +
+var career_now_stuntman = new Career({
+    name: 'Stuntman',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, endurance: 1, luck: 1, reputation: 1,
+    available_skills: ['[physical]', '[vehicle]', 'hardy'],
+    description: "You've rolled cars, jumped off buildings, jumped open drawbridges, even set yourself on fire in the name of " +
          "entertainment.",
-    available_exploits=[{'Name': 'Broken every bone',
+    available_exploits: [{'Name': 'Broken every bone',
                          'Desc': "You've broken most every bone in your body at one time or the other. You gain " +
                                  "natural SOAK 5."},
                         {'Name': 'Fast-healer',
@@ -1316,19 +1316,19 @@ var career_now_stuntman = new Career(
                         {'Name': 'Jumping off buildings', 'Desc': "You take half normal falling damage."},
                         {'Name': 'Grit your teeth',
                          'Desc': "You are immune to the Pain status track. It's not that you don't feel pain, " +
-                                 "it's that you're so used to it."}]);
+                                 "it's that you're so used to it."}]});
 
-var career_now_survivalist = new Career(
-    name='Survivalist',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='any [outdoor] skill',
-    endurance=1, intuition=1, willpower=1, luck=1,
-    available_skills=['geography', 'reactions', '[crafting]', 'fishing', 'hunting', 'climbing', 'swimming', 'carrying',
+var career_now_survivalist = new Career({
+    name: 'Survivalist',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'any [outdoor] skill',
+    endurance: 1, intuition: 1, willpower: 1, luck: 1,
+    available_skills: ['geography', 'reactions', '[crafting]', 'fishing', 'hunting', 'climbing', 'swimming', 'carrying',
                       'medicine', 'survival', 'cooking', 'animal handling', 'tracking', 'navigation'],
-    description="Some choose to spend time in the wild, testing their mind and body against nature, living off the land, " +
+    description: "Some choose to spend time in the wild, testing their mind and body against nature, living off the land, " +
          "and existing with animals.",
-    available_exploits=[{'Name': 'Spot poison',
+    available_exploits: [{'Name': 'Spot poison',
                          'Desc': "A survivalist needs to know what to eat and what not to. By sniffing and taking " +
                                  "very tiny tastes, you are able to detect the presence of poison."},
                         {'Name': 'Poison resistance',
@@ -1343,17 +1343,17 @@ var career_now_survivalist = new Career(
                                  "scent."},
                         {'Name': 'Improvised weapon',
                          'Desc': "You can craft a spear, knife, or bow from your natural surroundings. This takes you " +
-                                 "five minutes, and the item does not count as an improvised weapon when you use it."}]);
+                                 "five minutes, and the item does not count as an improvised weapon when you use it."}]});
 
-var career_now_teacher = new Career(
-    name='Teacher',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='any [academic], [artistic], [performance] or [scientific skill], or linguistics',
-    intuition=1, logic=1, charisma=1, luck=1,
-    available_skills=['teaching', 'insight', 'leadership', 'linguistics', '[scientific]', '[academic]', '[artistic]'],
-    description="Your calling is teaching others. You are a mentor figure, a font of learning, and a source of inspiration.",
-    available_exploits=[{'Name': 'Advice',
+var career_now_teacher = new Career({
+    name: 'Teacher',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'any [academic], [artistic], [performance] or [scientific skill], or linguistics',
+    intuition: 1, logic: 1, charisma: 1, luck: 1,
+    available_skills: ['teaching', 'insight', 'leadership', 'linguistics', '[scientific]', '[academic]', '[artistic]'],
+    description: "Your calling is teaching others. You are a mentor figure, a font of learning, and a source of inspiration.",
+    available_exploits: [{'Name': 'Advice',
                          'Desc': "You may freely donate your LUC dice to anybody within 30'. The dice must be used " +
                                  "immediately."},
                         {'Name': 'Role-model', 'Desc': "Allies within 30' of you gain +2 MENTAL DEFENSE."},
@@ -1365,38 +1365,38 @@ var career_now_teacher = new Career(
                                  "STR, AGI, END) with."},
                         {'Name': 'Professor',
                          'Desc': "You became a professor. You gain +1 REP and you have a textbook out. Name your " +
-                                 "textbook. When dealing with people in that field of study, your REP dice explode."}]);
+                                 "textbook. When dealing with people in that field of study, your REP dice explode."}]});
 
-var career_now_trader = new Career(
-    name='Trader',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    intuition=1, charisma=1, luck=1, reputation=1,
-    available_skills=['appraisal', '[social]', 'carousing', '[crafting]', 'bureaucracy', 'accounting', 'law',
+var career_now_trader = new Career({
+    name: 'Trader',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    intuition: 1, charisma: 1, luck: 1, reputation: 1,
+    available_skills: ['appraisal', '[social]', 'carousing', '[crafting]', 'bureaucracy', 'accounting', 'law',
                       'local knowledge', 'bribery', 'forgery'],
-    description="Life as a trader can mean profit, but it can also bring ruin.",
-    available_exploits=[{'Name': 'Sale of the century',
+    description: "Life as a trader can mean profit, but it can also bring ruin.",
+    available_exploits: [{'Name': 'Sale of the century',
                          'Desc': "You worked hard on a great deal, and it netted you $1,000. You may repeat this " +
                                  "exploit gaining $1,000 each time."},
                         {'Name': 'Trade route',
                          'Desc': "You know the best, most profitable trade routes. Your fuel costs are reduced by " +
                                  "20%."},
                         {'Name': 'Haggler',
-                         'Desc': " You know how to get a good deal. You reduce the cost of any purchase by 2d6%."}]);
+                         'Desc': " You know how to get a good deal. You reduce the cost of any purchase by 2d6%."}]});
 
-var career_now_vigilante = new Career(
-    name='Vigilante',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='none',
-    agility=1, endurance=1, intuition=1, reputation=1,
-    available_skills=['[subterfuge]', '[combat]', 'intimidation'],
-    description="Something about the world calls to you, asking—no, demanding—that you rise above the law to accomplish some " +
+var career_now_vigilante = new Career({
+    name: 'Vigilante',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'none',
+    agility: 1, endurance: 1, intuition: 1, reputation: 1,
+    available_skills: ['[subterfuge]', '[combat]', 'intimidation'],
+    description: "Something about the world calls to you, asking—no, demanding—that you rise above the law to accomplish some " +
          "task. You might battle crime, fight against a corrupt corporation, or work to clean the world of dirty " +
          "politicians, but you are often at odds with the law, using measures they're unable to utilize to get the " +
          "job done.",
-    available_exploits=[{'Name': 'Inside contacts',
+    available_exploits: [{'Name': 'Inside contacts',
                          'Desc': "You know people who know people who know people. You might have a reliable ear in " +
                                  "the underworld, a police detective neighbor that talks too much, or a wiretap to " +
                                  "the commissioner's phone. Regardless of your exact source, you can spend 4 hours to " +
@@ -1413,18 +1413,18 @@ var career_now_vigilante = new Career(
                                  "you receive a vehicle with one enhancement."},
                         {'Name': 'Signature weapon',
                          'Desc': "Choose one melee weapon. You gain a high quality version of that weapon, " +
-                                 "and you do +1d6 damage with it."}]);
+                                 "and you do +1d6 damage with it."}]});
 
-var career_now_warrior_monk = new Career(
-    name='Warrior-Monk',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='religion or martial arts',
-    agility=1, endurance=1, willpower=1, chi=1,
-    available_skills=['[artistic]', 'acrobatics', 'dancing', 'martial arts', 'philosophy', 'religion', 'staves'],
-    description="You became a member of a martial monastic order, and were trained in philosophy and martial arts. You " +
+var career_now_warrior_monk = new Career({
+    name: 'Warrior-Monk',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'religion or martial arts',
+    agility: 1, endurance: 1, willpower: 1, chi: 1,
+    available_skills: ['[artistic]', 'acrobatics', 'dancing', 'martial arts', 'philosophy', 'religion', 'staves'],
+    description: "You became a member of a martial monastic order, and were trained in philosophy and martial arts. You " +
          "should also take grades in a martial arts career.",
-    available_exploits=[{'Name': 'Defensive Stance',
+    available_exploits: [{'Name': 'Defensive Stance',
                          'Desc': "You gain +4 to your MELEE DEFENSE as long as you are unarmed and not wielding a " +
                                  "shield or wearing armor. This does not stack with Drunken Fist."},
                         {'Name': 'Drunken Fist',
@@ -1448,7 +1448,7 @@ var career_now_warrior_monk = new Career(
                         {'Name': 'Weapon Synthesis',
                          'Desc': "When using any Eastern weapon, you gain one free unarmed melee attack whenever you " +
                                  "make two weapon attacks."},
-                        {'Name': 'Zen Mind', 'Desc': "You gain +4 to your MENTAL DEFENSE."}]);
+                        {'Name': 'Zen Mind', 'Desc': "You gain +4 to your MENTAL DEFENSE."}]});
 
 var career_now_list = [career_now_actor, career_now_archaeologist, career_now_assassin, career_now_astronaut,
                    career_now_athlete, career_now_bartender, career_now_boot_camp, career_now_bouncer,

@@ -1,14 +1,14 @@
-var career_ma_aikido = new Career(
-    name='Aikido',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, intuition=1, willpower=1, chi=1,
-    available_skills=['acrobatics', 'escape artist', 'reactions', 'martial arts'],
-    description="Blending the force of your attacker with your own movements, you have mastered the art of redirecting a " +
+var career_ma_aikido = new Career({
+    name: 'Aikido',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, intuition: 1, willpower: 1, chi: 1,
+    available_skills: ['acrobatics', 'escape artist', 'reactions', 'martial arts'],
+    description: "Blending the force of your attacker with your own movements, you have mastered the art of redirecting a " +
          "foe’s movement to your advantage, placing them in disadvantageous positions with joint locks and a chilling " +
          "understanding of functional anatomy.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three soft exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Improved throw",
@@ -20,18 +20,18 @@ var career_ma_aikido = new Career(
                          'Desc': "Spend 2 actions to make a precise strike that both deals damage and immobilizes the " +
                                  "target until they shake the condition off."},
                         {'Name': "Aikido weapons",
-                         'Desc': "You may use your martial arts skill with swords, knives, and staves."}]);
+                         'Desc': "You may use your martial arts skill with swords, knives, and staves."}]});
 
-var career_ma_brazilian_jujutsu = new Career(
-    name='Brazilian Jujutsu',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    strength=1, agility=1, endurance=1, reputation=1,
-    available_skills=['acrobatics', 'meditation', 'martial arts'],
-    description="Taking your opponents down with expert technique and leverage, you take them to the ground, where you are a " +
+var career_ma_brazilian_jujutsu = new Career({
+    name: 'Brazilian Jujutsu',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    strength: 1, agility: 1, endurance: 1, reputation: 1,
+    available_skills: ['acrobatics', 'meditation', 'martial arts'],
+    description: "Taking your opponents down with expert technique and leverage, you take them to the ground, where you are a " +
          "master combatant.",
-    available_exploits=[
+    available_exploits: [
         {'Name': "Ground fighter", 'Desc': "Opponents do not gain a bonus to hit you in melee when you are prone."},
         {'Name': "Momentous knockdown",
          'Desc': "(requires Knockdown)  You do not pay a dice cost to perform the Knockdown exploit; however both you " +
@@ -42,18 +42,18 @@ var career_ma_brazilian_jujutsu = new Career(
                  "successful, your target is reduced to zero HEALTH but does not fall unconscious."},
         {'Name': "Escape",
          'Desc': "When pinned, locked, or held by another combatant, you may use a reaction to make an immediate " +
-                 "attempt to escape the pin."}]);
+                 "attempt to escape the pin."}]});
 
-var career_ma_capoeira = new Career(
-    name='Capoeira',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='dancing, martial arts',
-    agility=1, intuition=1, luck=1, chi=1,
-    available_skills=['acrobatics', 'dancing', 'jumping', 'reactions', 'martial arts'],
-    description="Training with a capoeira master, you’ve become more adept at the acrobatic martial art, able to tumble, " +
+var career_ma_capoeira = new Career({
+    name: 'Capoeira',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'dancing, martial arts',
+    agility: 1, intuition: 1, luck: 1, chi: 1,
+    available_skills: ['acrobatics', 'dancing', 'jumping', 'reactions', 'martial arts'],
+    description: "Training with a capoeira master, you’ve become more adept at the acrobatic martial art, able to tumble, " +
          "cartwheel, and flip around your enemies with ease.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Ginga", 'Desc': "You gain +2 to your DEFENSE attribute against melee attacks."},
@@ -71,19 +71,19 @@ var career_ma_capoeira = new Career(
                          'Desc': "Capoeira works better to music. When music is playing publicly, you can make an " +
                                  "additional unarmed attack per round as a free action. You cannot attach any exploit " +
                                  "to this attack."},
-                        {'Name': "Capoeira weapons", 'Desc': "You may use your martial arts skill with knives."}]);
+                        {'Name': "Capoeira weapons", 'Desc': "You may use your martial arts skill with knives."}]});
 
-var career_ma_gun_fu = new Career(
-    name='Gun Fu',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='pistols',
-    agility=1, intuition=1, luck=1, chi=1,
-    available_skills=['pistols', 'reactions', 'running', 'tactics', 'martial arts', 'jumping'],
-    description="You have mastered the synthesis of modern weaponry with ancient martial arts, able to maximize the power " +
+var career_ma_gun_fu = new Career({
+    name: 'Gun Fu',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'pistols',
+    agility: 1, intuition: 1, luck: 1, chi: 1,
+    available_skills: ['pistols', 'reactions', 'running', 'tactics', 'martial arts', 'jumping'],
+    description: "You have mastered the synthesis of modern weaponry with ancient martial arts, able to maximize the power " +
          "and accuracy of firearms by integrating the forms of various styles into one terrifying dance of explosive " +
          "death. ",
-    available_exploits=[{'Name': "Rapid reload",
+    available_exploits: [{'Name': "Rapid reload",
                          'Desc': "You may fire firearms with the single trait twice per round instead of once."},
                         {'Name': "Sliding fusillade",
                          'Desc': "For two actions, you can take your full movement in a straight line and make up to " +
@@ -105,19 +105,19 @@ var career_ma_gun_fu = new Career(
                          'Desc': "You are considered to have the ambidextrous trait while holding two sidearms, " +
                                  "even if you do not have that trait."},
                         {'Name': "When doves fly",
-                         'Desc': "Once per day you can cause a number of white doves to fly across the background."}]);
+                         'Desc': "Once per day you can cause a number of white doves to fly across the background."}]});
 
-var career_ma_gun_kata = new Career(
-    name='Gun Kata',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='pistols',
-    agility=1, intuition=1, willpower=1, chi=1,
-    available_skills=['pistols', 'martial arts', 'acrobatics', 'reactions', 'dancing'],
-    description="You have learned the unusual but beautiful art of melee gun combat, where the gun is considered a total " +
+var career_ma_gun_kata = new Career({
+    name: 'Gun Kata',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'pistols',
+    agility: 1, intuition: 1, willpower: 1, chi: 1,
+    available_skills: ['pistols', 'martial arts', 'acrobatics', 'reactions', 'dancing'],
+    description: "You have learned the unusual but beautiful art of melee gun combat, where the gun is considered a total " +
          "weapon and katas are performed which statistically inflict the maximum damage on the largest number of " +
          "targets while avoiding statistically likely trajectories of return fire.",
-    available_exploits=[{'Name': "Gunpunch",
+    available_exploits: [{'Name': "Gunpunch",
                          'Desc': "Once per round, while holding a sidearm, your martial arts attack does the damage " +
                                  "of your gun."},
                         {'Name': "Multipunch",
@@ -134,18 +134,18 @@ var career_ma_gun_kata = new Career(
                          'Desc': "Your skill in pistols can be used as part of your DEFENSE pool against firearms."},
                         {'Name': "Statistical pose",
                          'Desc': "You are able to adopt positions statistically most unlikely to be struck by " +
-                                 "gunfire. You gain +4 RANGED DEFENSE against firearms."}]);
+                                 "gunfire. You gain +4 RANGED DEFENSE against firearms."}]});
 
-var career_ma_jujutsu = new Career(
-    name='Jujutsu',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    strength=1, agility=1, endurance=1, chi=1,
-    available_skills=['meditation', 'melee weapon', 'stealth', 'martial arts'],
-    description="Trained in fighting an armed opponent with your feet and fists, you are a fluid warrior in combat, " +
+var career_ma_jujutsu = new Career({
+    name: 'Jujutsu',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    strength: 1, agility: 1, endurance: 1, chi: 1,
+    available_skills: ['meditation', 'melee weapon', 'stealth', 'martial arts'],
+    description: "Trained in fighting an armed opponent with your feet and fists, you are a fluid warrior in combat, " +
          "adapting to best use your enemy’s movements against them.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any two hard or soft exploits from the Universal Exploits for Martial " +
                                  "Artists sidebar."},
                         {'Name': "Breaking fall", 'Desc': "You take half damage from falls, throws, and trips."},
@@ -159,18 +159,18 @@ var career_ma_jujutsu = new Career(
                          'Desc': "(requires Trip) Once per turn, after a melee attack misses you, you automatically " +
                                  "make a reactive attack which, if successful, trips your attacker."},
                         {'Name': "Jujutsu weapons",
-                         'Desc': "You may use your martial arts skill with swords, spears, polearms, and staves."}]);
+                         'Desc': "You may use your martial arts skill with swords, spears, polearms, and staves."}]});
 
-var career_ma_karate = new Career(
-    name='Karate',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    strength=1, agility=1, willpower=1, chi=1,
-    available_skills=['meditation', 'martial arts'],
-    description="You learned a striking art which focuses on punches, kicks, and knee and able strikes, as well as open hand " +
+var career_ma_karate = new Career({
+    name: 'Karate',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    strength: 1, agility: 1, willpower: 1, chi: 1,
+    available_skills: ['meditation', 'martial arts'],
+    description: "You learned a striking art which focuses on punches, kicks, and knee and able strikes, as well as open hand " +
          "strikes.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Wax On, Wax Off",
@@ -188,18 +188,18 @@ var career_ma_karate = new Career(
                                  "not add additional exploits to these two attacks."},
                         {'Name': "Conditioning", 'Desc': "Your unarmed attacks do +1d6 damage."},
                         {'Name': "Karate weapons",
-                         'Desc': "You may use your martial arts skill with swords, spears, polearms, and staves."}]);
+                         'Desc': "You may use your martial arts skill with swords, spears, polearms, and staves."}]});
 
-var career_ma_krav_maga = new Career(
-    name='Krav Maga',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    strength=1, agility=1, endurance=1, chi=1,
-    available_skills=['perception', 'reactions', 'throwing', 'martial arts'],
-    description="Studying one of the newest and most practical martial arts has taught you to end a fight as soon as it " +
+var career_ma_krav_maga = new Career({
+    name: 'Krav Maga',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    strength: 1, agility: 1, endurance: 1, chi: 1,
+    available_skills: ['perception', 'reactions', 'throwing', 'martial arts'],
+    description: "Studying one of the newest and most practical martial arts has taught you to end a fight as soon as it " +
          "starts (if it has to) and to make the most out of your attacks with the least effort.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Know the arena",
@@ -216,20 +216,20 @@ var career_ma_krav_maga = new Career(
                         {'Name': "Impromptu weapon",
                          'Desc': "No matter the size of an impromptu weapon (so long as it is tiny or larger), " +
                                  "you can deal slashing, blunt, piercing, or blunt damage with it by making a thrown " +
-                                 "ranged attack. This does not count as an improvised weapon."}]);
+                                 "ranged attack. This does not count as an improvised weapon."}]});
 
-var career_ma_kung_fu = new Career(
-    name='Kung Fu',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, endurance=1, willpower=1, chi=1,
-    available_skills=['acrobatics', 'meditation', 'perception', 'reactions', 'staves', 'martial arts'],
-    description="Through intense and dedicated training, you've begun to unlock the secrets of the ancient martial arts of " +
+var career_ma_kung_fu = new Career({
+    name: 'Kung Fu',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, endurance: 1, willpower: 1, chi: 1,
+    available_skills: ['acrobatics', 'meditation', 'perception', 'reactions', 'staves', 'martial arts'],
+    description: "Through intense and dedicated training, you've begun to unlock the secrets of the ancient martial arts of " +
          "China. You can sense and feel the essence of your being and are able to manipulate not only that life " +
          "energy, but also your body, to its maximum effect. With these skills at your disposal, you are a fearsome " +
          "opponent in combat and able to perform feats of finesse and strength that dazzle your peers.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any two hard or soft exploits from the Universal Exploits for Martial " +
                                  "Artists sidebar."},
                         {'Name': "One-inch punch",
@@ -248,19 +248,19 @@ var career_ma_kung_fu = new Career(
                                  "to your CHI for one minute. This resistance stacks with any others you or your " +
                                  "equipment possess."},
                         {'Name': "Kung Fu weapons",
-                         'Desc': "You may use your martial arts skill with any Eastern melee weapon."}]);
+                         'Desc': "You may use your martial arts skill with any Eastern melee weapon."}]});
 
-var career_ma_muay_thai = new Career(
-    name='Muay Thai',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    strength=1, endurance=1, willpower=1, chi=1,
-    available_skills=['acrobatics', 'climbing', 'jumping', 'reactions', 'martial arts'],
-    description="Dedicated conditioning is a part of your daily routine, and you cannot count the number of times you’ve " +
+var career_ma_muay_thai = new Career({
+    name: 'Muay Thai',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    strength: 1, endurance: 1, willpower: 1, chi: 1,
+    available_skills: ['acrobatics', 'climbing', 'jumping', 'reactions', 'martial arts'],
+    description: "Dedicated conditioning is a part of your daily routine, and you cannot count the number of times you’ve " +
          "struck out against a tree trunk with your leg, but it doesn’t matter: your body truly is a living weapon. " +
          "You have mastered the art of Thai boxing.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Mae maei", 'Desc': "You gain +2 natural SOAK."},
@@ -273,18 +273,18 @@ var career_ma_muay_thai = new Career(
                         {'Name': "Ti khao and sok",
                          'Desc': "You leap quickly (up to your jump distance) and drive the momentum of your jump " +
                                  "into a knee or elbow strike that ignores a target’s SOAK; you take an amount of " +
-                                 "damage equal to half of what you deliver to the target."}]);
+                                 "damage equal to half of what you deliver to the target."}]});
 
-var career_ma_northern_shaolin = new Career(
-    name='Northern Shaolin',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, endurance=1, willpower=1, chi=1,
-    available_skills=['hardy', 'melee weapon', 'nature', 'running', 'martial arts'],
-    description="Focusing on the use of your legs and staying quick on your feet, you practice styles like Baguazhang, " +
+var career_ma_northern_shaolin = new Career({
+    name: 'Northern Shaolin',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, endurance: 1, willpower: 1, chi: 1,
+    available_skills: ['hardy', 'melee weapon', 'nature', 'running', 'martial arts'],
+    description: "Focusing on the use of your legs and staying quick on your feet, you practice styles like Baguazhang, " +
          "Eagle Claw, Northern Praying Mantis, or Chángquán.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three soft exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Fast feet", 'Desc': "You gain a +2 SPEED bonus."},
@@ -294,19 +294,19 @@ var career_ma_northern_shaolin = new Career(
                                  "maneuver standing."},
                         {'Name': "CHI healing",
                          'Desc': "Once per day you may roll your CHI dice pool and recover that much HEALTH. This " +
-                                 "takes one minute."}]);
+                                 "takes one minute."}]});
 
-var career_ma_pankration = new Career(
-    name='Pankration',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts or boxing',
-    strength=1, endurance=1, willpower=1, luck=1,
-    available_skills=['acrobatics', 'climbing', 'reactions', 'running', 'boxing'],
-    description="The truest expression of a person’s fighting ability, some would say, is the ancient art of wrestling—you " +
+var career_ma_pankration = new Career({
+    name: 'Pankration',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts or boxing',
+    strength: 1, endurance: 1, willpower: 1, luck: 1,
+    available_skills: ['acrobatics', 'climbing', 'reactions', 'running', 'boxing'],
+    description: "The truest expression of a person’s fighting ability, some would say, is the ancient art of wrestling—you " +
          "count yourself among their number. After hundreds of matches, you know exactly the best way to grapple and " +
          "pin an opponent in any situation.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three soft exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Olympic stance",
@@ -319,18 +319,18 @@ var career_ma_pankration = new Career(
                          'Desc': "(requires Bear Hug) If you choose not to move in a round when applying a bear hug, " +
                                  "you do double damage to your target."},
                         {'Name': "Takedown",
-                         'Desc': "(requires Knockdown) You may use the Knockdown exploit with no die penalty."}]);
+                         'Desc': "(requires Knockdown) You may use the Knockdown exploit with no die penalty."}]});
 
-var career_ma_savate = new Career(
-    name='Savate',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, endurance=1, luck=1, chi=1,
-    available_skills=['acrobatics', 'climbing', 'jumping', 'running', 'martial arts'],
-    description="Training with a champion of the sport or learning the hard way on the meaner streets in Marseille or Paris, " +
+var career_ma_savate = new Career({
+    name: 'Savate',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, endurance: 1, luck: 1, chi: 1,
+    available_skills: ['acrobatics', 'climbing', 'jumping', 'running', 'martial arts'],
+    description: "Training with a champion of the sport or learning the hard way on the meaner streets in Marseille or Paris, " +
          "you’ve studied the martial art of France and can put it to great use.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Assault savate",
@@ -346,18 +346,18 @@ var career_ma_savate = new Career(
                                  "next melee attack you make."},
                         {'Name': "Long kick", 'Desc': "Once per turn you may kick a target 10' from you with a lunge."},
                         {'Name': "Heavy shoe",
-                         'Desc': "A heavy shin kick immobilizes your foe until they shake the condition off."}]);
+                         'Desc': "A heavy shin kick immobilizes your foe until they shake the condition off."}]});
 
-var career_ma_southern_shaolin = new Career(
-    name='Southern Shaolin',
-    career_time='1d6',
-    career_time_unit='years',
-    prerequisites='martial arts',
-    agility=1, endurance=1, willpower=1, chi=1,
-    available_skills=['climbing', 'hardy', 'melee weapon', 'nature', 'martial arts'],
-    description="Your body is a weapon, and your hands are deadly indeed. Using styles like Fujian White Crane, Wing Chun, " +
+var career_ma_southern_shaolin = new Career({
+    name: 'Southern Shaolin',
+    career_time: '1d6',
+    career_time_unit: 'years',
+    prerequisites: 'martial arts',
+    agility: 1, endurance: 1, willpower: 1, chi: 1,
+    available_skills: ['climbing', 'hardy', 'melee weapon', 'nature', 'martial arts'],
+    description: "Your body is a weapon, and your hands are deadly indeed. Using styles like Fujian White Crane, Wing Chun, " +
          "Southern Praying Mantis, Bak Mei and Dragon, you are a master of Nanquan—the Southern Fist.",
-    available_exploits=[{'Name': "Curriculum exploits",
+    available_exploits: [{'Name': "Curriculum exploits",
                          'Desc': "Choose any three hard exploits from the Universal Exploits for Martial Artists " +
                                  "sidebar."},
                         {'Name': "Empty hand",
@@ -371,7 +371,7 @@ var career_ma_southern_shaolin = new Career(
                         {'Name': "Flowing attacker",
                          'Desc': "For each 5’ you travel during a turn, you may make one attack. For every attack " +
                                  "after the first, you take a cumulate -1d6 to the attack roll. Once you miss, " +
-                                 "your attack streak ends. This uses all of your actions for the turn."}]);
+                                 "your attack streak ends. This uses all of your actions for the turn."}]});
 
 var career_ma_list = [career_ma_aikido, career_ma_brazilian_jujutsu, career_ma_capoeira, career_ma_gun_fu,
                   career_ma_gun_kata, career_ma_jujutsu, career_ma_karate, career_ma_krav_maga,
