@@ -18,16 +18,16 @@ class Character
             chi: (options.chi === undefined) ? 0 : options.chi,
             psi: (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.race = (options.race === undefined) ? null : options.race;
-        this.homeworld = (options.homeworld === undefined) ? null : options.homeworld;
+        this.race = (options.race === undefined) ? deep_copy(race_new_human) : options.race;
+        this.homeworld = (options.homeworld === undefined) ? deep_copy(homeworld_none) : options.homeworld;
         this.hook = (options.hook === undefined) ? 'unset' : options.hook;
         this.career_track = (options.career_track === undefined) ? [] : options.career_track;
         this.notes = (options.notes === undefined) ? '' : options.notes;
-        this.trait = (options.trait === undefined) ? null : options.traits;
-        this.misc_exploits = (options.misc_exploits === undefined) ? null : options.misc_exploits;
+        this.trait = (options.trait === undefined) ? {name: 'unset', desc: 'unset'} : options.traits;
+        this.misc_exploits = (options.misc_exploits === undefined) ? [] : options.misc_exploits;
         this.age_descriptor = (options.age_descriptor === undefined) ? 'unset' : options.age_descriptor;
-        this.defense_skills = (options.defense_skills === undefined) ? null : options.defense_skills;
-        this.equipment = (options.equipment === undefined) ? null : options.equipment;
+        this.defense_skills = (options.defense_skills === undefined) ? {melee: '', ranged: '', mental: '', vital: ''} : options.defense_skills;
+        this.equipment = (options.equipment === undefined) ? {general: [], weapons: [], armor: []} : options.equipment;
     }
 }
 
@@ -54,8 +54,8 @@ class Race
         };
         this.size = (options.size === undefined) ? 'medium' : options.size;
         this.available_skills = (options.available_skills === undefined) ? null : options.available_skills;
+        this.skills = (options.skills === undefined) ? [] : options.skills;
         this.exploits = (options.exploits === undefined) ? null : options.exploits;
-
     }
 }
 
@@ -81,6 +81,7 @@ class Homeworld
             psi: (options.psionics === undefined) ? 0 : options.psionics
         };
         this.available_skills = (options.available_skills === undefined) ? null : options.available_skills;
+        this.skills = (options.skills === undefined) ? [] : options.skills;
     }
 }
 
@@ -192,4 +193,14 @@ function calc_total_stats(character)
     console.log(stat_total)
 
     return stat_total;
+}
+
+function calc_skill_total(character)
+{
+    skill_total = [{}]
+    for (skill in character.race.skills)
+    {
+        if (skill.name in skill_total) skill_total[skill.name] += skill.rank
+        else skill_total[skill.name] = skill.rank
+    }
 }

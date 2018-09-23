@@ -78,7 +78,7 @@
                 <table>
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" name="character_name" id="character_name" title="Your character's name"/></td>
+                        <td><input type="text" name="character_name" id="ovr_txt_character_name" title="Your character's name"/></td>
                     </tr>
                     <tr>
                         <td>Race</td>
@@ -94,7 +94,7 @@
                     </tr>
                     <tr>
                         <td>Hook</td>
-                        <td><input type="text" name="character_hook" title="Your hook is a single sentence which describes a hobby or quirk about your character, such as '... who collects antiques' or '... who cannot tell a lie'."/></td>
+                        <td><input type="text" name="character_hook" id="ovr_txt_character_hook" title="Your hook is a single sentence which describes a hobby or quirk about your character, such as '... who collects antiques' or '... who cannot tell a lie'."/></td>
                     </tr>
                 </table>
             </fieldset>
@@ -203,17 +203,17 @@
                     </tr>
                     <tr>
                         <td id="total_str">3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
-                        <td>3 (2d6)</td>
+                        <td id="total_agi">3 (2d6)</td>
+                        <td id="total_end">3 (2d6)</td>
+                        <td id="total_int">3 (2d6)</td>
+                        <td id="total_log">3 (2d6)</td>
+                        <td id="total_wil">3 (2d6)</td>
+                        <td id="total_cha">3 (2d6)</td>
+                        <td id="total_luc">3 (2d6)</td>
+                        <td id="total_rep">3 (2d6)</td>
+                        <td id="total_mag">3 (2d6)</td>
+                        <td id="total_chi">3 (2d6)</td>
+                        <td id="total_psi">3 (2d6)</td>
                     </tr>
                 </table>
             </fieldset>
@@ -430,17 +430,70 @@
         // UI //
         ////////
         var woin_character = new Character();
-        woin_character.race = deep_copy(race_new_human)
-        woin_character.homeworld = deep_copy(homeworld_arctic)
-        calc_total_stats(woin_character)
+        // woin_character.race = deep_copy(race_new_human)
+        // woin_character.homeworld = deep_copy(homeworld_arctic)
 
         function update_info() {
             // document.getElementById("character_name").innerHTML(woin_character.name);
-            $("#character_name").val(woin_character.name);
-            $("#total_str").html(woin_character.stats['str']);
+            // Overview
+            $("#ovr_txt_character_name").val(woin_character.name);
+            total_stats = calc_total_stats(woin_character);
+
+            max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
+            str_dice_pool_size = calc_dice_pool_size(total_stats['str']);
+            agi_dice_pool_size = calc_dice_pool_size(total_stats['agi']);
+            end_dice_pool_size = calc_dice_pool_size(total_stats['end']);
+            int_dice_pool_size = calc_dice_pool_size(total_stats['int']);
+            log_dice_pool_size = calc_dice_pool_size(total_stats['log']);
+            wil_dice_pool_size = calc_dice_pool_size(total_stats['wil']);
+            cha_dice_pool_size = calc_dice_pool_size(total_stats['cha']);
+            luc_dice_pool_size = calc_dice_pool_size(total_stats['luc']);
+            rep_dice_pool_size = calc_dice_pool_size(total_stats['rep']);
+            mag_dice_pool_size = calc_dice_pool_size(total_stats['mag']);
+            chi_dice_pool_size = calc_dice_pool_size(total_stats['chi']);
+            psi_dice_pool_size = calc_dice_pool_size(total_stats['psi']);
+
+            str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
+            agi_dice_pool = (agi_dice_pool_size <= max_dice_pool) ? agi_dice_pool_size : max_dice_pool;
+            end_dice_pool = (end_dice_pool_size <= max_dice_pool) ? end_dice_pool_size : max_dice_pool;
+            int_dice_pool = (int_dice_pool_size <= max_dice_pool) ? int_dice_pool_size : max_dice_pool;
+            log_dice_pool = (log_dice_pool_size <= max_dice_pool) ? log_dice_pool_size : max_dice_pool;
+            wil_dice_pool = (wil_dice_pool_size <= max_dice_pool) ? wil_dice_pool_size : max_dice_pool;
+            cha_dice_pool = (cha_dice_pool_size <= max_dice_pool) ? cha_dice_pool_size : max_dice_pool;
+            luc_dice_pool = (luc_dice_pool_size <= max_dice_pool) ? luc_dice_pool_size : max_dice_pool;
+            rep_dice_pool = (rep_dice_pool_size <= max_dice_pool) ? rep_dice_pool_size : max_dice_pool;
+            mag_dice_pool = (mag_dice_pool_size <= max_dice_pool) ? mag_dice_pool_size : max_dice_pool;
+            chi_dice_pool = (chi_dice_pool_size <= max_dice_pool) ? chi_dice_pool_size : max_dice_pool;
+            psi_dice_pool = (psi_dice_pool_size <= max_dice_pool) ? psi_dice_pool_size : max_dice_pool;
+
+            $("#total_str").html(total_stats['str'] + '(' + str_dice_pool + 'd6)');
+            $("#total_agi").html(total_stats['agi'] + '(' + agi_dice_pool + 'd6)');
+            $("#total_end").html(total_stats['end'] + '(' + end_dice_pool + 'd6)');
+            $("#total_int").html(total_stats['int'] + '(' + int_dice_pool + 'd6)');
+            $("#total_log").html(total_stats['log'] + '(' + log_dice_pool + 'd6)');
+            $("#total_wil").html(total_stats['wil'] + '(' + wil_dice_pool + 'd6)');
+            $("#total_cha").html(total_stats['cha'] + '(' + cha_dice_pool + 'd6)');
+            $("#total_luc").html(total_stats['luc'] + '(' + luc_dice_pool + 'd6)');
+            $("#total_rep").html(total_stats['rep'] + '(' + rep_dice_pool + 'd6)');
+            $("#total_mag").html(total_stats['mag'] + '(' + mag_dice_pool + 'd6)');
+            $("#total_chi").html(total_stats['chi'] + '(' + chi_dice_pool + 'd6)');
+            $("#total_psi").html(total_stats['psi'] + '(' + psi_dice_pool + 'd6)');
+
             $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race.name);
+            $("#ovr_btn_jump_to_homeworld").button('option', 'label', woin_character.homeworld.name);
+            $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
+            $("#ovr_txt_character_hook").val(woin_character.hook);
+
+            // Race tab
+            $("#rce_btn_set_race").button('option', 'label', woin_character.race.name);
+
+            // Homeworld tab
+            $("#hmw_btn_set_homeworld").button('option', 'label', woin_character.homeworld.name);
+
+            // Career tab
         };
 
+        update_info();
 
         // dialog = $("#dialog_race_select").dialog({
         //     autoOpen: false,
