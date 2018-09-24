@@ -102,20 +102,13 @@
             <!-- Skills -->
             <fieldset>
                 <legend>Skills</legend>
-                <ul>
-                    <li>Running (3)</li>
-                    <li>Pistols (1)</li>
-                </ul>
+                <ul id=ovr_lst_skills></ul>
             </fieldset>
 
             <!-- Exploits -->
             <fieldset>
                 <legend>Exploits</legend>
-                <ul>
-                    <li title="Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition.">Enduring</li>
-                    <li title="Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they stand on a planet new to them.">Explorers</li>
-                    <li title="Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above).">Varied</li>
-                </ul>
+                <ul id=ovr_lst_exploits></ul>
             </fieldset>
 
             <!-- Derived Statistics -->
@@ -430,14 +423,31 @@
         // UI //
         ////////
         var woin_character = new Character();
+        woin_character.race.skills = {'running': 3}
+        woin_character.race.skills['pistols'] = 1;
+        woin_character.homeworld.skills = {'jumping': 1};
         // woin_character.race = deep_copy(race_new_human)
         // woin_character.homeworld = deep_copy(homeworld_arctic)
 
         function update_info() {
-            // document.getElementById("character_name").innerHTML(woin_character.name);
             // Overview
             $("#ovr_txt_character_name").val(woin_character.name);
-            total_stats = calc_total_stats(woin_character);
+            total_stats = calc_stat_total(woin_character);
+            skill_total = calc_skill_total(woin_character);
+            exploit_total = calc_exploit_total(woin_character);
+            console.log(exploit_total);
+            $("#ovr_lst_skills").empty();
+            $("#ovr_lst_exploits").empty();
+
+            for (skill in skill_total)
+            {
+                $("#ovr_lst_skills").append('<li>' + skill + ' (' + skill_total[skill] + ')</li>');
+            }
+
+            for (exploit in exploit_total)
+            {
+                $("#ovr_lst_exploits").append('<li title="' + exploit_total[exploit] + '">' + exploit + '</li>')
+            }
 
             max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
             str_dice_pool_size = calc_dice_pool_size(total_stats['str']);
