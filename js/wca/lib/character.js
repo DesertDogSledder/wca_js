@@ -298,131 +298,131 @@ function calc_derived_stats(character)
         climbing += calc_dice_pool_size(skill_total['climbing'])
 
     }
-    if 'swimming' in skill_total:
-        swimming += calc_dice_pool_size(skill_total['swimming'])
-    if 'zero-g' in skill_total:
-        zero_g += calc_dice_pool_size(skill_total['zero-g'])
-    if 'high-g' in skill_total:
-        high_g += calc_dice_pool_size(skill_total['high-g'])
-    if 'low-g' in skill_total:
-        low_g += calc_dice_pool_size(skill_total['low-g'])
+    // if 'swimming' in skill_total:
+    //     swimming += calc_dice_pool_size(skill_total['swimming'])
+    // if 'zero-g' in skill_total:
+    //     zero_g += calc_dice_pool_size(skill_total['zero-g'])
+    // if 'high-g' in skill_total:
+    //     high_g += calc_dice_pool_size(skill_total['high-g'])
+    // if 'low-g' in skill_total:
+    //     low_g += calc_dice_pool_size(skill_total['low-g'])
 
-    climbing = math.ceil(climbing / 2)
-    swimming = math.ceil(swimming / 2)
-    zero_g = math.ceil(zero_g / 2)
-    high_g = math.ceil(high_g / 2)
-    low_g = math.ceil(low_g / 2)
+    // climbing = math.ceil(climbing / 2)
+    // swimming = math.ceil(swimming / 2)
+    // zero_g = math.ceil(zero_g / 2)
+    // high_g = math.ceil(high_g / 2)
+    // low_g = math.ceil(low_g / 2)
 
-    derived_stats['Speed'] = speed
-    derived_stats['Climb'] = climbing
-    derived_stats['Swim'] = swimming
-    derived_stats['Zero-G'] = zero_g
-    derived_stats['High-G'] = high_g
-    derived_stats['Low-G'] = low_g
+    // derived_stats['Speed'] = speed
+    // derived_stats['Climb'] = climbing
+    // derived_stats['Swim'] = swimming
+    // derived_stats['Zero-G'] = zero_g
+    // derived_stats['High-G'] = high_g
+    // derived_stats['Low-G'] = low_g
 
-    ########
-    # JUMP #
-    ########
-    derived_stats['Horizontal Jump Running'] = stat_total['AGI']*2
-    derived_stats['Horizontal Jump Standing'] = stat_total['AGI']
-    # Vertical jump values cannot exceed horizontal jump values
-    if stat_total['STR'] <= stat_total['AGI']:
-        vertical_jump_standing = stat_total['STR']
-        vertical_jump_running = stat_total['STR'] * 2
-    else:
-        vertical_jump_standing = stat_total['AGI']
-        vertical_jump_running = stat_total['AGI'] * 2
-    derived_stats['Vertical Jump Running'] = vertical_jump_running
-    derived_stats['Vertical Jump Standing'] =vertical_jump_standing
+    // ########
+    // # JUMP #
+    // ########
+    // derived_stats['Horizontal Jump Running'] = stat_total['AGI']*2
+    // derived_stats['Horizontal Jump Standing'] = stat_total['AGI']
+    // # Vertical jump values cannot exceed horizontal jump values
+    // if stat_total['STR'] <= stat_total['AGI']:
+    //     vertical_jump_standing = stat_total['STR']
+    //     vertical_jump_running = stat_total['STR'] * 2
+    // else:
+    //     vertical_jump_standing = stat_total['AGI']
+    //     vertical_jump_running = stat_total['AGI'] * 2
+    // derived_stats['Vertical Jump Running'] = vertical_jump_running
+    // derived_stats['Vertical Jump Standing'] =vertical_jump_standing
 
-    #########
-    # CARRY #
-    #########
-    if 'carry' in skill_total:
-        base_carry = (stat_total['STR'] + stat_total['END'] + skill_total['carry']) * 10
-    else:
-        base_carry = (stat_total['STR'] + stat_total['END']) * 10
+    // #########
+    // # CARRY #
+    // #########
+    // if 'carry' in skill_total:
+    //     base_carry = (stat_total['STR'] + stat_total['END'] + skill_total['carry']) * 10
+    // else:
+    //     base_carry = (stat_total['STR'] + stat_total['END']) * 10
 
-    if self.race['Size'] == 'large':
-        base_carry = math.ceil(base_carry * 1.5)
-    elif self.race['Size'] == 'enormous':
-        base_carry *= 2
-    elif self.race['Size'] == 'gigantic':
-        base_carry *= 4
-    elif self.race['Size'] == 'colossal':
-        base_carry *= 8
-    elif self.race['Size'] == 'titanic':
-        base_carry *= 16
+    // if self.race['Size'] == 'large':
+    //     base_carry = math.ceil(base_carry * 1.5)
+    // elif self.race['Size'] == 'enormous':
+    //     base_carry *= 2
+    // elif self.race['Size'] == 'gigantic':
+    //     base_carry *= 4
+    // elif self.race['Size'] == 'colossal':
+    //     base_carry *= 8
+    // elif self.race['Size'] == 'titanic':
+    //     base_carry *= 16
 
-    derived_stats['Carry'] = '{} (before exploits)'.format(base_carry)
+    // derived_stats['Carry'] = '{} (before exploits)'.format(base_carry)
 
-    ##############
-    # INITIATIVE #
-    ##############
-    if 'tactics' in skill_total:
-        tactics_dice_pool = calc_dice_pool_size(skill_total['tactics'])
-    else:
-        tactics_dice_pool = 0
-    if 'reactions' in skill_total:
-        reactions_dice_pool = calc_dice_pool_size(skill_total['reactions'])
-    else:
-        reactions_dice_pool = 0
+    // ##############
+    // # INITIATIVE #
+    // ##############
+    // if 'tactics' in skill_total:
+    //     tactics_dice_pool = calc_dice_pool_size(skill_total['tactics'])
+    // else:
+    //     tactics_dice_pool = 0
+    // if 'reactions' in skill_total:
+    //     reactions_dice_pool = calc_dice_pool_size(skill_total['reactions'])
+    // else:
+    //     reactions_dice_pool = 0
 
-    derived_stats['Initiative'] = int_dice_pool + max([tactics_dice_pool, reactions_dice_pool])
+    // derived_stats['Initiative'] = int_dice_pool + max([tactics_dice_pool, reactions_dice_pool])
 
-    ############
-    # DEFENSES #
-    ############
-    derived_stats['Melee Defense'] = max([str_dice_pool, agi_dice_pool])
-    derived_stats['Ranged Defense'] = agi_dice_pool
-    derived_stats['Mental Defense'] = max([cha_dice_pool, wil_dice_pool])
-    derived_stats['Vital Defense'] = end_dice_pool
+    // ############
+    // # DEFENSES #
+    // ############
+    // derived_stats['Melee Defense'] = max([str_dice_pool, agi_dice_pool])
+    // derived_stats['Ranged Defense'] = agi_dice_pool
+    // derived_stats['Mental Defense'] = max([cha_dice_pool, wil_dice_pool])
+    // derived_stats['Vital Defense'] = end_dice_pool
 
-    if self.defense_skills['Melee'] != '' and self.defense_skills['Melee'] in skill_total:
-        derived_stats['Melee Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Melee']])
-    if self.defense_skills['Ranged'] != '' and self.defense_skills['Ranged'] in skill_total:
-        derived_stats['Ranged Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Ranged']])
-    if self.defense_skills['Mental'] != '' and self.defense_skills['Mental'] in skill_total:
-        derived_stats['Mental Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Mental']])
-    if self.defense_skills['Vital'] != '' and self.defense_skills['Vital'] in skill_total:
-        derived_stats['Vital Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Vital']])
+    // if self.defense_skills['Melee'] != '' and self.defense_skills['Melee'] in skill_total:
+    //     derived_stats['Melee Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Melee']])
+    // if self.defense_skills['Ranged'] != '' and self.defense_skills['Ranged'] in skill_total:
+    //     derived_stats['Ranged Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Ranged']])
+    // if self.defense_skills['Mental'] != '' and self.defense_skills['Mental'] in skill_total:
+    //     derived_stats['Mental Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Mental']])
+    // if self.defense_skills['Vital'] != '' and self.defense_skills['Vital'] in skill_total:
+    //     derived_stats['Vital Defense'] += calc_dice_pool_size(skill_total[self.defense_skills['Vital']])
 
-    derived_stats['Melee Defense'] = math.ceil(derived_stats['Melee Defense'] * 3.5)
-    derived_stats['Ranged Defense'] = math.ceil(derived_stats['Ranged Defense'] * 3.5)
-    derived_stats['Mental Defense'] = math.ceil(derived_stats['Mental Defense'] * 3.5)
-    derived_stats['Vital Defense'] = math.ceil(derived_stats['Vital Defense'] * 3.5)
+    // derived_stats['Melee Defense'] = math.ceil(derived_stats['Melee Defense'] * 3.5)
+    // derived_stats['Ranged Defense'] = math.ceil(derived_stats['Ranged Defense'] * 3.5)
+    // derived_stats['Mental Defense'] = math.ceil(derived_stats['Mental Defense'] * 3.5)
+    // derived_stats['Vital Defense'] = math.ceil(derived_stats['Vital Defense'] * 3.5)
 
-    if self.race['Size'] == 'tiny':
-        derived_stats['Melee Defense'] += 4
-        derived_stats['Ranged Defense'] += 4
-    elif self.race['Size'] == 'small':
-        derived_stats['Melee Defense'] += 2
-        derived_stats['Ranged Defense'] += 2
-    elif self.race['Size'] == 'large':
-        derived_stats['Melee Defense'] -= 4
-        derived_stats['Ranged Defense'] -= 4
-    elif self.race['Size'] == 'enormous':
-        derived_stats['Melee Defense'] -= 8
-        derived_stats['Ranged Defense'] -= 8
-    elif self.race['Size'] == 'gigantic':
-        derived_stats['Melee Defense'] -= 16
-        derived_stats['Ranged Defense'] -= 16
-    elif self.race['Size'] == 'colossal':
-        derived_stats['Melee Defense'] -= 32
-        derived_stats['Ranged Defense'] -= 32
-    elif self.race['Size'] == 'titantic':
-        # extrapolation based on previous trends
-        derived_stats['Melee Defense'] -= 64
-        derived_stats['Ranged Defense'] -= 64
+    // if self.race['Size'] == 'tiny':
+    //     derived_stats['Melee Defense'] += 4
+    //     derived_stats['Ranged Defense'] += 4
+    // elif self.race['Size'] == 'small':
+    //     derived_stats['Melee Defense'] += 2
+    //     derived_stats['Ranged Defense'] += 2
+    // elif self.race['Size'] == 'large':
+    //     derived_stats['Melee Defense'] -= 4
+    //     derived_stats['Ranged Defense'] -= 4
+    // elif self.race['Size'] == 'enormous':
+    //     derived_stats['Melee Defense'] -= 8
+    //     derived_stats['Ranged Defense'] -= 8
+    // elif self.race['Size'] == 'gigantic':
+    //     derived_stats['Melee Defense'] -= 16
+    //     derived_stats['Ranged Defense'] -= 16
+    // elif self.race['Size'] == 'colossal':
+    //     derived_stats['Melee Defense'] -= 32
+    //     derived_stats['Ranged Defense'] -= 32
+    // elif self.race['Size'] == 'titantic':
+    //     # extrapolation based on previous trends
+    //     derived_stats['Melee Defense'] -= 64
+    //     derived_stats['Ranged Defense'] -= 64
 
-    if derived_stats['Melee Defense'] < 10:
-        derived_stats['Melee Defense'] = 10
-    if derived_stats['Ranged Defense'] < 10:
-        derived_stats['Ranged Defense'] = 10
-    if derived_stats['Mental Defense'] < 10:
-        derived_stats['Mental Defense'] = 10
-    if derived_stats['Vital Defense'] < 10:
-        derived_stats['Vital Defense'] = 10
+    // if derived_stats['Melee Defense'] < 10:
+    //     derived_stats['Melee Defense'] = 10
+    // if derived_stats['Ranged Defense'] < 10:
+    //     derived_stats['Ranged Defense'] = 10
+    // if derived_stats['Mental Defense'] < 10:
+    //     derived_stats['Mental Defense'] = 10
+    // if derived_stats['Vital Defense'] < 10:
+    //     derived_stats['Vital Defense'] = 10
 
     return derived_stats
 }
