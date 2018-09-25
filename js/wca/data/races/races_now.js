@@ -10,14 +10,14 @@ var race_now_augmented = new Race({
     endurance: 2,
     available_skills: ['hardy', 'perception', 'reactions', '[crafting]', '[trivia]', '[gaming]', '[scientific]',
                       '[technical]'],
-    exploits: [{name: 'Alteration',
-               desc: "Augmented begin play with two minor or one major cybernetic alteration."},
-              {name: 'Adaptive',
-               desc: "When incorporating new cybernetic alterations, augmented never need to make a check to see if " +
+    exploits: [{'Name': 'Alteration',
+               'Desc': "Augmented begin play with two minor or one major cybernetic alteration."},
+              {'Name': 'Adaptive',
+               'Desc': "When incorporating new cybernetic alterations, augmented never need to make a check to see if " +
                        "the upgrade takes hold. Additionally, they can incorporate an unlimited number of alterations " +
                        "beyond the normal limit of their END attribute."},
-              {name: 'Inert',
-               desc: "Augmented embrace technology over matters of spirit. They may never have a Chi score above " +
+              {'Name': 'Inert',
+               'Desc': "Augmented embrace technology over matters of spirit. They may never have a Chi score above " +
                        "zero."}]});
 
 var race_now_chosen = new Race({
@@ -32,13 +32,13 @@ var race_now_chosen = new Race({
     size: 'medium',
     chi: 3, reputation: 2, strength: 1, charisma: 1,
     available_skills: ['negotiating', 'tactics', '[crafting]', '[trivia]', '[gaming]', '[scientific]'],
-    exploits: [{name: 'Fast-Healing',
-               desc: "Chosen heal faster than most people. You may roll an extra 2d6 when determining how much you " +
+    exploits: [{'Name': 'Fast-Healing',
+               'Desc': "Chosen heal faster than most people. You may roll an extra 2d6 when determining how much you " +
                        "naturally heal each day."},
-              {name: 'Skill Focus',
-               desc: "You start play with two bonus skills of your choice at 3 ranks (2d6)."},
-              {name: 'Destiny',
-               desc: "Once, when you ordinarily die, you do not die. Instead, you remain at 0 Health until healed. " +
+              {'Name': 'Skill Focus',
+               'Desc': "You start play with two bonus skills of your choice at 3 ranks (2d6)."},
+              {'Name': 'Destiny',
+               'Desc': "Once, when you ordinarily die, you do not die. Instead, you remain at 0 Health until healed. " +
                        "When you have used your extra “life” you cannot use it again."}]});
 
 var race_now_human = new Race({
@@ -55,14 +55,14 @@ var race_now_human = new Race({
     size: 'medium',
     luck: 2,
     available_skills: ['any'],
-    exploits: [{name: 'Varied',
-               desc: "Humans boast more variation within their species than most. Add 2 to any attribute, " +
+    exploits: [{'Name': 'Varied',
+               'Desc': "Humans boast more variation within their species than most. Add 2 to any attribute, " +
                        "and add a further +1 to one other attribute (noted above)."},
-              {name: 'Explorers',
-               desc: "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
+              {'Name': 'Explorers',
+               'Desc': "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
                        "go to a country new to them."},
-              {name: 'Enduring',
-               desc: "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
+              {'Name': 'Enduring',
+               'Desc': "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
                        "Humans get +1 to their 1d6 die roll to shake off a temporary condition."}]});
 
 var race_now_mutant = new Race({
@@ -81,8 +81,8 @@ var race_now_mutant = new Race({
     endurance: 2, willpower: 1, reputation: 1, chi: 1,
     available_skills: ['hardy', 'intimidate', 'resistance', 'survival', '[crafting]', '[trivia]', '[gaming]',
                       'disguise'],
-    exploits: [{name: 'Mutation',
-               desc: "Mutants have one or more mutations. Select one major or two minor mutations. You may select " +
+    exploits: [{'Name': 'Mutation',
+               'Desc': "Mutants have one or more mutations. Select one major or two minor mutations. You may select " +
                        "any number of cosmetic mutations, but you must choose at least one."}]});
 
 var race_now_list = [race_now_augmented, race_now_chosen, race_now_human, race_now_mutant];

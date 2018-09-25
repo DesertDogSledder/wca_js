@@ -11,18 +11,18 @@ var race_new_android = new Race({
     size: 'small, medium, or large',
     strength: 2, logic: 2, psionics: -99,
     available_skills: ['computers', 'engineering', 'running', 'linguistics', '[technical]'],
-    exploits: [{name: 'Mindless',
-               desc: "Androids are immune to any attacks which target MENTAL DEFENSE."},
-              {name: 'Deterministic',
-               desc: "An Android's PSI attribute can never rise above zero, and an Android cannot spend LUC dice to " +
+    exploits: [{'Name': 'Mindless',
+               'Desc': "Androids are immune to any attacks which target MENTAL DEFENSE."},
+              {'Name': 'Deterministic',
+               'Desc': "An Android's PSI attribute can never rise above zero, and an Android cannot spend LUC dice to " +
                        "gain bonus dice when making attributes."},
-              {name: 'Electronic vulnerability',
-               desc: "As mechanoids, Androids are vulnerable (1d6) to electricity damage, vulnerable (2d6) to ion " +
+              {'Name': 'Electronic vulnerability',
+               'Desc': "As mechanoids, Androids are vulnerable (1d6) to electricity damage, vulnerable (2d6) to ion " +
                        "damage."},
-              {name: 'Automaton',
-               desc: "Androids do not need to eat, sleep, or breathe, and weigh 150% normal."},
-              {name: 'Bonus modification exploit',
-               desc: "Choose an android modification exploit."}]});
+              {'Name': 'Automaton',
+               'Desc': "Androids do not need to eat, sleep, or breathe, and weigh 150% normal."},
+              {'Name': 'Bonus modification exploit',
+               'Desc': "Choose an android modification exploit."}]});
 
 var race_new_borian = new Race({
     name: 'Borian',
@@ -35,19 +35,19 @@ var race_new_borian = new Race({
     size: 'small',
     endurance: 1, intuition: 1, charisma: 1, reputation: 1,
     available_skills: ['carousing', 'hardy', '[crafting]', 'engineering', 'appraisal'],
-    exploits: [{name: 'Darksight',
-               desc: "Borians can see in the dark to a distance of 10' per point of INT."},
-              {name: 'Iron constitution',
-               desc: "Borians are not affected by poisons, including alcohol. They are also immune to radiation " +
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Borians can see in the dark to a distance of 10' per point of INT."},
+              {'Name': 'Iron constitution',
+               'Desc': "Borians are not affected by poisons, including alcohol. They are also immune to radiation " +
                        "damage and radiation sickness."},
-              {name: 'Tinkerer',
-               desc: "Borians may designate one item of equipment which they own. That item permanently gains one " +
+              {'Name': 'Tinkerer',
+               'Desc': "Borians may designate one item of equipment which they own. That item permanently gains one " +
                        "bonus quality level. If the item is lost or destroyed, the Borian may designate a new item " +
                        "after 24 hours."},
-              {name: 'Long-lived',
-               desc: "When creating a Borian character, multiply their career lengths by 3."},
-              {name: 'Personable',
-               desc: "Borians are noted for their cheerful demeanour and likability. When taking a new career, " +
+              {'Name': 'Long-lived',
+               'Desc': "When creating a Borian character, multiply their career lengths by 3."},
+              {'Name': 'Personable',
+               'Desc': "Borians are noted for their cheerful demeanour and likability. When taking a new career, " +
                        "a Borian may optionally exchange one of the listed four attribute increases for CHA, " +
                        "as long as it doesn’t result in a duplicate attribute advancement."}]});
 
@@ -62,18 +62,18 @@ var race_new_canid = new Race({
     size: 'medium',
     agility: 1, intuition: 2, endurance: 1, charisma: 1,
     available_skills: ['perception', 'scent', 'insight', 'tracking', 'running', '[social]'],
-    exploits: [{name: 'Pack-bonding',
-               desc: "A Canid can designate one person per point of CHA as a member of its “pack”. It can, at-will, " +
+    exploits: [{'Name': 'Pack-bonding',
+               'Desc': "A Canid can designate one person per point of CHA as a member of its “pack”. It can, at-will, " +
                        "donate its LUC dice to its pack members, which must be used immediately."},
-              {name: 'Fur coat',
-               desc: "The Canid’s fur coat keeps it warm in cold climes. It gains natural SOAK 5 (cold)."},
-              {name: 'Chasers',
-               desc: "A heritage of chasing gives the Canid +1 to its SPEED score."},
-              {name: 'Scent',
-               desc: "Canids have incredible senses of smell. They gain 3 ranks (2d6) in scent, which works like " +
+              {'Name': 'Fur coat',
+               'Desc': "The Canid’s fur coat keeps it warm in cold climes. It gains natural SOAK 5 (cold)."},
+              {'Name': 'Chasers',
+               'Desc': "A heritage of chasing gives the Canid +1 to its SPEED score."},
+              {'Name': 'Scent',
+               'Desc': "Canids have incredible senses of smell. They gain 3 ranks (2d6) in scent, which works like " +
                        "perception but only where smell is involved."},
-              {name: 'Alcohol weakness',
-               desc: "Canids treat alcohol as a poison. Even a small amount renders them lubricated, and larger " +
+              {'Name': 'Alcohol weakness',
+               'Desc': "Canids treat alcohol as a poison. Even a small amount renders them lubricated, and larger " +
                        "amounts cause them 1d6 poison damage."}]});
 
 var race_new_corax = new Race({
@@ -88,16 +88,16 @@ var race_new_corax = new Race({
     size: 'small',
     agility: 2, intuition: 2, luck: 1, psionics: 1, endurance: -1,
     available_skills: ['acrobatics', 'perception', 'stealth', 'knives', 'bluffing', 'disguise'],
-    exploits: [{name: 'Hollow-boned',
-               desc: "A Corax’s bones are hollow, making it vulnerable (1d6) to blunt damage. They weigh half the " +
+    exploits: [{'Name': 'Hollow-boned',
+               'Desc': "A Corax’s bones are hollow, making it vulnerable (1d6) to blunt damage. They weigh half the " +
                        "normal weight of a creature of their size."},
-              {name: 'Wings',
-               desc: "The Corax’s small wings grant it +10’ JUMP distances (both horizontal and vertical) and " +
+              {'Name': 'Wings',
+               'Desc': "The Corax’s small wings grant it +10’ JUMP distances (both horizontal and vertical) and " +
                        "allows it to take no damage from falling as long as the fall is greater than 10’."},
-              {name: 'Beak',
-               desc: "The Corax’s powerful beak increases natural damage by +1d6 and changes it to piercing damage."},
-              {name: 'Mimicry',
-               desc: "Corax are able to mimic any voice nearly perfectly."}]});
+              {'Name': 'Beak',
+               'Desc': "The Corax’s powerful beak increases natural damage by +1d6 and changes it to piercing damage."},
+              {'Name': 'Mimicry',
+               'Desc': "Corax are able to mimic any voice nearly perfectly."}]});
 
 var race_new_felan = new Race({
     name: 'Felan',
@@ -111,16 +111,16 @@ var race_new_felan = new Race({
     agility: 2, intuition: 1, charisma: 1, luck: 1,
     available_skills: ['acrobatics', 'climbing', 'jumping', '[unarmed fighting]', 'reactions',
                       'appraisal', 'bluffing', 'stealth', 'negotiating'],
-    exploits: [{name: 'Fast',
-               desc: "Felans are fast and nimble, adding 2 to their SPEED."},
-              {name: 'Jumper',
-               desc: "Felans are adept at jumping, adding 5' to both horizontal and vertical jump distances."},
-              {name: 'Land on your feet',
-               desc: "When falling, a Felan reduces the effective distance by 10'."},
-              {name: 'Claws',
-               desc: "Accurately slashing with their sharp claws, a Felan's unarmed damage is 2d6 slashing damage."},
-              {name: 'Agile',
-               desc: "Felans are noted for their dexterity. When taking a new career, a Felan may optionally " +
+    exploits: [{'Name': 'Fast',
+               'Desc': "Felans are fast and nimble, adding 2 to their SPEED."},
+              {'Name': 'Jumper',
+               'Desc': "Felans are adept at jumping, adding 5' to both horizontal and vertical jump distances."},
+              {'Name': 'Land on your feet',
+               'Desc': "When falling, a Felan reduces the effective distance by 10'."},
+              {'Name': 'Claws',
+               'Desc': "Accurately slashing with their sharp claws, a Felan's unarmed damage is 2d6 slashing damage."},
+              {'Name': 'Agile',
+               'Desc': "Felans are noted for their dexterity. When taking a new career, a Felan may optionally " +
                        "exchange one of the listed four attribute increases for AGI, as long as it doesn’t result in " +
                        "a duplicate attribute advancement."}]});
 
@@ -133,28 +133,28 @@ var race_new_houseki = new Race({
     size: 'varies',
     strength: 2, logic: 1, agility: -1, willpower: 1, psionics: 1,
     available_skills: ['[technical]', 'brawling', 'zero-g', 'carousing', 'mining', 'hardy'],
-    exploits: [{name: 'Crystalline',
-               desc: "As crystalline creatures, Houseki can be tough to damage. They gain a natural 5 SOAK, " +
+    exploits: [{'Name': 'Crystalline',
+               'Desc': "As crystalline creatures, Houseki can be tough to damage. They gain a natural 5 SOAK, " +
                        "but are vulnerable (1d6) to sonic damage and take double damage from falling, due to their " +
                        "more brittle nature. Houseki are immune to the Bleeding condition."},
-              {name: 'Always growing',
-               desc: "A Houseki’s size category depends on its age category. Young Houseki are small, adult Houseki " +
+              {'Name': 'Always growing',
+               'Desc': "A Houseki’s size category depends on its age category. Young Houseki are small, adult Houseki " +
                        "are medium, and old Houseki are large. In theory, Houseki can continue to grow forever, " +
                        "barring an accident."},
-              {name: 'Crystal healing',
-               desc: "A Houseki’s crystalline body repairs itself at a rapid rate. Houseki gain 1 HEALTH every hour " +
+              {'Name': 'Crystal healing',
+               'Desc': "A Houseki’s crystalline body repairs itself at a rapid rate. Houseki gain 1 HEALTH every hour " +
                        "(up to their maximum HEALTH). This repair can be visibly seen as new crystals form and grow " +
                        "on the Houseki’s body."},
-              {name: 'Jagged crystal',
-               desc: "The jagged protrusions all over a Houseki’s body mean that their natural damage type is " +
+              {'Name': 'Jagged crystal',
+               'Desc': "The jagged protrusions all over a Houseki’s body mean that their natural damage type is " +
                        "piercing."},
-              {name: 'Slow & careful',
-               desc: "Houseki are naturally slow; they suffer -1d6 INITIATIVE (to a minimum of 1d6), and -1 SPEED."},
-              {name: 'Non-breather',
-               desc: "Houseki can exist comfortably in a vacuum. They do not need to breathe, and their crystalline " +
+              {'Name': 'Slow & careful',
+               'Desc': "Houseki are naturally slow; they suffer -1d6 INITIATIVE (to a minimum of 1d6), and -1 SPEED."},
+              {'Name': 'Non-breather',
+               'Desc': "Houseki can exist comfortably in a vacuum. They do not need to breathe, and their crystalline " +
                        "structure means that pressure differences do not cause them damage."},
-              {name: 'Implacable',
-               desc: "Houseki are noted for their implacability. When taking a new career, a Houseki may optionally " +
+              {'Name': 'Implacable',
+               'Desc': "Houseki are noted for their implacability. When taking a new career, a Houseki may optionally " +
                        "exchange one of the listed four attribute increases for WIL, as long as it doesn’t result in " +
                        "a duplicate attribute advancement."}]});
 
@@ -172,14 +172,14 @@ var race_new_human = new Race({
     size: 'medium',
     luck: 2,
     available_skills: ['any'],
-    exploits: [{name: 'Varied',
-               desc: "Humans boast more variation within their species than most. Add 2 to any attribute, " +
+    exploits: [{'Name': 'Varied',
+               'Desc': "Humans boast more variation within their species than most. Add 2 to any attribute, " +
                        "and add a further +1 to one other attribute (noted above)."},
-              {name: 'Explorers',
-               desc: "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
+              {'Name': 'Explorers',
+               'Desc': "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
                        "stand on a planet new to them."},
-              {name: 'Enduring',
-               desc: "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
+              {'Name': 'Enduring',
+               'Desc': "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
                        "Humans get +1 to their 1d6 die roll to shake off a temporary condition."}]});
 
 var race_new_human_belter = new Race({
@@ -191,17 +191,17 @@ var race_new_human_belter = new Race({
     agility: 2, intuition: 2, luck: 1,
     available_skills: ['acrobatics', 'low-g', 'zero-g', 'jumping', 'astronomy', 'carousing', 'appraisal', 'mining',
                       'engineering', 'zero-g sports', 'gambling'],
-    exploits: [{name: 'Frail form',
-               desc: "Belters are tall and spindly. Their STRENGTH attributes can never exceed 6."},
-              {name: 'Flexible',
-               desc: "Belters can contort themselves into unusual positions and fit into the smallest spaces. When " +
+    exploits: [{'Name': 'Frail form',
+               'Desc': "Belters are tall and spindly. Their STRENGTH attributes can never exceed 6."},
+              {'Name': 'Flexible',
+               'Desc': "Belters can contort themselves into unusual positions and fit into the smallest spaces. When " +
                        "restrained by somebody not trained in Belter restraint techniques, they can escape in one " +
                        "minute. If the captor is aware of this they can make an opposed LOG v AGI check to nullify " +
                        "this ability."},
-              {name: 'Hard-to-hit',
-               desc: "Belters often have to dodge flying debris and rocks. They gain +2 RANGED DEFENSE."},
-              {name: 'Hold breath',
-               desc: "A Belter can hold their breath for 10 minutes before having to form any kind of suffocation " +
+              {'Name': 'Hard-to-hit',
+               'Desc': "Belters often have to dodge flying debris and rocks. They gain +2 RANGED DEFENSE."},
+              {'Name': 'Hold breath',
+               'Desc': "A Belter can hold their breath for 10 minutes before having to form any kind of suffocation " +
                        "dice pool. This enables them to move in vacuums and ignore noxious fumes."}]});
 
 var race_new_human_clone = new Race({
@@ -213,14 +213,14 @@ var race_new_human_clone = new Race({
     size: 'medium',
     strength: 1, endurance: 1, agility: 1, intuition: 1, logic: 1, willpower: 1,
     available_skills: ['[developmental]', '[physical]'],
-    exploits: [{name: 'Ingrained skill package',
-               desc: "Clones come into being with existing skills and abilities. Choose one category from the " +
+    exploits: [{'Name': 'Ingrained skill package',
+               'Desc': "Clones come into being with existing skills and abilities. Choose one category from the " +
                        "following: [combat], [physical], [academic]. The character gains four skills at one rank from " +
                        "your chosen category. This does not increase a skill to higher than one rank."},
-              {name: 'Slow aging',
-               desc: "Clones age at half the speed of regular humans."},
-              {name: 'Fast healing',
-               desc: "Clones heal an extra 1d6 HEALTH each day."}]});
+              {'Name': 'Slow aging',
+               'Desc': "Clones age at half the speed of regular humans."},
+              {'Name': 'Fast healing',
+               'Desc': "Clones heal an extra 1d6 HEALTH each day."}]});
 
 var race_new_human_jovian = new Race({
     name: 'Human Jovian',
@@ -232,20 +232,20 @@ var race_new_human_jovian = new Race({
     size: 'medium',
     strength: 1, endurance: 2, willpower: 1,
     available_skills: ['hardy', 'carrying', 'mining', 'high-g', '[technical]'],
-    exploits: [{name: 'Sturdy frame',
-               desc: "Jovians are short and powerful. They gain +2d6 HEALTH and natural SOAK 3."},
-              {name: 'Crushing environments',
-               desc: "Jovians gain high-g as a natural movement rates, gaining that speed equal to their regular " +
+    exploits: [{'Name': 'Sturdy frame',
+               'Desc': "Jovians are short and powerful. They gain +2d6 HEALTH and natural SOAK 3."},
+              {'Name': 'Crushing environments',
+               'Desc': "Jovians gain high-g as a natural movement rates, gaining that speed equal to their regular " +
                        "SPEED."},
-              {name: 'Set in their ways',
-               desc: "Jovians are serious, almost dour, and hard to change. Something about high gravity results in " +
+              {'Name': 'Set in their ways',
+               'Desc': "Jovians are serious, almost dour, and hard to change. Something about high gravity results in " +
                        "inflexibility of mind in humans, and Jovians display this in abundance. Jovians gain +2 " +
                        "MENTAL DEFENSE."},
-              {name: 'Hard to move',
-               desc: "When a Jovian would normally suffer forced movement (from a push, knockback, or similar " +
+              {'Name': 'Hard to move',
+               'Desc': "When a Jovian would normally suffer forced movement (from a push, knockback, or similar " +
                        "attack), they can spend a LUC die to remain in place."},
-              {name: 'Inexhaustible',
-               desc: "Jovians are immune to the Fatigued condition."}]});
+              {'Name': 'Inexhaustible',
+               'Desc': "Jovians are immune to the Fatigued condition."}]});
 
 var race_new_human_warped = new Race({
     name: 'Human Warped',
@@ -259,13 +259,13 @@ var race_new_human_warped = new Race({
     size: 'medium',
     intuition: 2, psionics: 4, charisma: -1,
     available_skills: ['[psionic]', 'perception', 'insight', 'foresight', 'astrogation'],
-    exploits: [{name: 'Crazed minds',
-               desc: "The Warped really are a bit different. They think differently, and act strangely. They gain " +
+    exploits: [{'Name': 'Crazed minds',
+               'Desc': "The Warped really are a bit different. They think differently, and act strangely. They gain " +
                        "+2 MENTAL DEFENSE."},
-              {name: 'Warped psionics',
-               desc: "Warped begin play with two clairsentience or clairvoyance psionic powers."},
-              {name: 'See ghosts',
-               desc: "Warped claim to be able to see ghosts. Whether these are hallucinations or some strange " +
+              {'Name': 'Warped psionics',
+               'Desc': "Warped begin play with two clairsentience or clairvoyance psionic powers."},
+              {'Name': 'See ghosts',
+               'Desc': "Warped claim to be able to see ghosts. Whether these are hallucinations or some strange " +
                        "artifact of the black holes they grown up near, these ghosts are able to impart information. " +
                        "Once per day, a Warped can spend a LUC die and ask one yes/no question which the GM will " +
                        "answer truthfully."}]});
@@ -279,20 +279,20 @@ var race_new_jamila = new Race({
     size: 'medium',
     intuition: 2, charisma: 2, psionics: 1,
     available_skills: ['[social]', '[subterfuge]', '[artistic]'],
-    exploits: [{name: 'Pheromones',
-               desc: "Jamila are surrounded by a cloud of pheromones which extends 5’ around their body. Once per " +
+    exploits: [{'Name': 'Pheromones',
+               'Desc': "Jamila are surrounded by a cloud of pheromones which extends 5’ around their body. Once per " +
                        "day, using two actions, the Jamila is able to manipulate one target within the cloud with a " +
                        "CHA-based mental attack; the target gains the Charmed condition. The target is thereafter " +
                        "immune to the effect for one day. Targets always know when a Jamila attempts to do this, " +
                        "and will almost always resent it."},
-              {name: 'Draining life force',
-               desc: "Jamila are able to make a melee attack against a target; on a successful attack, they drain " +
+              {'Name': 'Draining life force',
+               'Desc': "Jamila are able to make a melee attack against a target; on a successful attack, they drain " +
                        "their victim’s life force (HEALTH) by 1d6 psychic damage, and gain the same HEALTH back " +
                        "themselves. The experience is intensely pleasurable for the victim. A victim reduced to zero " +
                        "HEALTH in this manner does not form a death dice pool. Any given target can only be affected " +
                        "by this attack once per day. The 1d6 damage cannot be increased beyond a flat 1d6."},
-              {name: 'Diplomats',
-               desc: "Jamila are noted for their charm. When taking a new career, a Jamila may optionally exchange " +
+              {'Name': 'Diplomats',
+               'Desc': "Jamila are noted for their charm. When taking a new career, a Jamila may optionally exchange " +
                        "one of the listed four attribute increases for CHA, as long as it doesn’t result in a " +
                        "duplicate attribute advancement."}]});
 
@@ -308,19 +308,19 @@ var race_new_ogron = new Race({
     size: 'large',
     strength: 2, endurance: 2,
     available_skills: ['carrying', 'hardy', 'bravery', 'intimidate'],
-    exploits: [{name: 'Dull-witted',
-               desc: "Although slow-witted, ogron minds are hard to penetrate. They gain a +4 bonus to MENTAL " +
+    exploits: [{'Name': 'Dull-witted',
+               'Desc': "Although slow-witted, ogron minds are hard to penetrate. They gain a +4 bonus to MENTAL " +
                        "DEFENSE."},
-              {name: 'Smelly',
-               desc: "No matter what they do, Ogrons smell bad. They take a permanent -1d6 penalty to any attempts " +
+              {'Name': 'Smelly',
+               'Desc': "No matter what they do, Ogrons smell bad. They take a permanent -1d6 penalty to any attempts " +
                        "at stealth."},
-              {name: 'Brawny',
-               desc: "Ogrons increase their carrying capacity by 50%."},
-              {name: 'Stronger with age',
-               desc: "Unlike most species, Ogrons can continue to increase their STR attribute into old age. " +
+              {'Name': 'Brawny',
+               'Desc': "Ogrons increase their carrying capacity by 50%."},
+              {'Name': 'Stronger with age',
+               'Desc': "Unlike most species, Ogrons can continue to increase their STR attribute into old age. " +
                        "Ancient Ogrons are incredibly strong."},
-              {name: 'Strong',
-               desc: "Ogrons are noted for their strength. When taking a new career, an Ogron may optionally " +
+              {'Name': 'Strong',
+               'Desc': "Ogrons are noted for their strength. When taking a new career, an Ogron may optionally " +
                        "exchange one of the listed four attribute increases for STR, as long as it doesn’t result in " +
                        "a duplicate attribute advancement."}]});
 
@@ -337,21 +337,21 @@ var race_new_pajak = new Race({
     size: 'medium',
     agility: 2, endurance: -1, intuition: 2, charisma: -1,
     available_skills: ['[subterfuge]', '[scientific]', 'bureaucracy', 'hypnotism'],
-    exploits: [{name: 'Insectoid',
-               desc: "As insectoids, climbing is a natural movement rate for the Pajak; they gain a CLIMB speed " +
+    exploits: [{'Name': 'Insectoid',
+               'Desc': "As insectoids, climbing is a natural movement rate for the Pajak; they gain a CLIMB speed " +
                        "equal to their regular SPEED. Pajak can move across walls and ceilings with ease."},
-              {name: 'Compound eyes',
-               desc: "The compound eyes of a Pajak give it +1d6 to perception checks and all-around sight, " +
+              {'Name': 'Compound eyes',
+               'Desc': "The compound eyes of a Pajak give it +1d6 to perception checks and all-around sight, " +
                        "making it immune to flanks and crossfires. Additionally, Pajaks are noted for their " +
                        "perceptivness. When taking a new career, a Pajak may optionally exchange one of the listed " +
                        "four attribute increases for INT, as long as it doesn’t result in a duplicate attribute " +
                        "advancement."},
-              {name: 'Thin bones',
-               desc: "A Pajak is light (weighing half what a creature its size normally would) and thin. Its " +
+              {'Name': 'Thin bones',
+               'Desc': "A Pajak is light (weighing half what a creature its size normally would) and thin. Its " +
                        "carrying capacity is half normal. However, they are double-jointed, and any attempt to escape " +
                        "a physically restrictive situation gains a +1d6 bonus."},
-              {name: 'Bite',
-               desc: "Pajak have a bite attack which does 2d6 piercing/poison damage."}]});
+              {'Name': 'Bite',
+               'Desc': "Pajak have a bite attack which does 2d6 piercing/poison damage."}]});
 
 var race_new_roden = new Race({
     name: 'Roden',
@@ -361,17 +361,17 @@ var race_new_roden = new Race({
     size: 'small',
     agility: 2, luck: 2, charisma: 1,
     available_skills: ['[subterfuge]', 'appraisal', 'perception'],
-    exploits: [{name: 'Gnaw away',
-               desc: "A Roden can gnaw though anything, given time. Most constantly gnaw on things all day. The " +
+    exploits: [{'Name': 'Gnaw away',
+               'Desc': "A Roden can gnaw though anything, given time. Most constantly gnaw on things all day. The " +
                        "Roden’s bite does double damage to inanimate objects."},
-              {name: 'Tail',
-               desc: "A Roden’s long tail can be used for balancing. Any time the Roden would normally fall or be " +
+              {'Name': 'Tail',
+               'Desc': "A Roden’s long tail can be used for balancing. Any time the Roden would normally fall or be " +
                        "rendered prone, it can spend one LUC die to remain standing."},
-              {name: 'Light sensitivity',
-               desc: "Roden’s suffer -1d6 to all checks when in bright light. However, they do have darksight to a " +
+              {'Name': 'Light sensitivity',
+               'Desc': "Roden’s suffer -1d6 to all checks when in bright light. However, they do have darksight to a " +
                        "distance of 5’ per point of INT."},
-              {name: 'Navigators',
-               desc: "Perhaps the species spent time in mazes in the past; Rodens start play with 3 ranks (2d6) in " +
+              {'Name': 'Navigators',
+               'Desc': "Perhaps the species spent time in mazes in the past; Rodens start play with 3 ranks (2d6) in " +
                        "either navigation or astrogation and can always sense direction."}]});
 
 var race_new_simp = new Race({
@@ -387,17 +387,17 @@ var race_new_simp = new Race({
     size: 'medium',
     strength: 2, agility: 2, logic: 1, psionics: 1,
     available_skills: ['jumping', 'climbing', 'acrobatics', 'dodging', 'throwing', 'zero-g', 'engineering'],
-    exploits: [{name: 'Natural climbers',
-               desc: "Simps gain climbing as a natural movement mode, able to climb at their full speed with no " +
+    exploits: [{'Name': 'Natural climbers',
+               'Desc': "Simps gain climbing as a natural movement mode, able to climb at their full speed with no " +
                        "checks needed."},
-              {name: 'Great leap',
-               desc: " Simps gain +5’ to both horizontal and vertical jump distances, and are able to use their " +
+              {'Name': 'Great leap',
+               'Desc': " Simps gain +5’ to both horizontal and vertical jump distances, and are able to use their " +
                        "full jump distances from a standing start."},
-              {name: 'Throwers',
-               desc: "Simps are great at throwing things. They double the range increment of thrown items and do " +
+              {'Name': 'Throwers',
+               'Desc': "Simps are great at throwing things. They double the range increment of thrown items and do " +
                        "+1d6 damage with thrown weapons."},
-              {name: 'Agile',
-               desc: "Simps are noted for their dexterity. When taking a new career, a Simp may optionally exchange " +
+              {'Name': 'Agile',
+               'Desc': "Simps are noted for their dexterity. When taking a new career, a Simp may optionally exchange " +
                        "one of the listed four attribute increases for AGI, as long as it doesn’t result in a " +
                        "duplicate attribute advancement."}]});
 
@@ -409,22 +409,22 @@ var race_new_solurial = new Race({
     size: 'large',
     strength: 2, endurance: 1, agility: -1, willpower: 1,
     available_skills: ['[outdoor]', '[artistic]'],
-    exploits: [{name: 'Plant',
-               desc: "Solurials have the plant cretaure type. They are vulnerable (1d6) to fire, but have 10 " +
+    exploits: [{'Name': 'Plant',
+               'Desc': "Solurials have the plant cretaure type. They are vulnerable (1d6) to fire, but have 10 " +
                        "natural SOAK. They are immune to the Bleeing and Fatigued conditions, and ignore natural " +
                        "difficult terrain."},
-              {name: 'Lashing vines',
-               desc: "A Solurial has a melee reach of 3 squares (15'), as they lash out with long limbs and vines."},
-              {name: 'Ponderous',
-               desc: "Solurials suffer a -2 SPEED penalty (this cannot reduce SPEED to less than 3), and -1d6 to " +
+              {'Name': 'Lashing vines',
+               'Desc': "A Solurial has a melee reach of 3 squares (15'), as they lash out with long limbs and vines."},
+              {'Name': 'Ponderous',
+               'Desc': "Solurials suffer a -2 SPEED penalty (this cannot reduce SPEED to less than 3), and -1d6 to " +
                        "INITIATIVE (to a minimum of 1d6)."},
-              {name: 'Photosynthesis',
-               desc: "Solurials do not eat animal or vegebtable matter. Instead, they absorb sunlight directly. A " +
+              {'Name': 'Photosynthesis',
+               'Desc': "Solurials do not eat animal or vegebtable matter. Instead, they absorb sunlight directly. A " +
                        "Solurial's requirement for sunlight is simialr to a human's requirement for food - it can go " +
                        "a few days without but if left too long the Solurial will grow weak before withering to " +
                        "death. On starships, they will have special chambers or lamps."},
-              {name: 'Extended families',
-               desc: "Solurials have extended families in the hundreds or thousands, and can remember every single " +
+              {'Name': 'Extended families',
+               'Desc': "Solurials have extended families in the hundreds or thousands, and can remember every single " +
                        "name. Solurials never forget information they have learned."}]});
 
 var race_new_spartan = new Race({
@@ -440,15 +440,15 @@ var race_new_spartan = new Race({
     size: 'medium',
     strength: 1, agility: 1, endurance: 1,
     available_skills: ['[combat]', 'intimidate', 'carousing'],
-    exploits: [{name: 'Berserker',
-               desc: "Spartans can enter a berserker rage by tasting their own blood when they are below half " +
+    exploits: [{'Name': 'Berserker',
+               'Desc': "Spartans can enter a berserker rage by tasting their own blood when they are below half " +
                        "HEALTH. This grants them a +1d6 bonus to all attack rolls. The rage only ends when all foes " +
                        "are dead, or the Spartan is rendered unconscious or restored to above half HEALTH."},
-              {name: 'Redundant organs',
-               desc: "Spartans have a number of redundant organs and heal fairly rapidly. They can spend five " +
+              {'Name': 'Redundant organs',
+               'Desc': "Spartans have a number of redundant organs and heal fairly rapidly. They can spend five " +
                        "minutes to heal 2d6 HEALTH once per day."},
-              {name: 'Warlike',
-               desc: "Spartans gain one bonus [combat] skill."}]});
+              {'Name': 'Warlike',
+               'Desc': "Spartans gain one bonus [combat] skill."}]});
 
 var race_new_synthetic = new Race({
     name: 'Synthetic',
@@ -459,22 +459,22 @@ var race_new_synthetic = new Race({
     size: 'medium',
     strength: 3, logic: 2, agility: 1, psionics: -99,
     available_skills: ['computers', 'engineering', 'medicine', 'piloting', '[artistic]', '[academic]', '[scientific]'],
-    exploits: [{name: 'Mindless',
-               desc: "Synthetics are immune to any attacks which target MENTAL DEFENSE."},
-              {name: 'Deterministic',
-               desc: "A Synthetic’s PSI attribute can never rise above zero, and an android can never spend LUC " +
+    exploits: [{'Name': 'Mindless',
+               'Desc': "Synthetics are immune to any attacks which target MENTAL DEFENSE."},
+              {'Name': 'Deterministic',
+               'Desc': "A Synthetic’s PSI attribute can never rise above zero, and an android can never spend LUC " +
                        "dice."},
-              {name: 'Electronic vulnerability',
-               desc: "As mechanoids, Synthetics are vulnerable (1d6) to electricity damage, vulnerable (2d6) to ion " +
+              {'Name': 'Electronic vulnerability',
+               'Desc': "As mechanoids, Synthetics are vulnerable (1d6) to electricity damage, vulnerable (2d6) to ion " +
                        "damage."},
-              {name: 'Automaton',
-               desc: "Synthetics do not need to eat, sleep, or breathe, and are immune to the Pain and Fatigued " +
+              {'Name': 'Automaton',
+               'Desc': "Synthetics do not need to eat, sleep, or breathe, and are immune to the Pain and Fatigued " +
                        "conditions."},
-              {name: 'Skill package',
-               desc: "Synthetics are built with a purpose in mind. They begin play with three bonus skills at rank " +
+              {'Name': 'Skill package',
+               'Desc': "Synthetics are built with a purpose in mind. They begin play with three bonus skills at rank " +
                        "3 (2d6). These skills must be from the Synthetic’s race skill choices."},
-              {name: 'Factory specs',
-               desc: "Synthetics do not take an origin career; they come fully formed from the factory and enter " +
+              {'Name': 'Factory specs',
+               'Desc': "Synthetics do not take an origin career; they come fully formed from the factory and enter " +
                        "their first full career immediately."}]});
 
 var race_new_trantor = new Race({
@@ -486,13 +486,13 @@ var race_new_trantor = new Race({
     size: 'large',
     strength: 2, logic: 2, charisma: 1, agility: -1,
     available_skills: ['hardy', 'carrying', 'concentration', 'history', 'negotiation', 'insight'],
-    exploits: [{name: 'Tusks',
-               desc: "A Trantor’s tusks increase its natural damage by +1d6 and change it to piercing damage."},
-              {name: 'Trunk',
-               desc: "The Trantor’s trunk can be used to perform a third action each round, although it cannot be " +
+    exploits: [{'Name': 'Tusks',
+               'Desc': "A Trantor’s tusks increase its natural damage by +1d6 and change it to piercing damage."},
+              {'Name': 'Trunk',
+               'Desc': "The Trantor’s trunk can be used to perform a third action each round, although it cannot be " +
                        "used to attack or move."},
-              {name: 'Never forget',
-               desc: "Trantors have photographic memories and never forget anything. They gain one bonus [" +
+              {'Name': 'Never forget',
+               'Desc': "Trantors have photographic memories and never forget anything. They gain one bonus [" +
                        "scientific] or [artistic] skill. They are noted for their memories. When taking a new career, " +
                        "a Trantor may optionally exchange one of the listed four attribute increases for LOG, " +
                        "as long as it doesn’t result in a duplicate attribute advancement."}]});
@@ -511,23 +511,23 @@ var race_new_venetian = new Race({
     agility: 1, logic: 2, luck: -2, psionics: 3,
     available_skills: ['reactions', 'acrobatics', 'perception', 'concentration', 'religion',
                       '[scientific]'],
-    exploits: [{name: 'Naturally psionic',
-               desc: "A society which integrates psionics from childhood, Venetians start play with one free " +
+    exploits: [{'Name': 'Naturally psionic',
+               'Desc': "A society which integrates psionics from childhood, Venetians start play with one free " +
                        "psionic exploit."},
-              {name: 'Acute hearing',
-               desc: "Venetians have excellent hearing, and gain a +1d6 bonus to perception checks when sound is " +
+              {'Name': 'Acute hearing',
+               'Desc': "Venetians have excellent hearing, and gain a +1d6 bonus to perception checks when sound is " +
                        "relevant."},
-              {name: 'Learned',
-               desc: "Venetians start with four species skills rather than three. The bonus (fourth) skill must be " +
+              {'Name': 'Learned',
+               'Desc': "Venetians start with four species skills rather than three. The bonus (fourth) skill must be " +
                        "a [scientific] skill."},
-              {name: 'Disciplined',
-               desc: "The mental discipline of a venetian is such that they are completely immune to the Fatigued " +
+              {'Name': 'Disciplined',
+               'Desc': "The mental discipline of a venetian is such that they are completely immune to the Fatigued " +
                        "condition as long as they get 8 hours sleep per week. This is not a preferred situation, " +
                        "however."},
-              {name: 'Long-lived',
-               desc: "When creating a Venetian character, multiply their career lengths by 5."},
-              {name: 'Logical',
-               desc: "Venetians are noted for their intelligence and logic. When taking a new career, a Venetian " +
+              {'Name': 'Long-lived',
+               'Desc': "When creating a Venetian character, multiply their career lengths by 5."},
+              {'Name': 'Logical',
+               'Desc': "Venetians are noted for their intelligence and logic. When taking a new career, a Venetian " +
                        "may optionally exchange one of the listed four attribute increases for LOG, as long as it " +
                        "doesn’t result in a duplicate attribute advancement."}]});
 

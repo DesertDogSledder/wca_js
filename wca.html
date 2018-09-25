@@ -116,42 +116,42 @@
                 <legend>Derived Statistics</legend>
                 <fieldset>
                     <legend>Health</legend>
-                    Roll END (2d6) + WIL (2d6) (average = 14)
+                    <div id=ovr_div_ds_health>derived_health</div>
                 </fieldset>
                 <fieldset>
                     <legend>Initiative</legend>
-                    2d6
+                    <div id=ovr_div_ds_init>derived_init</div>
                 </fieldset>
                 <fieldset>
                     <legend>Movement</legend>
                     <table>
                         <tr>
                             <td>Speed</td>
-                            <td>4</td>
+                            <td><div id=ovr_div_ds_speed>derived_speed</div></td>
                         </tr>
                         <tr>
                             <td>Climb</td>
-                            <td>2</td>
+                            <td><div id=ovr_div_ds_climb>derived_climb</div></td>
                         </tr>
                         <tr>
                             <td>Swim</td>
-                            <td>2</td>
+                            <td><div id=ovr_div_ds_swim>derived_swim</div></td>
                         </tr>
                         <tr>
                             <td>Zero/Low/High-G</td>
-                            <td>2/2/2</td>
+                            <td><div id=ovr_div_ds_g>derived_g</div></td>
                         </tr>
                         <tr>
-                            <td>Vertical Jump (Running)</td>
-                            <td>3'(6')</td>
+                            <td>V. Jump (Standing/Running)</td>
+                            <td><div id=ovr_div_ds_vert_jump>derived_vert_jump</div></td>
                         </tr>
                         <tr>
-                            <td>Horizontal Jump (Running)</td>
-                            <td>3'(6')</td>
+                            <td>H. Jump (Standing/Running)</td>
+                            <td><div id=ovr_div_ds_hori_jump>derived_hori_jump</div></td>
                         </tr>
                         <tr>
                             <td>Carry</td>
-                            <td>60 (before exploits)</td>
+                            <td><div id=ovr_div_ds_carry>derived_carry</div></td>
                         </tr>
                     </table>
                 </fieldset>
@@ -160,19 +160,19 @@
                     <table>
                         <tr>
                             <td>Melee</td>
-                            <td>10</td>
+                            <td><div id=ovr_div_def_melee>melee_def</div></td>
                         </tr>
                         <tr>
                             <td>Ranged</td>
-                            <td>10</td>
+                            <td><div id=ovr_div_def_ranged>ranged_def</div></td>
                         </tr>
                         <tr>
                             <td>Mental</td>
-                            <td>10</td>
+                            <td><div id=ovr_div_def_mental>mental_def</div></td>
                         </tr>
                         <tr>
                             <td>Vital</td>
-                            <td>10</td>
+                            <td><div id=ovr_div_def_vital>vital_def</div></td>
                         </tr>
                     </table>
                 </fieldset>
@@ -195,18 +195,18 @@
                         <td>PSI</td>
                     </tr>
                     <tr>
-                        <td id="total_str">3 (2d6)</td>
-                        <td id="total_agi">3 (2d6)</td>
-                        <td id="total_end">3 (2d6)</td>
-                        <td id="total_int">3 (2d6)</td>
-                        <td id="total_log">3 (2d6)</td>
-                        <td id="total_wil">3 (2d6)</td>
-                        <td id="total_cha">3 (2d6)</td>
-                        <td id="total_luc">3 (2d6)</td>
-                        <td id="total_rep">3 (2d6)</td>
-                        <td id="total_mag">3 (2d6)</td>
-                        <td id="total_chi">3 (2d6)</td>
-                        <td id="total_psi">3 (2d6)</td>
+                        <td id="total_str">total_str</td>
+                        <td id="total_agi">total_agi</td>
+                        <td id="total_end">total_end</td>
+                        <td id="total_int">total_int</td>
+                        <td id="total_log">total_log</td>
+                        <td id="total_wil">total_wil</td>
+                        <td id="total_cha">total_cha</td>
+                        <td id="total_luc">total_luc</td>
+                        <td id="total_rep">total_rep</td>
+                        <td id="total_mag">total_mag</td>
+                        <td id="total_chi">total_chi</td>
+                        <td id="total_psi">total_psi</td>
                     </tr>
                 </table>
             </fieldset>
@@ -224,14 +224,14 @@
                         <td>Size</td>
                         <td>
                             <select name="rce_sm_size" id="rce_sm_size">
-                                <option>Tiny</option>
-                                <option>Small</option>
-                                <option selected="selected">Medium</option>
-                                <option>Large</option>
-                                <option>Enormous</option>
-                                <option>Gigantic</option>
-                                <option>Colossal</option>
-                                <option>Titanic</option>
+                                <option value="tiny">Tiny</option>
+                                <option value="small">Small</option>
+                                <option value="medium" selected="selected">Medium</option>
+                                <option value="large">Large</option>
+                                <option value="enormous">Enormous</option>
+                                <option value="gigantic">Gigantic</option>
+                                <option value="colossal">Colossal</option>
+                                <option value="titanic">Titanic</option>
                             </select>
                         </td>
                     </tr>
@@ -423,11 +423,13 @@
         // UI //
         ////////
         var woin_character = new Character();
-        woin_character.race.skills = {'running': 3}
-        woin_character.race.skills['pistols'] = 1;
-        woin_character.homeworld.skills = {'jumping': 1};
+        woin_character.race['Skills'] = {'running': 3}
+        woin_character.race['Skills']['pistols'] = 1;
+        woin_character.race['Size'] = 'titanic';
+        woin_character.homeworld['Skills'] = {'jumping': 1};
         // woin_character.race = deep_copy(race_new_human)
         // woin_character.homeworld = deep_copy(homeworld_arctic)
+        update_info();
 
         function update_info() {
             // Overview
@@ -435,7 +437,18 @@
             total_stats = calc_stat_total(woin_character);
             skill_total = calc_skill_total(woin_character);
             exploit_total = calc_exploit_total(woin_character);
+            derived_stats = calc_derived_stats(woin_character);
+
+            // Main
+            $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race['Race'].name);
+            $("#ovr_btn_jump_to_homeworld").button('option', 'label', woin_character.homeworld['Homeworld'].name);
+            $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
+            $("#ovr_txt_character_hook").val(woin_character.hook);
+
             console.log(exploit_total);
+            console.log(derived_stats);
+
+            // Skills and exploits
             $("#ovr_lst_skills").empty();
             $("#ovr_lst_exploits").empty();
 
@@ -449,19 +462,38 @@
                 $("#ovr_lst_exploits").append('<li title="' + exploit_total[exploit] + '">' + exploit + '</li>')
             }
 
+
+            // Derived Stats
+            $("#ovr_div_ds_health").html(derived_stats['Health']);
+            $("#ovr_div_ds_init").html(derived_stats['Initiative'] + 'd6');
+            $("#ovr_div_ds_speed").html(derived_stats['Speed']);
+            $("#ovr_div_ds_climb").html(derived_stats['Climb']);
+            $("#ovr_div_ds_swim").html(derived_stats['Swim']);
+            $("#ovr_div_ds_g").html(derived_stats['Zero-G'] + '/' + derived_stats['Low-G'] + '/' + derived_stats['High-G']);
+            $("#ovr_div_ds_vert_jump").html(derived_stats['Vertical Jump Standing'] + '\'/' + derived_stats['Vertical Jump Running'] + '\'');
+            $("#ovr_div_ds_hori_jump").html(derived_stats['Horizontal Jump Standing'] + '\'/' + derived_stats['Horizontal Jump Running'] + '\'');
+            $("#ovr_div_ds_carry").html(derived_stats['Carry']);
+            // Defenses
+            $("#ovr_div_def_melee").html(derived_stats['Melee Defense']);
+            $("#ovr_div_def_ranged").html(derived_stats['Ranged Defense']);
+            $("#ovr_div_def_mental").html(derived_stats['Mental Defense']);
+            $("#ovr_div_def_vital").html(derived_stats['Vital Defense']);
+
+
+            // Stats
             max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
-            str_dice_pool_size = calc_dice_pool_size(total_stats['str']);
-            agi_dice_pool_size = calc_dice_pool_size(total_stats['agi']);
-            end_dice_pool_size = calc_dice_pool_size(total_stats['end']);
-            int_dice_pool_size = calc_dice_pool_size(total_stats['int']);
-            log_dice_pool_size = calc_dice_pool_size(total_stats['log']);
-            wil_dice_pool_size = calc_dice_pool_size(total_stats['wil']);
-            cha_dice_pool_size = calc_dice_pool_size(total_stats['cha']);
-            luc_dice_pool_size = calc_dice_pool_size(total_stats['luc']);
-            rep_dice_pool_size = calc_dice_pool_size(total_stats['rep']);
-            mag_dice_pool_size = calc_dice_pool_size(total_stats['mag']);
-            chi_dice_pool_size = calc_dice_pool_size(total_stats['chi']);
-            psi_dice_pool_size = calc_dice_pool_size(total_stats['psi']);
+            str_dice_pool_size = calc_dice_pool_size(total_stats['STR']);
+            agi_dice_pool_size = calc_dice_pool_size(total_stats['AGI']);
+            end_dice_pool_size = calc_dice_pool_size(total_stats['END']);
+            int_dice_pool_size = calc_dice_pool_size(total_stats['INT']);
+            log_dice_pool_size = calc_dice_pool_size(total_stats['LOG']);
+            wil_dice_pool_size = calc_dice_pool_size(total_stats['WIL']);
+            cha_dice_pool_size = calc_dice_pool_size(total_stats['CHA']);
+            luc_dice_pool_size = calc_dice_pool_size(total_stats['LUC']);
+            rep_dice_pool_size = calc_dice_pool_size(total_stats['REP']);
+            mag_dice_pool_size = calc_dice_pool_size(total_stats['MAG']);
+            chi_dice_pool_size = calc_dice_pool_size(total_stats['CHI']);
+            psi_dice_pool_size = calc_dice_pool_size(total_stats['PSI']);
 
             // Cap dice pool size
             // str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
@@ -492,34 +524,29 @@
             psi_dice_pool = psi_dice_pool_size;
 
 
-            $("#total_str").html(total_stats['str'] + '(' + str_dice_pool + 'd6)');
-            $("#total_agi").html(total_stats['agi'] + '(' + agi_dice_pool + 'd6)');
-            $("#total_end").html(total_stats['end'] + '(' + end_dice_pool + 'd6)');
-            $("#total_int").html(total_stats['int'] + '(' + int_dice_pool + 'd6)');
-            $("#total_log").html(total_stats['log'] + '(' + log_dice_pool + 'd6)');
-            $("#total_wil").html(total_stats['wil'] + '(' + wil_dice_pool + 'd6)');
-            $("#total_cha").html(total_stats['cha'] + '(' + cha_dice_pool + 'd6)');
-            $("#total_luc").html(total_stats['luc'] + '(' + luc_dice_pool + 'd6)');
-            $("#total_rep").html(total_stats['rep'] + '(' + rep_dice_pool + 'd6)');
-            $("#total_mag").html(total_stats['mag'] + '(' + mag_dice_pool + 'd6)');
-            $("#total_chi").html(total_stats['chi'] + '(' + chi_dice_pool + 'd6)');
-            $("#total_psi").html(total_stats['psi'] + '(' + psi_dice_pool + 'd6)');
-
-            $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race.name);
-            $("#ovr_btn_jump_to_homeworld").button('option', 'label', woin_character.homeworld.name);
-            $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
-            $("#ovr_txt_character_hook").val(woin_character.hook);
+            $("#total_str").html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
+            $("#total_agi").html(total_stats['AGI'] + '(' + agi_dice_pool + 'd6)');
+            $("#total_end").html(total_stats['END'] + '(' + end_dice_pool + 'd6)');
+            $("#total_int").html(total_stats['INT'] + '(' + int_dice_pool + 'd6)');
+            $("#total_log").html(total_stats['LOG'] + '(' + log_dice_pool + 'd6)');
+            $("#total_wil").html(total_stats['WIL'] + '(' + wil_dice_pool + 'd6)');
+            $("#total_cha").html(total_stats['CHA'] + '(' + cha_dice_pool + 'd6)');
+            $("#total_luc").html(total_stats['LUC'] + '(' + luc_dice_pool + 'd6)');
+            $("#total_rep").html(total_stats['REP'] + '(' + rep_dice_pool + 'd6)');
+            $("#total_mag").html(total_stats['MAG'] + '(' + mag_dice_pool + 'd6)');
+            $("#total_chi").html(total_stats['CHI'] + '(' + chi_dice_pool + 'd6)');
+            $("#total_psi").html(total_stats['PSI'] + '(' + psi_dice_pool + 'd6)');
 
             // Race tab
             $("#rce_btn_set_race").button('option', 'label', woin_character.race.name);
+            $("#rce_sm_size").val(woin_character.race.size);
+            $("#rce_sm_size").selectmenu("refresh");
 
             // Homeworld tab
             $("#hmw_btn_set_homeworld").button('option', 'label', woin_character.homeworld.name);
 
             // Career tab
         };
-
-        update_info();
 
         // dialog = $("#dialog_race_select").dialog({
         //     autoOpen: false,

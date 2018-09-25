@@ -15,22 +15,22 @@ var race_old_clockman = new Race({
     size: 'medium',
     strength: 1, logic: 2, willpower: 2,
     available_skills: ['engineering', 'astronomy', 'law', 'history', 'medicine'],
-    exploits: [{name: 'Clockwork',
-               desc: "As clockwork automatons, clockmen do not need to eat or breathe. They do, however, " +
+    exploits: [{'Name': 'Clockwork',
+               'Desc': "As clockwork automatons, clockmen do not need to eat or breathe. They do, however, " +
                        "need to sleep, in a fashion, as their gears wind down. Like other automatons they are " +
                        "vulnerable (1d6) to electricity and in sci-fi settings (2d6) to ion damage. They are immune " +
                        "to attacks which use MENTAL DEFENSE. Like most automatons, clockmen cannot have a MAG (or PSI " +
                        "or CHI) score, and cannot spend LUC dice."},
-              {name: 'Repair',
-               desc: "Once per day clockmen can repair themselves in a patchwork fashion to the amount half their " +
+              {'Name': 'Repair',
+               'Desc': "Once per day clockmen can repair themselves in a patchwork fashion to the amount half their " +
                        "normal maximum HEALTH by spending two actions and resources from their environment."},
-              {name: 'Wind-up',
-               desc: "Clockmen can spend two actions winding themselves up. For the next minute, they move at a " +
+              {'Name': 'Wind-up',
+               'Desc': "Clockmen can spend two actions winding themselves up. For the next minute, they move at a " +
                        "faster speed (making a rapid clockwork ticking noise while they do so), gaining an extra " +
                        "action each turn, but at the end of the minute they wind down and cannot act or move for one " +
                        "hour."},
-              {name: 'Internal clock',
-               desc: "Clockmen track the passage of time accurately, to the very second."}]});
+              {'Name': 'Internal clock',
+               'Desc': "Clockmen track the passage of time accurately, to the very second."}]});
 
 var race_old_danuki = new Race({
     name: 'Danuki',
@@ -44,15 +44,15 @@ var race_old_danuki = new Race({
     size: 'small',
     agility: 2, logic: 2, luck: 2, magic: 2,
     available_skills: ['bluffing', 'disguise', 'insight', 'stealth', 'thievery', 'alchemy'],
-    exploits: [{name: 'Masterful shapechanger',
-               desc: "A Danuki can assume the form of another creature. The new form must be small-sized and have a " +
+    exploits: [{'Name': 'Masterful shapechanger',
+               'Desc': "A Danuki can assume the form of another creature. The new form must be small-sized and have a " +
                        "Maximum Dice Pool equal to or lower than the Danuki. It takes the Danuki a full round to " +
                        "change shape, and it can only do so once per day. The transformation lasts until the Danuki " +
                        "ends it, or until it suffers the Afraid condition (Danuki cannot maintain a shape when " +
                        "feeling fear). The Danuki retains its own mental attributes, and its own Maximum Dice Pool, " +
                        "but gains any other physical characteristics of the new shape."},
-              {name: 'Cowardly',
-               desc: "Danuki are natural cowards. They must roll a 6 to shake off the Afraid condition. All danuki " +
+              {'Name': 'Cowardly',
+               'Desc': "Danuki are natural cowards. They must roll a 6 to shake off the Afraid condition. All danuki " +
                        "have a phobia, usually against a type of predator animal , but sometimes against a natural " +
                        "phenomenon. In addition, all danuki are phobic against getting caught; this triggers when " +
                        "grappled, entangled, cuffed, bound, or locked up. When in the presence of their phobia, " +
@@ -73,15 +73,15 @@ var race_old_deepling = new Race({
     size: 'medium',
     agility: 2, charisma: 2, logic: 2, magic: -99,
     available_skills: ['[crafting]', 'bluffing', 'engineering', 'sailing', 'rapiers', 'rifles', 'pistols'],
-    exploits: [{name: 'Natural weapons',
-               desc: "A Deepling's horns and tail make for dangerous natural weapons. A Deepling's natural damage " +
+    exploits: [{'Name': 'Natural weapons',
+               'Desc': "A Deepling's horns and tail make for dangerous natural weapons. A Deepling's natural damage " +
                        "is 2d6 rather than the 1d6 its size would normally allow, and becomes piercing damage."},
-              {name: 'Superior darksight',
-               desc: "Deeplings can see in the dark as though it were daylight."},
-              {name: 'Fire resistance',
-               desc: "Deeplings have a natural SOAK 5 (fire). At old age, this increases to 10."},
-              {name: 'Antimagic',
-               desc: "So averse to magic are they, Deeplings actually naturally suppress magic in their presence. " +
+              {'Name': 'Superior darksight',
+               'Desc': "Deeplings can see in the dark as though it were daylight."},
+              {'Name': 'Fire resistance',
+               'Desc': "Deeplings have a natural SOAK 5 (fire). At old age, this increases to 10."},
+              {'Name': 'Antimagic',
+               'Desc': "So averse to magic are they, Deeplings actually naturally suppress magic in their presence. " +
                        "Deeplings get +4 DEFENSE against any magical attacks. However, they can never have a MAG " +
                        "attribute."}]});
 
@@ -93,18 +93,18 @@ var race_old_earth_nymph = new Race({
     size: 'medium',
     endurance: 2, willpower: 1, magic: 3,
     available_skills: ['nature', 'religion', '[magical]', 'dancing', 'singing'],
-    exploits: [{name: "Stone's fortitude",
-               desc: "You have natural SOAK 5 to slashing damage."},
-              {name: 'Stone step',
-               desc: "Once per day you may pass through up to 30’ of natural stone. Worked stone blocks this " +
+    exploits: [{'Name': "Stone's fortitude",
+               'Desc': "You have natural SOAK 5 to slashing damage."},
+              {'Name': 'Stone step',
+               'Desc': "Once per day you may pass through up to 30’ of natural stone. Worked stone blocks this " +
                        "ability."},
-              {name: 'Voice of nature',
-               desc: "You know the secret of earth."},
-              {name: 'Fey',
-               desc: "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
+              {'Name': 'Voice of nature',
+               'Desc': "You know the secret of earth."},
+              {'Name': 'Fey',
+               'Desc': "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
                        "within 10’, and are vulnerable (1d6) to cold iron."},
-              {name: 'Fey grace',
-               desc: "You are immune to the Charmed condition."}]});
+              {'Name': 'Fey grace',
+               'Desc': "You are immune to the Charmed condition."}]});
 
 var race_old_forest_nymph = new Race({
     name: 'Forest Nymph',
@@ -115,19 +115,19 @@ var race_old_forest_nymph = new Race({
     size: 'medium',
     intuition: 1, agility: 2, magic: 3,
     available_skills: ['nature', 'religion', '[magical]', 'stealth', 'climbing', 'dancing', 'singing'],
-    exploits: [{name: 'Tree stride',
-               desc: "Once per turn, you can use an action to step magically into one adjacent living tree and " +
+    exploits: [{'Name': 'Tree stride',
+               'Desc': "Once per turn, you can use an action to step magically into one adjacent living tree and " +
                        "emerge from a second living tree within 60 feet of the first, appearing in an unoccupied " +
                        "space within 5 feet of the second tree. Both trees must be large-sized or bigger."},
-              {name: 'Voice of nature',
-               desc: "You know the secret of plants."},
-              {name: 'Fey',
-               desc: "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
+              {'Name': 'Voice of nature',
+               'Desc': "You know the secret of plants."},
+              {'Name': 'Fey',
+               'Desc': "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
                        "within 10’, and are vulnerable (1d6) to cold iron."},
-              {name: "Fey's grace",
-               desc: "You are immune to the Charmed condition."},
-              {name: "Nature's step",
-               desc: "You are not affected by difficult terrain caused by forest, brush, undergrowth, or similar " +
+              {'Name': "Fey's grace",
+               'Desc': "You are immune to the Charmed condition."},
+              {'Name': "Nature's step",
+               'Desc': "You are not affected by difficult terrain caused by forest, brush, undergrowth, or similar " +
                        "natural features; neither do you leave tracks or trace of your passing."}]});
 
 var race_old_goblin = new Race({
@@ -140,25 +140,25 @@ var race_old_goblin = new Race({
     size: 'small',
     agility: 2, intuition: 2,
     available_skills: ['thievery', 'climbing', 'stealth', 'survival', 'mining', 'running', 'knives'],
-    exploits: [{name: 'Pack attack',
-               desc: "Goblins work best in groups, using numbers to compensate for their small size. Goblins gain " +
+    exploits: [{'Name': 'Pack attack',
+               'Desc': "Goblins work best in groups, using numbers to compensate for their small size. Goblins gain " +
                        "+1d6 to attack a target for every ally also adjacent to the target."},
-              {name: 'Darksight',
-               desc: "Goblins can see in darkness as though it were normal light. They are vulnerable to bright " +
+              {'Name': 'Darksight',
+               'Desc': "Goblins can see in darkness as though it were normal light. They are vulnerable to bright " +
                        "light, however, and lose their Natural Cunning ability in direct sunlight, and cannot shake " +
                        "off the Blind status if it is caused by bright light (note that temporary conditions " +
                        "automatically end after 5 minutes)."},
-              {name: 'Natural cunning',
-               desc: "Although not known for their intellect, goblins do possess a natural instinct. They gain +1d6 " +
+              {'Name': 'Natural cunning',
+               'Desc': "Although not known for their intellect, goblins do possess a natural instinct. They gain +1d6 " +
                        "to INITIATIVE checks."},
-              {name: 'Scavengers',
-               desc: "Goblins can use any organic material as food, no matter how strange or rotten, and as such " +
+              {'Name': 'Scavengers',
+               'Desc': "Goblins can use any organic material as food, no matter how strange or rotten, and as such " +
                        "are immune to poisons."},
-              {name: 'Snatch',
-               desc: "Using a melee attack, a goblin can steal a small-sized or smaller item from an adjacent " +
+              {'Name': 'Snatch',
+               'Desc': "Using a melee attack, a goblin can steal a small-sized or smaller item from an adjacent " +
                        "target, even in combat."},
-              {name: 'Between the legs',
-               desc: "A goblin can freely move through the squares of large sized or larger creatures which have " +
+              {'Name': 'Between the legs',
+               'Desc': "A goblin can freely move through the squares of large sized or larger creatures which have " +
                        "two or more legs."}]});
 
 var race_old_grand_elf = new Race({
@@ -179,22 +179,22 @@ var race_old_grand_elf = new Race({
     agility: 2, logic: 2, luck: -2, magic: 3,
     available_skills: ['[musical]', 'alchemy', 'intimidate', 'law', 'leadership', 'muskets',
                       'pistols', 'sailing', 'swords'],
-    exploits: [{name: 'Fey',
-               desc: "Elves of all types are considered Fey."},
-              {name: 'Magic sense',
-               desc: "Grand elves can sense magic within 10' of them. They can intuitively sense the presence of " +
+    exploits: [{'Name': 'Fey',
+               'Desc': "Elves of all types are considered Fey."},
+              {'Name': 'Magic sense',
+               'Desc': "Grand elves can sense magic within 10' of them. They can intuitively sense the presence of " +
                        "magic, but not the power level, type, direction, or exact location."},
-              {name: 'Meditation',
-               desc: "Grand elves do not need to sleep. They may sometimes choose to meditate, instead, while their " +
+              {'Name': 'Meditation',
+               'Desc': "Grand elves do not need to sleep. They may sometimes choose to meditate, instead, while their " +
                        "non-elven companions are sleeping, but this is not necessary."},
-              {name: 'Naturally magical',
-               desc: "Grand elves begin play with one free spell-path."},
-              {name: 'Cultural weapon',
-               desc: "Grand elves begin play with a free musket or pistol."},
-              {name: 'Long-lived',
-               desc: "When creating a Grand Elf character, multiply their career lengths by 5."},
-              {name: 'Magical',
-               desc: "Grand Elves are noted for their magic. When taking a new career, a Grand Elf may optionally " +
+              {'Name': 'Naturally magical',
+               'Desc': "Grand elves begin play with one free spell-path."},
+              {'Name': 'Cultural weapon',
+               'Desc': "Grand elves begin play with a free musket or pistol."},
+              {'Name': 'Long-lived',
+               'Desc': "When creating a Grand Elf character, multiply their career lengths by 5."},
+              {'Name': 'Magical',
+               'Desc': "Grand Elves are noted for their magic. When taking a new career, a Grand Elf may optionally " +
                        "exchange one of the listed four attribute increases for MAG, as long as it doesn't result in " +
                        "a duplicate attribute advancement."}]});
 
@@ -213,14 +213,14 @@ var race_old_human = new Race({
     size: 'medium',
     luck: 2,
     available_skills: ['any'],
-    exploits: [{name: 'Varied',
-               desc: "Humans boast more variation within their species than most. Add 2 to any attribute, " +
+    exploits: [{'Name': 'Varied',
+               'Desc': "Humans boast more variation within their species than most. Add 2 to any attribute, " +
                        "and add a further +1 to one other attribute (noted above)."},
-              {name: 'Explorers',
-               desc: "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
+              {'Name': 'Explorers',
+               'Desc': "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they " +
                        "take a wilderness journey of more than one week's length."},
-              {name: 'Enduring',
-               desc: "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
+              {'Name': 'Enduring',
+               'Desc': "Humans may not be the fastest or the strongest, but they are known for their resilience. " +
                        "Humans get +1 to their 1d6 die roll to shake off a temporary condition."}]});
 
 var race_old_flint_dwarf = new Race({
@@ -239,14 +239,14 @@ var race_old_flint_dwarf = new Race({
     size: 'small',
     strength: 2, willpower: 1, charisma: 1,
     available_skills: ['navigation', 'carousing', 'survival', 'negotiating', 'linguistics', 'farming'],
-    exploits: [{name: 'Darksight',
-               desc: "Like most dwarves, Flint Dwarves can see in the dark to a distance of 60'."},
-              {name: 'Survivalist',
-               desc: "It's hard to kill a Flint Dwarf. They do not fall unconscious when at negative HEALTH (" +
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Like most dwarves, Flint Dwarves can see in the dark to a distance of 60'."},
+              {'Name': 'Survivalist',
+               'Desc': "It's hard to kill a Flint Dwarf. They do not fall unconscious when at negative HEALTH (" +
                        "although they still form a death pool as normal) and are do not suffer conditions from " +
                        "environmental effects. Additionally, they are immune to all diseases."},
-              {name: 'Inner fire',
-               desc: "Flint Dwarves gain +5 to all DEFENSEs against magical effects."}]});
+              {'Name': 'Inner fire',
+               'Desc': "Flint Dwarves gain +5 to all DEFENSEs against magical effects."}]});
 
 var race_old_jade_dwarf = new Race({
     name: 'Jade Dwarf',
@@ -268,15 +268,15 @@ var race_old_jade_dwarf = new Race({
     size: 'small',
     charisma: 2, logic: 1, willpower: 1,
     available_skills: ['swords', '[social]', 'religion', 'medicine', '[artistic]', 'appraisal'],
-    exploits: [{name: 'Darksight',
-               desc: "Like most dwarves, Jade Dwarves can see in the dark to a distance of 60'."},
-              {name: 'Incorruptible body',
-               desc: "Jade Dwarves are immune to non-magical diseases."},
-              {name: 'Exalted',
-               desc: "Jade Dwarves can sense the presence of (but not the direction or exact location of the Evil " +
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Like most dwarves, Jade Dwarves can see in the dark to a distance of 60'."},
+              {'Name': 'Incorruptible body',
+               'Desc': "Jade Dwarves are immune to non-magical diseases."},
+              {'Name': 'Exalted',
+               'Desc': "Jade Dwarves can sense the presence of (but not the direction or exact location of the Evil " +
                        "virtue within 60'."},
-              {name: 'Healing touch',
-               desc: "A Jade Dwarf can heal by touch, automatically granting 2d6 HEALTH with a single action. This " +
+              {'Name': 'Healing touch',
+               'Desc': "A Jade Dwarf can heal by touch, automatically granting 2d6 HEALTH with a single action. This " +
                        "same touch can be used to do 2d6 holy damage to the undead, a spirit, or any creature with " +
                        "the Evil virtue."}]});
 
@@ -292,16 +292,16 @@ var race_old_minotaur = new Race({
     size: 'medium',
     strength: 2, intuition: 2, endurance: 1, reputation: 1,
     available_skills: ['navigation', 'sailing', 'brawling', 'axes', 'polearms', 'tracking', 'scent'],
-    exploits: [{name: 'Horns',
-               desc: "A minotaur has horns which can be used in combat. The minotaur’s unarmed (natural) damage " +
+    exploits: [{'Name': 'Horns',
+               'Desc': "A minotaur has horns which can be used in combat. The minotaur’s unarmed (natural) damage " +
                        "increases by +1d6 and becomes piercing damage."},
-              {name: 'Charge',
-               desc: "Minotaurs gain the Charge exploit for free."},
-              {name: 'Direction sense',
-               desc: "A minotaur always knows which direction is which, and how deep it is below ground or how far " +
+              {'Name': 'Charge',
+               'Desc': "Minotaurs gain the Charge exploit for free."},
+              {'Name': 'Direction sense',
+               'Desc': "A minotaur always knows which direction is which, and how deep it is below ground or how far " +
                        "it is above ground. A minotaur never becomes lost when travelling."},
-              {name: 'Stoic',
-               desc: " Minotaurs are honor-bound and brought up to never show pain. When taking a new career, " +
+              {'Name': 'Stoic',
+               'Desc': " Minotaurs are honor-bound and brought up to never show pain. When taking a new career, " +
                        "a Minotaur may optionally exchange one of the listed four attribute increases for END, " +
                        "as long as it doesn’t result in a duplicate attribute advancement."}]});
 
@@ -327,20 +327,20 @@ var race_old_mountain_dwarf = new Race({
     endurance: 2, willpower: 2,
     available_skills: ['[crafting]', 'alchemy', 'appraisal', 'axes', 'engineering', 'carousing',
                       'hammers', 'mining'],
-    exploits: [{name: 'Darksight',
-               desc: "Mountain Dwarves can see in the dark to a distance of 60'."},
-              {name: 'Iron constitution',
-               desc: "Mountain Dwarves are not affected by non-magical poisons, with the exception of alcohol"},
-              {name: 'Sturdy',
-               desc: "With a low center of gravity, it is hard to knock a dwarf down. Any attempt to do so suffers " +
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Mountain Dwarves can see in the dark to a distance of 60'."},
+              {'Name': 'Iron constitution',
+               'Desc': "Mountain Dwarves are not affected by non-magical poisons, with the exception of alcohol"},
+              {'Name': 'Sturdy',
+               'Desc': "With a low center of gravity, it is hard to knock a dwarf down. Any attempt to do so suffers " +
                        "a -2d6 die penalty."},
-              {name: 'Earthy',
-               desc: "Mountain Dwarves automatically know the secret of earth, although Dwarves with MAGIC " +
+              {'Name': 'Earthy',
+               'Desc': "Mountain Dwarves automatically know the secret of earth, although Dwarves with MAGIC " +
                        "attributes are rare."},
-              {name: 'Long-lived',
-               desc: "When creating a Mountain Dwarf character, multiply their career lengths by 3."},
-              {name: 'Stubborn',
-               desc: "Mountain Dwarves are noted for their stubborn demeanour. When taking a new career, " +
+              {'Name': 'Long-lived',
+               'Desc': "When creating a Mountain Dwarf character, multiply their career lengths by 3."},
+              {'Name': 'Stubborn',
+               'Desc': "Mountain Dwarves are noted for their stubborn demeanour. When taking a new career, " +
                        "a Mountain Dwarf may optionally exchange one of the listed four attribute increases for WIL, " +
                        "as long as it doesn't result in a duplicate attribute advancement."}]});
 
@@ -359,16 +359,16 @@ var race_old_night_elf = new Race({
     size: 'medium',
     agility: 1, intuition: 1, charisma: 1, magic: 1,
     available_skills: ['stealth', 'alchemy', 'thievery', 'bluffing', 'insight', 'swords', 'herbalism', 'creation'],
-    exploits: [{name: 'Darksight',
-               desc: "Night Elves have superior darksight, able to see in darkness as though it were daylight."},
-              {name: 'Night affinity',
-               desc: "All Night Elves know the secret of shadow. In dim light or darker, Night Elves can become " +
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Night Elves have superior darksight, able to see in darkness as though it were daylight."},
+              {'Name': 'Night affinity',
+               'Desc': "All Night Elves know the secret of shadow. In dim light or darker, Night Elves can become " +
                        "invisible for one minute once per day."},
-              {name: 'Deceitful',
-               desc: "When night elves make CHA checks to deceive, the dice pool is considered an exploding dice " +
+              {'Name': 'Deceitful',
+               'Desc': "When night elves make CHA checks to deceive, the dice pool is considered an exploding dice " +
                        "pool."},
-              {name: 'Poisoners',
-               desc: "Accustomed to handling poison, night elves have a natural SOAK 10 (poison). Additionally, " +
+              {'Name': 'Poisoners',
+               'Desc': "Accustomed to handling poison, night elves have a natural SOAK 10 (poison). Additionally, " +
                        "at-will, they can add the poison damage type to their melee weapons, as long as they are " +
                        "wielding the weapon themself."}]});
 
@@ -388,16 +388,16 @@ var race_old_obsidian_dwarf = new Race({
     size: 'small',
     intuition: 2, logic: 2,
     available_skills: ['religion', 'history', 'intimidation', 'knives', 'alchemy'],
-    exploits: [{name: 'Darksight',
-               desc: "Like most dwarves, obsidian dwarves can see in the dark to a distance of 60'."},
-              {name: 'Magma born',
-               desc: "Obsidian dwarves are immune to fire and are immune to the effects of hot environments."},
-              {name: 'Obsidian skin',
-               desc: "An obsidian's dwarf's glassy skin is surprisingly hard, giving the dwarf +4 natural SOAK."},
-              {name: 'Secret of fire',
-               desc: "Obsidian dwarves automatically know the secret of fire."},
-              {name: 'Cold sensitivity',
-               desc: "Obsidian dwarves suffer from vulnerability 1d6 (cold)."}]});
+    exploits: [{'Name': 'Darksight',
+               'Desc': "Like most dwarves, obsidian dwarves can see in the dark to a distance of 60'."},
+              {'Name': 'Magma born',
+               'Desc': "Obsidian dwarves are immune to fire and are immune to the effects of hot environments."},
+              {'Name': 'Obsidian skin',
+               'Desc': "An obsidian's dwarf's glassy skin is surprisingly hard, giving the dwarf +4 natural SOAK."},
+              {'Name': 'Secret of fire',
+               'Desc': "Obsidian dwarves automatically know the secret of fire."},
+              {'Name': 'Cold sensitivity',
+               'Desc': "Obsidian dwarves suffer from vulnerability 1d6 (cold)."}]});
 
 var race_old_ogre = new Race({
     name: 'Ogre',
@@ -414,19 +414,19 @@ var race_old_ogre = new Race({
     size: 'large',
     strength: 3, endurance: 3,
     available_skills: ['brawling', 'bravery', 'carrying', 'hardy', 'intimidate', '[melee weapons]'],
-    exploits: [{name: 'Thick hide',
-               desc: "Ogres are extremely tough, with leathery skin. They gain 2 natural SOAK to physical attacks"},
-              {name: 'Smelly',
-               desc: "No matter what they do, ogres smell bad. They take a permanent -1d6 penalty to any attempts " +
+    exploits: [{'Name': 'Thick hide',
+               'Desc': "Ogres are extremely tough, with leathery skin. They gain 2 natural SOAK to physical attacks"},
+              {'Name': 'Smelly',
+               'Desc': "No matter what they do, ogres smell bad. They take a permanent -1d6 penalty to any attempts " +
                        "at stealth."},
-              {name: 'Darksight',
-               desc: "Ogres can see in the dark as though it were normal daylight."},
-              {name: 'Acid blood',
-               desc: "Ogres have acidic blood. In addition to gaining an additional 5 SOAK (acid), melee attackers " +
+              {'Name': 'Darksight',
+               'Desc': "Ogres can see in the dark as though it were normal daylight."},
+              {'Name': 'Acid blood',
+               'Desc': "Ogres have acidic blood. In addition to gaining an additional 5 SOAK (acid), melee attackers " +
                        "which cause more than 10 slashing or piercing damage in a single blow take 1d6 acid damage " +
                        "from the blood splash."},
-              {name: 'Strong',
-               desc: "Ogres are noted for their strength. When taking a new career, an Ogre may optionally exchange " +
+              {'Name': 'Strong',
+               'Desc': "Ogres are noted for their strength. When taking a new career, an Ogre may optionally exchange " +
                        "one of the listed four attribute increases for STR, as long as it doesn’t result in a " +
                        "duplicate attribute advancement."}]});
 
@@ -449,14 +449,14 @@ var race_old_orc = new Race({
     strength: 2, agility: 2, intuition: 3,
     available_skills: ['[melee weapons]', 'blacksmithing', 'carousing', 'hunting', 'intimidation', 'mining',
                       'running', 'tactics', 'tracking'],
-    exploits: [{name: 'Glory',
-               desc: "Orcs take pleasure in battle, and pride in their wounds. When reduced to below half HEALTH, " +
+    exploits: [{'Name': 'Glory',
+               'Desc': "Orcs take pleasure in battle, and pride in their wounds. When reduced to below half HEALTH, " +
                        "they gain a +1d6 die bonus to attack rolls."},
-              {name: 'Darksight',
-               desc: "Orcs can see clearly in the dark as though it were daylight. However, bright sunlight hurts " +
+              {'Name': 'Darksight',
+               'Desc': "Orcs can see clearly in the dark as though it were daylight. However, bright sunlight hurts " +
                        "their eyes, inflicting a -2 DEFENSE penalty."},
-              {name: 'Bloodlust',
-               desc: "Once per day an orc can drink fresh blood to recover 2d6 HEALTH. This takes an action. The " +
+              {'Name': 'Bloodlust',
+               'Desc': "Once per day an orc can drink fresh blood to recover 2d6 HEALTH. This takes an action. The " +
                        "blood must come from a creature slain in the last hour."}]});
 
 var race_old_smallfolk = new Race({
@@ -480,10 +480,10 @@ var race_old_smallfolk = new Race({
     agility: 2, charisma: 2, luck: 2, magic: 1,
     available_skills: ['[crafting]', 'farming', 'fishing', 'appraisal', 'cooking', 'brewing', 'slings', 'stealth',
                       'diplomacy', 'bluffing'],
-    exploits: [{name: 'Stubborn',
-               desc: "Smallfolk are difficult to enchant. They gain a +5 bonus to their MENTAL DEFENSE."},
-              {name: 'Evasion',
-               desc: "Smallfolk are nimble and adept at dodging. They gain a +5 bonus to their DEFENSE."}]});
+    exploits: [{'Name': 'Stubborn',
+               'Desc': "Smallfolk are difficult to enchant. They gain a +5 bonus to their MENTAL DEFENSE."},
+              {'Name': 'Evasion',
+               'Desc': "Smallfolk are nimble and adept at dodging. They gain a +5 bonus to their DEFENSE."}]});
 
 var race_old_sylvan_elf = new Race({
     name: 'Sylvan Elf',
@@ -504,23 +504,23 @@ var race_old_sylvan_elf = new Race({
     agility: 2, endurance: 2, magic: 3,
     available_skills: ['climbing', 'running', 'survival', 'tracking', 'animal handling', 'herbalism', 'bows', 'nature',
                       'stealth'],
-    exploits: [{name: 'Fey',
-               desc: "Elves of all types are considered Fey."},
-              {name: 'Nature affinity',
-               desc: "All sylvan elves know either the secret of plants or the secret of beasts."},
-              {name: 'Unimpeded',
-               desc: "Sylvan elves are not affected or slowed by difficult terrain while outdoors."},
-              {name: 'Tree-dwellers',
-               desc: "Sylvan elves gain a climb speed equal to their regular speed."},
-              {name: 'Trance',
-               desc: "Sylvan elves do not need to sleep. They may choose to meditate, instead, while their " +
+    exploits: [{'Name': 'Fey',
+               'Desc': "Elves of all types are considered Fey."},
+              {'Name': 'Nature affinity',
+               'Desc': "All sylvan elves know either the secret of plants or the secret of beasts."},
+              {'Name': 'Unimpeded',
+               'Desc': "Sylvan elves are not affected or slowed by difficult terrain while outdoors."},
+              {'Name': 'Tree-dwellers',
+               'Desc': "Sylvan elves gain a climb speed equal to their regular speed."},
+              {'Name': 'Trance',
+               'Desc': "Sylvan elves do not need to sleep. They may choose to meditate, instead, while their " +
                        "non-elven companions are sleeping, but this is not necessary."},
-              {name: 'Healthy',
-               desc: "Sylvan elves are completely immune to illness and disease of a non-magical nature."},
-              {name: 'Long-lived',
-               desc: "When creating a Sylvan Elf character, multiply their career lengths by 4."},
-              {name: 'Agile',
-               desc: "Sylvan Elves are noted for their dexterity. When taking a new career, a Sylvan Elf may " +
+              {'Name': 'Healthy',
+               'Desc': "Sylvan elves are completely immune to illness and disease of a non-magical nature."},
+              {'Name': 'Long-lived',
+               'Desc': "When creating a Sylvan Elf character, multiply their career lengths by 4."},
+              {'Name': 'Agile',
+               'Desc': "Sylvan Elves are noted for their dexterity. When taking a new career, a Sylvan Elf may " +
                        "optionally exchange one of the listed four attribute increases for AGI, as long as it doesn’t " +
                        "result in a duplicate attribute advancement."}]});
 
@@ -534,21 +534,21 @@ var race_old_water_nymph = new Race({
     size: 'medium',
     intuition: 1, charisma: 2, magic: 3,
     available_skills: ['nature', 'religion', '[magical]', '[social]', 'dancing', 'singing'],
-    exploits: [{name: 'Aquatic',
-               desc: "You can breathe underwater. You also have a SWIM speed equal to your regular SPEED."},
-              {name: 'Nautral allure',
-               desc: "ou can spend two actions making a MAG mental attack at a humanoid creature within 30’. If " +
+    exploits: [{'Name': 'Aquatic',
+               'Desc': "You can breathe underwater. You also have a SWIM speed equal to your regular SPEED."},
+              {'Name': 'Nautral allure',
+               'Desc': "ou can spend two actions making a MAG mental attack at a humanoid creature within 30’. If " +
                        "successful, the target gains the Charmed condition. If unsuccessful, you may not try again " +
                        "with the same target."},
-              {name: 'Voice of nature',
-               desc: "You know the secret of water."},
-              {name: 'Fey',
-               desc: "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
+              {'Name': 'Voice of nature',
+               'Desc': "You know the secret of water."},
+              {'Name': 'Fey',
+               'Desc': "As a fey creature, you can sense the presence of (but not the location or type of) magic " +
                        "within 10’, and are vulnerable (1d6) to cold iron."},
-              {name: 'Fey grace',
-               desc: "You are immune to the Charmed condition."},
-              {name: 'Watery step',
-               desc: "You can walk on water and other liquids."}]});
+              {'Name': 'Fey grace',
+               'Desc': "You are immune to the Charmed condition."},
+              {'Name': 'Watery step',
+               'Desc': "You can walk on water and other liquids."}]});
 
 var race_old_list = [race_old_clockman, race_old_danuki, race_old_deepling, race_old_earth_nymph, race_old_forest_nymph,
                  race_old_goblin, race_old_grand_elf, race_old_human, race_old_flint_dwarf, race_old_jade_dwarf,
