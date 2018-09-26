@@ -18,8 +18,8 @@ class Character
             'CHI': (options.chi === undefined) ? 0 : options.chi,
             'PSI': (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.race = (options.race === undefined) ? {'Race': deep_copy(race_new_human), 'Source': 'new', 'Skills': [], 'Size': 'medium', 'Stats': deep_copy(race_new_human.stats)} : options.race;
-        this.homeworld = (options.homeworld === undefined) ? {'Homeworld': deep_copy(homeworld_none), 'Source': 'new', 'Skills': []} : options.homeworld;
+        this.race = (options.race === undefined) ? {'Race': deep_copy(race_new_human), 'Source': 'races_new', 'Skills': [], 'Size': 'medium', 'Stats': deep_copy(race_new_human.stats)} : options.race;
+        this.homeworld = (options.homeworld === undefined) ? {'Homeworld': deep_copy(homeworld_none), 'Source': 'homeworlds_new', 'Skills': [], 'Stats': deep_copy(homeworld_none.stats)} : options.homeworld;
         this.hook = (options.hook === undefined) ? 'unset' : options.hook;
         this.career_track = (options.career_track === undefined) ? [] : options.career_track;
         this.notes = (options.notes === undefined) ? '' : options.notes;
@@ -147,7 +147,7 @@ function calc_max_dice_pool_size(career_grade) {
 function calc_stat_total(character)
 {
     // Deep copy
-    var stat_total = deep_copy(character.stats);
+    let stat_total = deep_copy(character.stats);
 
     for (stat in character.race['Stats'])
     {
@@ -168,7 +168,7 @@ function calc_stat_total(character)
         }
     }
 
-    console.log(stat_total);
+    // console.log(stat_total);
     return stat_total;
 }
 
@@ -198,6 +198,7 @@ function calc_skill_total(character)
     }
 
     let sorted_skill_total = sort_object(skill_total);
+    // console.log(sorted_skill_total);
     return sorted_skill_total;
 }
 

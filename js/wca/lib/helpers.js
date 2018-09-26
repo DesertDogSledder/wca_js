@@ -30,3 +30,12 @@ function sort_object(orig_obj)
 
     return sorted_obj;
 }
+
+function format_num(n)
+{
+    let format_str = ''
+    if (n >= 0) format_str = '+';
+
+    return format_str + n;
+}
+

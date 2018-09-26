@@ -195,18 +195,18 @@
                         <td>PSI</td>
                     </tr>
                     <tr>
-                        <td id="total_str">total_str</td>
-                        <td id="total_agi">total_agi</td>
-                        <td id="total_end">total_end</td>
-                        <td id="total_int">total_int</td>
-                        <td id="total_log">total_log</td>
-                        <td id="total_wil">total_wil</td>
-                        <td id="total_cha">total_cha</td>
-                        <td id="total_luc">total_luc</td>
-                        <td id="total_rep">total_rep</td>
-                        <td id="total_mag">total_mag</td>
-                        <td id="total_chi">total_chi</td>
-                        <td id="total_psi">total_psi</td>
+                        <td><div id="ovr_div_total_str">total_str</div></td>
+                        <td><div id="ovr_div_total_agi">total_agi</div></td>
+                        <td><div id="ovr_div_total_end">total_end</div></td>
+                        <td><div id="ovr_div_total_int">total_int</div></td>
+                        <td><div id="ovr_div_total_log">total_log</div></td>
+                        <td><div id="ovr_div_total_wil">total_wil</div></td>
+                        <td><div id="ovr_div_total_cha">total_cha</div></td>
+                        <td><div id="ovr_div_total_luc">total_luc</div></td>
+                        <td><div id="ovr_div_total_rep">total_rep</div></td>
+                        <td><div id="ovr_div_total_mag">total_mag</div></td>
+                        <td><div id="ovr_div_total_chi">total_chi</div></td>
+                        <td><div id="ovr_div_total_psi">total_psi</div></td>
                     </tr>
                 </table>
             </fieldset>
@@ -239,10 +239,7 @@
             </fieldset>
             <fieldset>
                 <legend>Selected Skills</legend>
-                <ul>
-                    <li>Running (1)</li>
-                    <li>Sneezing (1)</li>
-                </ul>
+                <ul id=rce_lst_skills><li>rce_skills</li></ul>
                 <button id="rce_btn_set_race_skills" title="Select the racial skills">Set Race Skills</button>
             </fieldset>
             <fieldset>
@@ -271,18 +268,18 @@
                         <td>PSI</td>
                     </tr>
                     <tr>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
+                        <td><div id=rce_div_race_str>race_str</div></td>
+                        <td><div id=rce_div_race_agi>race_agi</div></td>
+                        <td><div id=rce_div_race_end>race_end</div></td>
+                        <td><div id=rce_div_race_int>race_int</div></td>
+                        <td><div id=rce_div_race_log>race_log</div></td>
+                        <td><div id=rce_div_race_wil>race_wil</div></td>
+                        <td><div id=rce_div_race_cha>race_cha</div></td>
+                        <td><div id=rce_div_race_luc>race_luc</div></td>
+                        <td><div id=rce_div_race_rep>race_rep</div></td>
+                        <td><div id=rce_div_race_mag>race_mag</div></td>
+                        <td><div id=rce_div_race_chi>race_chi</div></td>
+                        <td><div id=rce_div_race_psi>race_psi</div></td>
                     </tr>
                 </table>
             </fieldset>
@@ -294,10 +291,7 @@
             </fieldset>
             <fieldset>
                     <legend>Selected Skills</legend>
-                    <ul>
-                        <li>Coughing (1)</li>
-                        <li>Sniffling (1)</li>
-                    </ul>
+                    <ul id=hmw_lst_skills><li>hmw_skills</li></ul>
                     <button id="hmw_btn_set_homeworld_skills" title="Select the character's homeworld skills">Set Homeworld Skills</button>
             </fieldset>
             <fieldset>
@@ -318,18 +312,18 @@
                         <td>PSI</td>
                     </tr>
                     <tr>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
-                        <td>+0</td>
+                        <td><div id=hmw_div_hmw_str>hmw_str</div></td>
+                        <td><div id=hmw_div_hmw_agi>hmw_agi</div></td>
+                        <td><div id=hmw_div_hmw_end>hmw_end</div></td>
+                        <td><div id=hmw_div_hmw_int>hmw_int</div></td>
+                        <td><div id=hmw_div_hmw_log>hmw_log</div></td>
+                        <td><div id=hmw_div_hmw_wil>hmw_wil</div></td>
+                        <td><div id=hmw_div_hmw_cha>hmw_cha</div></td>
+                        <td><div id=hmw_div_hmw_luc>hmw_luc</div></td>
+                        <td><div id=hmw_div_hmw_rep>hmw_rep</div></td>
+                        <td><div id=hmw_div_hmw_mag>hmw_mag</div></td>
+                        <td><div id=hmw_div_hmw_chi>hmw_chi</div></td>
+                        <td><div id=hmw_div_hmw_psi>hmw_psi</div></td>
                     </tr>
                 </table>
             </fieldset>
@@ -414,6 +408,36 @@
             <select id="rce_sm_race_select">
                 <option>Blah</option>
             </select>
+            <table>
+                <tr>
+                    <td>STR</td>
+                    <td>AGI</td>
+                    <td>END</td>
+                    <td>INT</td>
+                    <td>LOG</td>
+                    <td>WIL</td>
+                    <td>CHA</td>
+                    <td>LUC</td>
+                    <td>REP</td>
+                    <td>MAG</td>
+                    <td>CHI</td>
+                    <td>PSI</td>
+                </tr>
+                <tr>
+                    <td><input id="rs_sp_race_str" /></td>
+                    <td><input id="rs_sp_race_agi" /></td>
+                    <td><input id="rs_sp_race_end" /></td>
+                    <td><input id="rs_sp_race_int" /></td>
+                    <td><input id="rs_sp_race_log" /></td>
+                    <td><input id="rs_sp_race_wil" /></td>
+                    <td><input id="rs_sp_race_cha" /></td>
+                    <td><input id="rs_sp_race_luc" /></td>
+                    <td><input id="rs_sp_race_rep" /></td>
+                    <td><input id="rs_sp_race_mag" /></td>
+                    <td><input id="rs_sp_race_chi" /></td>
+                    <td><input id="rs_sp_race_psi" /></td>
+                </tr>
+            </table>
         </div>
     </div>
 
@@ -426,7 +450,8 @@
         woin_character.race['Skills'] = {'running': 3}
         woin_character.race['Skills']['pistols'] = 1;
         woin_character.race['Size'] = 'titanic';
-        woin_character.homeworld['Skills'] = {'jumping': 1};
+        woin_character.homeworld['Skills'] = {'jumping': 1, 'running': 1};
+        woin_character.race['Stats']['STR'] = -1;
         // woin_character.race = deep_copy(race_new_human)
         // woin_character.homeworld = deep_copy(homeworld_arctic)
         update_info();
@@ -445,8 +470,9 @@
             $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
             $("#ovr_txt_character_hook").val(woin_character.hook);
 
-            console.log(exploit_total);
-            console.log(derived_stats);
+            // console.log(exploit_total);
+            // console.log(derived_stats);
+            // console.log(woin_character.homeworld['Skills']);
 
             // Skills and exploits
             $("#ovr_lst_skills").empty();
@@ -456,7 +482,6 @@
             {
                 $("#ovr_lst_skills").append('<li>' + skill + ' (' + skill_total[skill] + ')</li>');
             }
-
             for (exploit in exploit_total)
             {
                 $("#ovr_lst_exploits").append('<li title="' + exploit_total[exploit] + '">' + exploit + '</li>')
@@ -524,26 +549,66 @@
             psi_dice_pool = psi_dice_pool_size;
 
 
-            $("#total_str").html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
-            $("#total_agi").html(total_stats['AGI'] + '(' + agi_dice_pool + 'd6)');
-            $("#total_end").html(total_stats['END'] + '(' + end_dice_pool + 'd6)');
-            $("#total_int").html(total_stats['INT'] + '(' + int_dice_pool + 'd6)');
-            $("#total_log").html(total_stats['LOG'] + '(' + log_dice_pool + 'd6)');
-            $("#total_wil").html(total_stats['WIL'] + '(' + wil_dice_pool + 'd6)');
-            $("#total_cha").html(total_stats['CHA'] + '(' + cha_dice_pool + 'd6)');
-            $("#total_luc").html(total_stats['LUC'] + '(' + luc_dice_pool + 'd6)');
-            $("#total_rep").html(total_stats['REP'] + '(' + rep_dice_pool + 'd6)');
-            $("#total_mag").html(total_stats['MAG'] + '(' + mag_dice_pool + 'd6)');
-            $("#total_chi").html(total_stats['CHI'] + '(' + chi_dice_pool + 'd6)');
-            $("#total_psi").html(total_stats['PSI'] + '(' + psi_dice_pool + 'd6)');
+            $("#ovr_div_total_str").html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
+            $("#ovr_div_total_agi").html(total_stats['AGI'] + '(' + agi_dice_pool + 'd6)');
+            $("#ovr_div_total_end").html(total_stats['END'] + '(' + end_dice_pool + 'd6)');
+            $("#ovr_div_total_int").html(total_stats['INT'] + '(' + int_dice_pool + 'd6)');
+            $("#ovr_div_total_log").html(total_stats['LOG'] + '(' + log_dice_pool + 'd6)');
+            $("#ovr_div_total_wil").html(total_stats['WIL'] + '(' + wil_dice_pool + 'd6)');
+            $("#ovr_div_total_cha").html(total_stats['CHA'] + '(' + cha_dice_pool + 'd6)');
+            $("#ovr_div_total_luc").html(total_stats['LUC'] + '(' + luc_dice_pool + 'd6)');
+            $("#ovr_div_total_rep").html(total_stats['REP'] + '(' + rep_dice_pool + 'd6)');
+            $("#ovr_div_total_mag").html(total_stats['MAG'] + '(' + mag_dice_pool + 'd6)');
+            $("#ovr_div_total_chi").html(total_stats['CHI'] + '(' + chi_dice_pool + 'd6)');
+            $("#ovr_div_total_psi").html(total_stats['PSI'] + '(' + psi_dice_pool + 'd6)');
 
             // Race tab
             $("#rce_btn_set_race").button('option', 'label', woin_character.race.name);
             $("#rce_sm_size").val(woin_character.race.size);
             $("#rce_sm_size").selectmenu("refresh");
 
+            $("#rce_lst_skills").empty();
+
+            for (skill in woin_character.race['Skills'])
+            {
+                $("#rce_lst_skills").append('<li>' + skill + ' (' + woin_character.race['Skills'][skill] + ')</li>');
+            }
+
+            $("#rce_div_race_str").html(format_num(woin_character.race['Stats']['STR']));
+            $("#rce_div_race_agi").html(format_num(woin_character.race['Stats']['AGI']));
+            $("#rce_div_race_end").html(format_num(woin_character.race['Stats']['END']));
+            $("#rce_div_race_int").html(format_num(woin_character.race['Stats']['INT']));
+            $("#rce_div_race_log").html(format_num(woin_character.race['Stats']['LOG']));
+            $("#rce_div_race_wil").html(format_num(woin_character.race['Stats']['WIL']));
+            $("#rce_div_race_cha").html(format_num(woin_character.race['Stats']['CHA']));
+            $("#rce_div_race_luc").html(format_num(woin_character.race['Stats']['LUC']));
+            $("#rce_div_race_rep").html(format_num(woin_character.race['Stats']['REP']));
+            $("#rce_div_race_mag").html(format_num(woin_character.race['Stats']['MAG']));
+            $("#rce_div_race_chi").html(format_num(woin_character.race['Stats']['CHI']));
+            $("#rce_div_race_psi").html(format_num(woin_character.race['Stats']['PSI']));
+
             // Homeworld tab
             $("#hmw_btn_set_homeworld").button('option', 'label', woin_character.homeworld.name);
+
+            $("#hmw_lst_skills").empty();
+
+            for (skill in woin_character.homeworld['Skills'])
+            {
+                $("#hmw_lst_skills").append('<li>' + skill + ' (' + woin_character.homeworld['Skills'][skill] + ')</li>');
+            }
+
+            $("#hmw_div_hmw_str").html(format_num(woin_character.homeworld['Stats']['STR']));
+            $("#hmw_div_hmw_agi").html(format_num(woin_character.homeworld['Stats']['AGI']));
+            $("#hmw_div_hmw_end").html(format_num(woin_character.homeworld['Stats']['END']));
+            $("#hmw_div_hmw_int").html(format_num(woin_character.homeworld['Stats']['INT']));
+            $("#hmw_div_hmw_log").html(format_num(woin_character.homeworld['Stats']['LOG']));
+            $("#hmw_div_hmw_wil").html(format_num(woin_character.homeworld['Stats']['WIL']));
+            $("#hmw_div_hmw_cha").html(format_num(woin_character.homeworld['Stats']['CHA']));
+            $("#hmw_div_hmw_luc").html(format_num(woin_character.homeworld['Stats']['LUC']));
+            $("#hmw_div_hmw_rep").html(format_num(woin_character.homeworld['Stats']['REP']));
+            $("#hmw_div_hmw_mag").html(format_num(woin_character.homeworld['Stats']['MAG']));
+            $("#hmw_div_hmw_chi").html(format_num(woin_character.homeworld['Stats']['CHI']));
+            $("#hmw_div_hmw_psi").html(format_num(woin_character.homeworld['Stats']['PSI']));
 
             // Career tab
         };
@@ -570,9 +635,11 @@
         // };
 
         $("#rce_sm_race_module").selectmenu({
-            change: select_race_module
+            change: select_race_module,
         });
-        $("#rce_sm_race_select").selectmenu();
+        $("#rce_sm_race_select").selectmenu({
+            change: select_race,
+        });
     </script>
 </body>
 
