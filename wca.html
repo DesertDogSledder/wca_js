@@ -47,6 +47,18 @@
         select {
             width: 200px;
         }
+
+        /* Side-by-side styling */
+        .container {
+            display: flex;
+        }
+        .fixed {
+            width: 200px;
+        }
+        .flex-item {
+            flex-grow: 1;
+        }
+
     </style>
     <!-- <script data-main="js/app.js" src="js/require.js"></script> -->
     <script src="js/jquery/jquery-3.3.1.min.js"></script>
@@ -71,6 +83,8 @@
             <li><a href="#tabs-exploits">Exploits</a></li>
             <li><a href="#tabs-equipment">Equipment</a></li>
         </ul>
+
+        <!-- Overview tab -->
         <div id="tabs-overview">
             <!-- General Info -->
             <fieldset>
@@ -212,6 +226,8 @@
             </fieldset>
 
         </div>
+
+        <!-- Race tab -->
         <div id="tabs-race">
             <fieldset>
                 <legend>Race</legend>
@@ -284,6 +300,8 @@
                 </table>
             </fieldset>
         </div>
+
+        <!-- Homeworld tab -->
         <div id="tabs-homeworld">
             <fieldset>
                 <legend>Homeworld</legend>
@@ -328,6 +346,8 @@
                 </table>
             </fieldset>
         </div>
+
+        <!-- Career tab -->
         <div id="tabs-careers">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 <div id="accordion">
                     <div class="group">
@@ -393,21 +413,47 @@
                     </div>
                 </div>
         </div>
+
+        <!-- Exploit tab -->
         <div id="tabs-exploits">
             
         </div>
+
+        <!-- Equipment tab -->
         <div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
+        <!-- Race select dialog -->
         <div id="dialog_race_select" title="Select a Race">
-            <select id="rce_sm_race_module" name="rce_sm_race_module">
-                <option value="races_old">OLD</option>
-                <option value="races_now">NOW</option>
-                <option value="races_new">NEW</option>
-            </select>
-            <br />
-            <select id="rce_sm_race_select">
-                <option>Blah</option>
-            </select>
+            <div class="container">
+                <div class="fixed">
+                    <select id="rs_sm_race_module" name="rs_sm_race_module">
+                        <option value="races_old">OLD</option>
+                        <option value="races_now">NOW</option>
+                        <option value="races_new">NEW</option>
+                    </select>
+                </div>
+                <div class="flex-item">
+                    <select id="rs_sm_race_select">
+                        <option>ERR</option>
+                    </select>
+                </div>
+            </div>
+            <hr />
+            <label for="rs_div_race_desc"><b>Description</b></label>
+            <div id="rs_div_race_desc">Race description goes here</div>
+            <hr />
+            <div class="container">
+                <label for="rs_div_race_size">Size<br/></label>
+                <div class="fixed" id="rs_div_race_size">Race size goes here</div>
+                <label for="rs_div_race_skills">Skills</label>
+                <div class="flex-item" id="rs_div_race_available_skills">
+                    <ul id="rs_lst_race_available_skills"></ul>
+                </div>
+                <label for="rs_div_race_exploits">Exploits</label>
+                <div class="flex-item" id="rs_div_race_exploits">
+                    <ul id="rs_lst_race_exploits"></ul>
+                </div>
+            </div>
             <table>
                 <tr>
                     <td>STR</td>
@@ -452,6 +498,7 @@
         woin_character.race['Size'] = 'titanic';
         woin_character.homeworld['Skills'] = {'jumping': 1, 'running': 1};
         woin_character.race['Stats']['STR'] = -1;
+        // woin_character.race['Source']['Var'] = 'race_new_borian';
         // woin_character.race = deep_copy(race_new_human)
         // woin_character.homeworld = deep_copy(homeworld_arctic)
         update_info();
@@ -459,20 +506,16 @@
         function update_info() {
             // Overview
             $("#ovr_txt_character_name").val(woin_character.name);
-            total_stats = calc_stat_total(woin_character);
-            skill_total = calc_skill_total(woin_character);
-            exploit_total = calc_exploit_total(woin_character);
-            derived_stats = calc_derived_stats(woin_character);
+            let total_stats = calc_stat_total(woin_character);
+            let skill_total = calc_skill_total(woin_character);
+            let exploit_total = calc_exploit_total(woin_character);
+            let derived_stats = calc_derived_stats(woin_character);
 
             // Main
             $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race['Race'].name);
             $("#ovr_btn_jump_to_homeworld").button('option', 'label', woin_character.homeworld['Homeworld'].name);
             $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
             $("#ovr_txt_character_hook").val(woin_character.hook);
-
-            // console.log(exploit_total);
-            // console.log(derived_stats);
-            // console.log(woin_character.homeworld['Skills']);
 
             // Skills and exploits
             $("#ovr_lst_skills").empty();
@@ -506,47 +549,47 @@
 
 
             // Stats
-            max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
-            str_dice_pool_size = calc_dice_pool_size(total_stats['STR']);
-            agi_dice_pool_size = calc_dice_pool_size(total_stats['AGI']);
-            end_dice_pool_size = calc_dice_pool_size(total_stats['END']);
-            int_dice_pool_size = calc_dice_pool_size(total_stats['INT']);
-            log_dice_pool_size = calc_dice_pool_size(total_stats['LOG']);
-            wil_dice_pool_size = calc_dice_pool_size(total_stats['WIL']);
-            cha_dice_pool_size = calc_dice_pool_size(total_stats['CHA']);
-            luc_dice_pool_size = calc_dice_pool_size(total_stats['LUC']);
-            rep_dice_pool_size = calc_dice_pool_size(total_stats['REP']);
-            mag_dice_pool_size = calc_dice_pool_size(total_stats['MAG']);
-            chi_dice_pool_size = calc_dice_pool_size(total_stats['CHI']);
-            psi_dice_pool_size = calc_dice_pool_size(total_stats['PSI']);
+            let max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
+            let str_dice_pool_size = calc_dice_pool_size(total_stats['STR']);
+            let agi_dice_pool_size = calc_dice_pool_size(total_stats['AGI']);
+            let end_dice_pool_size = calc_dice_pool_size(total_stats['END']);
+            let int_dice_pool_size = calc_dice_pool_size(total_stats['INT']);
+            let log_dice_pool_size = calc_dice_pool_size(total_stats['LOG']);
+            let wil_dice_pool_size = calc_dice_pool_size(total_stats['WIL']);
+            let cha_dice_pool_size = calc_dice_pool_size(total_stats['CHA']);
+            let luc_dice_pool_size = calc_dice_pool_size(total_stats['LUC']);
+            let rep_dice_pool_size = calc_dice_pool_size(total_stats['REP']);
+            let mag_dice_pool_size = calc_dice_pool_size(total_stats['MAG']);
+            let chi_dice_pool_size = calc_dice_pool_size(total_stats['CHI']);
+            let psi_dice_pool_size = calc_dice_pool_size(total_stats['PSI']);
 
             // Cap dice pool size
-            // str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
-            // agi_dice_pool = (agi_dice_pool_size <= max_dice_pool) ? agi_dice_pool_size : max_dice_pool;
-            // end_dice_pool = (end_dice_pool_size <= max_dice_pool) ? end_dice_pool_size : max_dice_pool;
-            // int_dice_pool = (int_dice_pool_size <= max_dice_pool) ? int_dice_pool_size : max_dice_pool;
-            // log_dice_pool = (log_dice_pool_size <= max_dice_pool) ? log_dice_pool_size : max_dice_pool;
-            // wil_dice_pool = (wil_dice_pool_size <= max_dice_pool) ? wil_dice_pool_size : max_dice_pool;
-            // cha_dice_pool = (cha_dice_pool_size <= max_dice_pool) ? cha_dice_pool_size : max_dice_pool;
-            // luc_dice_pool = (luc_dice_pool_size <= max_dice_pool) ? luc_dice_pool_size : max_dice_pool;
-            // rep_dice_pool = (rep_dice_pool_size <= max_dice_pool) ? rep_dice_pool_size : max_dice_pool;
-            // mag_dice_pool = (mag_dice_pool_size <= max_dice_pool) ? mag_dice_pool_size : max_dice_pool;
-            // chi_dice_pool = (chi_dice_pool_size <= max_dice_pool) ? chi_dice_pool_size : max_dice_pool;
-            // psi_dice_pool = (psi_dice_pool_size <= max_dice_pool) ? psi_dice_pool_size : max_dice_pool;
+            // let str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
+            // let agi_dice_pool = (agi_dice_pool_size <= max_dice_pool) ? agi_dice_pool_size : max_dice_pool;
+            // let end_dice_pool = (end_dice_pool_size <= max_dice_pool) ? end_dice_pool_size : max_dice_pool;
+            // let int_dice_pool = (int_dice_pool_size <= max_dice_pool) ? int_dice_pool_size : max_dice_pool;
+            // let log_dice_pool = (log_dice_pool_size <= max_dice_pool) ? log_dice_pool_size : max_dice_pool;
+            // let wil_dice_pool = (wil_dice_pool_size <= max_dice_pool) ? wil_dice_pool_size : max_dice_pool;
+            // let cha_dice_pool = (cha_dice_pool_size <= max_dice_pool) ? cha_dice_pool_size : max_dice_pool;
+            // let luc_dice_pool = (luc_dice_pool_size <= max_dice_pool) ? luc_dice_pool_size : max_dice_pool;
+            // let rep_dice_pool = (rep_dice_pool_size <= max_dice_pool) ? rep_dice_pool_size : max_dice_pool;
+            // let mag_dice_pool = (mag_dice_pool_size <= max_dice_pool) ? mag_dice_pool_size : max_dice_pool;
+            // let chi_dice_pool = (chi_dice_pool_size <= max_dice_pool) ? chi_dice_pool_size : max_dice_pool;
+            // let psi_dice_pool = (psi_dice_pool_size <= max_dice_pool) ? psi_dice_pool_size : max_dice_pool;
 
             // Don't cap dice pool size
-            str_dice_pool = str_dice_pool_size;
-            agi_dice_pool = agi_dice_pool_size;
-            end_dice_pool = end_dice_pool_size;
-            int_dice_pool = int_dice_pool_size;
-            log_dice_pool = log_dice_pool_size;
-            wil_dice_pool = wil_dice_pool_size;
-            cha_dice_pool = cha_dice_pool_size;
-            luc_dice_pool = luc_dice_pool_size;
-            rep_dice_pool = rep_dice_pool_size;
-            mag_dice_pool = mag_dice_pool_size;
-            chi_dice_pool = chi_dice_pool_size;
-            psi_dice_pool = psi_dice_pool_size;
+            let str_dice_pool = str_dice_pool_size;
+            let agi_dice_pool = agi_dice_pool_size;
+            let end_dice_pool = end_dice_pool_size;
+            let int_dice_pool = int_dice_pool_size;
+            let log_dice_pool = log_dice_pool_size;
+            let wil_dice_pool = wil_dice_pool_size;
+            let cha_dice_pool = cha_dice_pool_size;
+            let luc_dice_pool = luc_dice_pool_size;
+            let rep_dice_pool = rep_dice_pool_size;
+            let mag_dice_pool = mag_dice_pool_size;
+            let chi_dice_pool = chi_dice_pool_size;
+            let psi_dice_pool = psi_dice_pool_size;
 
 
             $("#ovr_div_total_str").html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
@@ -569,9 +612,10 @@
 
             $("#rce_lst_skills").empty();
 
-            for (skill in woin_character.race['Skills'])
+            let race_skills_sorted = sort_object(woin_character.race['Skills']);
+            for (skill in race_skills_sorted)
             {
-                $("#rce_lst_skills").append('<li>' + skill + ' (' + woin_character.race['Skills'][skill] + ')</li>');
+                $("#rce_lst_skills").append('<li>' + skill + ' (' + race_skills_sorted[skill] + ')</li>');
             }
 
             $("#rce_div_race_str").html(format_num(woin_character.race['Stats']['STR']));
@@ -592,9 +636,10 @@
 
             $("#hmw_lst_skills").empty();
 
-            for (skill in woin_character.homeworld['Skills'])
+            let hmw_skills_sorted = sort_object(woin_character.homeworld['Skills']);
+            for (skill in hmw_skills_sorted)
             {
-                $("#hmw_lst_skills").append('<li>' + skill + ' (' + woin_character.homeworld['Skills'][skill] + ')</li>');
+                $("#hmw_lst_skills").append('<li>' + skill + ' (' + hmw_skills_sorted[skill] + ')</li>');
             }
 
             $("#hmw_div_hmw_str").html(format_num(woin_character.homeworld['Stats']['STR']));
@@ -613,31 +658,11 @@
             // Career tab
         };
 
-        // dialog = $("#dialog_race_select").dialog({
-        //     autoOpen: false,
-        //     height: 400,
-        //     width: 350,
-        //     modal: false,
-        //     buttons: {
-        //         Cancel: function() {
-        //             dialog.dialog("close");
-        //         }
-        //     },
-        //     close: function() {
-
-        //     }
-        // });
-
-        // race_modules = {
-        //     "races_new": race_new_list,
-        //     "races_now": race_now_list,
-        //     "races_old": race_old_list
-        // };
-
-        $("#rce_sm_race_module").selectmenu({
+        $("#rs_sm_race_module").selectmenu({
             change: select_race_module,
+            width: 150
         });
-        $("#rce_sm_race_select").selectmenu({
+        $("#rs_sm_race_select").selectmenu({
             change: select_race,
         });
     </script>

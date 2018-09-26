@@ -531,8 +531,31 @@ var race_new_venetian = new Race({
                        "may optionally exchange one of the listed four attribute increases for LOG, as long as it " +
                        "doesn’t result in a duplicate attribute advancement."}]});
 
-var race_new_list = [race_new_android, race_new_borian, race_new_canid, race_new_corax, race_new_felan, race_new_houseki,
-                 race_new_human, race_new_human_belter, race_new_human_clone, race_new_human_jovian,
-                 race_new_human_warped, race_new_jamila, race_new_ogron, race_new_pajak, race_new_roden,
-                 race_new_simp, race_new_solurial, race_new_spartan, race_new_synthetic, race_new_trantor,
-                 race_new_venetian];
+// var race_new_list = [race_new_android, race_new_borian, race_new_canid, race_new_corax, race_new_felan, race_new_houseki,
+//                  race_new_human, race_new_human_belter, race_new_human_clone, race_new_human_jovian,
+//                  race_new_human_warped, race_new_jamila, race_new_ogron, race_new_pajak, race_new_roden,
+//                  race_new_simp, race_new_solurial, race_new_spartan, race_new_synthetic, race_new_trantor,
+//                  race_new_venetian];
+
+var race_new_list = {
+        'race_new_android': race_new_android, 'race_new_borian': race_new_borian,
+        'race_new_canid': race_new_canid,
+        'race_new_corax': race_new_corax,
+        'race_new_felan': race_new_felan,
+        'race_new_houseki': race_new_houseki,
+        'race_new_human': race_new_human,
+        'race_new_human_belter': race_new_human_belter,
+        'race_new_human_clone': race_new_human_clone,
+        'race_new_human_jovian': race_new_human_jovian,
+        'race_new_human_warped': race_new_human_warped,
+        'race_new_jamila': race_new_jamila,
+        'race_new_ogron': race_new_ogron,
+        'race_new_pajak': race_new_pajak,
+        'race_new_roden': race_new_roden,
+        'race_new_simp': race_new_simp,
+        'race_new_solurial': race_new_solurial,
+        'race_new_spartan': race_new_spartan,
+        'race_new_synthetic': race_new_synthetic,
+        'race_new_trantor': race_new_trantor,
+        'race_new_venetian': race_new_venetian
+};                 

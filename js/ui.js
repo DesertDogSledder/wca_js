@@ -58,9 +58,9 @@ $("#hmw_btn_set_homeworld_skills").button();
 // Race select dialog
 dialog = $("#dialog_race_select").dialog({
     autoOpen: false,
-    height: 400,
-    width: 970,
-    modal: false,
+    height: 'auto',
+    width: 'auto',
+    modal: true,
     // buttons: {
     //     Cancel: function() {
     //         dialog.dialog("close");
@@ -107,13 +107,14 @@ dialog = $("#dialog_race_select").dialog({
         // $("rce_sm_race_module").val(value);
         // $("rce_sm_race_module").selectmenu("refresh");
         // select_race_module(null, {item:{value: ''}})
-        // console.log('I love lamp');
         // let value = $("rce_sm_race_module").selectmenu("option", "races_new");
-        $("#rce_sm_race_module").val(woin_character.race['Source']);
-        $("#rce_sm_race_module").selectmenu("refresh");
-        select_race_module(null, {item:{value: woin_character.race['Source']}});
-        $("#rce_sm_race_select").val(woin_character.race['Race'].name);
-        $("#rce_sm_race_select").selectmenu("refresh");
+        $("#rs_sm_race_module").val(woin_character.race['Source']);
+        $("#rs_sm_race_module").selectmenu("refresh");
+
+        select_race_module(null, {item:{value: woin_character.race['Source']['File']}});
+
+        $("#rs_sm_race_select").val(woin_character.race['Source']['Var']);
+        $("#rs_sm_race_select").selectmenu("refresh");
         
         $("#rs_sp_race_str").val(woin_character.race['Stats']['STR']);
         $("#rs_sp_race_agi").val(woin_character.race['Stats']['AGI']);
@@ -128,6 +129,7 @@ dialog = $("#dialog_race_select").dialog({
         $("#rs_sp_race_chi").val(woin_character.race['Stats']['CHI']);
         $("#rs_sp_race_psi").val(woin_character.race['Stats']['PSI']);
 
+        select_race(null, {item:{value: woin_character.race['Source']['Var']}});
     }
 });
 
@@ -175,30 +177,37 @@ function validate_spinner()
 function select_race_module(event, data) 
 {
     var options = [];
-    // console.log(data)
-    console.log(race_modules[data.item.value])
-    for (race in race_modules[data.item.value])
+    var selected_race_module = data.item.value;
+    for (race in race_modules[selected_race_module])
     {
-        // console.log(race)
-        options.push("<option value=" + race + ">" + race_modules[data.item.value][race].name + "</option>");
+        options.push("<option value=" + race + ">" + race_modules[selected_race_module][race].name + "</option>");
     }
 
     // Clear the options first   
-    $("#rce_sm_race_select option").each(
+    $("#rs_sm_race_select option").each(
         function(index, option) 
         {
             $(option).remove();
         }
     );
-    $("#rce_sm_race_select").append(options.join("")).selectmenu();
-    $("#rce_sm_race_select").selectmenu("refresh");
-    
-    // console.log(data.item.value)
-    // console.log(race_modules[data.item.value][0].name)
-    // for (race in race_modules[$("#select_race_module").item.value])
+    $("#rs_sm_race_select").append(options.join("")).selectmenu();
+    $("#rs_sm_race_select").selectmenu("refresh");
 };
 
 function select_race(event, data)
 {
-    console.log(data.item.value);
+    var selected_race_module = $("#rs_sm_race_module").val();
+    var selected_race_var = data.item.value;
+    // Exception happens here.  If page loads and user goes to race select too quickly,
+    // selected_race_module aka $("#rs_sm_race_module").val() is null and borks it all up
+    var selected_race = race_modules[selected_race_module][selected_race_var];
+    var available_skills = sort_object(selected_race.available_skills);
+    
+    $("#rs_div_race_size").html(selected_race.size);
+
+    $("#rs_lst_race_available_skills").empty();
+    for (skill in available_skills)
+    {
+        $("#rs_lst_race_available_skills").append('<li>' + available_skills[skill] + '</li>');
+    }
 }

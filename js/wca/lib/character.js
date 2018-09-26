@@ -18,7 +18,7 @@ class Character
             'CHI': (options.chi === undefined) ? 0 : options.chi,
             'PSI': (options.psionics === undefined) ? 0 : options.psionics
         };
-        this.race = (options.race === undefined) ? {'Race': deep_copy(race_new_human), 'Source': 'races_new', 'Skills': [], 'Size': 'medium', 'Stats': deep_copy(race_new_human.stats)} : options.race;
+        this.race = (options.race === undefined) ? {'Race': deep_copy(race_new_human), 'Source': {'File': 'races_new', 'Var': 'race_new_human'}, 'Skills': [], 'Size': 'medium', 'Stats': deep_copy(race_new_human.stats)} : options.race;
         this.homeworld = (options.homeworld === undefined) ? {'Homeworld': deep_copy(homeworld_none), 'Source': 'homeworlds_new', 'Skills': [], 'Stats': deep_copy(homeworld_none.stats)} : options.homeworld;
         this.hook = (options.hook === undefined) ? 'unset' : options.hook;
         this.career_track = (options.career_track === undefined) ? [] : options.career_track;
