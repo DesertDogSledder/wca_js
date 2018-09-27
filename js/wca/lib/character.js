@@ -42,7 +42,7 @@ class Race
             'STR': (options.strength === undefined) ? 0 : options.strength,
             'AGI': (options.agility === undefined) ? 0 : options.agility,
             'END': (options.endurance === undefined) ? 0 : options.endurance,
-            'INT': (options.intuition === undefined) ? 0 : options.intution,
+            'INT': (options.intuition === undefined) ? 0 : options.intuition,
             'LOG': (options.logic === undefined) ? 0 : options.logic,
             'WIL': (options.willpower === undefined) ? 0 : options.willpower,
             'CHA': (options.charisma === undefined) ? 0 : options.charisma,
@@ -208,7 +208,7 @@ function calc_exploit_total(character)
 
     for (let i=0; i<character.race['Race'].exploits.length; i++)
     {
-        exploit_total[character.race['Race'].exploits[i].name] = character.race['Race'].exploits[i].desc;
+        exploit_total[character.race['Race'].exploits[i]['Name']] = character.race['Race'].exploits[i]['Desc'];
     }
 
     let sorted_exploit_total = sort_object(exploit_total);

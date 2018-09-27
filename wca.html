@@ -59,6 +59,15 @@
             flex-grow: 1;
         }
 
+        /* Other stuff */
+        td, th {
+            padding: 5px;
+        }
+        .stat-table, .stat-td, .stat-tr {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
     </style>
     <!-- <script data-main="js/app.js" src="js/require.js"></script> -->
     <script src="js/jquery/jquery-3.3.1.min.js"></script>
@@ -193,7 +202,7 @@
             </fieldset>
             <fieldset>
                 <legend>Total Stats</legend>
-                <table>
+                <table class="stat-table">
                     <tr>
                         <td>STR</td>
                         <td>AGI</td>
@@ -260,11 +269,7 @@
             </fieldset>
             <fieldset>
                 <legend>Exploits</legend>
-                <ul>
-                    <li title="Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition.">Enduring</li>
-                    <li title="Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they stand on a planet new to them.">Explorers</li>
-                    <li title="Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above).">Varied</li>
-                </ul>
+                <ul id="rce_lst_exploits"></ul>
             </fieldset>
             <fieldset>
                 <legend>Racial Stats</legend>
@@ -423,7 +428,7 @@
         <div id="tabs-equipment">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
         <!-- Race select dialog -->
-        <div id="dialog_race_select" title="Select a Race">
+        <div id="rce_div_race_select" title="Select a Race">
             <div class="container">
                 <div class="fixed">
                     <select id="rs_sm_race_module" name="rs_sm_race_module">
@@ -443,13 +448,15 @@
             <div id="rs_div_race_desc">Race description goes here</div>
             <hr />
             <div class="container">
-                <label for="rs_div_race_size">Size<br/></label>
-                <div class="fixed" id="rs_div_race_size">Race size goes here</div>
-                <label for="rs_div_race_skills">Skills</label>
+                <div class="fixed">
+                    <label for="rs_div_race_size"><b>Size</b><br/></label>
+                    <div id="rs_div_race_size">Race size goes here</div>
+                </div>
+                <label for="rs_div_race_skills"><b>Skills</b></label>
                 <div class="flex-item" id="rs_div_race_available_skills">
                     <ul id="rs_lst_race_available_skills"></ul>
                 </div>
-                <label for="rs_div_race_exploits">Exploits</label>
+                <label for="rs_div_race_exploits"><b>Exploits</b></label>
                 <div class="flex-item" id="rs_div_race_exploits">
                     <ul id="rs_lst_race_exploits"></ul>
                 </div>
@@ -470,18 +477,18 @@
                     <td>PSI</td>
                 </tr>
                 <tr>
-                    <td><input id="rs_sp_race_str" /></td>
-                    <td><input id="rs_sp_race_agi" /></td>
-                    <td><input id="rs_sp_race_end" /></td>
-                    <td><input id="rs_sp_race_int" /></td>
-                    <td><input id="rs_sp_race_log" /></td>
-                    <td><input id="rs_sp_race_wil" /></td>
-                    <td><input id="rs_sp_race_cha" /></td>
-                    <td><input id="rs_sp_race_luc" /></td>
-                    <td><input id="rs_sp_race_rep" /></td>
-                    <td><input id="rs_sp_race_mag" /></td>
-                    <td><input id="rs_sp_race_chi" /></td>
-                    <td><input id="rs_sp_race_psi" /></td>
+                    <td><input id="rs_sp_race_str" readonly/></td>
+                    <td><input id="rs_sp_race_agi" readonly/></td>
+                    <td><input id="rs_sp_race_end" readonly/></td>
+                    <td><input id="rs_sp_race_int" readonly/></td>
+                    <td><input id="rs_sp_race_log" readonly/></td>
+                    <td><input id="rs_sp_race_wil" readonly/></td>
+                    <td><input id="rs_sp_race_cha" readonly/></td>
+                    <td><input id="rs_sp_race_luc" readonly/></td>
+                    <td><input id="rs_sp_race_rep" readonly/></td>
+                    <td><input id="rs_sp_race_mag" readonly/></td>
+                    <td><input id="rs_sp_race_chi" readonly/></td>
+                    <td><input id="rs_sp_race_psi" readonly/></td>
                 </tr>
             </table>
         </div>
@@ -492,6 +499,80 @@
         ////////
         // UI //
         ////////
+        // var $ovr_txt_character_hook = $("#ovr_txt_character_hook");
+        // var $ovr_txt_character_name = $("#ovr_txt_character_name");
+        // var $ovr_lst_skills = $("#ovr_lst_skills");
+        // var $ovr_lst_exploits = $("#ovr_lst_exploits");
+
+        // // Derived Stats
+        // var $ovr_div_ds_health = $("#ovr_div_ds_health");
+        // var $ovr_div_ds_init = $("#ovr_div_ds_init");
+        // var $ovr_div_ds_speed = $("#ovr_div_ds_speed");
+        // var $ovr_div_ds_climb = $("#ovr_div_ds_climb");
+        // var $ovr_div_ds_swim = $("#ovr_div_ds_swim");
+        // var $ovr_div_ds_g = $("#ovr_div_ds_g");
+        // var $ovr_div_ds_vert_jump = $("#ovr_div_ds_vert_jump");
+        // var $ovr_div_ds_hori_jump = $("#ovr_div_ds_hori_jump");
+        // // Defenses
+        // var $ovr_div_ds_carry = $("#ovr_div_ds_carry");
+        // var $ovr_div_def_melee = $("#ovr_div_def_melee");
+        // var $ovr_div_def_ranged = $("#ovr_div_def_ranged");
+        // var $ovr_div_def_mental = $("#ovr_div_def_mental");
+        // var $ovr_div_def_vital = $("#ovr_div_def_vital");
+        // // Total Stats
+        // var $ovr_div_total_str = $("#ovr_div_total_str");
+        // var $ovr_div_total_agi = $("#ovr_div_total_agi");
+        // var $ovr_div_total_end = $("#ovr_div_total_end");
+        // var $ovr_div_total_int = $("#ovr_div_total_int");
+        // var $ovr_div_total_log = $("#ovr_div_total_log");
+        // var $ovr_div_total_wil = $("#ovr_div_total_wil");
+        // var $ovr_div_total_cha = $("#ovr_div_total_cha");
+        // var $ovr_div_total_luc = $("#ovr_div_total_luc");
+        // var $ovr_div_total_rep = $("#ovr_div_total_rep");
+        // var $ovr_div_total_mag = $("#ovr_div_total_mag");
+        // var $ovr_div_total_chi = $("#ovr_div_total_chi");
+        // var $ovr_div_total_psi = $("#ovr_div_total_psi");
+
+        // // Race stats
+        // var $rce_lst_skills = $("#rce_lst_skills");
+        // var $rce_div_race_str = $("#rce_div_race_str");
+        // var $rce_div_race_agi = $("#rce_div_race_agi");
+        // var $rce_div_race_end = $("#rce_div_race_end");
+        // var $rce_div_race_int = $("#rce_div_race_int");
+        // var $rce_div_race_log = $("#rce_div_race_log");
+        // var $rce_div_race_wil = $("#rce_div_race_wil");
+        // var $rce_div_race_cha = $("#rce_div_race_cha");
+        // var $rce_div_race_luc = $("#rce_div_race_luc");
+        // var $rce_div_race_rep = $("#rce_div_race_rep");
+        // var $rce_div_race_mag = $("#rce_div_race_mag");
+        // var $rce_div_race_chi = $("#rce_div_race_chi");
+        // var $rce_div_race_psi = $("#rce_div_race_psi");
+        // // Homeworld
+        // var $hmw_lst_skills = $("#hmw_lst_skills");
+        // var $hmw_div_hmw_str = $("#hmw_div_hmw_str");
+        // var $hmw_div_hmw_agi = $("#hmw_div_hmw_agi");
+        // var $hmw_div_hmw_end = $("#hmw_div_hmw_end");
+        // var $hmw_div_hmw_int = $("#hmw_div_hmw_int");
+        // var $hmw_div_hmw_log = $("#hmw_div_hmw_log");
+        // var $hmw_div_hmw_wil = $("#hmw_div_hmw_wil");
+        // var $hmw_div_hmw_cha = $("#hmw_div_hmw_cha");
+        // var $hmw_div_hmw_luc = $("#hmw_div_hmw_luc");
+        // var $hmw_div_hmw_rep = $("#hmw_div_hmw_rep");
+        // var $hmw_div_hmw_mag = $("#hmw_div_hmw_mag");
+        // var $hmw_div_hmw_chi = $("#hmw_div_hmw_chi");
+        // var $hmw_div_hmw_psi = $("#hmw_div_hmw_psi");
+        // // Race select dialog
+        // var $rs_sm_race_module = $("#rs_sm_race_module").selectmenu({
+        //     change: select_race_module,
+        //     width: 150
+        // });
+        // var $rs_sm_race_select = $("#rs_sm_race_select").selectmenu({
+        //     change: select_race,
+        // });
+        // var $rs_div_race_desc = $("#rs_div_race_desc");
+        // var $rs_div_race_size = $("#rs_div_race_size");
+        // var $rs_lst_race_available_skills = $("#rs_lst_race_available_skills");
+
         var woin_character = new Character();
         woin_character.race['Skills'] = {'running': 3}
         woin_character.race['Skills']['pistols'] = 1;
@@ -501,170 +582,164 @@
         // woin_character.race['Source']['Var'] = 'race_new_borian';
         // woin_character.race = deep_copy(race_new_human)
         // woin_character.homeworld = deep_copy(homeworld_arctic)
-        update_info();
+        // $(function(){update_info();});
 
-        function update_info() {
-            // Overview
-            $("#ovr_txt_character_name").val(woin_character.name);
-            let total_stats = calc_stat_total(woin_character);
-            let skill_total = calc_skill_total(woin_character);
-            let exploit_total = calc_exploit_total(woin_character);
-            let derived_stats = calc_derived_stats(woin_character);
+        // function update_info() {
+        //     // Overview
+        //     $ovr_txt_character_name.val(woin_character.name);
 
-            // Main
-            $("#ovr_btn_jump_to_race").button('option', 'label', woin_character.race['Race'].name);
-            $("#ovr_btn_jump_to_homeworld").button('option', 'label', woin_character.homeworld['Homeworld'].name);
-            $("#ovr_btn_set_trait").button('option', 'label', woin_character.trait.name);
-            $("#ovr_txt_character_hook").val(woin_character.hook);
+        //     let total_stats = calc_stat_total(woin_character);
+        //     let skill_total = calc_skill_total(woin_character);
+        //     let exploit_total = calc_exploit_total(woin_character);
+        //     let derived_stats = calc_derived_stats(woin_character);
 
-            // Skills and exploits
-            $("#ovr_lst_skills").empty();
-            $("#ovr_lst_exploits").empty();
+        //     // Main
+        //     $ovr_btn_jump_to_race.button('option', 'label', woin_character.race['Race'].name);
+        //     $ovr_btn_jump_to_homeworld.button('option', 'label', woin_character.homeworld['Homeworld'].name);
+        //     $ovr_btn_set_trait.button('option', 'label', woin_character.trait.name);
+        //     $ovr_txt_character_hook.val(woin_character.hook);
 
-            for (skill in skill_total)
-            {
-                $("#ovr_lst_skills").append('<li>' + skill + ' (' + skill_total[skill] + ')</li>');
-            }
-            for (exploit in exploit_total)
-            {
-                $("#ovr_lst_exploits").append('<li title="' + exploit_total[exploit] + '">' + exploit + '</li>')
-            }
+        //     // Skills and exploits
+        //     $ovr_lst_skills.empty();
+        //     $ovr_lst_exploits.empty();
 
-
-            // Derived Stats
-            $("#ovr_div_ds_health").html(derived_stats['Health']);
-            $("#ovr_div_ds_init").html(derived_stats['Initiative'] + 'd6');
-            $("#ovr_div_ds_speed").html(derived_stats['Speed']);
-            $("#ovr_div_ds_climb").html(derived_stats['Climb']);
-            $("#ovr_div_ds_swim").html(derived_stats['Swim']);
-            $("#ovr_div_ds_g").html(derived_stats['Zero-G'] + '/' + derived_stats['Low-G'] + '/' + derived_stats['High-G']);
-            $("#ovr_div_ds_vert_jump").html(derived_stats['Vertical Jump Standing'] + '\'/' + derived_stats['Vertical Jump Running'] + '\'');
-            $("#ovr_div_ds_hori_jump").html(derived_stats['Horizontal Jump Standing'] + '\'/' + derived_stats['Horizontal Jump Running'] + '\'');
-            $("#ovr_div_ds_carry").html(derived_stats['Carry']);
-            // Defenses
-            $("#ovr_div_def_melee").html(derived_stats['Melee Defense']);
-            $("#ovr_div_def_ranged").html(derived_stats['Ranged Defense']);
-            $("#ovr_div_def_mental").html(derived_stats['Mental Defense']);
-            $("#ovr_div_def_vital").html(derived_stats['Vital Defense']);
+        //     for (skill in skill_total)
+        //     {
+        //         $ovr_lst_skills.append('<li>' + skill + ' (' + skill_total[skill] + ')</li>');
+        //     }
+        //     for (exploit in exploit_total)
+        //     {
+        //         $ovr_lst_exploits.append('<li title="' + exploit_total[exploit] + '">' + exploit + '</li>')
+        //     }
 
 
-            // Stats
-            let max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
-            let str_dice_pool_size = calc_dice_pool_size(total_stats['STR']);
-            let agi_dice_pool_size = calc_dice_pool_size(total_stats['AGI']);
-            let end_dice_pool_size = calc_dice_pool_size(total_stats['END']);
-            let int_dice_pool_size = calc_dice_pool_size(total_stats['INT']);
-            let log_dice_pool_size = calc_dice_pool_size(total_stats['LOG']);
-            let wil_dice_pool_size = calc_dice_pool_size(total_stats['WIL']);
-            let cha_dice_pool_size = calc_dice_pool_size(total_stats['CHA']);
-            let luc_dice_pool_size = calc_dice_pool_size(total_stats['LUC']);
-            let rep_dice_pool_size = calc_dice_pool_size(total_stats['REP']);
-            let mag_dice_pool_size = calc_dice_pool_size(total_stats['MAG']);
-            let chi_dice_pool_size = calc_dice_pool_size(total_stats['CHI']);
-            let psi_dice_pool_size = calc_dice_pool_size(total_stats['PSI']);
-
-            // Cap dice pool size
-            // let str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
-            // let agi_dice_pool = (agi_dice_pool_size <= max_dice_pool) ? agi_dice_pool_size : max_dice_pool;
-            // let end_dice_pool = (end_dice_pool_size <= max_dice_pool) ? end_dice_pool_size : max_dice_pool;
-            // let int_dice_pool = (int_dice_pool_size <= max_dice_pool) ? int_dice_pool_size : max_dice_pool;
-            // let log_dice_pool = (log_dice_pool_size <= max_dice_pool) ? log_dice_pool_size : max_dice_pool;
-            // let wil_dice_pool = (wil_dice_pool_size <= max_dice_pool) ? wil_dice_pool_size : max_dice_pool;
-            // let cha_dice_pool = (cha_dice_pool_size <= max_dice_pool) ? cha_dice_pool_size : max_dice_pool;
-            // let luc_dice_pool = (luc_dice_pool_size <= max_dice_pool) ? luc_dice_pool_size : max_dice_pool;
-            // let rep_dice_pool = (rep_dice_pool_size <= max_dice_pool) ? rep_dice_pool_size : max_dice_pool;
-            // let mag_dice_pool = (mag_dice_pool_size <= max_dice_pool) ? mag_dice_pool_size : max_dice_pool;
-            // let chi_dice_pool = (chi_dice_pool_size <= max_dice_pool) ? chi_dice_pool_size : max_dice_pool;
-            // let psi_dice_pool = (psi_dice_pool_size <= max_dice_pool) ? psi_dice_pool_size : max_dice_pool;
-
-            // Don't cap dice pool size
-            let str_dice_pool = str_dice_pool_size;
-            let agi_dice_pool = agi_dice_pool_size;
-            let end_dice_pool = end_dice_pool_size;
-            let int_dice_pool = int_dice_pool_size;
-            let log_dice_pool = log_dice_pool_size;
-            let wil_dice_pool = wil_dice_pool_size;
-            let cha_dice_pool = cha_dice_pool_size;
-            let luc_dice_pool = luc_dice_pool_size;
-            let rep_dice_pool = rep_dice_pool_size;
-            let mag_dice_pool = mag_dice_pool_size;
-            let chi_dice_pool = chi_dice_pool_size;
-            let psi_dice_pool = psi_dice_pool_size;
+        //     // Derived Stats
+        //     $ovr_div_ds_health.html(derived_stats['Health']);
+        //     $ovr_div_ds_init.html(derived_stats['Initiative'] + 'd6');
+        //     $ovr_div_ds_speed.html(derived_stats['Speed']);
+        //     $ovr_div_ds_climb.html(derived_stats['Climb']);
+        //     $ovr_div_ds_swim.html(derived_stats['Swim']);
+        //     $ovr_div_ds_g.html(derived_stats['Zero-G'] + '/' + derived_stats['Low-G'] + '/' + derived_stats['High-G']);
+        //     $ovr_div_ds_vert_jump.html(derived_stats['Vertical Jump Standing'] + '\'/' + derived_stats['Vertical Jump Running'] + '\'');
+        //     $ovr_div_ds_hori_jump.html(derived_stats['Horizontal Jump Standing'] + '\'/' + derived_stats['Horizontal Jump Running'] + '\'');
+        //     $ovr_div_ds_carry.html(derived_stats['Carry']);
+        //     // Defenses
+        //     $ovr_div_def_melee.html(derived_stats['Melee Defense']);
+        //     $ovr_div_def_ranged.html(derived_stats['Ranged Defense']);
+        //     $ovr_div_def_mental.html(derived_stats['Mental Defense']);
+        //     $ovr_div_def_vital.html(derived_stats['Vital Defense']);
 
 
-            $("#ovr_div_total_str").html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
-            $("#ovr_div_total_agi").html(total_stats['AGI'] + '(' + agi_dice_pool + 'd6)');
-            $("#ovr_div_total_end").html(total_stats['END'] + '(' + end_dice_pool + 'd6)');
-            $("#ovr_div_total_int").html(total_stats['INT'] + '(' + int_dice_pool + 'd6)');
-            $("#ovr_div_total_log").html(total_stats['LOG'] + '(' + log_dice_pool + 'd6)');
-            $("#ovr_div_total_wil").html(total_stats['WIL'] + '(' + wil_dice_pool + 'd6)');
-            $("#ovr_div_total_cha").html(total_stats['CHA'] + '(' + cha_dice_pool + 'd6)');
-            $("#ovr_div_total_luc").html(total_stats['LUC'] + '(' + luc_dice_pool + 'd6)');
-            $("#ovr_div_total_rep").html(total_stats['REP'] + '(' + rep_dice_pool + 'd6)');
-            $("#ovr_div_total_mag").html(total_stats['MAG'] + '(' + mag_dice_pool + 'd6)');
-            $("#ovr_div_total_chi").html(total_stats['CHI'] + '(' + chi_dice_pool + 'd6)');
-            $("#ovr_div_total_psi").html(total_stats['PSI'] + '(' + psi_dice_pool + 'd6)');
+        //     // Stats
+        //     let max_dice_pool = calc_max_dice_pool_size(woin_character.career_track.length);
+        //     let str_dice_pool_size = calc_dice_pool_size(total_stats['STR']);
+        //     let agi_dice_pool_size = calc_dice_pool_size(total_stats['AGI']);
+        //     let end_dice_pool_size = calc_dice_pool_size(total_stats['END']);
+        //     let int_dice_pool_size = calc_dice_pool_size(total_stats['INT']);
+        //     let log_dice_pool_size = calc_dice_pool_size(total_stats['LOG']);
+        //     let wil_dice_pool_size = calc_dice_pool_size(total_stats['WIL']);
+        //     let cha_dice_pool_size = calc_dice_pool_size(total_stats['CHA']);
+        //     let luc_dice_pool_size = calc_dice_pool_size(total_stats['LUC']);
+        //     let rep_dice_pool_size = calc_dice_pool_size(total_stats['REP']);
+        //     let mag_dice_pool_size = calc_dice_pool_size(total_stats['MAG']);
+        //     let chi_dice_pool_size = calc_dice_pool_size(total_stats['CHI']);
+        //     let psi_dice_pool_size = calc_dice_pool_size(total_stats['PSI']);
 
-            // Race tab
-            $("#rce_btn_set_race").button('option', 'label', woin_character.race.name);
-            $("#rce_sm_size").val(woin_character.race.size);
-            $("#rce_sm_size").selectmenu("refresh");
+        //     // Cap dice pool size
+        //     // let str_dice_pool = (str_dice_pool_size <= max_dice_pool) ? str_dice_pool_size : max_dice_pool;
+        //     // let agi_dice_pool = (agi_dice_pool_size <= max_dice_pool) ? agi_dice_pool_size : max_dice_pool;
+        //     // let end_dice_pool = (end_dice_pool_size <= max_dice_pool) ? end_dice_pool_size : max_dice_pool;
+        //     // let int_dice_pool = (int_dice_pool_size <= max_dice_pool) ? int_dice_pool_size : max_dice_pool;
+        //     // let log_dice_pool = (log_dice_pool_size <= max_dice_pool) ? log_dice_pool_size : max_dice_pool;
+        //     // let wil_dice_pool = (wil_dice_pool_size <= max_dice_pool) ? wil_dice_pool_size : max_dice_pool;
+        //     // let cha_dice_pool = (cha_dice_pool_size <= max_dice_pool) ? cha_dice_pool_size : max_dice_pool;
+        //     // let luc_dice_pool = (luc_dice_pool_size <= max_dice_pool) ? luc_dice_pool_size : max_dice_pool;
+        //     // let rep_dice_pool = (rep_dice_pool_size <= max_dice_pool) ? rep_dice_pool_size : max_dice_pool;
+        //     // let mag_dice_pool = (mag_dice_pool_size <= max_dice_pool) ? mag_dice_pool_size : max_dice_pool;
+        //     // let chi_dice_pool = (chi_dice_pool_size <= max_dice_pool) ? chi_dice_pool_size : max_dice_pool;
+        //     // let psi_dice_pool = (psi_dice_pool_size <= max_dice_pool) ? psi_dice_pool_size : max_dice_pool;
 
-            $("#rce_lst_skills").empty();
+        //     // Don't cap dice pool size
+        //     let str_dice_pool = str_dice_pool_size;
+        //     let agi_dice_pool = agi_dice_pool_size;
+        //     let end_dice_pool = end_dice_pool_size;
+        //     let int_dice_pool = int_dice_pool_size;
+        //     let log_dice_pool = log_dice_pool_size;
+        //     let wil_dice_pool = wil_dice_pool_size;
+        //     let cha_dice_pool = cha_dice_pool_size;
+        //     let luc_dice_pool = luc_dice_pool_size;
+        //     let rep_dice_pool = rep_dice_pool_size;
+        //     let mag_dice_pool = mag_dice_pool_size;
+        //     let chi_dice_pool = chi_dice_pool_size;
+        //     let psi_dice_pool = psi_dice_pool_size;
 
-            let race_skills_sorted = sort_object(woin_character.race['Skills']);
-            for (skill in race_skills_sorted)
-            {
-                $("#rce_lst_skills").append('<li>' + skill + ' (' + race_skills_sorted[skill] + ')</li>');
-            }
 
-            $("#rce_div_race_str").html(format_num(woin_character.race['Stats']['STR']));
-            $("#rce_div_race_agi").html(format_num(woin_character.race['Stats']['AGI']));
-            $("#rce_div_race_end").html(format_num(woin_character.race['Stats']['END']));
-            $("#rce_div_race_int").html(format_num(woin_character.race['Stats']['INT']));
-            $("#rce_div_race_log").html(format_num(woin_character.race['Stats']['LOG']));
-            $("#rce_div_race_wil").html(format_num(woin_character.race['Stats']['WIL']));
-            $("#rce_div_race_cha").html(format_num(woin_character.race['Stats']['CHA']));
-            $("#rce_div_race_luc").html(format_num(woin_character.race['Stats']['LUC']));
-            $("#rce_div_race_rep").html(format_num(woin_character.race['Stats']['REP']));
-            $("#rce_div_race_mag").html(format_num(woin_character.race['Stats']['MAG']));
-            $("#rce_div_race_chi").html(format_num(woin_character.race['Stats']['CHI']));
-            $("#rce_div_race_psi").html(format_num(woin_character.race['Stats']['PSI']));
+        //     $ovr_div_total_str.html(total_stats['STR'] + '(' + str_dice_pool + 'd6)');
+        //     $ovr_div_total_agi.html(total_stats['AGI'] + '(' + agi_dice_pool + 'd6)');
+        //     $ovr_div_total_end.html(total_stats['END'] + '(' + end_dice_pool + 'd6)');
+        //     $ovr_div_total_int.html(total_stats['INT'] + '(' + int_dice_pool + 'd6)');
+        //     $ovr_div_total_log.html(total_stats['LOG'] + '(' + log_dice_pool + 'd6)');
+        //     $ovr_div_total_wil.html(total_stats['WIL'] + '(' + wil_dice_pool + 'd6)');
+        //     $ovr_div_total_cha.html(total_stats['CHA'] + '(' + cha_dice_pool + 'd6)');
+        //     $ovr_div_total_luc.html(total_stats['LUC'] + '(' + luc_dice_pool + 'd6)');
+        //     $ovr_div_total_rep.html(total_stats['REP'] + '(' + rep_dice_pool + 'd6)');
+        //     $ovr_div_total_mag.html(total_stats['MAG'] + '(' + mag_dice_pool + 'd6)');
+        //     $ovr_div_total_chi.html(total_stats['CHI'] + '(' + chi_dice_pool + 'd6)');
+        //     $ovr_div_total_psi.html(total_stats['PSI'] + '(' + psi_dice_pool + 'd6)');
 
-            // Homeworld tab
-            $("#hmw_btn_set_homeworld").button('option', 'label', woin_character.homeworld.name);
+        //     // Race tab
+        //     $rce_btn_set_race.button('option', 'label', woin_character.race.name);
+        //     $rce_sm_size.val(woin_character.race.size);
+        //     $rce_sm_size.selectmenu("refresh");
 
-            $("#hmw_lst_skills").empty();
+        //     $rce_lst_skills.empty();
 
-            let hmw_skills_sorted = sort_object(woin_character.homeworld['Skills']);
-            for (skill in hmw_skills_sorted)
-            {
-                $("#hmw_lst_skills").append('<li>' + skill + ' (' + hmw_skills_sorted[skill] + ')</li>');
-            }
+        //     let race_skills_sorted = sort_object(woin_character.race['Skills']);
+        //     for (skill in race_skills_sorted)
+        //     {
+        //         $rce_lst_skills.append('<li>' + skill + ' (' + race_skills_sorted[skill] + ')</li>');
+        //     }
 
-            $("#hmw_div_hmw_str").html(format_num(woin_character.homeworld['Stats']['STR']));
-            $("#hmw_div_hmw_agi").html(format_num(woin_character.homeworld['Stats']['AGI']));
-            $("#hmw_div_hmw_end").html(format_num(woin_character.homeworld['Stats']['END']));
-            $("#hmw_div_hmw_int").html(format_num(woin_character.homeworld['Stats']['INT']));
-            $("#hmw_div_hmw_log").html(format_num(woin_character.homeworld['Stats']['LOG']));
-            $("#hmw_div_hmw_wil").html(format_num(woin_character.homeworld['Stats']['WIL']));
-            $("#hmw_div_hmw_cha").html(format_num(woin_character.homeworld['Stats']['CHA']));
-            $("#hmw_div_hmw_luc").html(format_num(woin_character.homeworld['Stats']['LUC']));
-            $("#hmw_div_hmw_rep").html(format_num(woin_character.homeworld['Stats']['REP']));
-            $("#hmw_div_hmw_mag").html(format_num(woin_character.homeworld['Stats']['MAG']));
-            $("#hmw_div_hmw_chi").html(format_num(woin_character.homeworld['Stats']['CHI']));
-            $("#hmw_div_hmw_psi").html(format_num(woin_character.homeworld['Stats']['PSI']));
+        //     $rce_div_race_str.html(format_num(woin_character.race['Stats']['STR']));
+        //     $rce_div_race_agi.html(format_num(woin_character.race['Stats']['AGI']));
+        //     $rce_div_race_end.html(format_num(woin_character.race['Stats']['END']));
+        //     $rce_div_race_int.html(format_num(woin_character.race['Stats']['INT']));
+        //     $rce_div_race_log.html(format_num(woin_character.race['Stats']['LOG']));
+        //     $rce_div_race_wil.html(format_num(woin_character.race['Stats']['WIL']));
+        //     $rce_div_race_cha.html(format_num(woin_character.race['Stats']['CHA']));
+        //     $rce_div_race_luc.html(format_num(woin_character.race['Stats']['LUC']));
+        //     $rce_div_race_rep.html(format_num(woin_character.race['Stats']['REP']));
+        //     $rce_div_race_mag.html(format_num(woin_character.race['Stats']['MAG']));
+        //     $rce_div_race_chi.html(format_num(woin_character.race['Stats']['CHI']));
+        //     $rce_div_race_psi.html(format_num(woin_character.race['Stats']['PSI']));
 
-            // Career tab
-        };
+        //     // Homeworld tab
+        //     $hmw_btn_set_homeworld.button('option', 'label', woin_character.homeworld.name);
 
-        $("#rs_sm_race_module").selectmenu({
-            change: select_race_module,
-            width: 150
-        });
-        $("#rs_sm_race_select").selectmenu({
-            change: select_race,
-        });
+        //     $hmw_lst_skills.empty();
+
+        //     let hmw_skills_sorted = sort_object(woin_character.homeworld['Skills']);
+        //     for (skill in hmw_skills_sorted)
+        //     {
+        //         $hmw_lst_skills.append('<li>' + skill + ' (' + hmw_skills_sorted[skill] + ')</li>');
+        //     }
+
+        //     $hmw_div_hmw_str.html(format_num(woin_character.homeworld['Stats']['STR']));
+        //     $hmw_div_hmw_agi.html(format_num(woin_character.homeworld['Stats']['AGI']));
+        //     $hmw_div_hmw_end.html(format_num(woin_character.homeworld['Stats']['END']));
+        //     $hmw_div_hmw_int.html(format_num(woin_character.homeworld['Stats']['INT']));
+        //     $hmw_div_hmw_log.html(format_num(woin_character.homeworld['Stats']['LOG']));
+        //     $hmw_div_hmw_wil.html(format_num(woin_character.homeworld['Stats']['WIL']));
+        //     $hmw_div_hmw_cha.html(format_num(woin_character.homeworld['Stats']['CHA']));
+        //     $hmw_div_hmw_luc.html(format_num(woin_character.homeworld['Stats']['LUC']));
+        //     $hmw_div_hmw_rep.html(format_num(woin_character.homeworld['Stats']['REP']));
+        //     $hmw_div_hmw_mag.html(format_num(woin_character.homeworld['Stats']['MAG']));
+        //     $hmw_div_hmw_chi.html(format_num(woin_character.homeworld['Stats']['CHI']));
+        //     $hmw_div_hmw_psi.html(format_num(woin_character.homeworld['Stats']['PSI']));
+
+        //     // Career tab
+        //     // stuff here
+        // };
     </script>
 </body>
 
