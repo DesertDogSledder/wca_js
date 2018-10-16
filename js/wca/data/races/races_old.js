@@ -38,7 +38,7 @@ var race_old_danuki = new Race({
          "They are peerless shapechangers but rarely have an agenda with their change of forms; pranks and laughter " +
          "are often enough for them.\n\n" +
          "Danuki are small, about 2’7”, furred humanoids that are very animal-like, looking like a Japanese " +
-         "raccon-dog walking on its hind legs. Their bodies appear rotund and short limbed; much of it is actually " +
+         "raccoon-dog walking on its hind legs. Their bodies appear rotund and short limbed; much of it is actually " +
          "fur. They have fluffy tails, and when a Danuki fails a disguise attempt, the first sign of is often that " +
          "their tail starts poking out.",
     size: 'small',
@@ -550,7 +550,29 @@ var race_old_water_nymph = new Race({
               {'Name': 'Watery step',
                'Desc': "You can walk on water and other liquids."}]});
 
-var race_old_list = [race_old_clockman, race_old_danuki, race_old_deepling, race_old_earth_nymph, race_old_forest_nymph,
-                 race_old_goblin, race_old_grand_elf, race_old_human, race_old_flint_dwarf, race_old_jade_dwarf,
-                 race_old_minotaur, race_old_mountain_dwarf, race_old_night_elf, race_old_obsidian_dwarf,
-                 race_old_ogre, race_old_orc, race_old_smallfolk, race_old_sylvan_elf, race_old_water_nymph];
+// var race_old_list = [race_old_clockman, race_old_danuki, race_old_deepling, race_old_earth_nymph, race_old_forest_nymph,
+//                  race_old_goblin, race_old_grand_elf, race_old_human, race_old_flint_dwarf, race_old_jade_dwarf,
+//                  race_old_minotaur, race_old_mountain_dwarf, race_old_night_elf, race_old_obsidian_dwarf,
+//                  race_old_ogre, race_old_orc, race_old_smallfolk, race_old_sylvan_elf, race_old_water_nymph];
+
+var race_old_list = {
+        'race_old_clockman': race_old_clockman,
+        'race_old_danuki': race_old_danuki,
+        'race_old_deepling': race_old_deepling,
+        'race_old_earth_nymph': race_old_earth_nymph,
+        'race_old_forest_nymph': race_old_forest_nymph,
+        'race_old_goblin': race_old_goblin,
+        'race_old_grand_elf': race_old_grand_elf,
+        'race_old_human': race_old_human,
+        'race_old_flint_dwarf': race_old_flint_dwarf,
+        'race_old_jade_dwarf': race_old_jade_dwarf,
+        'race_old_minotaur': race_old_minotaur,
+        'race_old_mountain_dwarf': race_old_mountain_dwarf,
+        'race_old_night_elf': race_old_night_elf,
+        'race_old_obsidian_dwarf': race_old_obsidian_dwarf,
+        'race_old_ogre': race_old_ogre,
+        'race_old_orc': race_old_orc,
+        'race_old_smallfolk': race_old_smallfolk,
+        'race_old_sylvan_elf': race_old_sylvan_elf,
+        'race_old_water_nymph': race_old_water_nymph
+};

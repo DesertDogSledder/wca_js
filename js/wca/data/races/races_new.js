@@ -538,7 +538,8 @@ var race_new_venetian = new Race({
 //                  race_new_venetian];
 
 var race_new_list = {
-        'race_new_android': race_new_android, 'race_new_borian': race_new_borian,
+        'race_new_android': race_new_android,
+        'race_new_borian': race_new_borian,
         'race_new_canid': race_new_canid,
         'race_new_corax': race_new_corax,
         'race_new_felan': race_new_felan,
@@ -558,4 +559,4 @@ var race_new_list = {
         'race_new_synthetic': race_new_synthetic,
         'race_new_trantor': race_new_trantor,
         'race_new_venetian': race_new_venetian
-};                 
+};

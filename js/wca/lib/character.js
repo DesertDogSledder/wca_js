@@ -151,12 +151,14 @@ function calc_stat_total(character)
 
     for (stat in character.race['Stats'])
     {
+        console.log(character.race['Stats'][stat]);
         stat_total[stat] += character.race['Stats'][stat];
         // console.log(stat + character.race['Stats'][stat])
     }
 
     for (stat in character.homeworld['Stats'])
     {
+        console.log(character.homeworld['Stats'][stat]);
         stat_total[stat] += character.homeworld['Stats'][stat];
     }
 
@@ -164,11 +166,13 @@ function calc_stat_total(character)
     {
         for (stat in character.career_track[career].stats)
         {
+            console.log(character.career_track[career].stats[stat]);
             stat_total[stat] += character.career_track[career].stats[stat];
         }
     }
 
     // console.log(stat_total);
+    console.log(stat_total);
     return stat_total;
 }
 

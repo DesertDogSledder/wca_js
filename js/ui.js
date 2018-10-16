@@ -78,6 +78,9 @@ $rce_btn_set_race.on("click", function(){
     $rce_diag_race_select.dialog("open");
 });
 var $rce_btn_set_race_skills = $("#rce_btn_set_race_skills").button();
+$rce_btn_set_race_skills.on('click', function(){
+    $rce_diag_race_skill_select.dialog("open");
+});
 var $rce_sm_size = $("#rce_sm_size").selectmenu({
     change: select_size,
     width: 150
@@ -151,30 +154,33 @@ var $rce_diag_race_select = $("#rce_div_race_select").dialog({
                 let selected_race_module = $rs_sm_race_module.val();
                 let selected_race_var = $rs_sm_race_select.val();
                 let selected_race = race_modules[selected_race_module][selected_race_var];
+                // console.log($rs_sm_race_select.val());
 
                 // console.log(selected_race);
 
                 woin_character.race['Race'] = deep_copy(selected_race);
-                woin_character.race['Source'] = selected_race_module;
-                woin_character.race['Var'] = selected_race_var;
+                woin_character.race['Source']['File'] = selected_race_module;
+                woin_character.race['Source']['Var'] = selected_race_var;
 
-                woin_character.race['Stats']['STR'] = $rs_sp_race_str.val();
-                woin_character.race['Stats']['AGI'] = $rs_sp_race_agi.val();
-                woin_character.race['Stats']['END'] = $rs_sp_race_end.val();
-                woin_character.race['Stats']['INT'] = $rs_sp_race_int.val();
-                woin_character.race['Stats']['LOG'] = $rs_sp_race_log.val();
-                woin_character.race['Stats']['WIL'] = $rs_sp_race_wil.val();
-                woin_character.race['Stats']['CHA'] = $rs_sp_race_cha.val();
-                woin_character.race['Stats']['LUC'] = $rs_sp_race_luc.val();
-                woin_character.race['Stats']['REP'] = $rs_sp_race_rep.val();
-                woin_character.race['Stats']['MAG'] = $rs_sp_race_mag.val();
-                woin_character.race['Stats']['CHI'] = $rs_sp_race_chi.val();
-                woin_character.race['Stats']['PSI'] = $rs_sp_race_psi.val();
+                woin_character.race['Stats']['STR'] = parseInt($rs_sp_race_str.val());
+                woin_character.race['Stats']['AGI'] = parseInt($rs_sp_race_agi.val());
+                woin_character.race['Stats']['END'] = parseInt($rs_sp_race_end.val());
+                woin_character.race['Stats']['INT'] = parseInt($rs_sp_race_int.val());
+                woin_character.race['Stats']['LOG'] = parseInt($rs_sp_race_log.val());
+                woin_character.race['Stats']['WIL'] = parseInt($rs_sp_race_wil.val());
+                woin_character.race['Stats']['CHA'] = parseInt($rs_sp_race_cha.val());
+                woin_character.race['Stats']['LUC'] = parseInt($rs_sp_race_luc.val());
+                woin_character.race['Stats']['REP'] = parseInt($rs_sp_race_rep.val());
+                woin_character.race['Stats']['MAG'] = parseInt($rs_sp_race_mag.val());
+                woin_character.race['Stats']['CHI'] = parseInt($rs_sp_race_chi.val());
+                woin_character.race['Stats']['PSI'] = parseInt($rs_sp_race_psi.val());
+
+                // console.log(woin_character.race['Stats']);
 
                 $(this).dialog("close");
                 update_info();
 
-                // console.log(woin_character.race['Race']);
+                // console.log(woin_character.race['Var']);
             }
         },
         {
@@ -192,13 +198,13 @@ var $rce_diag_race_select = $("#rce_div_race_select").dialog({
     },
     open: function()
     {
-        $rs_sm_race_module.val(woin_character.race['Source']['File']);
-        $rs_sm_race_module.selectmenu("refresh");
-        $rs_sm_race_module.change();
+        // $rs_sm_race_module.val(woin_character.race['Source']['File']);
+        // $rs_sm_race_module.selectmenu("refresh");
+        // $rs_sm_race_module.change();
 
-        $rs_sm_race_select.val(woin_character.race['Source']['Var']);
-        $rs_sm_race_select.selectmenu("refresh");
-        $rs_sm_race_select.change();
+        // $rs_sm_race_select.val(woin_character.race['Source']['Var']);
+        // $rs_sm_race_select.selectmenu("refresh");
+        // $rs_sm_race_select.change();
         
         $rs_sp_race_str.val(woin_character.race['Stats']['STR']);
         $rs_sp_race_agi.val(woin_character.race['Stats']['AGI']);
@@ -212,6 +218,12 @@ var $rce_diag_race_select = $("#rce_div_race_select").dialog({
         $rs_sp_race_mag.val(woin_character.race['Stats']['MAG']);
         $rs_sp_race_chi.val(woin_character.race['Stats']['CHI']);
         $rs_sp_race_psi.val(woin_character.race['Stats']['PSI']);
+
+        // console.log(woin_character.race['Source']['File']);
+
+        // select_race_module(null, {item: {value: woin_character.race['Source']['File']}});
+        // select_race(null, {item: {value: woin_character.race['Source']['Var']}});
+
     }
 });
 var $rs_sm_race_module = $("#rs_sm_race_module").selectmenu({
@@ -224,6 +236,67 @@ var $rs_sm_race_select = $("#rs_sm_race_select").selectmenu({
 var $rs_div_race_desc = $("#rs_div_race_desc");
 var $rs_div_race_size = $("#rs_div_race_size");
 var $rs_lst_race_available_skills = $("#rs_lst_race_available_skills");
+var $rs_lst_race_exploits = $("#rs_lst_race_exploits");
+
+// Race skill select dialog
+var $rsk_sel_current_skills = $("#rsk_sel_current_skills").selectable();
+var $rsk_btn_del_skill = $("#rsk_btn_del_skill").button();
+$rsk_btn_del_skill.on("click", function(event) { // bind click event to link
+    var index = $("#tabs-race").index()-1;
+    $('#tabs').tabs("option", "active", index);
+});
+var $rsk_txt_skill_name = $("#rsk_txt_skill_name");
+var $rsk_sp_skill_lvl = $("#rsk_sp_skill_lvl").spinner({
+    spin: function(event, ui) {
+        if (ui.value < 0) {
+            $(this).spinner("value", 0);
+            return false;
+        }
+    }
+}).width(30);
+var $rsk_btn_add_skill = $("#rsk_btn_add_skill").button();
+var $rce_diag_race_skill_select = $("#rce_diag_race_skill_select").dialog({
+    autoOpen: false,
+    height: 'auto',
+    minWidth: 1070,
+    width: 1070,
+    maxWidth: 1070,
+    modal: true,
+    buttons: [
+        {
+            text: "OK",
+            click: function()
+            {
+                $(this).dialog("close");
+                update_info();
+            }
+        },
+        {
+            text: "Cancel",
+            click: function()
+            {
+                $(this).dialog("close");
+            }
+        },
+    ],
+    close: function() 
+    {
+
+    },
+    open: function()
+    {
+        $rsk_sel_current_skills.empty();
+        let race_skills_sorted = sort_object(woin_character.race['Skills']);
+        console.log(woin_character.race['Skills']);
+        var new_race_skills = deep_copy(race_skills_sorted);
+        for (skill in race_skills_sorted)
+        {
+            $rsk_sel_current_skills.append('<li>' + skill + ' (' + race_skills_sorted[skill] + ')</li>');
+        }
+        $rsk_sel_current_skills.selectable();
+        $rsk_sp_skill_lvl.val(0);
+    }
+});
 
 
 // Functions
@@ -237,9 +310,15 @@ function select_race_module(event, data)
     }
 
     $rs_sm_race_select.find('option').remove().end();
-    $rs_sm_race_select.append(options.join("")).selectmenu();
-    $rs_sm_race_select.selectmenu("refresh");
+    // $rs_sm_race_select.append(options.join("")).selectmenu();
+    $rs_sm_race_select.append(options.join(""));
+    // console.log($rs_sm_race_select.selectmenu("value"));
 
+    // let arrayOfValues = $("#rs_sm_race_select option").map(0);
+    // console.log(arrayOfValues);
+    // $rs_sm_race_select.val($rs_sm_race_select.val()[0]);
+    $rs_sm_race_select.prop("selectedIndex", 0);
+    $rs_sm_race_select.selectmenu("refresh");
     $rs_sm_race_select.change();
 };
 
@@ -255,10 +334,20 @@ function select_race(event, data)
     $rs_div_race_desc.html(selected_race.description);
     $rs_div_race_size.html(selected_race.size);
 
+    // Skills
     $rs_lst_race_available_skills.empty();
     for (skill in available_skills)
     {
         $rs_lst_race_available_skills.append('<li>' + available_skills[skill] + '</li>');
+    }
+
+    // Exploits
+    race_exploits = JSON.parse(JSON.stringify(woin_character.race['Race'].exploits));
+    race_exploits.sort(dynamic_sort_multiple('Name'));
+    $rs_lst_race_exploits.empty();
+    for (exploit in race_exploits)
+    {
+        $rs_lst_race_exploits.append('<li title="' + race_exploits[exploit]['Desc'] + '">' + race_exploits[exploit]['Name'] + '</li>')
     }
 
     $rs_sp_race_str.val(selected_race.stats['STR']);
@@ -284,6 +373,7 @@ function select_size(event, data)
 
 function update_info() {
     // Overview
+    console.log('update_info called');
     $ovr_txt_character_name.val(woin_character.name);
 
     let total_stats = calc_stat_total(woin_character);
@@ -402,7 +492,7 @@ function update_info() {
     race_exploits = JSON.parse(JSON.stringify(woin_character.race['Race'].exploits));
     race_exploits.sort(dynamic_sort_multiple('Name'));
 
-
+    $rce_lst_exploits.empty();
     for (exploit in race_exploits)
     {
         $rce_lst_exploits.append('<li title="' + race_exploits[exploit]['Desc'] + '">' + race_exploits[exploit]['Name'] + '</li>')
@@ -447,6 +537,15 @@ function update_info() {
 
     // Career tab
     // stuff here
+
+    // Race select dialog
+    $rs_sm_race_module.val(woin_character.race['Source']['File']);
+    $rs_sm_race_module.selectmenu("refresh");
+    $rs_sm_race_module.change();
+
+    $rs_sm_race_select.val(woin_character.race['Source']['Var']);
+    $rs_sm_race_select.selectmenu("refresh");
+    $rs_sm_race_select.change();
 };
 update_info();
 });

@@ -85,4 +85,11 @@ var race_now_mutant = new Race({
                'Desc': "Mutants have one or more mutations. Select one major or two minor mutations. You may select " +
                        "any number of cosmetic mutations, but you must choose at least one."}]});
 
-var race_now_list = [race_now_augmented, race_now_chosen, race_now_human, race_now_mutant];
+// var race_now_list = [race_now_augmented, race_now_chosen, race_now_human, race_now_mutant];
+
+var race_now_list = {
+        'race_now_augmented': race_now_augmented,
+        'race_now_chosen': race_now_chosen,
+        'race_now_human': race_now_human,
+        'race_now_mutant': race_now_mutant
+};
