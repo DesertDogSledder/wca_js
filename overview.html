@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>WOIN Character Assistant</title>
+  </head>
+  <body onload=refreshOverview()>
+    <div class="container">
+      <nav class="nav nav-tabs">
+        <a href="overview.html" class="nav-item nav-link active">Overview</a>
+        <a href="race.html" class="nav-item nav-link">Race</a>
+        <a href="homeworld.html" class="nav-item nav-link">Homeworld</a>
+        <a href="careers.html" class="nav-item nav-link">Careers</a>
+        <a href="exploits.html" class="nav-item nav-link">Exploits</a>
+        <a href="equipment.html" class="nav-item nav-link">Equipment</a>
+      </nav>
+      <!--Overview Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><button type="button" class="btn btn-danger" id="ovrBtnNewCharacter">New Character</button><h5>Overview</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <b>Name:</b>
+            <span id=ovrNameVal></span>
+            <button type="button" class="btn btn-warning" id="ovrBtnEditName"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+          </div>
+          <div class="mb-2">
+            <b>Race:</b>
+            <span id="ovrRaceVal"></span>
+            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit race"></button>
+          </div>
+          <div class="mb-2">
+            <b>Homeworld:</b>
+            <span id="ovrHomeworldVal"></span>
+            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit homeworld"></button>
+          </div>
+          <div class="mb-2">
+            <b>Trait: </b>
+            <span id="ovrTraitVal"></span>
+            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit trait"></button>
+          </div>
+          <div class="mb-2">
+            <b>Hook: </b>
+            <span id="ovrHookVal"></span>
+            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit hook"></button>
+          </div>
+        </div>
+      </div>
+
+      <!--Skills Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Skills</h5></div>
+        <div class="card-body"><ul id="ovrSkillList"></ul></div>
+      </div>
+    
+      <!--Exploits Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Exploits</h5></div>
+        <div class="card-body"><ul id="ovrExploitList"></div>
+      </div>
+    
+      <!--Derived Statistics Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Derived Statistics</h5></div>
+        <div class="card-body">
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Health</h5></div>
+            <div class="card-body">
+              <div id="ovrHealthInfo"></div>
+            </div>
+          </div>
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Initiative</h5></div>
+            <div class="card-body">
+              <div id="ovrInitiativeInfo"></div>
+            </div>
+          </div>
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Movement</h5></div>
+            <div class="card-body">
+              <div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Speed</th>
+                      <td id="ovrMovementSpeed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Climb</th>
+                      <td id="ovrMovementClimb"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Swim</th>
+                      <td id="ovrMovementSwim"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Zero/Low/High-G</th>
+                      <td id="ovrMovementG"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">V. Jump (Standing/Running)</th>
+                      <td id="ovrMovementVerticalJump"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">H. Jump (Standing/Running)</th>
+                      <td id="ovrMovementHorizontalJump"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Carry</th>
+                      <td id="ovrMovementCarry"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Defenses</h5></div>
+            <div class="card-body">
+              <div>
+                <table class="table">
+                  <tr>
+                    <th scope="row">Melee</th>
+                    <td id="ovrDefenseMelee"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ranged</th>
+                    <td id="ovrDefenseRanged"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mental</th>
+                    <td id="ovrDefenseMental"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Vital</th>
+                    <td id="ovrDefenseVital"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card bg-light border-dark mb-3" id="ovrHomeworldStatsDiv">
+        <div class="card-header"><h5>Stats</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">STR</th>
+                  <th scope="col">AGI</th>
+                  <th scope="col">END</th>
+                  <th scope="col">INT</th>
+                  <th scope="col">LOG</th>
+                  <th scope="col">WIL</th>
+                  <th scope="col">CHA</th>
+                  <th scope="col">LUC</th>
+                  <th scope="col">REP</th>
+                  <th scope="col">MAG</th>
+                  <th scope="col">CHI</th>
+                  <th scope="col">PSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="ovrStrength"></td>
+                  <td id="ovrAgility"></td>
+                  <td id="ovrEndurance"></td>
+                  <td id="ovrIntuition"></td>
+                  <td id="ovrLogic"></td>
+                  <td id="ovrWillpower"></td>
+                  <td id="ovrCharisma"></td>
+                  <td id="ovrLuck"></td>
+                  <td id="ovrReputation"></td>
+                  <td id="ovrMagic"></td>
+                  <td id="ovrChi"></td>
+                  <td id="ovrPsionics"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    <!--End of container-->
+    </div>
+
+    <!--Modals-->
+    <!--Edit Name-->
+    <div class="modal fade" id="ovrEditNameModal" tabindex="-1" role="dialog" aria-labelledby="editNameModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovrEditNameModalLabel">Edit Name</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="ovrEditNameInput">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovrEditNameModalBtnSave">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--New Character-->
+    <div class="modal fade" id="ovrNewCharacterModal" tabindex="-1" role="dialog" aria-labelledby="newCharacterModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovrNewCharacterModalLabel">Create New Character</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            All data will be lost. Proceed?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovrNewCharacterModalBtnSave">New Character</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="js/wca/data/careers/careers_martial_arts.js"></script>
+    <script src="js/wca/data/careers/careers_new.js"></script>
+    <script src="js/wca/data/careers/careers_now.js"></script>
+    <script src="js/wca/data/careers/careers_old.js"></script>
+    <script src="js/wca/data/careers/origins.js"></script>
+
+    <script src="js/wca/data/races/races_new.js"></script>
+    <script src="js/wca/data/races/races_now.js"></script>
+    <script src="js/wca/data/races/races_old.js"></script>
+
+    <script src="js/wca/data/homeworlds/homeworlds_new.js"></script>
+
+    <script src="js/wca/lib/helpers.js"></script>
+    <script src="js/wca.js"></script>
+    <script src="js/wca_ui.js"></script>
+  </body>
+</html>

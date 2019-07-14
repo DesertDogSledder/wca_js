@@ -1,6 +1,5 @@
 // Source: https://www.nickang.com/how-to-clone-class-instance-javascript/
-function deep_copy(original)
-{
+function deepCopy(original) {
     var copied = Object.assign(
         Object.create(
           Object.getPrototypeOf(original)
@@ -10,37 +9,33 @@ function deep_copy(original)
     return copied;
 }
 
-function sort_object(orig_obj)
-{
-    let keys = Object.keys(orig_obj);
+function sortObject(origObj) {
+    let keys = Object.keys(origObj);
     keys.sort();
 
-    let sorted_obj = {};
+    let sortedObj = {};
     let i;
 
-    for (i=0; i<keys.length; i++)
-    {
-        sorted_obj[keys[i]] = 0;
+    for (i=0; i<keys.length; i++) {
+        sortedObj[keys[i]] = 0;
     }
 
-    for (key in sorted_obj)
-    {
-        sorted_obj[key] = orig_obj[key];
+    for (key in sortedObj) {
+        sortedObj[key] = origObj[key];
     }
 
-    return sorted_obj;
+    return sortedObj;
 }
 
-function format_num(n)
-{
-    let format_str = ''
-    if (n >= 0) format_str = '+';
+function formatNum(n) {
+    let formatStr = ''
+    if (n >= 0) formatStr = '+';
 
-    return format_str + n;
+    return formatStr + n;
 }
 
 // Source: Ege Özcan https://stackoverflow.com/a/4760279
-function dynamic_sort(property) {
+function dynamicSort(property) {
     var sortOrder = 1;
     if(property[0] === "-") {
         sortOrder = -1;
@@ -53,7 +48,7 @@ function dynamic_sort(property) {
 }
 
 // Source: Ege Özcan https://stackoverflow.com/a/4760279
-function dynamic_sort_multiple() {
+function dynamicSortMultiple() {
     /*
      * save the arguments object as it will be overwritten
      * note that arguments object is an array-like object
@@ -66,7 +61,7 @@ function dynamic_sort_multiple() {
          * as long as we have extra properties to compare
          */
         while(result === 0 && i < numberOfProperties) {
-            result = dynamic_sort(props[i])(obj1, obj2);
+            result = dynamicSort(props[i])(obj1, obj2);
             i++;
         }
         return result;

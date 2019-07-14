@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <nav class="nav nav-tabs">
+          <a href="#" class="nav-item nav-link active">Overview</a>
+          <a href="#" class="nav-item nav-link">Race</a>
+          <a href="#" class="nav-item nav-link">Career</a>
+          <a href="#" class="nav-item nav-link">Iguana</a>
+        </nav> -->
+        <h1>Hello, world!</h1>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="race-tab" data-toggle="tab" href="#race" role="tab" aria-controls="race" aria-selected="false">Race</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="homeworld-tab" data-toggle="tab" href="#homeworld" role="tab" aria-controls="homeworld" aria-selected="false">Homeworld</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="careers-tab" data-toggle="tab" href="#careers" role="tab" aria-controls="careers" aria-selected="false">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="exploits-tab" data-toggle="tab" href="#exploits" role="tab" aria-controls="exploits" aria-selected="false">Exploits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="equipment-tab" data-toggle="tab" href="#equipment" role="tab" aria-controls="equipment" aria-selected="false">Equipment</a>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <!--Overview Tab-->
+          <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+            <!--Overview Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Overview</h5></div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <b>Name:</b>
+                  <span id=ovrNameVal>NameVal</span>
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+                <div class="mb-2">
+                  <b>Race:</b>
+                  <span id="ovrRaceVal">RaceVal</span>
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+                <div class="mb-2">
+                  <b>Homeworld:</b>
+                  <span id="ovrHomeworldVal">HomeworldVal</span>
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+                <div class="mb-2">
+                  <b>Trait: </b>
+                  <span id="ovrTraitVal">TraitVal</span>
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+                <div class="mb-2">
+                  <b>Hook: </b>
+                  <span id="ovrHookVal">HookVal</span>
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+              </div>
+            </div>
+
+            <!--Skills Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Skills</h5></div>
+              <div class="card-body">Skills go here</div>
+            </div>
+      
+            <!--Exploits Card-->
+            <div class="card bg-light border-dark mb-3">
+                <div class="card-header"><h5>Exploits</h5></div>
+                <div class="card-body">Exploits go here</div>
+            </div>
+      
+            <!--Derived Statistics Card-->
+            <div class="card bg-light border-dark mb-3">
+                <div class="card-header"><h5>Derived Statistics</h5></div>
+                <div class="card-body">
+                  <div class="col col-lg-2">Test1</div>
+                  <div class="col col-lg-2">Test1</div>
+                </div>
+            </div>
+          </div>
+
+          <!--Race Tab-->
+          <div class="tab-pane fade" id="race" role="tabpanel" aria-labelledby="race-tab">
+            <!--Race Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Race</h5></div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <b>Race Name:</b>
+                  <span id=rceNameVal>RaceNameVal</span>
+                </div>
+                <div class="mb-2">
+                  <b>Size:</b>
+                  <span id="rceSizeVal">SizeVal</span>
+                  <button type="button" class="btn btn-warning" id="rceBtnEditRace"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+                </div>
+              </div>
+            </div>
+
+            <!--Selected Skills Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Selected Skills</h5></div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <ul id="rceSelectedSkillsList">No Skills</ul>
+                </div>
+                <div class="mb-2">
+                  <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"> Edit Skills</button>
+                </div>
+              </div>
+            </div>
+
+            <!--Exploits Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Exploits</h5></div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <ul id="rceExploitsList">No Exploits</ul>
+                </div>
+              </div>
+            </div>
+
+            <!--Race Stats Card-->
+            <div class="card bg-light border-dark mb-3">
+              <div class="card-header"><h5>Racial Stats</h5></div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <ul id="rceExploitsList">No Exploits</ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="homeworld" role="tabpanel" aria-labelledby="homeworld-tab">Homeworld Tab Content</div>
+
+          <div class="tab-pane fade" id="careers" role="tabpanel" aria-labelledby="careers-tab">Careers Tab Content</div>
+
+          <div class="tab-pane fade" id="exploits" role="tabpanel" aria-labelledby="exploits-tab">Exploits Tab Content</div>
+
+          <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">Equipment Tab Content</div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
