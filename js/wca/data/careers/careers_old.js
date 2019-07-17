@@ -1,13 +1,13 @@
 var career_old_alchemist = {
     "name": "Alchemist",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "herbalism, alchemy",
     "description": "Alchemists mix potions and substances, and transforms substances from one to another. Creating elixirs of life in bubbling cauldrons and seeking the secrets of magical chemistry, alchemists are true creators. Many make a living selling their concoctions. Unlike herbalism, alchemy involves a touch of magic. For each alchemical concoction, you should roll and note down an Alchemical Science result. This describes the nature of the concoction, whether it requires you to dilute amber in a jade keg, or cool mercury in a ruby flute.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Explosive alchemy",
-            "Desc": "You can create an explosive concoction using your alchemy kit. This takes a full round (two actions), and the concoction can be thrown (range increment 3, radius 5', damage 3d6 fire). The concoction can only be stored for 5 minutes before it stops working."
+            "Desc": "You can create an explosive concoction using your alchemy kit. This takes a full round (two actions), and the concoction can be thrown (range increment 3, radius 5&apos;, damage 3d6 fire). The concoction can only be stored for 5 minutes before it stops working."
         },
         {
             "Name": "Healing potion",
@@ -15,7 +15,7 @@ var career_old_alchemist = {
         },
         {
             "Name": "Gaseous concoction",
-            "Desc": "(requires Concoction, alchemy 5) Your concoction can be thrown in a glass bottle which breaks on inpact, causing a 10' radius area of gas."
+            "Desc": "(requires Concoction, alchemy 5) Your concoction can be thrown in a glass bottle which breaks on inpact, causing a 10&apos; radius area of gas."
         },
         {
             "Name": "Greater healing potion",
@@ -55,11 +55,11 @@ var career_old_alchemist = {
 };
 var career_old_archer = {
     "name": "Archer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "AGI 3+",
     "description": "You joined the army as an archer, manning walls and front lines in times of war.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Long shot",
             "Desc": "You have an eye for distance. You can double the range increment of a bow by taking a -1d6 die penalty to damage."
@@ -82,11 +82,11 @@ var career_old_archer = {
         },
         {
             "Name": "Double shot",
-            "Desc": "You notch two arrows and let both fly simultaneously. Each must be directed at a different target, and both targets must be within 10' of each other. You cannot combine this ability with any other exploits."
+            "Desc": "You notch two arrows and let both fly simultaneously. Each must be directed at a different target, and both targets must be within 10&apos; of each other. You cannot combine this ability with any other exploits."
         },
         {
             "Name": "Intercepting shot",
-            "Desc": "(requires INT 8+; Rapid Shot) You can shoot another arrow out of the sky as a reaction. Roll an opposed attack roll against that of the attacker's arrow; if you succeed, the arrow is split and falls harmlessly to the ground."
+            "Desc": "(requires INT 8+; Rapid Shot) You can shoot another arrow out of the sky as a reaction. Roll an opposed attack roll against that of the attacker&apos;s arrow; if you succeed, the arrow is split and falls harmlessly to the ground."
         }
     ],
     "stats": {
@@ -106,11 +106,11 @@ var career_old_archer = {
 };
 var career_old_assassin = {
     "name": "Assassin",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth",
     "description": "A killer for hire, you mastered the skills of assassination.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Surprise attack",
             "Desc": "If you successfully hit a target before it becomes aware of you, you gain a +2d6 damage bonus."
@@ -149,18 +149,18 @@ var career_old_assassin = {
 };
 var career_old_barbarian = {
     "name": "Barbarian",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Tribal warriors from the very fringes of civilization, barbarians are wild and uncouth. Barbarians exemplify physical prowess and natural prowess, but can feel uncomfortable in enclosed spaces.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Fleet of foot",
             "Desc": "In an outdoor environment, you gain a +2 bonus to your SPEED."
         },
         {
             "Name": "Mighty leap",
-            "Desc": "Your horizontal free jump distance increases by 5' (one square)."
+            "Desc": "Your horizontal free jump distance increases by 5&apos; (one square)."
         },
         {
             "Name": "Set in the old ways",
@@ -232,11 +232,11 @@ var career_old_barbarian = {
 };
 var career_old_berserker = {
     "name": "Berserker",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "STR 6+, Feral exploit",
     "description": "Some barbarians become berserkers \u2013 raging warriors of fury.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Frenzy",
             "Desc": "You can fly into a berserk rage. When berserk, you must attack the closest enemy, and move on to the next closest thereafter. You gain SOAK +5 (even when wearing armor) and +1d6 damage. Each round you rage for, you take 1d6 damage; you do not stop raging until you pass out or until all enemies are dead."
@@ -271,11 +271,11 @@ var career_old_berserker = {
 };
 var career_old_burglar = {
     "name": "Burglar",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth",
     "description": "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums and high security vaults.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Locksmith",
             "Desc": "You gain a exceptional quality lockpicking kit. You gain a +1d6 bonus to attempts to pick locks, combinations, guess passwords, or access security panels."
@@ -314,18 +314,18 @@ var career_old_burglar = {
 };
 var career_old_cleric = {
     "name": "Cleric",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "religion",
     "description": "The cleric devotes his or her life to a higher power, hoping to serve that power\u2019s will. Whether the cleric serves a noble god or a vicious demon lord, he or she gains power from faith, and learns to wield powerful magic in the service of his or her deity. Clerics are also trained to be capable warriors, able to defend themselves physically if their spells fail them. Since clerics deal more in abstract realms of the soul and the spirit, their magic has a definite slant toward the intangible, generally eschewing direct offensive magic in favor of spells that affect creatures\u2019 essence and behavior, or that make creatures more or less able to battle. Most clerics worship one specific deity from a pantheon, but still respect other members of that pantheon, even if they are not actual followers. The agendas of deities\u2019 worshippers may conflict in the realm of mortals, but it is folly to defy even enemy deities. Thus, though a cleric may choose to change the deity he or she reveres, if the clerics truly abandons the pantheon, he or she will never be accepted by any deity, being forced to rely on mortal magic alone.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Beatification",
             "Desc": "(requires religion 6) You gain the Virtue of your god. Additionally, all damage you do is damage of that Virtue type, whatever the delivery instrument."
         },
         {
             "Name": "Blessing/curse",
-            "Desc": "(requires Portfolio) You can issue a blessing or a curse. This takes one minute, lasts one hour, and affects one creature within 30'. A curse makes the target unable to access its LUC pool; a blessing grants it a bonus 3d6 to its LUC pool for the hour."
+            "Desc": "(requires Portfolio) You can issue a blessing or a curse. This takes one minute, lasts one hour, and affects one creature within 30&apos;. A curse makes the target unable to access its LUC pool; a blessing grants it a bonus 3d6 to its LUC pool for the hour."
         },
         {
             "Name": "Divine touch",
@@ -337,7 +337,7 @@ var career_old_cleric = {
         },
         {
             "Name": "Sense virtue",
-            "Desc": "(requires Portfolio) You are able to sense the presence of (but not the location of) any beings or objects within 60' with a Virtue opposite to that of the secret you chose."
+            "Desc": "(requires Portfolio) You are able to sense the presence of (but not the location of) any beings or objects within 60&apos; with a Virtue opposite to that of the secret you chose."
         }
     ],
     "stats": {
@@ -357,18 +357,18 @@ var career_old_cleric = {
 };
 var career_old_diabolist = {
     "name": "Diabolist",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "religion, secret of evil",
     "description": "A diabolist consorts with the infernal, and dabbles in the darkest and most dangerous of magical arts \u2013 he deals with demons and devils, risking his very soul in the process. A diabolist needs a strong will, for devils and demons know the powers of temptation, deceit, and the lure of pure evil. A diabolist knows how to summon infernal creatures and bind them to his will.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Blood magic",
             "Desc": "(requires Faustian Pact) You are now able to cast spells for fewer MP by spilling your own blood. As an action, you may do either 1d6 or 2d6 damage to yourself; the MP cost of the next spell cast within one minute is reduced by the number of d6s damage you cause."
         },
         {
             "Name": "Demonic traits",
-            "Desc": "(requires Faustian Pact) You begin to take on the appearance of the infernal. You may take this exploit up to six times. Each time you take it, roll 1d6 to determine the trait you gain; if a trait is duplicated, roll again. 1. Horns. +1d6 Magic Points 2. Red eyes. Darkvision 60' 3. Claws. +1d6 to unarmed damage 4. Red skin. SOAK 5 (fire) 5. Hooves. +1 SPEED 6. Tail. +1 AGILITY"
+            "Desc": "(requires Faustian Pact) You begin to take on the appearance of the infernal. You may take this exploit up to six times. Each time you take it, roll 1d6 to determine the trait you gain; if a trait is duplicated, roll again. 1. Horns. +1d6 Magic Points 2. Red eyes. Darkvision 60&apos; 3. Claws. +1d6 to unarmed damage 4. Red skin. SOAK 5 (fire) 5. Hooves. +1 SPEED 6. Tail. +1 AGILITY"
         },
         {
             "Name": "Faustian pact",
@@ -400,11 +400,11 @@ var career_old_diabolist = {
 };
 var career_old_druid = {
     "name": "Druid",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "nature",
     "description": "Guardians of nature, druids are attuned with the natural forces of the world. Plants and animals are their allies, and druids frequently live in the wild, deep within forests. A druid typically wields a staff or sickle.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Animal affinity",
             "Desc": "(requires Speak With Animals) With a successful CHA vs. MENTAL DEFENSE check, you can shift an animal one stage along the Charm status track for one hour."
@@ -419,7 +419,7 @@ var career_old_druid = {
         },
         {
             "Name": "Beast form",
-            "Desc": "You may transform into a small or medium-sized animal (and back again) once per day for up to one hour. You cannot speak in this form, and retain your own mental attributes, but otherwise use the animal's statistics."
+            "Desc": "You may transform into a small or medium-sized animal (and back again) once per day for up to one hour. You cannot speak in this form, and retain your own mental attributes, but otherwise use the animal&apos;s statistics."
         },
         {
             "Name": "Companion link",
@@ -434,7 +434,7 @@ var career_old_druid = {
             "Desc": "(requires Beast form) You may now change into a large or tiny animal."
         },
         {
-            "Name": "Nature's passage",
+            "Name": "Nature&apos;s passage",
             "Desc": "You can move through woodland areas and thick undergrowth without any speed reduction, and leave no tracks or traces of your passing unless you choose to do so."
         },
         {
@@ -467,22 +467,22 @@ var career_old_druid = {
 };
 var career_old_firemage = {
     "name": "Firemage",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "secret of fire.",
     "description": "Firemages are fascinated by fire. They love the way it flickers and dances; they excel at creating flames, throwing fire, and delight in creating and controlling infernos and conflagrations. Firemages can sometimes be identified by a slight sent of sulfur.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Fiery affinity.",
             "Desc": "Your focus on fire grants you +1d6 to any attribute which interacts with fire or heat."
         },
         {
             "Name": "Firebolt",
-            "Desc": "(requires Flaming Touch) You can throw a bolt of fire as a single ranged attack (using your MAG attribute) which has a range increment of 30' and does 2d6 fire damage."
+            "Desc": "(requires Flaming Touch) You can throw a bolt of fire as a single ranged attack (using your MAG attribute) which has a range increment of 30&apos; and does 2d6 fire damage."
         },
         {
             "Name": "Firebolt, greater",
-            "Desc": "(requires Firebolt) Your Firebolt's damage increases to 3d6 fire."
+            "Desc": "(requires Firebolt) Your Firebolt&apos;s damage increases to 3d6 fire."
         },
         {
             "Name": "Fire immunity",
@@ -494,7 +494,7 @@ var career_old_firemage = {
         },
         {
             "Name": "Firesculptor",
-            "Desc": "You can 'sculpt' fire easily; any non-magical flame within 30' can be shaped or enlarged as a single action and a mere effort of will as long as it remains within 30' (things outside can catch fire as normal, but you have no control over them)."
+            "Desc": "You can &apos;sculpt&apos; fire easily; any non-magical flame within 30&apos; can be shaped or enlarged as a single action and a mere effort of will as long as it remains within 30&apos; (things outside can catch fire as normal, but you have no control over them)."
         },
         {
             "Name": "Flaming aura",
@@ -526,29 +526,29 @@ var career_old_firemage = {
 };
 var career_old_gladiator = {
     "name": "Gladiator",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You fought in an arena for money and fame with a flashy combat style and a few dirty tricks.",
-    "availableExploits": [
+    "available_exploits": [
         {
-            "Name": "Gladiator's skills",
+            "Name": "Gladiator&apos;s skills",
             "Desc": "You gain two of the following universal exploits: Disarm, Trip, Achilles Heel, Blinding Attack, Crippling Strike, Quickstand, Taunt. You may repeat this exploit to gain two more from the list."
         },
         {
             "Name": "Showman",
-            "Desc": "You can make a CHA vs. MENTAL DEFENSE attack in combat against a single target within 30' as a standard action to put on an intimidating and flashy display of prowess. If successful, the target is moved one stage down the Fear status track."
+            "Desc": "You can make a CHA vs. MENTAL DEFENSE attack in combat against a single target within 30&apos; as a standard action to put on an intimidating and flashy display of prowess. If successful, the target is moved one stage down the Fear status track."
         },
         {
             "Name": "Exhibitionist",
             "Desc": "Onlookers give you strength. If there are 6 or more non-participating people watching you fight, you replenish your LUCK pool by 1 die every time you defeat an opponent."
         },
         {
-            "Name": "Crowd's worship",
+            "Name": "Crowd&apos;s worship",
             "Desc": "(requires Exhibitionist) You feed off the admiration of a crowd to the extent that if there are 6 or more non-participating people watching you fight, every time you defeat a foe, you gain 2d6 HEALTH as you bask in glory."
         },
         {
-            "Name": "Gladiator's cut",
+            "Name": "Gladiator&apos;s cut",
             "Desc": "Your successful strikes move your target one stage along the Bleeding status track."
         },
         {
@@ -557,7 +557,7 @@ var career_old_gladiator = {
         },
         {
             "Name": "Signature move",
-            "Desc": "(requires Gladiator's Skills) Choose one exploit that you have learned from the Gladiator's Skills list. This becomes your signature move. You gain a permanent +1d6 when using that move."
+            "Desc": "(requires Gladiator&apos;s Skills) Choose one exploit that you have learned from the Gladiator&apos;s Skills list. This becomes your signature move. You gain a permanent +1d6 when using that move."
         },
         {
             "Name": "Fake wounds",
@@ -585,11 +585,11 @@ var career_old_gladiator = {
 };
 var career_old_herbalist = {
     "name": "Herbalist",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "INT 4+",
     "description": "An herbalist knows how to gather, store, prepare, and administer herbs and herbal concoctions which have a wide variety of effects. An expert herbalist can, merely from gathering resources found in nature, create ointments and mixtures which protect, heal, or ward. For each herbal mixture, you should roll and note down an Herbal Science result. This describes the nature of the mixture, whether it is soup of the spirit-wood weed, or incense from the blue-vine nut.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Healing herbs",
             "Desc": "As long as you have your herbalism kit on you, you can heal an ally by 1d6 of HEALTH as a single action. No creature can benefit from this healing more than once per day."
@@ -600,7 +600,7 @@ var career_old_herbalist = {
         },
         {
             "Name": "Herbal ward",
-            "Desc": "You can create a herbal abjuration effect (equal to a 0 MP spell) at-will. It takes you one minute to prepare the herbs, and they remain usable for five minutes. Choose one creature type; any time a creature of that type attempts to come within 10' of you (or the recipient of your herbs), it is subject to a LOG vs. MENTAL DEFENSE attack. On a success, it may not come any closer for five minutes, at which point it may try again. The duration of the effect is 30 minutes."
+            "Desc": "You can create a herbal abjuration effect (equal to a 0 MP spell) at-will. It takes you one minute to prepare the herbs, and they remain usable for five minutes. Choose one creature type; any time a creature of that type attempts to come within 10&apos; of you (or the recipient of your herbs), it is subject to a LOG vs. MENTAL DEFENSE attack. On a success, it may not come any closer for five minutes, at which point it may try again. The duration of the effect is 30 minutes."
         },
         {
             "Name": "Stimulant",
@@ -628,21 +628,21 @@ var career_old_herbalist = {
 };
 var career_old_inquisitor = {
     "name": "Inquisitor",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "law, divination",
     "description": "Inquisitors are magical bodyguards and interrogators skilled in uncovering plots and opposing enemy magic. Inquisitorial magic is subtle in its effects, with few sensory cues, but very distinctive with regard to its caster. Inquisitors learn to use their force of will to intimidate foes, and so they typically growl their spells loudly and gesture clearly at their spell\u2019s targets. They use few directly offensive spells, though many can create flaming barriers for defense or to trap foes. Inquisitors are easily recognized for their masks, which they claim protect their souls from enemy magic. Most Inquisitor masks are wood or stone carved in the shape of bearskulls, and many Inquisitors favor bearskin cloaks. They seldom arm themselves with more than a claw-shaped dagger. Inquisitors learn their spells from copies of old spellbooks, scribed by the founders of the Inquisitorial order centuries ago. These spellbooks are written in a civilized form of Orcish, and are closely protected by the order that owns them. Experienced Inquisitors also usually study the magic of other groups to be better able to counterspell it.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Dispel magic",
-            "Desc": "(requires Sense Magic) You are able to dispel magic within 30' as a single action by making a MAG vs. MAG check against the effect you are trying to dispel."
+            "Desc": "(requires Sense Magic) You are able to dispel magic within 30&apos; as a single action by making a MAG vs. MAG check against the effect you are trying to dispel."
         },
         {
-            "Name": "Inquisitor's mask",
-            "Desc": "You can protect yourself from spells by hiding your soul behind a special mask. You create the mask yourself. While you wear that mask you gain a +4 MENTAL DEFENSE bonus. Also divination spells that directly target you take a -1d6 die penalty.&nbsp; You must make the mask yourself, and it must be specifically designed to protect your soul. You can take this exploit a second time to create a Greater Inquisitor's Mask, which gives you +6 MENTAL DEFENSE and inflicts a -2d6 penalty to divination spells targeting you."
+            "Name": "Inquisitor&apos;s mask",
+            "Desc": "You can protect yourself from spells by hiding your soul behind a special mask. You create the mask yourself. While you wear that mask you gain a +4 MENTAL DEFENSE bonus. Also divination spells that directly target you take a -1d6 die penalty.&nbsp; You must make the mask yourself, and it must be specifically designed to protect your soul. You can take this exploit a second time to create a Greater Inquisitor&apos;s Mask, which gives you +6 MENTAL DEFENSE and inflicts a -2d6 penalty to divination spells targeting you."
         },
         {
-            "Name": "Inquisitor's sight",
+            "Name": "Inquisitor&apos;s sight",
             "Desc": "You gain the secret of humanoids, and gain one rank in the compulsion, divination, and abjuration skills."
         },
         {
@@ -651,7 +651,7 @@ var career_old_inquisitor = {
         },
         {
             "Name": "Sense magic",
-            "Desc": "You are able to sniff out magic within 60'."
+            "Desc": "You are able to sniff out magic within 60&apos;."
         }
     ],
     "stats": {
@@ -671,22 +671,22 @@ var career_old_inquisitor = {
 };
 var career_old_knight = {
     "name": "Knight",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "heraldry",
     "description": "You became a knight \u2013 a mounted warrior proficient in lance, shield, and sword.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Bonded mount",
             "Desc": "You gain a loyal warhorse. The warhorse is bonded to you, and gains +2 SPEED while you are riding it. If the warhorse dies, you can replace it after a week of mourning."
         },
         {
             "Name": "Jouster",
-            "Desc": "You can charge an enemy from horseback using your lance. This attack gains +2d6 to both attack and damage, and requires you to move on horseback at least 20' in a straight line."
+            "Desc": "You can charge an enemy from horseback using your lance. This attack gains +2d6 to both attack and damage, and requires you to move on horseback at least 20&apos; in a straight line."
         },
         {
             "Name": "Jumper",
-            "Desc": "Your horse's free JUMP distance increases by 5' horizontally, and 5' vertically."
+            "Desc": "Your horse&apos;s free JUMP distance increases by 5&apos; horizontally, and 5&apos; vertically."
         },
         {
             "Name": "Honorable",
@@ -714,11 +714,11 @@ var career_old_knight = {
 };
 var career_old_loremaster = {
     "name": "Loremaster",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "INT 4+",
     "description": "A loremaster is a scholar and academic expert; years spent in libraries studying ancient texts makes loremasters amongst the most knowledgeable in the world. Loremasters even pick up some minor magical spells which help them in their studies.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Secrets",
             "Desc": "You learn four secrets."
@@ -745,7 +745,7 @@ var career_old_loremaster = {
         },
         {
             "Name": "Wise counsel",
-            "Desc": "You can spend two actions to offer advice and counsel, giving one ally within 30' a +2d6 bonus to a single attribute check. Any given target can only benefit from this once per day."
+            "Desc": "You can spend two actions to offer advice and counsel, giving one ally within 30&apos; a +2d6 bonus to a single attribute check. Any given target can only benefit from this once per day."
         },
         {
             "Name": "Ritual",
@@ -773,11 +773,11 @@ var career_old_loremaster = {
 };
 var career_old_mage = {
     "name": "Mage",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "one [magical] skill",
     "description": "You are practiced in the arcane arts, able to wield spells with ease. A mage is a trained magic-user \u2013 sometimes known as a wizard, or sorcerer. Able to cast a variety of spells, and well-versed in a range of lore, the mage is a generalist.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Broad knowledge base",
             "Desc": "(requires Arcane Knowledge Base) Choose two more [magical] skills and two elemental or creature secrets. You gain these two skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -792,7 +792,7 @@ var career_old_mage = {
         },
         {
             "Name": "Attuned",
-            "Desc": "You are able to detect magic easily. You do not need to make any kind of attribute check to detect magic within 30', and are aware of its existence automatically."
+            "Desc": "You are able to detect magic easily. You do not need to make any kind of attribute check to detect magic within 30&apos;, and are aware of its existence automatically."
         },
         {
             "Name": "Familiar",
@@ -824,11 +824,11 @@ var career_old_mage = {
 };
 var career_old_man_at_arms = {
     "name": "Man-at-Arms",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "An infantryman, you fought in battle on the front lines.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Equipped",
             "Desc": "You start play with a high quality sword, spear, or suit of chainmail."
@@ -867,18 +867,18 @@ var career_old_man_at_arms = {
 };
 var career_old_minstrel = {
     "name": "Minstrel",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "CHA 4+",
     "description": "You used the power of your music to earn a living.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Instrument",
             "Desc": "You start play with a high quality musical instrument. You can make money by playing at taverns and doing local performances. You can automatically make 1d6 x 10 gc per day by doing this. This ability cannot be used during downtime."
         },
         {
             "Name": "Song",
-            "Desc": "(requires Instrument) You can take this exploit multiple times, learning a new song each time. Your songs affect sentient beings who can hear and understand them. Each time you learn a song, choose one Status track (e.g. Song of Cheer, Song of Courage, or Song of Tiredness); that song allows you to move those within 30' who can hear you one stage up or down that status track. Unwilling targets require a CHA vs. MENTAL DEFENSE attack."
+            "Desc": "(requires Instrument) You can take this exploit multiple times, learning a new song each time. Your songs affect sentient beings who can hear and understand them. Each time you learn a song, choose one Status track (e.g. Song of Cheer, Song of Courage, or Song of Tiredness); that song allows you to move those within 30&apos; who can hear you one stage up or down that status track. Unwilling targets require a CHA vs. MENTAL DEFENSE attack."
         },
         {
             "Name": "Beastsong",
@@ -886,7 +886,7 @@ var career_old_minstrel = {
         },
         {
             "Name": "Projection",
-            "Desc": "(requires Song) You use the power of your voice to increase the radius of your songs to 60'."
+            "Desc": "(requires Song) You use the power of your voice to increase the radius of your songs to 60&apos;."
         }
     ],
     "stats": {
@@ -906,11 +906,11 @@ var career_old_minstrel = {
 };
 var career_old_musketeer = {
     "name": "Musketeer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "AGI or INT 5+",
     "description": "Wielding musket and sword, you became a swashbuckling musketeer.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Cloak flourish",
             "Desc": "You can use a cape or cloak with a flourish to distract your foes; the garment counts as a small shield, but does not require a free hand to use it."
@@ -929,7 +929,7 @@ var career_old_musketeer = {
         },
         {
             "Name": "Whites of their eyes",
-            "Desc": "You are accustomed to standing your ground as oncoming hordes charge, firing only when you see the whites of their eyes. When charged by an opponent, you may fire a free musket or pistol shot when they come within 10' of you."
+            "Desc": "You are accustomed to standing your ground as oncoming hordes charge, firing only when you see the whites of their eyes. When charged by an opponent, you may fire a free musket or pistol shot when they come within 10&apos; of you."
         },
         {
             "Name": "Quick reload",
@@ -953,18 +953,18 @@ var career_old_musketeer = {
 };
 var career_old_necromancer = {
     "name": "Necromancer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "secret of undead.",
     "description": "A master of the dark arts, a necromancer is able to summon, bind, and control the undead. Eventually, a necromancer turns into a terrifying lich, the most powerful of undead. A necromancer knows the ways of disease, poison, and the power of fear.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Corpse visage",
             "Desc": "(requires Eyes of the Dead) Your skin and visage alter slightly, becoming more like the undead you surround yourself with. You gain 5 natural SOAK, but become Vulnerable 1d6 (Light) and your CHA attribute is reduced by 2 points (to a minimum of 2)."
         },
         {
             "Name": "Eyes of the dead",
-            "Desc": "You share the senses of the undead, gaining darksight 60'."
+            "Desc": "You share the senses of the undead, gaining darksight 60&apos;."
         },
         {
             "Name": "Necromantic Lore",
@@ -1008,11 +1008,11 @@ var career_old_necromancer = {
 };
 var career_old_pirate = {
     "name": "Pirate",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "sailing",
     "description": "A scourge of the high seas, you plunder for loot and fame.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Crows nest",
             "Desc": "You have spent many hours on the lookout. You can always access the ambush turn."
@@ -1023,7 +1023,7 @@ var career_old_pirate = {
         },
         {
             "Name": "Keelhauled",
-            "Desc": "You've been keelhauled or felt the lash of the cat at least once. You gain SOAK 2."
+            "Desc": "You&apos;ve been keelhauled or felt the lash of the cat at least once. You gain SOAK 2."
         },
         {
             "Name": "Rigging",
@@ -1031,7 +1031,7 @@ var career_old_pirate = {
         },
         {
             "Name": "Fearsome reputation",
-            "Desc": "Your reputation precedes you. With a REP vs. MENTAL DEFENSE attack you can intimidate a single target within 30'. If successful, the target moves one stage down the Feat status track."
+            "Desc": "Your reputation precedes you. With a REP vs. MENTAL DEFENSE attack you can intimidate a single target within 30&apos;. If successful, the target moves one stage down the Feat status track."
         },
         {
             "Name": "Polly",
@@ -1039,7 +1039,7 @@ var career_old_pirate = {
         },
         {
             "Name": "Fierce reputation",
-            "Desc": "(requires Fearsome Reputation) Your reputation is now so fierce that you can either push one target two stages down the Fear status track, or all targets within 30' one stage down the track with a REP vs. MENTAL DEFENSE attack."
+            "Desc": "(requires Fearsome Reputation) Your reputation is now so fierce that you can either push one target two stages down the Fear status track, or all targets within 30&apos; one stage down the track with a REP vs. MENTAL DEFENSE attack."
         }
     ],
     "stats": {
@@ -1059,11 +1059,11 @@ var career_old_pirate = {
 };
 var career_old_prisoner = {
     "name": "Prisoner",
-    "careerTime": "2d6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to survive, although you did make one or two lifelong contacts.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Prison tough",
             "Desc": "You are mentally and physically toughened. Each time you take this exploit you gain a permanent +1 bonus to your DEFENSE and MENTAL DEFENSE. You may repeat this exploit."
@@ -1090,21 +1090,21 @@ var career_old_prisoner = {
 };
 var career_old_ranger = {
     "name": "Ranger",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "WIL 3+",
     "description": "Woodsman and hunter, you are a master of the outdoors. The ranger is the quintessential outdoorsman.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Companion",
-            "Desc": "You gain an animal companion, much like the druid's. This companion will accompany and defend you. If your companion dies, you attract a new companion in one month. However, if you abuse your companion (for example by sending it ahead to set off traps), it will leave you and you will never be able to replace the companion."
+            "Desc": "You gain an animal companion, much like the druid&apos;s. This companion will accompany and defend you. If your companion dies, you attract a new companion in one month. However, if you abuse your companion (for example by sending it ahead to set off traps), it will leave you and you will never be able to replace the companion."
         },
         {
             "Name": "Beastmaster",
             "Desc": "(requires Companion) You gain a second animal companion. You can repeat this exploit, gaining a new companion each time you take it."
         },
         {
-            "Name": "Nature's secrets",
+            "Name": "Nature&apos;s secrets",
             "Desc": "You learn the secret of plants and the secret of beasts."
         },
         {
@@ -1116,8 +1116,8 @@ var career_old_ranger = {
             "Desc": "You are not affected by difficult terrain caused by plants or undergrowth."
         },
         {
-            "Name": "Nature's camouflage",
-            "Desc": "You can camouflage yourself to become effectively invisible at a distance of 30' or greater. You may only move at half SPEED while camouflaged, and any attack ends the effect for anybody within sight."
+            "Name": "Nature&apos;s camouflage",
+            "Desc": "You can camouflage yourself to become effectively invisible at a distance of 30&apos; or greater. You may only move at half SPEED while camouflaged, and any attack ends the effect for anybody within sight."
         },
         {
             "Name": "Beast whisperer",
@@ -1141,11 +1141,11 @@ var career_old_ranger = {
 };
 var career_old_ruffian = {
     "name": "Ruffian",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for small amounts of money.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "The filth!",
             "Desc": "You have developed an uncanny ability to detect the Watch. When attempting to sniff out a watchman or similar authority figure, you gain a +1d6 bonus."
@@ -1172,11 +1172,11 @@ var career_old_ruffian = {
 };
 var career_old_sailor = {
     "name": "Sailor",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "At home on the sea, you spent time aboard a ship mastering the art of sailing.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Climb the rigging",
             "Desc": "You can climb your SPEED instead of half your SPEED."
@@ -1211,7 +1211,7 @@ var career_old_sailor = {
         },
         {
             "Name": "Lookout",
-            "Desc": "Crow's nest duty is a mandatory part of a sailor's life. You gain +1d6 to perception checks."
+            "Desc": "Crow&apos;s nest duty is a mandatory part of a sailor&apos;s life. You gain +1d6 to perception checks."
         },
         {
             "Name": "Peg leg",
@@ -1235,11 +1235,11 @@ var career_old_sailor = {
 };
 var career_old_smith = {
     "name": "Smith",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "STR 4+",
-    "description": "A smith is a master metalwork. Blacksmith, weaponsmith, armorer, a smith is able to create, maintain, and even enchant a warrior's tools. Many smiths combine traditions of smithing and alchemy to learn how to make magical weapons and armor.",
-    "availableExploits": [
+    "description": "A smith is a master metalwork. Blacksmith, weaponsmith, armorer, a smith is able to create, maintain, and even enchant a warrior&apos;s tools. Many smiths combine traditions of smithing and alchemy to learn how to make magical weapons and armor.",
+    "available_exploits": [
         {
             "Name": "Maintenance",
             "Desc": "You know how to maintain equipment. Designate one standard quality suit of armor or a weapon; this item becomes high quality, as long as you spend an hour maintaining it every day."
@@ -1302,14 +1302,14 @@ var career_old_smith = {
 };
 var career_old_squire = {
     "name": "Squire",
-    "careerTime": "1",
-    "careerTimeUnit": "years",
+    "career_time": "1",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "You spent time as a squire to a noble knight. While some move straight into knighthood, paying your dues as a squire is the only way to truly rise to the top of the knightly tradition. You can always tell a knight who wasn't a squire first, as he lacks some of the basics.",
-    "availableExploits": [
+    "description": "You spent time as a squire to a noble knight. While some move straight into knighthood, paying your dues as a squire is the only way to truly rise to the top of the knightly tradition. You can always tell a knight who wasn&apos;t a squire first, as he lacks some of the basics.",
+    "available_exploits": [
         {
             "Name": "Sword-sharpener",
-            "Desc": "You know how to maintain your (or your liege's) equipment. One standard quality suit of armor and one standard quality melee weapon becomes high quality, as long as you spend an hour maintaining it every day."
+            "Desc": "You know how to maintain your (or your liege&apos;s) equipment. One standard quality suit of armor and one standard quality melee weapon becomes high quality, as long as you spend an hour maintaining it every day."
         },
         {
             "Name": "Etiquette",
@@ -1325,7 +1325,7 @@ var career_old_squire = {
         },
         {
             "Name": "Dress wounds",
-            "Desc": "You can heal 1d6 HEALTH using a basic healer's kit; this costs two actions. No recipient can benefit from this more than once per day."
+            "Desc": "You can heal 1d6 HEALTH using a basic healer&apos;s kit; this costs two actions. No recipient can benefit from this more than once per day."
         }
     ],
     "stats": {
@@ -1345,11 +1345,11 @@ var career_old_squire = {
 };
 var career_old_undead_hunter = {
     "name": "Undead Hunter",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "religion",
     "description": "An expert on the undead, you have vowed to hunt and destroy them. Your academic research and knowledge are powerful weapons against your immortal foes. Many undead hunters choose to learn a little magic, also.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Death Bane",
             "Desc": ". Using an herbalism kit, you can create a death bane\u2014an ointment or natural amulet (such as the stereotypical garlic vs. vampires). This grants<br />you +4 DEFENSE vs. the undead. Death Ward. You learn the secret of undead."
@@ -1372,11 +1372,11 @@ var career_old_undead_hunter = {
         },
         {
             "Name": "Stench of Death",
-            "Desc": "You can sense the presence of the undead within 30'."
+            "Desc": "You can sense the presence of the undead within 30&apos;."
         },
         {
             "Name": "Turn Undead",
-            "Desc": "(requires Stalwart) You can make a CHA vs. Mental Defense attack which affects all undead within 30' of you. Undead affected by this attack are moved one step along the Fear status track."
+            "Desc": "(requires Stalwart) You can make a CHA vs. Mental Defense attack which affects all undead within 30&apos; of you. Undead affected by this attack are moved one step along the Fear status track."
         }
     ],
     "stats": {
@@ -1396,11 +1396,11 @@ var career_old_undead_hunter = {
 };
 var career_old_warrior_monk = {
     "name": "Warrior-monk",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "religion or martial arts",
     "description": "You became a member of a militant monastic order, and were trained in philosophy and martial arts.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Martial technique base",
             "Desc": "You gain two of the following universal exploits: Trip, Throw, Sidestep, Flying Kick. You may take this exploit again to gain the remaining two exploits."
@@ -1411,7 +1411,7 @@ var career_old_warrior_monk = {
         },
         {
             "Name": "Martial leap",
-            "Desc": "Increase both your vertical and horizontal JUMP distances by 5'."
+            "Desc": "Increase both your vertical and horizontal JUMP distances by 5&apos;."
         },
         {
             "Name": "Defensive stance",
@@ -1459,11 +1459,11 @@ var career_old_warrior_monk = {
 };
 var career_old_watchman = {
     "name": "Watchman",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A town guard or local police force, you enforce the law.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Vigilant",
             "Desc": "Constantly vigilant, you are hard to surprise. You gain a +1d6 die bonus to access the ambush turn."

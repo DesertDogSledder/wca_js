@@ -1,119 +1,157 @@
-function calcDicePoolSize(rawScore) {
-    var dicePoolSize = 0;
-    var scoreComparison = 0;
-    var comparisonIncrement = 2;
+var race_dict = {
+    'old': race_old_dict,
+    'now': race_now_dict,
+    'new': race_new_dict,
+};
 
-    while (rawScore > scoreComparison) {
-        dicePoolSize += 1;
-        scoreComparison += comparisonIncrement;
-        comparisonIncrement += 1;
+var homeworld_dict = {
+    'new': homeworld_new_dict,
+};
+
+var exploit_dict = {
+    'android': exploits_android,
+    'psionic': exploits_psionic,
+    'traits': exploits_traits,
+    'universal': exploits_universal,
+};
+
+function calc_dice_pool_size(raw_score) {
+    var dice_pool_size = 0;
+    var score_comparison = 0;
+    var comparison_increment = 2;
+
+    while (raw_score > score_comparison) {
+        dice_pool_size += 1;
+        score_comparison += comparison_increment;
+        comparison_increment += 1;
     };
 
-    return dicePoolSize;
+    return dice_pool_size;
 }
 
-function calcMaxDicePoolSize(careerGrade) {
-    var maxDicePoolSize = 5;
-    var scoreComparison = 5;
-    var comparisonIncrement = 2;
+function calc_max_dice_pool_size(career_grade) {
+    var max_dice_pool_size = 5;
+    var score_comparison = 5;
+    var comparison_increment = 2;
 
-    while (careerGrade > scoreComparison) {
-        maxDicePoolSize += 1;
-        scoreComparison += comparisonIncrement;
-        comparisonIncrement += 1;
+    while (career_grade > score_comparison) {
+        max_dice_pool_size += 1;
+        score_comparison += comparison_increment;
+        comparison_increment += 1;
     };
 
-    return maxDicePoolSize;
+    return max_dice_pool_size;
 }
 
-function getUserCharacter() {
-    if (localStorage.getItem('userCharacter') == null) {
-        newCharacter();
+function get_user_character() {
+    if (localStorage.getItem('user_character') == null) {
+        new_character();
     }
-    let userCharacter = JSON.parse(localStorage.getItem('userCharacter'));
-    return userCharacter;
+    let user_character = JSON.parse(localStorage.getItem('user_character'));
+    return user_character;
 }
 
-function newCharacter() {
-    let userCharacter = {
+function new_character() {
+    // let user_character = {
+    //     'name': 'unset',
+    //     'race': {
+    //         'source': 'new',
+    //         'id': 'race_new_human',
+    //         'stats': {
+    //             'strength': 0,
+    //             'agility': 0,
+    //             'endurance': 0,
+    //             'intuition': 0,
+    //             'logic': 0,
+    //             'willpower': 0,
+    //             'charisma': 0,
+    //             'luck': 2,
+    //             'reputation': 0,
+    //             'magic': 0,
+    //             'chi': 0,
+    //             'psionics': 0
+    //         },
+    //         'size': 'medium',
+    //         'skills': {},
+    //     },
+    //     'homeworld': {
+    //         'source': 'new',
+    //         'id': 'homeworld_none',
+    //         'stats': {},
+    //         'skills': [],
+    //     },
+    //     'career_track': [],
+    //     'notes': '',
+    //     'trait': {},
+    //     'misc_exploits': [],
+    //     'defense_skills': {
+    //         'melee': '',
+    //         'ranged': '',
+    //         'mental': '',
+    //         'vital': '',
+    //     },
+    //     'age_descriptor': 'unset',
+    //     'equipment': [],
+    // };
+    let user_character = {
         'name': 'unset',
         'race': {
-            'source': 'new',
-            'id': 'race_new_human',
-            'stats': {
-                'strength': 0,
-                'agility': 0,
-                'endurance': 0,
-                'intuition': 0,
-                'logic': 0,
-                'willpower': 0,
-                'charisma': 0,
-                'luck': 2,
-                'reputation': 0,
-                'magic': 0,
-                'chi': 0,
-                'psionics': 0
-            },
+            'source': '',
+            'id': '',
+            'stats': {},
             'size': 'medium',
-            'skills': [],
+            'skills': {},
         },
         'homeworld': {
-            'source': 'new',
-            'id': 'homeworld_none',
+            'source': '',
+            'id': '',
             'stats': {},
             'skills': [],
         },
-        'careerTrack': [],
+        'career_track': [],
         'notes': '',
         'trait': {},
-        'miscExploits': [],
-        'defenseSkills': {
+        'misc_exploits': [],
+        'defense_skills': {
             'melee': '',
             'ranged': '',
             'mental': '',
             'vital': '',
         },
-        'ageDescriptor': 'unset',
+        'age_descriptor': 'unset',
         'equipment': [],
     };
 
-    localStorage.setItem('userCharacter', JSON.stringify(userCharacter));
+    set_race(user_character, 'new', 'race_new_human');
+    set_homeworld(user_character, 'new', 'homeworld_none');
+
+    localStorage.setItem('user_character', JSON.stringify(user_character));
 }
 
-function saveCharacter(userCharacter) {
-    localStorage.setItem('userCharacter', JSON.stringify(userCharacter));
+function save_character(user_character) {
+    localStorage.setItem('user_character', JSON.stringify(user_character));
 }
 
-function fetchRaceDict(race_source) {
-    if (race_source == 'old') {
-        race_dict = race_old_dict;
-    } else if (race_source == 'now') {
-        race_dict = race_now_dict;
-    } else {
-        race_dict = race_new_dict;
+function set_race(user_character, race_source, race_id) {
+    user_character.race.source = race_source;
+    user_character.race.id = race_id;
+    for (stat in race_dict[race_source][race_id].stats) {
+        user_character.race.stats[stat] = race_dict[race_source][race_id].stats[stat];
     }
-    return race_dict;
 }
 
-function getRace(userCharacter) {
-    race_dict = fetchRaceDict(userCharacter.race.source);
-    return race_dict[userCharacter.race.id];
+function set_homeworld(user_character, homeworld_source, homeworld_id) {
+    user_character.homeworld.source = homeworld_source;
+    user_character.homeworld.id = homeworld_id;
+    for (stat in homeworld_dict[homeworld_source][homeworld_id].stats) {
+        user_character.homeworld.stats[stat] = homeworld_dict[homeworld_source][homeworld_id].stats[stat];
+    }
 }
 
-function fetchHomeworldDict(homeworld_source) {
-    homeworld_dict = homeworld_new_dict;
-    return homeworld_dict;
-}
-
-function getHomeworld(userCharacter) {
-    homeworld_dict = fetchHomeworldDict(userCharacter.homeworld.source);
-    return homeworld_dict[userCharacter.homeworld.id];
-}
-
-function calcStatTotal(userCharacter)
+function calc_stat_total(user_character)
 {
     // Base stats
-    let statTotal = {
+    let stat_total = {
         'strength': 3,
         'agility': 3,
         'endurance': 3,
@@ -128,375 +166,376 @@ function calcStatTotal(userCharacter)
         'psionics': 0
     };
 
-    for (stat in userCharacter.race.stats) {
-        statTotal[stat] += userCharacter.race.stats[stat];
+    for (stat in user_character.race.stats) {
+        stat_total[stat] += user_character.race.stats[stat];
     }
 
-    for (stat in userCharacter.homeworld.stats) {
-        statTotal[stat] += userCharacter.homeworld.stats[stat];
+    for (stat in user_character.homeworld.stats) {
+        stat_total[stat] += user_character.homeworld.stats[stat];
     }
 
-    for (career in userCharacter.careerTrack)
+    for (career in user_character.career_track)
     {
-        for (stat in userCharacter.careerTrack[career].stats)
+        for (stat in user_character.career_track[career].stats)
         {
-            statTotal[stat] += userCharacter.careerTrack[career].stats[stat];
+            stat_total[stat] += user_character.career_track[career].stats[stat];
         }
     }
 
-    // console.log(statTotal);
-    return statTotal;
+    // console.log(stat_total);
+    return stat_total;
 }
 
-function calcSkillTotal(userCharacter)
+function calc_skill_total(user_character)
 {
-    let skillTotal = {};
+    console.log('calc_skill_total called')
+    let skill_total = {};
     // Racial skill tally
-    for (skill in userCharacter.race.skills)
+    for (skill in user_character.race.skills)
     {
-        if (skill in skillTotal) skillTotal[skill] += userCharacter.race.skills[skill];
-        else skillTotal[skill] = userCharacter.race.skills[skill];
+        if (skill in skill_total) skill_total[skill] += user_character.race.skills[skill];
+        else skill_total[skill] = user_character.race.skills[skill];
     }
     // Homeworld skill tally
-    for (skill in userCharacter.homeworld.skills)
+    for (skill in user_character.homeworld.skills)
     {
-        if (skill in skillTotal) skillTotal[skill] += userCharacter.homeworld.skills[skill];
-        else skillTotal[skill] = userCharacter.homeworld.skills[skill];
+        if (skill in skill_total) skill_total[skill] += user_character.homeworld.skills[skill];
+        else skill_total[skill] = user_character.homeworld.skills[skill];
     }
     // Career skill tally
-    for (career in userCharacter.careerTrack)
+    for (career in user_character.career_track)
     {
-        for (skill in userCharacter.careerTrack.skills)
+        for (skill in user_character.career_track.skills)
         {
-            if (skill in skillTotal) skillTotal[skill] += career.skills[skill];
-            else skillTotal[skill] = career.skills[skill];    
+            if (skill in skill_total) skill_total[skill] += career.skills[skill];
+            else skill_total[skill] = career.skills[skill];    
         }
     }
 
-    let storedSkillTotal = sortObject(skillTotal);
-    // console.log(storedSkillTotal);
-    return storedSkillTotal;
+    let stored_skill_total = sort_object(skill_total);
+    // console.log(stored_skill_total);
+    return stored_skill_total;
 }
 
-function calcExploitTotal(userCharacter)
+function calc_exploit_total(user_character)
 {
-    let exploitTotal = {};
-    userCharacterRace = getRace(userCharacter)
-    for (let i=0; i<userCharacterRace.exploits.length; i++)
+    let exploit_total = {};
+    let user_character_race = race_dict[user_character.race.source][user_character.race.id];
+    for (let i=0; i<user_character_race.exploits.length; i++)
     {
-        exploitTotal[userCharacterRace.exploits[i]['Name']] = userCharacterRace.exploits[i]['Desc'];
+        exploit_total[user_character_race.exploits[i]['Name']] = user_character_race.exploits[i]['Desc'];
     }
 
-    let sortedExploitTotal = sortObject(exploitTotal);
-    // console.log(sortedExploitTotal);
-    return sortedExploitTotal;
+    let sorted_exploit_total = sort_object(exploit_total);
+    // console.log(sorted_exploit_total);
+    return sorted_exploit_total;
 }
 
-function calcDerivedStats(userCharacter)
+function calc_derived_stats(user_character)
 {
-    let derivedStats = {};
-    let statTotal = calcStatTotal(userCharacter)
-    let skillTotal = calcSkillTotal(userCharacter)
+    let derived_stats = {};
+    let stat_total = calc_stat_total(user_character)
+    let skill_total = calc_skill_total(user_character)
 
-    let maxDicePool = calcMaxDicePoolSize(userCharacter.careerTrack.length);
-    let strDicePoolSize = calcDicePoolSize(statTotal['strength']);
-    let agiDicePoolSize = calcDicePoolSize(statTotal['agility']);
-    let endDicePoolSize = calcDicePoolSize(statTotal['endurance']);
-    let intDicePoolSize = calcDicePoolSize(statTotal['intuition']);
-    let wilDicePoolSize = calcDicePoolSize(statTotal['willpower']);
-    let chaDicePoolSize = calcDicePoolSize(statTotal['charisma']);
+    let maxDicePool = calc_max_dice_pool_size(user_character.career_track.length);
+    let str_dice_pool_size = calc_dice_pool_size(stat_total['strength']);
+    let agi_dice_pool_size = calc_dice_pool_size(stat_total['agility']);
+    let end_dice_pool_size = calc_dice_pool_size(stat_total['endurance']);
+    let int_dice_pool_size = calc_dice_pool_size(stat_total['intuition']);
+    let wil_dice_pool_size = calc_dice_pool_size(stat_total['willpower']);
+    let cha_dice_pool_size = calc_dice_pool_size(stat_total['charisma']);
 
     // Cap dice pools here
-    // let strDicePool = (strDicePoolSize <= maxDicePool) ? strDicePoolSize : maxDicePool;
-    // let agiDicePool = (agiDicePoolSize <= maxDicePool) ? agiDicePoolSize : maxDicePool;
-    // let endDicePool = (endDicePoolSize <= maxDicePool) ? endDicePoolSize : maxDicePool;
-    // let intDicePool = (intDicePoolSize <= maxDicePool) ? intDicePoolSize : maxDicePool;
-    // let wilDicePool = (wilDicePoolSize <= maxDicePool) ? wilDicePoolSize : maxDicePool;
-    // let chaDicePool = (chaDicePoolSize <= maxDicePool) ? chaDicePoolSize : maxDicePool;
+    // let str_dice_pool = (str_dice_pool_size <= maxDicePool) ? str_dice_pool_size : maxDicePool;
+    // let agi_dice_pool = (agi_dice_pool_size <= maxDicePool) ? agi_dice_pool_size : maxDicePool;
+    // let end_dice_pool = (end_dice_pool_size <= maxDicePool) ? end_dice_pool_size : maxDicePool;
+    // let int_dice_pool = (int_dice_pool_size <= maxDicePool) ? int_dice_pool_size : maxDicePool;
+    // let wil_dice_pool = (wil_dice_pool_size <= maxDicePool) ? wil_dice_pool_size : maxDicePool;
+    // let cha_dice_pool = (cha_dice_pool_size <= maxDicePool) ? cha_dice_pool_size : maxDicePool;
 
     // Don't cap dice pools here
-    let strDicePool = strDicePoolSize;
-    let agiDicePool = agiDicePoolSize;
-    let endDicePool = endDicePoolSize;
-    let intDicePool = intDicePoolSize;
-    let wilDicePool = wilDicePoolSize;
-    let chaDicePool = chaDicePoolSize;
+    let str_dice_pool = str_dice_pool_size;
+    let agi_dice_pool = agi_dice_pool_size;
+    let end_dice_pool = end_dice_pool_size;
+    let int_dice_pool = int_dice_pool_size;
+    let wil_dice_pool = wil_dice_pool_size;
+    let cha_dice_pool = cha_dice_pool_size;
 
 
     ////////////
     // HEALTH //
     ////////////
-    let averageHealth = endDicePool + wilDicePool;
-    let healthInfo = 'Roll endurance (' + endDicePool + 'd6) + WIL (' + wilDicePool + 'd6)';
+    let average_health = end_dice_pool + wil_dice_pool;
+    let health_info = 'Roll endurance (' + end_dice_pool + 'd6) + WIL (' + wil_dice_pool + 'd6)';
 
-    if ('hardy' in skillTotal)
+    if ('hardy' in skill_total)
     {
-        let hardyDicePoolSize = calcDicePoolSize(skillTotal.hardy);
+        let hardy_dice_pool_size = calc_dice_pool_size(skill_total.hardy);
         // Cap dice pool here
-        // let hardyDicePool = (hardyDicePoolSize <= maxDicePool) ? hardyDicePoolSize : maxDicePool;
+        // let hardy_dice_pool = (hardy_dice_pool_size <= maxDicePool) ? hardy_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        let hardyDicePool = hardyDicePoolSize;
-        healthInfo += ' + hardy (' + hardyDicePool + 'd6)';
-        averageHealth += hardyDicePool;
+        let hardy_dice_pool = hardy_dice_pool_size;
+        health_info += ' + hardy (' + hardy_dice_pool + 'd6)';
+        average_health += hardy_dice_pool;
     }
 
-    averageHealth = Math.ceil(averageHealth * 3.5);
-    if (averageHealth >= 10) healthInfo += ' (average = ' + averageHealth + ')';
-    else healthInfo += ' (average bumped up to minimum = 10)';
+    average_health = Math.ceil(average_health * 3.5);
+    if (average_health >= 10) health_info += ' (average = ' + average_health + ')';
+    else health_info += ' (average bumped up to minimum = 10)';
 
-    derivedStats['Health'] = healthInfo;
+    derived_stats['Health'] = health_info;
 
     ///////////
     // SPEED //
     ///////////
-    let baseSpeed = strDicePool + agiDicePool;
-    let speed = baseSpeed;
-    if ('running' in skillTotal)
+    let base_speed = str_dice_pool + agi_dice_pool;
+    let speed = base_speed;
+    if ('running' in skill_total)
     {
-        runningDicePoolSize = calcDicePoolSize(skillTotal['running']);
+        running_dice_pool_size = calc_dice_pool_size(skill_total['running']);
         // Cap dice pool here
-        // runningDicePool = (runningDicePoolSize <= maxDicePool) ? runningDicePoolSize : maxDicePool;
+        // running_dice_pool = (running_dice_pool_size <= maxDicePool) ? running_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        runningDicePool = runningDicePoolSize;
+        running_dice_pool = running_dice_pool_size;
         
-        speed += runningDicePool;
+        speed += running_dice_pool;
     }
 
-    let climbing = baseSpeed;
-    let swimming = baseSpeed;
-    let zeroG = baseSpeed;
-    let highG = baseSpeed;
-    let lowG = baseSpeed;
+    let climbing = base_speed;
+    let swimming = base_speed;
+    let zero_g = base_speed;
+    let high_g = base_speed;
+    let low_g = base_speed;
 
-    if ('climbing' in skillTotal)
+    if ('climbing' in skill_total)
     {
-        climbingDicePoolSize = calcDicePoolSize(skillTotal['climbing']);
+        climbing_dice_pool_size = calc_dice_pool_size(skill_total['climbing']);
         // Cap dice pool here
-        // climbingDicePool = (climbingDicePoolSize <= maxDicePool) ? climbingDicePoolSize : maxDicePool;
+        // climbing_dice_pool = (climbing_dice_pool_size <= maxDicePool) ? climbing_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        climbingDicePool = climbingDicePoolSize;
-        climbing += climbingDicePool;
+        climbing_dice_pool = climbing_dice_pool_size;
+        climbing += climbing_dice_pool;
 
     }
-    if ('swimming' in skillTotal)
+    if ('swimming' in skill_total)
     {
-        swimmingDicePoolSize = calcDicePoolSize(skillTotal['swimming']);
+        swimming_dice_pool_size = calc_dice_pool_size(skill_total['swimming']);
         // Cap dice pool here
-        // swimmingDicePool = (swimmingDicePoolSize <= maxDicePool) ? swimmingDicePoolSize : maxDicePool;
+        // swimming_dice_pool = (swimming_dice_pool_size <= maxDicePool) ? swimming_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        swimmingDicePool = swimmingDicePoolSize;
-        swimming += swimmingDicePool;
+        swimming_dice_pool = swimming_dice_pool_size;
+        swimming += swimming_dice_pool;
 
     }
-    if ('zero-g' in skillTotal)
+    if ('zero-g' in skill_total)
     {
-        zero_gDicePoolSize = calcDicePoolSize(skillTotal['zero-g']);
+        zero_g_dice_pool_size = calc_dice_pool_size(skill_total['zero-g']);
         // Cap dice pool here
-        // zero_gDicePool = (zero_gDicePoolSize <= maxDicePool) ? zero_gDicePoolSize : maxDicePool;
+        // zero_g_dice_pool = (zero_g_dice_pool_size <= maxDicePool) ? zero_g_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        zero_gDicePool = zero_gDicePoolSize;
-        zeroG += zero_gDicePool;
+        zero_g_dice_pool = zero_g_dice_pool_size;
+        zero_g += zero_g_dice_pool;
 
     }
-    if ('high-g' in skillTotal)
+    if ('high-g' in skill_total)
     {
-        highGDicePoolSize = calcDicePoolSize(skillTotal['high-g']);
+        high_g_dice_pool_size = calc_dice_pool_size(skill_total['high-g']);
         // Cap dice pool here
-        // high_gDicePool = (high_gDicePoolSize <= maxDicePool) ? high_gDicePoolSize : maxDicePool;
+        // high_g_dice_pool = (high_g_dice_pool_size <= maxDicePool) ? high_g_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        high_gDicePool = high_gDicePoolSize;
-        highG += high_gDicePool;
+        high_g_dice_pool = high_g_dice_pool_size;
+        high_g += high_g_dice_pool;
 
     }
-    if ('low-g' in skillTotal)
+    if ('low-g' in skill_total)
     {
-        low_gDicePoolSize = calcDicePoolSize(skillTotal['low-g']);
+        low_g_dice_pool_size = calc_dice_pool_size(skill_total['low-g']);
         // Cap dice pool here
-        // low_gDicePool = (low_gDicePoolSize <= maxDicePool) ? low_gDicePoolSize : maxDicePool;
+        // low_g_dice_pool = (low_g_dice_pool_size <= maxDicePool) ? low_g_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        low_gDicePool = low_gDicePoolSize;
-        lowG += low_gDicePool;
+        low_g_dice_pool = low_g_dice_pool_size;
+        low_g += low_g_dice_pool;
 
     }
 
     climbing = Math.ceil(climbing / 2);
     swimming = Math.ceil(swimming / 2);
-    zeroG = Math.ceil(zeroG / 2);
-    highG = Math.ceil(highG / 2);
-    lowG = Math.ceil(lowG / 2);
+    zero_g = Math.ceil(zero_g / 2);
+    high_g = Math.ceil(high_g / 2);
+    low_g = Math.ceil(low_g / 2);
 
-    derivedStats['Speed'] = speed;
-    derivedStats['Climb'] = climbing;
-    derivedStats['Swim'] = swimming;
-    derivedStats['Zero-G'] = zeroG;
-    derivedStats['High-G'] = highG;
-    derivedStats['Low-G'] = lowG;
+    derived_stats['Speed'] = speed;
+    derived_stats['Climb'] = climbing;
+    derived_stats['Swim'] = swimming;
+    derived_stats['Zero-G'] = zero_g;
+    derived_stats['High-G'] = high_g;
+    derived_stats['Low-G'] = low_g;
 
     //////////
     // JUMP //
     //////////
-    derivedStats['Horizontal Jump Running'] = statTotal['agility'] * 2;
-    derivedStats['Horizontal Jump Standing'] = statTotal['agility'];
+    derived_stats['Horizontal Jump Running'] = stat_total['agility'] * 2;
+    derived_stats['Horizontal Jump Standing'] = stat_total['agility'];
     // Vertical jump values cannot exceed horizontal jump values
-    if (statTotal['strength'] <= statTotal['agility'])
+    if (stat_total['strength'] <= stat_total['agility'])
     {
-        var verticalJumpStanding = statTotal['strength'];
-        var verticalJumpRunning = statTotal['strength'] * 2;
+        var vertical_jump_standing = stat_total['strength'];
+        var vertical_jump_running = stat_total['strength'] * 2;
     }
     else
     {
-        var verticalJumpStanding = statTotal['agility'];
-        var verticalJumpRunning = statTotal['agility'] * 2;
+        var vertical_jump_standing = stat_total['agility'];
+        var vertical_jump_running = stat_total['agility'] * 2;
     }
-    derivedStats['Vertical Jump Running'] = verticalJumpRunning;
-    derivedStats['Vertical Jump Standing'] = verticalJumpStanding;
+    derived_stats['Vertical Jump Running'] = vertical_jump_running;
+    derived_stats['Vertical Jump Standing'] = vertical_jump_standing;
 
     ///////////
     // CARRY //
     ///////////
-    if ('carry' in skillTotal) var base_carry = (statTotal['strength'] + statTotal['endurance'] + skillTotal['carry']) * 10;
-    else var base_carry = (statTotal['strength'] + statTotal['endurance']) * 10;
+    if ('carry' in skill_total) var base_carry = (stat_total['strength'] + stat_total['endurance'] + skill_total['carry']) * 10;
+    else var base_carry = (stat_total['strength'] + stat_total['endurance']) * 10;
 
-    if (userCharacter.race['Size'] == 'large') base_carry = Math.ceil(base_carry * 1.5);
-    else if (userCharacter.race['Size'] == 'enormous') base_carry *= 2;
-    else if (userCharacter.race['Size'] == 'gigantic') base_carry *= 4;
-    else if (userCharacter.race['Size'] == 'colossal') base_carry *= 8;
-    else if (userCharacter.race['Size'] == 'titanic') base_carry *= 16;
+    if (user_character.race['Size'] == 'large') base_carry = Math.ceil(base_carry * 1.5);
+    else if (user_character.race['Size'] == 'enormous') base_carry *= 2;
+    else if (user_character.race['Size'] == 'gigantic') base_carry *= 4;
+    else if (user_character.race['Size'] == 'colossal') base_carry *= 8;
+    else if (user_character.race['Size'] == 'titanic') base_carry *= 16;
 
-    derivedStats['Carry'] = base_carry + ' (before exploits)';
+    derived_stats['Carry'] = base_carry + ' (before exploits)';
 
     ////////////////
     // INITIATIVE //
     ////////////////
-    if ('tactics' in skillTotal)
+    if ('tactics' in skill_total)
     {
-        var tacticsDicePoolSize = calcDicePoolSize(skillTotal['tactics']);
+        var tactics_dice_pool_size = calc_dice_pool_size(skill_total['tactics']);
         // Cap dice pool here
-        // var tacticsDicePool = (tacticsDicePoolSize <= maxDicePool) ? tacticsDicePoolSize : maxDicePool;
+        // var tactics_dice_pool = (tactics_dice_pool_size <= maxDicePool) ? tactics_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        var tacticsDicePool = tacticsDicePoolSize;
+        var tactics_dice_pool = tactics_dice_pool_size;
     }
-    else var tacticsDicePool = 0;
-    if ('reactions' in skillTotal)
+    else var tactics_dice_pool = 0;
+    if ('reactions' in skill_total)
     {
-        var reactionsDicePoolSize = calcDicePoolSize(skillTotal['reactions'])
+        var reactions_dice_pool_size = calc_dice_pool_size(skill_total['reactions'])
         // Cap dice pool here
-        // var reactionsDicePool = (reactionsDicePoolSize <= maxDicePool) ? reactionsDicePoolSize : maxDicePool;
+        // var reactions_dice_pool = (reactions_dice_pool_size <= maxDicePool) ? reactions_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        var reactionsDicePool = reactionsDicePoolSize;
+        var reactions_dice_pool = reactions_dice_pool_size;
     }
-    else var reactionsDicePool = 0;
+    else var reactions_dice_pool = 0;
 
-    derivedStats['Initiative'] = intDicePool + Math.max(tacticsDicePool, reactionsDicePool);
+    derived_stats['Initiative'] = int_dice_pool + Math.max(tactics_dice_pool, reactions_dice_pool);
 
     //////////////
     // DEFENSES //
     //////////////
-    derivedStats['Melee Defense'] = Math.max(strDicePool, agiDicePool);
-    derivedStats['Ranged Defense'] = agiDicePool;
-    derivedStats['Mental Defense'] = Math.max(chaDicePool, wilDicePool);
-    derivedStats['Vital Defense'] = endDicePool;
+    derived_stats['Melee Defense'] = Math.max(str_dice_pool, agi_dice_pool);
+    derived_stats['Ranged Defense'] = agi_dice_pool;
+    derived_stats['Mental Defense'] = Math.max(cha_dice_pool, wil_dice_pool);
+    derived_stats['Vital Defense'] = end_dice_pool;
 
-    if (userCharacter.defenseSkills['Melee'] != '' && userCharacter.defenseSkills['Melee'] in skillTotal)
+    if (user_character.defense_skills['Melee'] != '' && user_character.defense_skills['Melee'] in skill_total)
     {
-        defenseSkillsMeleeDicePoolSize = calcDicePoolSize(skillTotal[userCharacter.defenseSkills['Melee']]);
+        defense_skills_melee_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Melee']]);
         // Cap dice pool here
-        // var defenseSkillsMeleeDicePool = (defenseSkillsMeleeDicePoolSize <= maxDicePool) ? defenseSkillsMeleeDicePoolSize : maxDicePool;
+        // var defense_skills_melee_dice_pool = (defense_skills_melee_dice_pool_size <= maxDicePool) ? defense_skills_melee_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        defenseSkillsMeleeDicePool = defenseSkillsMeleeDicePoolSize;
+        defense_skills_melee_dice_pool = defense_skills_melee_dice_pool_size;
 
-        derivedStats['Melee Defense'] += defenseSkillsMeleeDicePool;
+        derived_stats['Melee Defense'] += defense_skills_melee_dice_pool;
     }
-    if (userCharacter.defenseSkills['Ranged'] != '' && userCharacter.defenseSkills['Ranged'] in skillTotal)
+    if (user_character.defense_skills['Ranged'] != '' && user_character.defense_skills['Ranged'] in skill_total)
     {
-        defenseSkillsRangedDicePoolSize = calcDicePoolSize(skillTotal[userCharacter.defenseSkills['Ranged']]);
+        defense_skills_ranged_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Ranged']]);
         // Cap dice pool here
-        // var defenseSkillsRangedDicePool = (defenseSkillsRangedDicePoolSize <= maxDicePool) ? defenseSkillsRangedDicePoolSize : maxDicePool;
+        // var defense_skills_ranged_dice_pool = (defense_skills_ranged_dice_pool_size <= maxDicePool) ? defense_skills_ranged_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        defenseSkillsRangedDicePool = defenseSkillsRangedDicePoolSize;
+        defense_skills_ranged_dice_pool = defense_skills_ranged_dice_pool_size;
 
-        derivedStats['Ranged Defense'] += defenseSkillsRangedDicePool;
+        derived_stats['Ranged Defense'] += defense_skills_ranged_dice_pool;
     }
-    if (userCharacter.defenseSkills['Mental'] != '' && userCharacter.defenseSkills['Mental'] in skillTotal)
+    if (user_character.defense_skills['Mental'] != '' && user_character.defense_skills['Mental'] in skill_total)
     {
-        defenseSkillsMentalDicePoolSize = calcDicePoolSize(skillTotal[userCharacter.defenseSkills['Mental']]);
+        defense_skills_mental_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Mental']]);
         // Cap dice pool here
-        // var defenseSkillsMentalDicePool = (defenseSkillsMentalDicePoolSize <= maxDicePool) ? defenseSkillsMentalDicePoolSize : maxDicePool;
+        // var defense_skills_mental_dice_pool = (defense_skills_mental_dice_pool_size <= maxDicePool) ? defense_skills_mental_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        defenseSkillsMentalDicePool = defenseSkillsMentalDicePoolSize;
+        defense_skills_mental_dice_pool = defense_skills_mental_dice_pool_size;
 
-        derivedStats['Mental Defense'] += defenseSkillsMentalDicePool;
+        derived_stats['Mental Defense'] += defense_skills_mental_dice_pool;
     }
-    if (userCharacter.defenseSkills['Vital'] != '' && userCharacter.defenseSkills['Vital'] in skillTotal)
+    if (user_character.defense_skills['Vital'] != '' && user_character.defense_skills['Vital'] in skill_total)
     {
-        defenseSkillsVitalDicePoolSize = calcDicePoolSize(skillTotal[userCharacter.defenseSkills['Vital']]);
+        defense_skills_vital_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Vital']]);
         // Cap dice pool here
-        // var defenseSkillsVitalDicePool = (defenseSkillsVitalDicePoolSize <= maxDicePool) ? defenseSkillsVitalDicePoolSize : maxDicePool;
+        // var defense_skills_vital_dice_pool = (defense_skills_vital_dice_pool_size <= maxDicePool) ? defense_skills_vital_dice_pool_size : maxDicePool;
 
         // Don't cap dice pool here
-        defenseSkillsVitalDicePool = defenseSkillsVitalDicePoolSize;
+        defense_skills_vital_dice_pool = defense_skills_vital_dice_pool_size;
 
-        derivedStats['Vital Defense'] += defenseSkillsVitalDicePool;
+        derived_stats['Vital Defense'] += defense_skills_vital_dice_pool;
     }
 
-    derivedStats['Melee Defense'] = Math.ceil(derivedStats['Melee Defense'] * 3.5);
-    derivedStats['Ranged Defense'] = Math.ceil(derivedStats['Ranged Defense'] * 3.5);
-    derivedStats['Mental Defense'] = Math.ceil(derivedStats['Mental Defense'] * 3.5);
-    derivedStats['Vital Defense'] = Math.ceil(derivedStats['Vital Defense'] * 3.5);
+    derived_stats['Melee Defense'] = Math.ceil(derived_stats['Melee Defense'] * 3.5);
+    derived_stats['Ranged Defense'] = Math.ceil(derived_stats['Ranged Defense'] * 3.5);
+    derived_stats['Mental Defense'] = Math.ceil(derived_stats['Mental Defense'] * 3.5);
+    derived_stats['Vital Defense'] = Math.ceil(derived_stats['Vital Defense'] * 3.5);
 
-    if (userCharacter.race['Size'] == 'tiny')
+    if (user_character.race['Size'] == 'tiny')
     {        
-        derivedStats['Melee Defense'] += 4;
-        derivedStats['Ranged Defense'] += 4;
+        derived_stats['Melee Defense'] += 4;
+        derived_stats['Ranged Defense'] += 4;
     }
-    else if (userCharacter.race['Size'] == 'small')
+    else if (user_character.race['Size'] == 'small')
     {
-        derivedStats['Melee Defense'] += 2;
-        derivedStats['Ranged Defense'] += 2;
+        derived_stats['Melee Defense'] += 2;
+        derived_stats['Ranged Defense'] += 2;
     }
-    else if (userCharacter.race['Size'] == 'large')
+    else if (user_character.race['Size'] == 'large')
     {
-        derivedStats['Melee Defense'] -= 4;
-        derivedStats['Ranged Defense'] -= 4;
+        derived_stats['Melee Defense'] -= 4;
+        derived_stats['Ranged Defense'] -= 4;
     }
-    else if (userCharacter.race['Size'] == 'enormous')
+    else if (user_character.race['Size'] == 'enormous')
     {
-        derivedStats['Melee Defense'] -= 8;
-        derivedStats['Ranged Defense'] -= 8;
+        derived_stats['Melee Defense'] -= 8;
+        derived_stats['Ranged Defense'] -= 8;
     }
-    else if (userCharacter.race['Size'] == 'gigantic')
+    else if (user_character.race['Size'] == 'gigantic')
     {
-        derivedStats['Melee Defense'] -= 16;
-        derivedStats['Ranged Defense'] -= 16;
+        derived_stats['Melee Defense'] -= 16;
+        derived_stats['Ranged Defense'] -= 16;
     }
-    else if (userCharacter.race['Size'] == 'colossal')
+    else if (user_character.race['Size'] == 'colossal')
     {
-        derivedStats['Melee Defense'] -= 32;
-        derivedStats['Ranged Defense'] -= 32;
+        derived_stats['Melee Defense'] -= 32;
+        derived_stats['Ranged Defense'] -= 32;
     }
-    else if (userCharacter.race['Size'] == 'titantic')
+    else if (user_character.race['Size'] == 'titantic')
     {
         // extrapolation based on previous trends
-        derivedStats['Melee Defense'] -= 64;
-        derivedStats['Ranged Defense'] -= 64;
+        derived_stats['Melee Defense'] -= 64;
+        derived_stats['Ranged Defense'] -= 64;
     }
 
-    if (derivedStats['Melee Defense'] < 10) derivedStats['Melee Defense'] = 10;
-    if (derivedStats['Ranged Defense'] < 10) derivedStats['Ranged Defense'] = 10;
-    if (derivedStats['Mental Defense'] < 10) derivedStats['Mental Defense'] = 10;
-    if (derivedStats['Vital Defense'] < 10) derivedStats['Vital Defense'] = 10;
+    if (derived_stats['Melee Defense'] < 10) derived_stats['Melee Defense'] = 10;
+    if (derived_stats['Ranged Defense'] < 10) derived_stats['Ranged Defense'] = 10;
+    if (derived_stats['Mental Defense'] < 10) derived_stats['Mental Defense'] = 10;
+    if (derived_stats['Vital Defense'] < 10) derived_stats['Vital Defense'] = 10;
 
-    return derivedStats;
+    return derived_stats;
 }

@@ -1,17 +1,17 @@
 var career_ma_aikido = {
     "name": "Aikido",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
-    "description": "Blending the force of your attacker with your own movements, you have mastered the art of redirecting a foe\u2019s movement to your advantage, placing them in disadvantageous positions with joint locks and a chilling understanding of functional anatomy.",
-    "availableExploits": [
+    "description": "Blending the force of your attacker with your own movements, you have mastered the art of redirecting a foe&apos;s movement to your advantage, placing them in disadvantageous positions with joint locks and a chilling understanding of functional anatomy.",
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three soft exploits from the Universal Exploits for Martial Artists sidebar."
         },
         {
             "Name": "Improved throw",
-            "Desc": "(requires Throw) Your throwing distance increases by 5' and deals +1d6 damage."
+            "Desc": "(requires Throw) Your throwing distance increases by 5&apos; and deals +1d6 damage."
         },
         {
             "Name": "Reactive lock",
@@ -43,11 +43,11 @@ var career_ma_aikido = {
 };
 var career_ma_brazilian_jujutsu = {
     "name": "Brazilian Jujutsu",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Taking your opponents down with expert technique and leverage, you take them to the ground, where you are a master combatant.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Ground fighter",
             "Desc": "Opponents do not gain a bonus to hit you in melee when you are prone."
@@ -82,11 +82,11 @@ var career_ma_brazilian_jujutsu = {
 };
 var career_ma_capoeira = {
     "name": "Capoeira",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "dancing, martial arts",
     "description": "Training with a capoeira master, you\u2019ve become more adept at the acrobatic martial art, able to tumble, cartwheel, and flip around your enemies with ease.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -133,11 +133,11 @@ var career_ma_capoeira = {
 };
 var career_ma_gun_fu = {
     "name": "Gun Fu",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "pistols",
     "description": "You have mastered the synthesis of modern weaponry with ancient martial arts, able to maximize the power and accuracy of firearms by integrating the forms of various styles into one terrifying dance of explosive death. ",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Rapid reload",
             "Desc": "You may fire firearms with the single trait twice per round instead of once."
@@ -156,7 +156,7 @@ var career_ma_gun_fu = {
         },
         {
             "Name": "Curved bullet",
-            "Desc": "You may spend a LUC die to curve a bullet round a corner once per round, effectively negating your target's cover. You must still have line of sight; this ability negates cover, but does not create new lines of sight."
+            "Desc": "You may spend a LUC die to curve a bullet round a corner once per round, effectively negating your target&apos;s cover. You must still have line of sight; this ability negates cover, but does not create new lines of sight."
         },
         {
             "Name": "Cover me!",
@@ -188,11 +188,11 @@ var career_ma_gun_fu = {
 };
 var career_ma_gun_kata = {
     "name": "Gun Kata",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "pistols",
     "description": "You have learned the unusual but beautiful art of melee gun combat, where the gun is considered a total weapon and katas are performed which statistically inflict the maximum damage on the largest number of targets while avoiding statistically likely trajectories of return fire.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Gunpunch",
             "Desc": "Once per round, while holding a sidearm, your martial arts attack does the damage of your gun."
@@ -203,7 +203,7 @@ var career_ma_gun_kata = {
         },
         {
             "Name": "Closedown",
-            "Desc": "When attacked by somebody with a gun 10' or less away from you, you immediately move adjacent to them and perform a martial arts attack as a reaction."
+            "Desc": "When attacked by somebody with a gun 10&apos; or less away from you, you immediately move adjacent to them and perform a martial arts attack as a reaction."
         },
         {
             "Name": "Bulletcatcher",
@@ -235,11 +235,11 @@ var career_ma_gun_kata = {
 };
 var career_ma_jujutsu = {
     "name": "Jujutsu",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Trained in fighting an armed opponent with your feet and fists, you are a fluid warrior in combat, adapting to best use your enemy\u2019s movements against them.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any two hard or soft exploits from the Universal Exploits for Martial Artists sidebar."
@@ -282,11 +282,11 @@ var career_ma_jujutsu = {
 };
 var career_ma_karate = {
     "name": "Karate",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "You learned a striking art which focuses on punches, kicks, and knee and able strikes, as well as open hand strikes.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -301,7 +301,7 @@ var career_ma_karate = {
         },
         {
             "Name": "Crane stance",
-            "Desc": "You adopt a stance by spending an action. You cannot move while in this stance. If any foe attempts to engage you melee combat, you gain a free attack as a reaction against him. This attack takes place before your foe's attack. Once you have made this attack, your stance ends."
+            "Desc": "You adopt a stance by spending an action. You cannot move while in this stance. If any foe attempts to engage you melee combat, you gain a free attack as a reaction against him. This attack takes place before your foe&apos;s attack. Once you have made this attack, your stance ends."
         },
         {
             "Name": "Double punch",
@@ -333,11 +333,11 @@ var career_ma_karate = {
 };
 var career_ma_krav_maga = {
     "name": "Krav Maga",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Studying one of the newest and most practical martial arts has taught you to end a fight as soon as it starts (if it has to) and to make the most out of your attacks with the least effort.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -376,11 +376,11 @@ var career_ma_krav_maga = {
 };
 var career_ma_kung_fu = {
     "name": "Kung Fu",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
-    "description": "Through intense and dedicated training, you've begun to unlock the secrets of the ancient martial arts of China. You can sense and feel the essence of your being and are able to manipulate not only that life energy, but also your body, to its maximum effect. With these skills at your disposal, you are a fearsome opponent in combat and able to perform feats of finesse and strength that dazzle your peers.",
-    "availableExploits": [
+    "description": "Through intense and dedicated training, you&apos;ve begun to unlock the secrets of the ancient martial arts of China. You can sense and feel the essence of your being and are able to manipulate not only that life energy, but also your body, to its maximum effect. With these skills at your disposal, you are a fearsome opponent in combat and able to perform feats of finesse and strength that dazzle your peers.",
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any two hard or soft exploits from the Universal Exploits for Martial Artists sidebar."
@@ -395,7 +395,7 @@ var career_ma_kung_fu = {
         },
         {
             "Name": "Sticking hands",
-            "Desc": "You remain in constant contact with your foe's arms and hands, allowing you to easily deflect attacks and counter. You gain +2 MELEE DEFENSE against one adjacent opponent, and may counterstrike with a basic (no additional exploits) unarmed attack against that foe as a reaction to any missed attack."
+            "Desc": "You remain in constant contact with your foe&apos;s arms and hands, allowing you to easily deflect attacks and counter. You gain +2 MELEE DEFENSE against one adjacent opponent, and may counterstrike with a basic (no additional exploits) unarmed attack against that foe as a reaction to any missed attack."
         },
         {
             "Name": "Active resistance",
@@ -423,11 +423,11 @@ var career_ma_kung_fu = {
 };
 var career_ma_muay_thai = {
     "name": "Muay Thai",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Dedicated conditioning is a part of your daily routine, and you cannot count the number of times you\u2019ve struck out against a tree trunk with your leg, but it doesn\u2019t matter: your body truly is a living weapon. You have mastered the art of Thai boxing.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -466,11 +466,11 @@ var career_ma_muay_thai = {
 };
 var career_ma_northern_shaolin = {
     "name": "Northern Shaolin",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Focusing on the use of your legs and staying quick on your feet, you practice styles like Baguazhang, Eagle Claw, Northern Praying Mantis, or Ch\u00e1ngqu\u00e1n.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three soft exploits from the Universal Exploits for Martial Artists sidebar."
@@ -509,11 +509,11 @@ var career_ma_northern_shaolin = {
 };
 var career_ma_pankration = {
     "name": "Pankration",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts or boxing",
     "description": "The truest expression of a person\u2019s fighting ability, some would say, is the ancient art of wrestling\u2014you count yourself among their number. After hundreds of matches, you know exactly the best way to grapple and pin an opponent in any situation.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three soft exploits from the Universal Exploits for Martial Artists sidebar."
@@ -552,11 +552,11 @@ var career_ma_pankration = {
 };
 var career_ma_savate = {
     "name": "Savate",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Training with a champion of the sport or learning the hard way on the meaner streets in Marseille or Paris, you\u2019ve studied the martial art of France and can put it to great use.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -575,7 +575,7 @@ var career_ma_savate = {
         },
         {
             "Name": "Long kick",
-            "Desc": "Once per turn you may kick a target 10' from you with a lunge."
+            "Desc": "Once per turn you may kick a target 10&apos; from you with a lunge."
         },
         {
             "Name": "Heavy shoe",
@@ -599,11 +599,11 @@ var career_ma_savate = {
 };
 var career_ma_southern_shaolin = {
     "name": "Southern Shaolin",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "martial arts",
     "description": "Your body is a weapon, and your hands are deadly indeed. Using styles like Fujian White Crane, Wing Chun, Southern Praying Mantis, Bak Mei and Dragon, you are a master of Nanquan\u2014the Southern Fist.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Curriculum exploits",
             "Desc": "Choose any three hard exploits from the Universal Exploits for Martial Artists sidebar."
@@ -618,7 +618,7 @@ var career_ma_southern_shaolin = {
         },
         {
             "Name": "Flowing attacker",
-            "Desc": "For each 5' you travel during a turn, you may make one attack. For every attack after the first, you take a cumulate -1d6 to the attack roll. Once you miss, your attack streak ends. This uses all of your actions for the turn."
+            "Desc": "For each 5&apos; you travel during a turn, you may make one attack. For every attack after the first, you take a cumulate -1d6 to the attack roll. Once you miss, your attack streak ends. This uses all of your actions for the turn."
         }
     ],
     "stats": {

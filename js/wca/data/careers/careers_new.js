@@ -1,10 +1,10 @@
 var career_new_academy = {
     "name": "Academy",
-    "careerTime": "3",
-    "careerTimeUnit": "years",
+    "career_time": "3",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "You joined the military and completed basic military training. Some programs send recruits to college to gain degrees before returning to cadet assignments. The Military Academy is the basic training location for both Naval and Marine officers, and as such covers a wide curriculum along with an opportunity to specialize early in a science, medicine, or engineering career.The Military Academy is regarded as a top-quality institution, easily the equal of many highly placed universities. The Academy is a three-year course, and is widely regarded as the equivalent of a Bachelor's degree.",
-    "availableExploits": [
+    "description": "You joined the military and completed basic military training. Some programs send recruits to college to gain degrees before returning to cadet assignments. The Military Academy is the basic training location for both Naval and Marine officers, and as such covers a wide curriculum along with an opportunity to specialize early in a science, medicine, or engineering career.The Military Academy is regarded as a top-quality institution, easily the equal of many highly placed universities. The Academy is a three-year course, and is widely regarded as the equivalent of a Bachelor&apos;s degree.",
+    "available_exploits": [
         {
             "Name": "Basic training",
             "Desc": "You gain all of the following skills at 1 rank (1d6); this does not increase an existing skill beyond 1 rank. Tactics (marines) or piloting (navy); computers; law; one [scientific] skill (navy) or survival (marines)."
@@ -43,11 +43,11 @@ var career_new_academy = {
 };
 var career_new_assassin = {
     "name": "Assassin",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth, tracking, [combat]",
     "description": "A killer for hire, you mastered the skills of assassination.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Killing blow",
             "Desc": "Any attack you make during the ambush turn gains a +2d6 bonus to attack."
@@ -82,11 +82,11 @@ var career_new_assassin = {
 };
 var career_new_athlete = {
     "name": "Athlete",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[sport] or [physical]",
     "description": "You are a professional athlete, whether that be in a team sport or a track and field event.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Athletic",
             "Desc": "Choose four [physical] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -121,11 +121,11 @@ var career_new_athlete = {
 };
 var career_new_bartender = {
     "name": "Bartender",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Bartending is a great way to pay the bills. Some make a lifelong career of it.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Bouncer",
             "Desc": "You are used to dealing with drunkards. You gain a +1d6 bonus to all checks vs. an intoxicated creature."
@@ -156,14 +156,14 @@ var career_new_bartender = {
 };
 var career_new_battlepsyche = {
     "name": "Battlepsyche",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "concentration",
     "description": "Battlepsychs are trained for wartime psionic combat. They specialize in brute-force mental offense.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Psi-blast",
-            "Desc": "You can use an action and make a PSI vs. MENTAL DEFENSE attack to blast an opponent with a mental burst which does 3d6 psionic damage and has a range increment of 10'."
+            "Desc": "You can use an action and make a PSI vs. MENTAL DEFENSE attack to blast an opponent with a mental burst which does 3d6 psionic damage and has a range increment of 10&apos;."
         },
         {
             "Name": "Telekinetic shield",
@@ -171,11 +171,11 @@ var career_new_battlepsyche = {
         },
         {
             "Name": "Psychic cone",
-            "Desc": "You gain the ability to once per day spend 1d6 HEALTH to project a 30' of psychic energy which causes psychic damage equal to your PSI check to all in the area of effect. If the 1d6 HEALTH causes you to fall to zero HEALTH, the power fails."
+            "Desc": "You gain the ability to once per day spend 1d6 HEALTH to project a 30&apos; of psychic energy which causes psychic damage equal to your PSI check to all in the area of effect. If the 1d6 HEALTH causes you to fall to zero HEALTH, the power fails."
         },
         {
             "Name": "Electrokinetic blast",
-            "Desc": "You blast an opponent with a range increment of 20' with a bolt of focused electricity. Make a PSI vs. DEFENSE attack; if you succeed, you do 2d6 electricity damage. You may repeat this Exploit once, incresing the damage to 3d6."
+            "Desc": "You blast an opponent with a range increment of 20&apos; with a bolt of focused electricity. Make a PSI vs. DEFENSE attack; if you succeed, you do 2d6 electricity damage. You may repeat this Exploit once, incresing the damage to 3d6."
         }
     ],
     "stats": {
@@ -195,11 +195,11 @@ var career_new_battlepsyche = {
 };
 var career_new_biopsychic = {
     "name": "Biopsychic",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "medicine",
     "description": "Biopsychics are dedicated to healing. Known by a variety of names \u2013 energy healer, faith healers, psychic surgeons, and more they channel psionic energy into others in order to heal injuries and sickness.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Psychic healing",
             "Desc": "You can heal 1d6 HEALTH by touch. Any given creature can only benefit from this power once per day. You may repeat this Exploit once, increasing the healing to 2d6 HEALTH."
@@ -230,18 +230,18 @@ var career_new_biopsychic = {
 };
 var career_new_bounty_hunter = {
     "name": "Bounty Hunter",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "As a bounty hunter you spent time tracking down and capturing wanted criminals.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Prey",
             "Desc": "You may choose a target species. You gain a +1d6 bonus to attempts to track targets of that species."
         },
         {
             "Name": "Datamining",
-            "Desc": "You are able to locate a target's current location down to a specific planet by accessing credit, criminal, customs, and other records if you have access to a computer link."
+            "Desc": "You are able to locate a target&apos;s current location down to a specific planet by accessing credit, criminal, customs, and other records if you have access to a computer link."
         }
     ],
     "stats": {
@@ -261,11 +261,11 @@ var career_new_bounty_hunter = {
 };
 var career_new_burglar = {
     "name": "Burglar",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth",
     "description": "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums and high security vaults.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Locksmith",
             "Desc": "You gain an exceptional quality lockpicking kit."
@@ -304,14 +304,14 @@ var career_new_burglar = {
 };
 var career_new_college = {
     "name": "College",
-    "careerTime": "4",
-    "careerTimeUnit": "years",
+    "career_time": "4",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You attended a civilian college or university and gained formal qualifications in a chosen area of study.Choose a subject, which can be any skill, but is typically a [scientific], [technical], [academic], or [artistic] skill. You can restart this career at any time to gain degrees in additional subjects.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Bachelor",
-            "Desc": "After a four-year course, you gained a Bachelor's degree or equivalent at university. Improve your skill ranks in your chosen subject to 3. Your research skills are developed. If you have access to a library or data network, you gain a +1d6 bonus to attempts to learn information about a subject. Make a Challenging [13] LOG check before advancing any attributes. If you succeed, you pass this degree with honors and gain 1 bonus REP attribute point."
+            "Desc": "After a four-year course, you gained a Bachelor&apos;s degree or equivalent at university. Improve your skill ranks in your chosen subject to 3. Your research skills are developed. If you have access to a library or data network, you gain a +1d6 bonus to attempts to learn information about a subject. Make a Challenging [13] LOG check before advancing any attributes. If you succeed, you pass this degree with honors and gain 1 bonus REP attribute point."
         },
         {
             "Name": "Masters",
@@ -339,11 +339,11 @@ var career_new_college = {
 };
 var career_new_con_artist = {
     "name": "Con Artist",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "bluffing",
     "description": "You honed your skills and learned how to trick others out of their money with charm, lies, bluffs, disguise, and more. Many career criminals combine the craft of the con man with the skills of the burglar.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Grifter",
             "Desc": "In a bar or other crowded social situation, you can automatically make credits equal to a CHA check x 10 in the space of an hour using only the gift of the gab. You can only do this once per day. This Exploit cannot be used during downtime."
@@ -354,7 +354,7 @@ var career_new_con_artist = {
         },
         {
             "Name": "Quick change",
-            "Desc": "You are able to don a quick disguise in one round instead of five minutes. This must be a disguise you've successfully used before."
+            "Desc": "You are able to don a quick disguise in one round instead of five minutes. This must be a disguise you&apos;ve successfully used before."
         },
         {
             "Name": "Beguiling",
@@ -378,11 +378,11 @@ var career_new_con_artist = {
 };
 var career_new_craftsman = {
     "name": "Craftsman",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[crafting] or [technical]",
     "description": "You made your living by practising your craft as a carpenter, electrician, mechanic, or other professional skilled worker. You are the backbone of society, representative of all those billions like you who lead ordinary lives.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Handyman",
             "Desc": "Choose four [crafting] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -397,7 +397,7 @@ var career_new_craftsman = {
         },
         {
             "Name": "Builder",
-            "Desc": "Assuming raw materials are available, you can make an item of equipment in one day by rolling a LOG check vs. the item's value."
+            "Desc": "Assuming raw materials are available, you can make an item of equipment in one day by rolling a LOG check vs. the item&apos;s value."
         },
         {
             "Name": "Fixer",
@@ -421,11 +421,11 @@ var career_new_craftsman = {
 };
 var career_new_detective = {
     "name": "Detective",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You become a detective, expert at spotting clues and finding your man. Even if you leave the profession, you still retain enough contacts to call in favors and request information.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Clues",
             "Desc": "If there are any clues to find at a crime scene, you automatically find them within 5 minutes."
@@ -456,11 +456,11 @@ var career_new_detective = {
 };
 var career_new_diplomat = {
     "name": "Diplomat",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[social]",
     "description": "You have represented your planet elsewhere.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Diplomatic",
             "Desc": "Choose four [social] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -471,7 +471,7 @@ var career_new_diplomat = {
         },
         {
             "Name": "Embassy",
-            "Desc": "You have access to your home planet's ambassadorial embassy and residences on any planet (if there are any), which can provide food, shelter, basic equipment, and medical care."
+            "Desc": "You have access to your home planet&apos;s ambassadorial embassy and residences on any planet (if there are any), which can provide food, shelter, basic equipment, and medical care."
         },
         {
             "Name": "Diplomatic immunity",
@@ -495,11 +495,11 @@ var career_new_diplomat = {
 };
 var career_new_drifter = {
     "name": "Drifter",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Somehow you lost your way. Drinking, gambling, with no clear objective, you drifted through the fringes of society.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Unseen",
             "Desc": "You know how to blend in so that nobody pays any attention to you. You gain a +1d6 bonus when attempting to do so."
@@ -522,11 +522,11 @@ var career_new_drifter = {
 };
 var career_new_engineer = {
     "name": "Engineer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "engineering",
     "description": "You became an engineer, proficient at manipulating technology and repairing devices and engines.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Technical knowledge base",
             "Desc": "Choose four [technical] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -545,11 +545,11 @@ var career_new_engineer = {
         },
         {
             "Name": "Engine-master",
-            "Desc": "(requires Engine-tuner) You can increase your starship's FTL speed by 2 factors for a number of hours equal to your LOG check, after which the FTL engines cannot be used for 24 hours. This does not stack with other engineers should others be present."
+            "Desc": "(requires Engine-tuner) You can increase your starship&apos;s FTL speed by 2 factors for a number of hours equal to your LOG check, after which the FTL engines cannot be used for 24 hours. This does not stack with other engineers should others be present."
         },
         {
             "Name": "Explosives",
-            "Desc": "You can create explosives from common items and surroundings. The explosive takes 30 minutes to make, and causes 3d6 heat damage to all within 5'. The explosive can be stored, but only for up to two hours."
+            "Desc": "You can create explosives from common items and surroundings. The explosive takes 30 minutes to make, and causes 3d6 heat damage to all within 5&apos;. The explosive can be stored, but only for up to two hours."
         },
         {
             "Name": "Saboteur",
@@ -581,11 +581,11 @@ var career_new_engineer = {
 };
 var career_new_gambler = {
     "name": "Gambler",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[gaming]",
     "description": "You became an expert gambler, proficient at games of skill and chance.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Lucky streak",
             "Desc": "Roll 3d6 and multiply by 100. You gain that many credits. You may repeat this Exploit, gaining 3d6x100 credits each time."
@@ -616,11 +616,11 @@ var career_new_gambler = {
 };
 var career_new_gangster = {
     "name": "Gangster",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "intimidate",
     "description": "Eventually your life of crime led you to better things as you fell into a gang or crew.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Intimidating",
             "Desc": "Intimidation is your way of life, especially in the criminal underworld. When attempting to intimidate a criminal, you gain a +1d6 bonus."
@@ -647,11 +647,11 @@ var career_new_gangster = {
 };
 var career_new_intelligence_officer_spy = {
     "name": "Intelligence Officer/Spy",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "You're a spy. This may be Navy Intelligence or some other force. You have a wide remit, dealing with both domestic and external threats, and perform undercover investigations into military and civilian issues.",
-    "availableExploits": [
+    "description": "You&apos;re a spy. This may be Navy Intelligence or some other force. You have a wide remit, dealing with both domestic and external threats, and perform undercover investigations into military and civilian issues.",
+    "available_exploits": [
         {
             "Name": "False identify",
             "Desc": "You are able to create a false identity, complete with background records, in one day."
@@ -690,11 +690,11 @@ var career_new_intelligence_officer_spy = {
 };
 var career_new_marine_cadet_assignment = {
     "name": "Marine Cadet Assignment",
-    "careerTime": "2",
-    "careerTimeUnit": "years",
+    "career_time": "2",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You completed your cadet assignment in the Star Marines, which gave you a rude awakening after the comparative luxury that was the Academy. Assigned menial tasks in hostile conditions and climates, you endured two years before being approved by your Sergeant.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Light sleeper",
             "Desc": "You gain a Kevlar vest and a rifle. You also gain the ability to sleep lightly, and are not disadvantaged by perception check made while asleep."
@@ -717,22 +717,22 @@ var career_new_marine_cadet_assignment = {
 };
 var career_new_marine_tour = {
     "name": "Marine Tour",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A tour of duty in the Star Marines means a deployment to a probably dangerous environment where you engaged enemy forces in infantry based ground battles or boarded hostile starships. Star Marines pride themselves on their sense of duty and their courage, and consider themselves the most professional soldiers in known space.With each tour, roll 1d6. On a roll of 6, you gain a medal and a bonus +1 REP.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Battle scars",
-            "Desc": "You've received so many battle scars that you sometimes don't notice injury. You gain a SOAK bonus of 2."
+            "Desc": "You&apos;ve received so many battle scars that you sometimes don&apos;t notice injury. You gain a SOAK bonus of 2."
         },
         {
             "Name": "Quick naps",
-            "Desc": "You've learned to manage with little sleep. As long as you get 4 hours, you count as fully rested."
+            "Desc": "You&apos;ve learned to manage with little sleep. As long as you get 4 hours, you count as fully rested."
         },
         {
             "Name": "Get on with it",
-            "Desc": "Your platoon doesn't have much patience for whining about minor injuries. Once per day you can pause for two actions and recover 2d6 HEALTH."
+            "Desc": "Your platoon doesn&apos;t have much patience for whining about minor injuries. Once per day you can pause for two actions and recover 2d6 HEALTH."
         },
         {
             "Name": "Shake it off",
@@ -740,7 +740,7 @@ var career_new_marine_tour = {
         },
         {
             "Name": "Platoon leader",
-            "Desc": "You are able to grant your entire party a +1d6 INITIATIVE bonus as long as they are within 30' of you."
+            "Desc": "You are able to grant your entire party a +1d6 INITIATIVE bonus as long as they are within 30&apos; of you."
         }
     ],
     "stats": {
@@ -760,11 +760,11 @@ var career_new_marine_tour = {
 };
 var career_new_medic = {
     "name": "Medic",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "medicine",
     "description": "You enter the medical profession. If you have gained a doctorate at college, you do so as a doctor; otherwise you are referred to as a nurse or medic.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Medical knowledge base",
             "Desc": "Choose four [medical] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -795,7 +795,7 @@ var career_new_medic = {
         },
         {
             "Name": "Medical officer",
-            "Desc": "On board a starship, your vessel's daily sickbay capacity for restoring casualties to active duty is increased by 10% as long as you are in charge of the medical facilities."
+            "Desc": "On board a starship, your vessel&apos;s daily sickbay capacity for restoring casualties to active duty is increased by 10% as long as you are in charge of the medical facilities."
         },
         {
             "Name": "Emergency response",
@@ -819,18 +819,18 @@ var career_new_medic = {
 };
 var career_new_miner = {
     "name": "Miner",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "There's nothing like a few years spent down a tritanium mine to build character.",
-    "availableExploits": [
+    "description": "There&apos;s nothing like a few years spent down a tritanium mine to build character.",
+    "available_exploits": [
         {
             "Name": "Underground sense",
             "Desc": "When underground you can always determine direction and depth and pick a route to the surface."
         },
         {
             "Name": "Darksight",
-            "Desc": "You have spent so much time below ground that you've developed darksight to a distance of 30'."
+            "Desc": "You have spent so much time below ground that you&apos;ve developed darksight to a distance of 30&apos;."
         },
         {
             "Name": "Mining hazards",
@@ -838,7 +838,7 @@ var career_new_miner = {
         },
         {
             "Name": "Toxic gases",
-            "Desc": "The underground is full of toxic fumes, and you've become used to them. You gain a poison SOAK of 5."
+            "Desc": "The underground is full of toxic fumes, and you&apos;ve become used to them. You gain a poison SOAK of 5."
         },
         {
             "Name": "Identify substance",
@@ -862,11 +862,11 @@ var career_new_miner = {
 };
 var career_new_navy_cadet_cruise = {
     "name": "Navy Cadet Cruise",
-    "careerTime": "1",
-    "careerTimeUnit": "years",
+    "career_time": "1",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You completed your cadet cruise and are now a Navy Officer! The cadet cruise is a year long, and spent on a starship; those who successfully complete the cadet cruise and evaluation are then able to proceed to a Navy Tour or to Navy Command School. The exact assignment of the cadet cruise varies, but a cadet will typically carry out a range of non-specialized duties under the supervision of an evaluating officer.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Ship rat",
             "Desc": "You gain an overall familiarity with naval vessels and starships, and get a +1d6 bonus to checks related to them."
@@ -889,11 +889,11 @@ var career_new_navy_cadet_cruise = {
 };
 var career_new_navy_tour = {
     "name": "Navy Tour",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "A navy tour is a regular military assignment; tours constitute the bulk of a military character's career. Tours in the Navy can encompass any and all of these duties. A crewman will typically specialize in one of several career branches \u2013 medical, security, engineering, science, operations, pilot \u2013 and carry out his tour of duty in that area of specialization, often with a long-term aim of becoming chief of that department. For example, if you are already a medic, your tour will be as a medical officer; if you are already a scientist, it will be as a science officer or similar role. The same goes for pilots, security personnel, engineers, and so on.",
-    "availableExploits": [
+    "description": "A navy tour is a regular military assignment; tours constitute the bulk of a military character&apos;s career. Tours in the Navy can encompass any and all of these duties. A crewman will typically specialize in one of several career branches \u2013 medical, security, engineering, science, operations, pilot \u2013 and carry out his tour of duty in that area of specialization, often with a long-term aim of becoming chief of that department. For example, if you are already a medic, your tour will be as a medical officer; if you are already a scientist, it will be as a science officer or similar role. The same goes for pilots, security personnel, engineers, and so on.",
+    "available_exploits": [
         {
             "Name": "Starship familiarity",
             "Desc": ". Your familiarity with naval starships is such that you can automatically navigate to any location inside one."
@@ -916,7 +916,7 @@ var career_new_navy_tour = {
         },
         {
             "Name": "First contact",
-            "Desc": "You were involved in a first contact mission, discovering a new alien species. Decide on the nature of the species (with your GM's approval). You gain a bonus +1 REP and 1 rank in linguistics."
+            "Desc": "You were involved in a first contact mission, discovering a new alien species. Decide on the nature of the species (with your GM&apos;s approval). You gain a bonus +1 REP and 1 rank in linguistics."
         }
     ],
     "stats": {
@@ -936,11 +936,11 @@ var career_new_navy_tour = {
 };
 var career_new_performer = {
     "name": "Performer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[performance]",
     "description": "You became a musician or other performer, and made your way working bars, clubs, and theaters.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Triple-threat",
             "Desc": "You gain the skills singing, dancing, and acting at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -979,14 +979,14 @@ var career_new_performer = {
 };
 var career_new_pilot = {
     "name": "Pilot",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "piloting",
     "description": "You became a pilot or starship helm officer, learning to fly shuttles, fighters, freighters, or starships.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Push the limits",
-            "Desc": "You can exceed a ship's normal maximum FTL speed by one factor (as long as it has FTL capability)."
+            "Desc": "You can exceed a ship&apos;s normal maximum FTL speed by one factor (as long as it has FTL capability)."
         },
         {
             "Name": "Evasive flying",
@@ -1006,7 +1006,7 @@ var career_new_pilot = {
         },
         {
             "Name": "Full stop",
-            "Desc": "As an action, you can bring a starship to an immediate stop without needing to decelerate. This causes 1d6 damage to the ship's superstructure."
+            "Desc": "As an action, you can bring a starship to an immediate stop without needing to decelerate. This causes 1d6 damage to the ship&apos;s superstructure."
         },
         {
             "Name": "Astrogator",
@@ -1034,11 +1034,11 @@ var career_new_pilot = {
 };
 var career_new_police_officer = {
     "name": "Police Officer",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You join the police or other security force and begin a career as a uniformed officer.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Troublesense",
             "Desc": "You are easily able to spot trouble before it happens. You gain a +1d6 bonus to initiative checks."
@@ -1077,11 +1077,11 @@ var career_new_police_officer = {
 };
 var career_new_priest = {
     "name": "Priest",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "religion",
     "description": "You joined the clergy and practised religion, tending to your flock.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Confessional",
             "Desc": "Your insights into the morality of living things enables you to draw confessions from others. Given an hour of conversation, you gain a +2d6 bonus to checks designed to gain information from another creature."
@@ -1112,11 +1112,11 @@ var career_new_priest = {
 };
 var career_new_prisoner = {
     "name": "Prisoner",
-    "careerTime": "2d6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to survive, although you did make one or two lifelong contacts.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Prison tough",
             "Desc": "You are mentally and physically toughened. Each time you go to prison you gain a permanent +1 bonus to your DEFENSE and MENTAL DEFENSE."
@@ -1143,22 +1143,22 @@ var career_new_prisoner = {
 };
 var career_new_psi_cop = {
     "name": "Psi-cop",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "law",
-    "description": "A Psi-Cop is a specialist investigative law-enforcement individual with psionic training, and usually works alongside police \u2013 or occasionally Navy Security or Intelligence \u2013 in a consulting role. Psi-Cops aren't usually trained in direct psionic combat skills; their area of expertise is in the teasing out of information from suspects and crime scenes, although higher ranking Psi-Cops known as Inquisitors do receive potent combat training.",
-    "availableExploits": [
+    "description": "A Psi-Cop is a specialist investigative law-enforcement individual with psionic training, and usually works alongside police \u2013 or occasionally Navy Security or Intelligence \u2013 in a consulting role. Psi-Cops aren&apos;t usually trained in direct psionic combat skills; their area of expertise is in the teasing out of information from suspects and crime scenes, although higher ranking Psi-Cops known as Inquisitors do receive potent combat training.",
+    "available_exploits": [
         {
             "Name": "Speak-with-dead",
             "Desc": "You have the ability to interrogate a dead body which has been dead for less than a day. It will truthfully answer three yes/no questions with no PSI check needed."
         },
         {
             "Name": "Psychic interrogation",
-            "Desc": "You can make a special PSI attack vs. a suspect's MENTAL DEFENSE. Success means that they must answer three yes/no questions truthfully."
+            "Desc": "You can make a special PSI attack vs. a suspect&apos;s MENTAL DEFENSE. Success means that they must answer three yes/no questions truthfully."
         },
         {
             "Name": "Sense motive",
-            "Desc": "You are able to sense strong emotions within 30', although you cannot necessarily pinpoint their location."
+            "Desc": "You are able to sense strong emotions within 30&apos;, although you cannot necessarily pinpoint their location."
         },
         {
             "Name": "Psychic torture",
@@ -1182,14 +1182,14 @@ var career_new_psi_cop = {
 };
 var career_new_psychic = {
     "name": "Psychic",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You used your psionic abilities in a career of professional psychic work. Your skills are commercial and generalist in nature.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Empathy",
-            "Desc": "You can automatically sense strong emotions in others within 30'."
+            "Desc": "You can automatically sense strong emotions in others within 30&apos;."
         },
         {
             "Name": "Ghostly advice",
@@ -1221,11 +1221,11 @@ var career_new_psychic = {
 };
 var career_new_scientist = {
     "name": "Scientist",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[scientific]",
     "description": "You take your science with you as investigate phenomena in strange locations. Field scientists are viewed by academia as adventurous types, and include archaeologists, meteorologists, zoologists, oceanographers, geologists, botanists, astrophysicists, and much more. Scientists on starships are usually known as science officers.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Scientific knowledge base",
             "Desc": "Choose four [scientific] skills. You gain these four skills at 1 rank (1d6). This does not increase the rank of an existing skill."
@@ -1260,11 +1260,11 @@ var career_new_scientist = {
 };
 var career_new_scout_special_forces = {
     "name": "Scout/Special Forces",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth or [combat]",
     "description": "The pinnacle of special operations, either police, military or freelance, the infiltrator aptly describes the occupation of many men and women whose job it is to infiltrate enemy locations and accomplish dangerous missions, and specialized soldiers able to operate alone and perform reconnaissance. A scout needs a range of skills beyond the mere ability to kill that is the hallmark of the assassin.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Quick-hide",
             "Desc": "You are able to disappear while in plain sight. You can make a stealth check even while under observation to move your speed and become effectively invisible for a round. You may then make regular stealth checks as normal, but cannot repeat this feat against the same observer."
@@ -1303,11 +1303,11 @@ var career_new_scout_special_forces = {
 };
 var career_new_smuggler = {
     "name": "Smuggler",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "piloting",
     "description": "You spent time as a smuggler, moving stolen or illegal goods from one planetary system to another.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Smuggle",
             "Desc": "You know how to hide objects, either about your person or in a location. You gain a +2d6 bonus to attempts to hide items."
@@ -1318,7 +1318,7 @@ var career_new_smuggler = {
         },
         {
             "Name": "Haggler",
-            "Desc": "You're a born haggler, and can reduce the cost of any purchase by 3d6%."
+            "Desc": "You&apos;re a born haggler, and can reduce the cost of any purchase by 3d6%."
         },
         {
             "Name": "Fence",
@@ -1346,14 +1346,14 @@ var career_new_smuggler = {
 };
 var career_new_sniper = {
     "name": "Sniper",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "stealth, rifles",
     "description": "You mastered the art of lying very still for long periods of time and shooting people a long way away. Sniping is a job which requires great endurance, patience, and accuracy.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Vantage point",
-            "Desc": "You gain an additional +1d6 to attack with a ranged weapon if you are at least 30' higher than your target. This stacks with the regular +1d6 bonus for high ground."
+            "Desc": "You gain an additional +1d6 to attack with a ranged weapon if you are at least 30&apos; higher than your target. This stacks with the regular +1d6 bonus for high ground."
         },
         {
             "Name": "Steady eye",
@@ -1385,11 +1385,11 @@ var career_new_sniper = {
 };
 var career_new_socialite = {
     "name": "Socialite",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "[social]",
     "description": "You aim be famous for being famous, and have mastered the art of networking.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "High class",
             "Desc": "You are at home when in high-class social gatherings. In such environments, you gain a +1d6 bonus to all attribute checks. Unfortunately, you are less comfortable \u2013 or welcome - in lower-class environments, and suffer a -1d6 penalty to all social interactions in such situations."
@@ -1412,11 +1412,11 @@ var career_new_socialite = {
 };
 var career_new_space_jockey = {
     "name": "Space Jockey",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You got a commission on a civilian ship \u2013 a merchant vessel or miner. As a general dogsbody, you learned a variety of skills, and you feel truly at home aboard a vessel travelling between the stars.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Zero-g monkey",
             "Desc": "You gain an effective fly speed equal to your regular SPEED in zero-g environments."
@@ -1451,11 +1451,11 @@ var career_new_space_jockey = {
 };
 var career_new_spartan_battle_school = {
     "name": "Spartan Battle School",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "Spartan",
     "description": "Spartan education is brutal and militaristic.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Swordsman",
             "Desc": "You gain a high quality Spartan sword."
@@ -1482,11 +1482,11 @@ var career_new_spartan_battle_school = {
 };
 var career_new_starbase_assignment = {
     "name": "Starbase Assignment",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were assigned to a Starbase or space station.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Starbase layout",
             "Desc": "You become accustomed to the layout of starbases and outposts, and can navigate them without need for reference."
@@ -1509,14 +1509,14 @@ var career_new_starbase_assignment = {
 };
 var career_new_star_knight = {
     "name": "Star Knight",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "concentration or meditation; law",
     "description": "An elite order of warriors, the Star knights are respected throughout the galaxy. Star knights rarely use ranged weapons, engaging the enemy with their laser swords.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Enhanced attributes",
-            "Desc": "You gain +2 SPEED and +5' to both vertical and horizontal jump distances."
+            "Desc": "You gain +2 SPEED and +5&apos; to both vertical and horizontal jump distances."
         },
         {
             "Name": "Psionic attributes",
@@ -1532,11 +1532,11 @@ var career_new_star_knight = {
         },
         {
             "Name": "Throw sword",
-            "Desc": "(requires Laser Sword) You can throw a laser sword as a ranged weapon with a range increment of 10'. The sword returns to your hand."
+            "Desc": "(requires Laser Sword) You can throw a laser sword as a ranged weapon with a range increment of 10&apos;. The sword returns to your hand."
         },
         {
             "Name": "Sense psionics",
-            "Desc": "You can sense the presence of psionics within 30' of you."
+            "Desc": "You can sense the presence of psionics within 30&apos; of you."
         },
         {
             "Name": "Foresight",
@@ -1552,15 +1552,15 @@ var career_new_star_knight = {
         },
         {
             "Name": "Summon",
-            "Desc": "You can telekinetically call a Small or smaller object within 10' to your hand by using two actions. If the object is held by someone else, it will require an opposed PSI vs. STR check."
+            "Desc": "You can telekinetically call a Small or smaller object within 10&apos; to your hand by using two actions. If the object is held by someone else, it will require an opposed PSI vs. STR check."
         },
         {
             "Name": "Telekinesis",
-            "Desc": "(requires Summon) You can freely telekinetically move and manipulate single objects of Small size or smaller within 30' of you. You may only manipulate one such object at a time."
+            "Desc": "(requires Summon) You can freely telekinetically move and manipulate single objects of Small size or smaller within 30&apos; of you. You may only manipulate one such object at a time."
         },
         {
             "Name": "Psychic choke",
-            "Desc": "(requires Telekinesis) You can squeeze the breath from a victim within 30' with a PSI vs. DEFENSE check, causing 3d6 blunt damage."
+            "Desc": "(requires Telekinesis) You can squeeze the breath from a victim within 30&apos; with a PSI vs. DEFENSE check, causing 3d6 blunt damage."
         },
         {
             "Name": "Psychic push",
@@ -1572,7 +1572,7 @@ var career_new_star_knight = {
         },
         {
             "Name": "Psychic suggestion",
-            "Desc": "(requires Telepathic Message) You can momentarily influence the thoughts and actions of another creature within 30' by making a PSI vs. MENTAL DEFENSE check."
+            "Desc": "(requires Telepathic Message) You can momentarily influence the thoughts and actions of another creature within 30&apos; by making a PSI vs. MENTAL DEFENSE check."
         },
         {
             "Name": "Destiny",
@@ -1596,11 +1596,11 @@ var career_new_star_knight = {
 };
 var career_new_street_thug = {
     "name": "Street Thug",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for small amounts of money.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "The filth!",
             "Desc": "You have developed an uncanny ability to detect cops. When attempting to sniff out a police officer or similar authority figure, you gain a +1d6 bonus."
@@ -1627,11 +1627,11 @@ var career_new_street_thug = {
 };
 var career_new_systems_upgrade = {
     "name": "Systems Upgrade",
-    "careerTime": "1d6",
-    "careerTimeUnit": "months",
+    "career_time": "1d6",
+    "career_time_unit": "months",
     "prerequisites": "Android; computers, engineering",
     "description": "You spent time upgrading your software or hardware.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Modification",
             "Desc": "Choose one modification from the Android species Exploits list. You may repeat this Exploit."
@@ -1654,11 +1654,11 @@ var career_new_systems_upgrade = {
 };
 var career_new_trader = {
     "name": "Trader",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Life as a trader can mean profit, but it can also bring ruin.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Sale of the century",
             "Desc": "You worked hard on a great deal, and it netted you 1,000Cr. You may repeat this Exploit, gaining 1,000Cr each time."
@@ -1689,11 +1689,11 @@ var career_new_trader = {
 };
 var career_new_venetian_retreat = {
     "name": "Venetian Retreat",
-    "careerTime": "4d6",
-    "careerTimeUnit": "years",
+    "career_time": "4d6",
+    "career_time_unit": "years",
     "prerequisites": "Venetian",
     "description": "The long-lived Venetians often retire to their own kind for a decade or more in order to contemplate their place in the universe, and train their minds.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Fortified",
             "Desc": "You gain a +5 bonus to MENTAL DEFENSE."

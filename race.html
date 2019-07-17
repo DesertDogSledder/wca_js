@@ -10,7 +10,7 @@
 
     <title>WOIN Character Assistant</title>
   </head>
-  <body onload=refreshRace()>
+  <body onload=refresh_race()>
     <div class="container">
       <nav class="nav nav-tabs">
           <a href="overview.html" class="nav-item nav-link">Overview</a>
@@ -26,26 +26,23 @@
         <div class="card-body">
             <div class="mb-2">
               <b>Race Name:</b>
-              <span id=rceNameVal></span>
-              <button type="button" class="btn btn-warning" id="rceBtnEditRace"><img src="/octicon/svg/pencil.svg" alt="edit race"></button>
+              <span id=rce_name_val></span>
+              <button type="button" class="btn btn-warning" id="rce_btn_edit_race"><img src="/octicon/svg/pencil.svg" alt="edit race"></button>
             </div>
             <div class="mb-2">
               <b>Size:</b>
-              <span id="rceSizeVal">SizeVal</span>
-              <button type="button" class="btn btn-warning" id="rceBtnEditSize"><img src="/octicon/svg/pencil.svg" alt="edit size"></button>
+              <span id="rce_size_val">SizeVal</span>
+              <button type="button" class="btn btn-warning" id="rce_btn_edit_size"><img src="/octicon/svg/pencil.svg" alt="edit size"></button>
           </div>
         </div>
       </div>
 
       <!--Selected Skills Card-->
       <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Selected Skills</h5></div>
+        <div class="card-header"><h5>Selected Skills</h5><button type="button" class="btn btn-warning" id="rce_btn_edit_skills"><img src="/octicon/svg/pencil.svg" alt="edit skills"></button></div>
         <div class="card-body">
           <div class="mb-2">
-            <ul id="rceSelectedSkillsList">No Skills</ul>
-          </div>
-          <div class="mb-2">
-            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit name"> Edit Skills</button>
+            <ul id="rce_selected_skills_list">No Skills</ul>
           </div>
         </div>
       </div>
@@ -55,14 +52,14 @@
         <div class="card-header"><h5>Exploits</h5></div>
         <div class="card-body">
           <div class="mb-2">
-            <ul id="rceExploitsList">No Exploits</ul>
+            <ul id="rce_exploits_list"></ul>
           </div>
         </div>
       </div>
 
       <!--Race Stats Card-->
       <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Racial Stats</h5></div>
+        <div class="card-header"><h5>Racial Stats</h5> <button type="button" class="btn btn-warning" id="rce_btn_edit_stats"><img src="/octicon/svg/pencil.svg" alt="edit stats"></button></div>
         <div class="card-body">
           <div class="mb-2">
             <table class="table">
@@ -84,18 +81,18 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td id="rceStrength"></td>
-                    <td id="rceAgility"></td>
-                    <td id="rceEndurance"></td>
-                    <td id="rceIntuition"></td>
-                    <td id="rceLogic"></td>
-                    <td id="rceWillpower"></td>
-                    <td id="rceCharisma"></td>
-                    <td id="rceLuck"></td>
-                    <td id="rceReputation"></td>
-                    <td id="rceMagic"></td>
-                    <td id="rceChi"></td>
-                    <td id="rcePsionics"></td>
+                    <td id="rce_strength"></td>
+                    <td id="rce_agility"></td>
+                    <td id="rce_endurance"></td>
+                    <td id="rce_intuition"></td>
+                    <td id="rce_logic"></td>
+                    <td id="rce_willpower"></td>
+                    <td id="rce_charisma"></td>
+                    <td id="rce_luck"></td>
+                    <td id="rce_reputation"></td>
+                    <td id="rce_magic"></td>
+                    <td id="rce_chi"></td>
+                    <td id="rce_psionics"></td>
                   </tr>
                 </tbody>
               </table>
@@ -107,86 +104,71 @@
     </div>
 
     <!--Modals-->
-    <!--Edit Name-->
-    <div class="modal fade" id="rceSelectRaceModal" tabindex="-1" role="dialog" aria-labelledby="selectRaceModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <!--Edit Race-->
+    <div class="modal fade" id="rce_select_race_modal" tabindex="-1" role="dialog" aria-labelledby="select_race_modal" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="rceSelectRaceModalLabel">Select Race</h5>
+            <h5 class="modal-title" id="rce_select_race_modal_label">Select Race</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="rceSelectRaceModalSource">Source</label>
-              <select class="form-control" id="rceSelectRaceModalSource">
+              <label for="rce_select_race_modal_source"><b>Source:</b></label>
+              <select class="form-control" id="rce_select_race_modal_source">
                 <option value="old">OLD</option>
                 <option value="now">NOW</option>
                 <option value="new">NEW</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="rceSelectRaceModalRace">Race</label>
-              <select class="form-control" id="rceSelectRaceModalRace"></select>
+              <label for="rce_select_race_modal_race"><b>Race:</b></label>
+              <select class="form-control" id="rce_select_race_modal_race"></select>
             </div>
             <div class="form-group">
-              <div id="rceSelectRaceModalDesc"></div>
-              <div><b>Available Skills:</b> <ul id="rceSelectRaceModalSkills"></ul></div>
+              <b>Description:</b>
+              <div id="rce_select_race_modal_desc"></div>
             </div>
             <div class="form-group">
-              <div><b>Exploits:</b> <ul id="rceSelectRaceModalExploits"></ul></div>
+              <div><b>Available Skills:</b> <ul id="rce_select_race_modal_skills"></ul></div>
+            </div>
+            <div class="form-group">
+              <div><b>Exploits:</b> <ul id="rce_select_race_modal_exploits"></ul></div>
             </div>
             <div class="form-group">
               <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STR</th>
+                    <th scope="col">AGI</th>
+                    <th scope="col">END</th>
+                    <th scope="col">INT</th>
+                    <th scope="col">LOG</th>
+                    <th scope="col">WIL</th>
+                    <th scope="col">CHA</th>
+                    <th scope="col">LUC</th>
+                    <th scope="col">REP</th>
+                    <th scope="col">MAG</th>
+                    <th scope="col">CHI</th>
+                    <th scope="col">PSI</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">STR</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalStrength"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">AGI</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalAgility"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">END</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalEndurance"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">INT</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalIntuition"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">LOG</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalLogic"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">WIL</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalWillpower"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">CHA</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalCharisma"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">LUC</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalLuck"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">REP</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalReputation"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">MAG</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalMagic"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">CHI</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalChi"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">PSI</th>
-                    <td><input class="form-control" type="number" id="rceSelectRaceModalPsionics"></td>
+                    <td id="rce_select_race_modal_strength"></td>
+                    <td id="rce_select_race_modal_agility"></td>
+                    <td id="rce_select_race_modal_endurance"></td>
+                    <td id="rce_select_race_modal_intuition"></td>
+                    <td id="rce_select_race_modal_logic"></td>
+                    <td id="rce_select_race_modal_willpower"></td>
+                    <td id="rce_select_race_modal_charisma"></td>
+                    <td id="rce_select_race_modal_luck"></td>
+                    <td id="rce_select_race_modal_reputation"></td>
+                    <td id="rce_select_race_modal_magic"></td>
+                    <td id="rce_select_race_modal_chi"></td>
+                    <td id="rce_select_race_modal_psionics"></td>
                   </tr>
                 </tbody>
               </table>
@@ -194,7 +176,149 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="rceSelectRaceModalSave">Select Race</button>
+            <button type="button" class="btn btn-primary" id="rce_select_race_modal_save">Select Race</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Size-->
+    <div class="modal fade" id="rce_edit_size_modal" tabindex="-1" role="dialog" aria-labelledby="edit_size_modal" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rce_edit_size_modal_label">Edit Size</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <select class="form-control" id="rce_edit_size_modal_select_size">
+                <option value="tiny">Tiny</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="enormous">Enormous</option>
+                <option value="gigantic">Gigantic</option>
+                <option value="colossal">Colossal</option>
+                <option value="Titanic">Titanic</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="rce_edit_size_modal_save">Select Size</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Race Skills-->
+    <div class="modal fade" id="rce_edit_skills_modal" tabindex="-1" role="dialog" aria-labelledby="edit_skills_modal" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rce_edit_skills_label">Select Race Skills</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <b>Available Skills:</b>
+              <ul id="rce_edit_skills_modal_avail_skills"></ul>
+            </div>
+            <div class="form-group">
+              <b>Current Skills:</b>
+              <select class="custom-select" id="rce_edit_skills_modal_curr_skills" multiple></select>
+              <button type="button" class="btn btn-danger" id="rce_edit_skils_modal_remove">Remove Selected</button>
+            </div>
+            <div class="form-group">
+              <label for="rce_edit_skills_modal_skill"><b>Skill:</b></label>
+              <input type="text" class="form-control" id="rce_edit_skills_modal_skill">
+              <label for="rce_edit_skills_modal_rank"><b>Rank:</b></label>
+              <input type="number" class="form-control" id="rce_edit_skills_modal_rank">
+              <button type="button" class="btn btn-success" id="rce_edit_skils_modal_add">Set</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="rce_edit_skills_modal_save">Save Skills</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Race Stats-->
+    <div class="modal fade" id="rce_edit_stats_modal" tabindex="-1" role="dialog" aria-labelledby="edit_stats_modal" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rce_edit_stats_modal_label">Edit Race Stats</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">STR</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_strength"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">AGI</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_agility"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">END</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_endurance"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">INT</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_intuition"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">LOG</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_logic"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">WIL</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_willpower"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">CHA</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_charisma"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">LUC</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_luck"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">REP</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_reputation"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">MAG</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_magic"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">CHI</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_chi"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PSI</th>
+                    <td><input class="form-control" type="number" id="rce_edit_stats_modal_psionics"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="rce_edit_stats_modal_save">Save Stats</button>
           </div>
         </div>
       </div>
@@ -219,8 +343,18 @@
 
     <script src="js/wca/data/homeworlds/homeworlds_new.js"></script>
 
+    <script src="js/wca/data/exploits/exploits_android.js"></script>
+    <script src="js/wca/data/exploits/exploits_psionic.js"></script>
+    <script src="js/wca/data/exploits/exploits_traits.js"></script>
+    <script src="js/wca/data/exploits/exploits_universal.js"></script>
+
     <script src="js/wca/lib/helpers.js"></script>
     <script src="js/wca.js"></script>
-    <script src="js/wca_ui.js"></script>
+    <script src="js/overview_ui.js"></script>
+    <script src="js/race_ui.js"></script>
+    <script src="js/homeworld_ui.js"></script>
+    <script src="js/careers_ui.js"></script>
+    <script src="js/exploits_ui.js"></script>
+    <script src="js/equipment_ui.js"></script>
   </body>
 </html>

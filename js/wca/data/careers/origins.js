@@ -1,13 +1,13 @@
 var career_woin_origin_acoloyte = {
     "name": "Acoloyte",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A childhood spent in a monastery taught you well for a life of piety.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Daily Worship",
-            "Desc": "Once per day, you may pray to your deity and refresh your LUCK (or \"faith\" as you view it) dice pool."
+            "Desc": "Once per day, you may pray to your deity and refresh your LUCK (or &quot;faith&quot; as you view it) dice pool."
         }
     ],
     "stats": {
@@ -27,14 +27,14 @@ var career_woin_origin_acoloyte = {
 };
 var career_woin_origin_acrobat = {
     "name": "Acrobat",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "You've been trained in acrobatics, taught to flip and cartwheel with ease to entertain spectators. Perhaps you grew up in a circus or travelling show.",
-    "availableExploits": [
+    "description": "You&apos;ve been trained in acrobatics, taught to flip and cartwheel with ease to entertain spectators. Perhaps you grew up in a circus or travelling show.",
+    "available_exploits": [
         {
             "Name": "Slippery",
-            "Desc": "It isn't easy to hit you. You receive a +2 to DEFENSE when you are aware of an incoming attack, and you reduce falling damage by 1d6."
+            "Desc": "It isn&apos;t easy to hit you. You receive a +2 to DEFENSE when you are aware of an incoming attack, and you reduce falling damage by 1d6."
         }
     ],
     "stats": {
@@ -54,11 +54,11 @@ var career_woin_origin_acrobat = {
 };
 var career_woin_origin_borian_apprentice = {
     "name": "Borian Apprentice",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "Borian",
     "description": "Growing up on the Borian Homeworld often involves an apprenticeship in a trade or craft.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Artisan",
             "Desc": "Choose a [crafting] skill. You gain 3 ranks in that skill."
@@ -81,11 +81,11 @@ var career_woin_origin_borian_apprentice = {
 };
 var career_woin_origin_everyman = {
     "name": "Everyman",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your childhood was characterized only by its unremarkability. A normal childhood and High School experience, reasonable grades, and a typical teenaged social life, perhaps youdreamed of being something more.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Ordinary",
             "Desc": "Your very nondescript nature makes you easily able to blend in unnoticed, giving you a +1d6 bonus to attempts to bluff, disguise, or otherwise remain visible but unremarked upon."
@@ -108,14 +108,14 @@ var career_woin_origin_everyman = {
 };
 var career_woin_origin_experiment = {
     "name": "Experiment",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were the subject of tests and experiments by scientists and doctors, whether created or merely altered. Your childhood was spent in a lab.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Programming",
-            "Desc": "You have been specifically bred and engineered for a purpose. At the start of a fight your \u2018programming' kicks in, granting you a +2d6 INITIATIVE bonus."
+            "Desc": "You have been specifically bred and engineered for a purpose. At the start of a fight your \u2018programming&apos; kicks in, granting you a +2d6 INITIATIVE bonus."
         }
     ],
     "stats": {
@@ -135,11 +135,11 @@ var career_woin_origin_experiment = {
 };
 var career_woin_origin_farmhand_old = {
     "name": "Farmhand, archaic",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You grew up on a farm, learning how to manage crops and livestock.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Outdoorsman",
             "Desc": "You know the secret of plants."
@@ -162,11 +162,11 @@ var career_woin_origin_farmhand_old = {
 };
 var career_woin_origin_farmhand_new = {
     "name": "Farmhand, future",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You grew up on a farm \u2013 a wheat farm, a moisture farm, or similar.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Dreamer",
             "Desc": "You may replenish your LUCK pool once per day by spending five minutes daydreaming about wonderful possibilities."
@@ -189,11 +189,11 @@ var career_woin_origin_farmhand_new = {
 };
 var career_woin_origin_felan_scavenger = {
     "name": "Felan Scavenger",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "Felan",
     "description": "With their short lifespans and rapid growth to maturity, the Felan do not form strong family bonds. A youngster is soon left to fend for itself.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Scavenge",
             "Desc": "Once per day, given an hour in an urban environment, you can scavenge one item worth up to 100Cr. This exploit cannot be used during downtime."
@@ -216,11 +216,11 @@ var career_woin_origin_felan_scavenger = {
 };
 var career_woin_origin_geek = {
     "name": "Geek",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were obsessed with geek culture; you can recite lines from your favorite movies, rules from your favorite tabletop games, or obscure facts from your favorite video games.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "What Would Luke Do?",
             "Desc": "Once per day you can be inspired by a pop culture character: you may spend all of your LUC dice on a check without reducing your LUC pool."
@@ -243,11 +243,11 @@ var career_woin_origin_geek = {
 };
 var career_woin_origin_hacker = {
     "name": "Hacker",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were obsessed with computer systems in your adolescent years.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "White-hat",
             "Desc": "You are practised at hacking and anti-hacking techniques. You can actively provide a starship control computer with a +4ELECTRONIC DEFENSE score, and gain a +1d6 bonus to electronic attacks."
@@ -270,11 +270,11 @@ var career_woin_origin_hacker = {
 };
 var career_woin_origin_jock = {
     "name": "Jock",
-    "careerTime": "15",
-    "careerTimeUnit": "years",
+    "career_time": "15",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were a football player (or other sportsman) in High School. You developed your physical and social skills, but your academic skills fell slightly behind.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Athlete",
             "Desc": "You are able to either throw objects with a +50% to their range increment, OR gain a +2 to your SPEED."
@@ -297,11 +297,11 @@ var career_woin_origin_jock = {
 };
 var career_woin_origin_martial_artist = {
     "name": "Martial Artist",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "The story of your youth involves disciplined, regimented schooling in a traditional style of fighting, typically at a dojo in a remote location.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Training.",
             "Desc": "Your training proves that the old ways are often the best, for more reasons than one. You receive a +1 bonus to all three DEFENSEs."
@@ -324,11 +324,11 @@ var career_woin_origin_martial_artist = {
 };
 var career_woin_origin_military_brat = {
     "name": "Military Brat",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You spent time getting shuffled around from military base to military base or otherwise learning from modern soldiers.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Tactical",
             "Desc": "You gain 3 ranks (2d6) in the tactics skill."
@@ -351,11 +351,11 @@ var career_woin_origin_military_brat = {
 };
 var career_woin_origin_moisture_farmer = {
     "name": "Moisture Farmer",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You grew up on a desert world, eking out a living harvesting moisture from the atmosphere.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Technician",
             "Desc": "You are adept at maintaining and repairing old equipment, persuading it to function for far longer than it is designed to. You can make any non-functioning Medium or smaller electronic item work for up to one hour, although it will be permanently broken thereafter."
@@ -378,11 +378,11 @@ var career_woin_origin_moisture_farmer = {
 };
 var career_woin_origin_navy_brat = {
     "name": "Navy Brat",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were brought up on starships, starbases, and military installations.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Petrolhead",
             "Desc": "You have a familiarity with vehicles of military design. When driving or piloting a military vehicle (but not a starship), you gain a +1d6 bonus to checks to operate it."
@@ -405,11 +405,11 @@ var career_woin_origin_navy_brat = {
 };
 var career_woin_origin_nerd = {
     "name": "Nerd",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "You've been obsessed with computer systems.",
-    "availableExploits": [
+    "description": "You&apos;ve been obsessed with computer systems.",
+    "available_exploits": [
         {
             "Name": "White-hat",
             "Desc": "You are practiced at hacking and antihacking techniques. You can actively provide a computer system with a +4 e-DEFENSE score and gain a +1d6 bonus to electronic attacks."
@@ -432,11 +432,11 @@ var career_woin_origin_nerd = {
 };
 var career_woin_origin_noble = {
     "name": "Noble, archaic",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You had a privilieged upbriging, surrounded by luxury.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Silver Spoon",
             "Desc": "Your wealthy upbringing means that you start play with 1,000 bonus gold coins and a superior quality set of clothing."
@@ -459,11 +459,11 @@ var career_woin_origin_noble = {
 };
 var career_woin_origin_novice = {
     "name": "Novice",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You were brought up in a monastic or religious order.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Confidant",
             "Desc": "Being brought up in a monastery has given you a certain perception. You can discern a lie through a mix of intuition and experience. You gain a +1d6 bonus to discern lies and deceptions."
@@ -486,11 +486,11 @@ var career_woin_origin_novice = {
 };
 var career_woin_origin_orphan = {
     "name": "Orphan",
-    "careerTime": "2d6 +6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6 +6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your childhood was not a happy one.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Urchin",
             "Desc": "You are very familiar with urban backgrounds, and are able to blend in easily. With a one-hour period in a new city, you are able to name local crime figures."
@@ -513,11 +513,11 @@ var career_woin_origin_orphan = {
 };
 var career_woin_origin_page = {
     "name": "Page",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You spent years in the service of a lord or lady, learning the ways of court, running messages, cleaning, and serving a noble.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Page Gear",
             "Desc": "You start play with a superior set of clothing and a high-quality musical instrument."
@@ -540,11 +540,11 @@ var career_woin_origin_page = {
 };
 var career_woin_origin_primitive = {
     "name": "Primitive",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You grew up in a tribe where you knew little of civilization.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Fleet",
             "Desc": "You gain +2 to your SPEED when outdoors in a non-urban envirpnemnt This does not stack with other other exploits which grant a SPEED bonus."
@@ -567,11 +567,11 @@ var career_woin_origin_primitive = {
 };
 var career_woin_origin_prodigy = {
     "name": "Prodigy",
-    "careerTime": "2d6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A veritable genius, years ahead of your classmates, you were fast-tracked through your academic career.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Unorthodox",
             "Desc": "You often have an unorthodox approach to things. Once per day you may substitute one of your mental attributes for another one for the purposes of making a single attribute check."
@@ -594,11 +594,11 @@ var career_woin_origin_prodigy = {
 };
 var career_woin_origin_scion = {
     "name": "Scion",
-    "careerTime": "15",
-    "careerTimeUnit": "years",
+    "career_time": "15",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You had a privileged upbringing in a wealthy family, heir to old money. You have never known hardship.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Privileged",
             "Desc": "You gain two sets of exceptional quality clothing and 1,000 bonus credits."
@@ -621,11 +621,11 @@ var career_woin_origin_scion = {
 };
 var career_woin_origin_scout_eagle = {
     "name": "Scout/Eagle",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Always prepared, you were a member of the Boy or Girl Scouts or a similar organization.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Be Prepared",
             "Desc": "Once per day you can produce a small object worth $10 or less from your pockets."
@@ -648,14 +648,14 @@ var career_woin_origin_scout_eagle = {
 };
 var career_woin_origin_service_droid = {
     "name": "Service Droid",
-    "careerTime": "1d6",
-    "careerTimeUnit": "years",
+    "career_time": "1d6",
+    "career_time_unit": "years",
     "prerequisites": "Android",
     "description": "You were created to perform a specific service \u2013 perhaps as a repair droid, domestic bot, astromech, or a translator.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Unsuspicious",
-            "Desc": "Everybody trusts a service droid; it doesn't even occur to them that one might lie or attack. You gain a +1d6 bonus to all attempts to bluff or deceive or to access an ambush turn."
+            "Desc": "Everybody trusts a service droid; it doesn&apos;t even occur to them that one might lie or attack. You gain a +1d6 bonus to all attempts to bluff or deceive or to access an ambush turn."
         }
     ],
     "stats": {
@@ -675,11 +675,11 @@ var career_woin_origin_service_droid = {
 };
 var career_woin_origin_slave = {
     "name": "Slave",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A lifetime of slavery and labor has toughned you both physically and mentally.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Hardship",
             "Desc": "A life of oppression has taught you to endure hardship; you gain an extra death/dying countdown die when reduced to below 0 HEALTH."
@@ -702,11 +702,11 @@ var career_woin_origin_slave = {
 };
 var career_woin_origin_street_tough = {
     "name": "Street Tough",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You fell in with local gangs and the lower echelons of organized crime, looking up to gangsters as role models. You joined a gang, played truant, and engaged in petty crime.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Fell Off a Truck",
             "Desc": "You may acquire starting equipment at half cost. However, any items you acquire this way have been stolen."
@@ -729,11 +729,11 @@ var career_woin_origin_street_tough = {
 };
 var career_woin_origin_survivor = {
     "name": "Survivor",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
-    "description": "The story of your childhood is one of hardship and warzones; you've grown a thick hide from countless conflicts or wars.",
-    "availableExploits": [
+    "description": "The story of your childhood is one of hardship and warzones; you&apos;ve grown a thick hide from countless conflicts or wars.",
+    "available_exploits": [
         {
             "Name": "Endurance",
             "Desc": "You endured a lot, and have the scars to prove it. You gain +2 natural Soak."
@@ -756,11 +756,11 @@ var career_woin_origin_survivor = {
 };
 var career_woin_origin_talent = {
     "name": "Talent",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "You manifested undisciplined psionic ability early in life, and struggled because of it.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Empath",
             "Desc": "You can sense strong emotions in those with whom you converse."
@@ -783,11 +783,11 @@ var career_woin_origin_talent = {
 };
 var career_woin_origin_traveller = {
     "name": "Traveller",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your parents travelled a lot, which gave you great exposure to the wonders and goings on of the universe.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Stargazer",
             "Desc": "Your years of travelling the space lanes has heightened your sense of location. You can identify which system you are in if you are able to see the sky (as long as you are not in uncharted space)."
@@ -810,11 +810,11 @@ var career_woin_origin_traveller = {
 };
 var career_woin_origin_urchin = {
     "name": "Urchin",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "A rough childhood on the streets taught you how to survive.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Life on the Streets",
             "Desc": "Accustomed to sleeping rough, you heal a bonus 1d6 HEALTH every day."
@@ -836,12 +836,12 @@ var career_woin_origin_urchin = {
     }
 };
 var career_woin_origin_wizards_apprentice = {
-    "name": "Wizard's Apprentice",
-    "careerTime": "2d6+6",
-    "careerTimeUnit": "years",
+    "name": "Wizard&apos;s Apprentice",
+    "career_time": "2d6+6",
+    "career_time_unit": "years",
     "prerequisites": "none",
     "description": "Your childood was an academic one of study and lore.",
-    "availableExploits": [
+    "available_exploits": [
         {
             "Name": "Prestidigitation",
             "Desc": "You learned little magical tricks to help with your chores as an apprenstice. You are able to use small displays of magical presidigitation at-will to assist you with day-to-day inconveniences: cleaning clothes, keeping the rain or mud off, a tiny reading light, polishing silverware, and the like."
