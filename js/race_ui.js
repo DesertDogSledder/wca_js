@@ -20,6 +20,7 @@ $("#rce_select_race_modal").on('shown.bs.modal', enable_tooltips);
 function refresh_race() {
     let user_character = get_user_character();
     let character_race = race_dict[user_character.race.source][user_character.race.id];
+    let race_exploits = race_exploits_dict[user_character.race.source][user_character.race.id]
     console.log(user_character.race.skills);
     // $("#rce_name_val").html(race_dict[user_character.race.source][user_character.race.id].name)
     $("#rce_name_val").html(character_race.name);
@@ -31,8 +32,8 @@ function refresh_race() {
         $("#rce_selected_skills_list").append('<li>' + skill + ' (' + user_character.race.skills[skill] + ')');
     }
     $("#rce_exploits_list").empty();
-    for (exploit in character_race.exploits) {
-        $("#rce_exploits_list").append("<li data-toggle='tooltip' data-placement='left' title=\"" + character_race.exploits[exploit]['Desc'] + "\">" + character_race.exploits[exploit]['Name'] + "</li>")
+    for (exploit in race_exploits) {
+        $("#rce_exploits_list").append("<li data-toggle='tooltip' data-placement='left' title=\"" + race_exploits[exploit]['desc'] + "\">" + race_exploits[exploit]['name'] + "</li>")
     }
 
     for (stat in user_character.race.stats) {
@@ -76,8 +77,8 @@ function race_modal_select_race() {
         $("#rce_select_race_modal_skills").append('<li>' + race_dict[source_val][race_val].available_skills[skill] + '</li>');
     }
     $("#rce_select_race_modal_exploits").html('');
-    for (exploit in race_dict[source_val][race_val].exploits) {
-        $("#rce_select_race_modal_exploits").append("<li data-toggle='tooltip' data-placement='left' title=\"" + race_dict[source_val][race_val].exploits[exploit]['Desc'] + "\">" + race_dict[source_val][race_val].exploits[exploit]['Name'] + "</li>")
+    for (exploit in race_exploits_dict[source_val][race_val]) {
+        $("#rce_select_race_modal_exploits").append("<li data-toggle='tooltip' data-placement='left' title=\"" + race_exploits_dict[source_val][race_val][exploit]['desc'] + "\">" + race_exploits_dict[source_val][race_val][exploit]['name'] + "</li>")
     }
     for (stat in race_dict[source_val][race_val].stats) {
         $("#rce_select_race_modal_" + stat).html(format_num(race_dict[source_val][race_val].stats[stat]));

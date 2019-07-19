@@ -294,18 +294,18 @@ var career_ma_southern_shaolin = {
 };
 
 var career_ma_dict = {
-    "career_ma_aikido": "career_ma_aikido",
-    "career_ma_brazilian_jujutsu": "career_ma_brazilian_jujutsu",
-    "career_ma_capoeira": "career_ma_capoeira",
-    "career_ma_gun_fu": "career_ma_gun_fu",
-    "career_ma_gun_kata": "career_ma_gun_kata",
-    "career_ma_jujutsu": "career_ma_jujutsu",
-    "career_ma_karate": "career_ma_karate",
-    "career_ma_krav_maga": "career_ma_krav_maga",
-    "career_ma_kung_fu": "career_ma_kung_fu",
-    "career_ma_muay_thai": "career_ma_muay_thai",
-    "career_ma_northern_shaolin": "career_ma_northern_shaolin",
-    "career_ma_pankration": "career_ma_pankration",
-    "career_ma_savate": "career_ma_savate",
-    "career_ma_southern_shaolin": "career_ma_southern_shaolin"
+    "career_ma_aikido": career_ma_aikido,
+    "career_ma_brazilian_jujutsu": career_ma_brazilian_jujutsu,
+    "career_ma_capoeira": career_ma_capoeira,
+    "career_ma_gun_fu": career_ma_gun_fu,
+    "career_ma_gun_kata": career_ma_gun_kata,
+    "career_ma_jujutsu": career_ma_jujutsu,
+    "career_ma_karate": career_ma_karate,
+    "career_ma_krav_maga": career_ma_krav_maga,
+    "career_ma_kung_fu": career_ma_kung_fu,
+    "career_ma_muay_thai": career_ma_muay_thai,
+    "career_ma_northern_shaolin": career_ma_northern_shaolin,
+    "career_ma_pankration": career_ma_pankration,
+    "career_ma_savate": career_ma_savate,
+    "career_ma_southern_shaolin": career_ma_southern_shaolin,
 }

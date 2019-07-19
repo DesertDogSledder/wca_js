@@ -107,8 +107,8 @@ var race_now_mutant = {
 };
 
 var race_now_dict = {
-    "race_now_augmented": "race_now_augmented",
-    "race_now_chosen": "race_now_chosen",
-    "race_now_human": "race_now_human",
-    "race_now_mutant": "race_now_mutant"
+    "race_now_augmented": race_now_augmented,
+    "race_now_chosen": race_now_chosen,
+    "race_now_human": race_now_human,
+    "race_now_mutant": race_now_mutant,
 }

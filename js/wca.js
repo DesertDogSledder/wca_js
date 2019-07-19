@@ -4,6 +4,12 @@ var race_dict = {
     'new': race_new_dict,
 };
 
+var race_exploits_dict = {
+    'old': exploits_races_old,
+    'now': exploits_races_now,
+    'new': exploits_races_new,
+};
+
 var homeworld_dict = {
     'new': homeworld_new_dict,
 };
@@ -220,14 +226,13 @@ function calc_skill_total(user_character)
 function calc_exploit_total(user_character)
 {
     let exploit_total = {};
-    let user_character_race = race_dict[user_character.race.source][user_character.race.id];
-    for (let i=0; i<user_character_race.exploits.length; i++)
-    {
-        exploit_total[user_character_race.exploits[i]['Name']] = user_character_race.exploits[i]['Desc'];
+    let race_exploits = race_exploits_dict[user_character.race.source][user_character.race.id];
+
+    for (let exploit in race_exploits) {
+        exploit_total[race_exploits[exploit]['name']] = race_exploits[exploit]['desc'];
     }
 
     let sorted_exploit_total = sort_object(exploit_total);
-    // console.log(sorted_exploit_total);
     return sorted_exploit_total;
 }
 
