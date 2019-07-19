@@ -12,6 +12,20 @@ var race_now_augmented = {
         "perception",
         "reactions"
     ],
+    "exploits": [
+        {
+            "Name": "Adaptive",
+            "Desc": "When incorporating new cybernetic alterations, augmented never need to make a check to see if the upgrade takes hold. Additionally, they can incorporate an unlimited number of alterations beyond the normal limit of their END attribute."
+        },
+        {
+            "Name": "Alteration",
+            "Desc": "Augmented begin play with two minor or one major cybernetic alteration."
+        },
+        {
+            "Name": "Inert",
+            "Desc": "Augmented embrace technology over matters of spirit. They may never have a Chi score above zero."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 0,
@@ -39,6 +53,20 @@ var race_now_chosen = {
         "negotiating",
         "tactics"
     ],
+    "exploits": [
+        {
+            "Name": "Destiny",
+            "Desc": "Once, when you ordinarily die, you do not die. Instead, you remain at 0 Health until healed. When you have used your extra &quot;life&quot; you cannot use it again."
+        },
+        {
+            "Name": "Fast-Healing",
+            "Desc": "Chosen heal faster than most people. You may roll an extra 2d6 when determining how much you naturally heal each day."
+        },
+        {
+            "Name": "Skill Focus",
+            "Desc": "You start play with two bonus skills of your choice at 3 ranks (2d6)."
+        }
+    ],
     "stats": {
         "strength": 1,
         "agility": 0,
@@ -60,6 +88,20 @@ var race_now_human = {
     "size": "medium",
     "available_skills": [
         "any"
+    ],
+    "exploits": [
+        {
+            "Name": "Enduring",
+            "Desc": "Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition."
+        },
+        {
+            "Name": "Explorers",
+            "Desc": "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they go to a country new to them."
+        },
+        {
+            "Name": "Varied",
+            "Desc": "Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above)."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -90,6 +132,12 @@ var race_now_mutant = {
         "resistance",
         "survival"
     ],
+    "exploits": [
+        {
+            "Name": "Mutation",
+            "Desc": "Mutants have one or more mutations. Select one major or two minor mutations. You may select any number of cosmetic mutations, but you must choose at least one."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 0,
@@ -107,8 +155,8 @@ var race_now_mutant = {
 };
 
 var race_now_dict = {
-    "race_now_augmented": "race_now_augmented",
-    "race_now_chosen": "race_now_chosen",
-    "race_now_human": "race_now_human",
-    "race_now_mutant": "race_now_mutant"
+    "race_now_augmented": race_now_augmented,
+    "race_now_chosen": race_now_chosen,
+    "race_now_human": race_now_human,
+    "race_now_mutant": race_now_mutant,
 }

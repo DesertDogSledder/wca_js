@@ -9,6 +9,24 @@ var race_old_clockman = {
         "law",
         "medicine"
     ],
+    "exploits": [
+        {
+            "Name": "Clockwork",
+            "Desc": "As clockwork automatons, clockmen do not need to eat or breathe. They do, however, need to sleep, in a fashion, as their gears wind down. Like other automatons they are vulnerable (1d6) to electricity and in sci-fi settings (2d6) to ion damage. They are immune to attacks which use MENTAL DEFENSE. Like most automatons, clockmen cannot have a MAG (or PSI or CHI) score, and cannot spend LUC dice."
+        },
+        {
+            "Name": "Internal clock",
+            "Desc": "Clockmen track the passage of time accurately, to the very second."
+        },
+        {
+            "Name": "Repair",
+            "Desc": "Once per day clockmen can repair themselves in a patchwork fashion to the amount half their normal maximum HEALTH by spending two actions and resources from their environment."
+        },
+        {
+            "Name": "Wind-up",
+            "Desc": "Clockmen can spend two actions winding themselves up. For the next minute, they move at a faster speed (making a rapid clockwork ticking noise while they do so), gaining an extra action each turn, but at the end of the minute they wind down and cannot act or move for one hour."
+        }
+    ],
     "stats": {
         "strength": 1,
         "agility": 0,
@@ -35,6 +53,16 @@ var race_old_danuki = {
         "insight",
         "stealth",
         "thievery"
+    ],
+    "exploits": [
+        {
+            "Name": "Cowardly",
+            "Desc": "Danuki are natural cowards. They must roll a 6 to shake off the Afraid condition. All danuki have a phobia, usually against a type of predator animal , but sometimes against a natural phenomenon. In addition, all danuki are phobic against getting caught; this triggers when grappled, entangled, cuffed, bound, or locked up. When in the presence of their phobia, danuki become Afraid. You should randomly select a phobia, or choose one with the GM&apos;s approval."
+        },
+        {
+            "Name": "Masterful shapechanger",
+            "Desc": "A Danuki can assume the form of another creature. The new form must be small-sized and have a Maximum Dice Pool equal to or lower than the Danuki. It takes the Danuki a full round to change shape, and it can only do so once per day. The transformation lasts until the Danuki ends it, or until it suffers the Afraid condition (Danuki cannot maintain a shape when feeling fear). The Danuki retains its own mental attributes, and its own Maximum Dice Pool, but gains any other physical characteristics of the new shape."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -64,6 +92,24 @@ var race_old_deepling = {
         "rifles",
         "sailing"
     ],
+    "exploits": [
+        {
+            "Name": "Antimagic",
+            "Desc": "So averse to magic are they, Deeplings actually naturally suppress magic in their presence. Deeplings get +4 DEFENSE against any magical attacks. However, they can never have a MAG attribute."
+        },
+        {
+            "Name": "Fire resistance",
+            "Desc": "Deeplings have a natural SOAK 5 (fire). At old age, this increases to 10."
+        },
+        {
+            "Name": "Natural weapons",
+            "Desc": "A Deepling&apos;s horns and tail make for dangerous natural weapons. A Deepling&apos;s natural damage is 2d6 rather than the 1d6 its size would normally allow, and becomes piercing damage."
+        },
+        {
+            "Name": "Superior darksight",
+            "Desc": "Deeplings can see in the dark as though it were daylight."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 2,
@@ -89,6 +135,28 @@ var race_old_earth_nymph = {
         "nature",
         "religion",
         "singing"
+    ],
+    "exploits": [
+        {
+            "Name": "Fey",
+            "Desc": "As a fey creature, you can sense the presence of (but not the location or type of) magic within 10&apos;, and are vulnerable (1d6) to cold iron."
+        },
+        {
+            "Name": "Fey grace",
+            "Desc": "You are immune to the Charmed condition."
+        },
+        {
+            "Name": "Stone step",
+            "Desc": "Once per day you may pass through up to 30&apos; of natural stone. Worked stone blocks this ability."
+        },
+        {
+            "Name": "Stone&apos;s fortitude",
+            "Desc": "You have natural SOAK 5 to slashing damage."
+        },
+        {
+            "Name": "Voice of nature",
+            "Desc": "You know the secret of earth."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -118,6 +186,28 @@ var race_old_forest_nymph = {
         "singing",
         "stealth"
     ],
+    "exploits": [
+        {
+            "Name": "Fey",
+            "Desc": "As a fey creature, you can sense the presence of (but not the location or type of) magic within 10&apos;, and are vulnerable (1d6) to cold iron."
+        },
+        {
+            "Name": "Fey&apos;s grace",
+            "Desc": "You are immune to the Charmed condition."
+        },
+        {
+            "Name": "Nature&apos;s step",
+            "Desc": "You are not affected by difficult terrain caused by forest, brush, undergrowth, or similar natural features; neither do you leave tracks or trace of your passing."
+        },
+        {
+            "Name": "Tree stride",
+            "Desc": "Once per turn, you can use an action to step magically into one adjacent living tree and emerge from a second living tree within 60 feet of the first, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be large-sized or bigger."
+        },
+        {
+            "Name": "Voice of nature",
+            "Desc": "You know the secret of plants."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 2,
@@ -145,6 +235,32 @@ var race_old_goblin = {
         "stealth",
         "survival",
         "thievery"
+    ],
+    "exploits": [
+        {
+            "Name": "Between the legs",
+            "Desc": "A goblin can freely move through the squares of large sized or larger creatures which have two or more legs."
+        },
+        {
+            "Name": "Darksight",
+            "Desc": "Goblins can see in darkness as though it were normal light. They are vulnerable to bright light, however, and lose their Natural Cunning ability in direct sunlight, and cannot shake off the Blind status if it is caused by bright light (note that temporary conditions automatically end after 5 minutes)."
+        },
+        {
+            "Name": "Natural cunning",
+            "Desc": "Although not known for their intellect, goblins do possess a natural instinct. They gain +1d6 to INITIATIVE checks."
+        },
+        {
+            "Name": "Pack attack",
+            "Desc": "Goblins work best in groups, using numbers to compensate for their small size. Goblins gain +1d6 to attack a target for every ally also adjacent to the target."
+        },
+        {
+            "Name": "Scavengers",
+            "Desc": "Goblins can use any organic material as food, no matter how strange or rotten, and as such are immune to poisons."
+        },
+        {
+            "Name": "Snatch",
+            "Desc": "Using a melee attack, a goblin can steal a small-sized or smaller item from an adjacent target, even in combat."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -176,6 +292,36 @@ var race_old_grand_elf = {
         "sailing",
         "swords"
     ],
+    "exploits": [
+        {
+            "Name": "Cultural weapon",
+            "Desc": "Grand elves begin play with a free musket or pistol."
+        },
+        {
+            "Name": "Fey",
+            "Desc": "Elves of all types are considered Fey."
+        },
+        {
+            "Name": "Long-lived",
+            "Desc": "When creating a Grand Elf character, multiply their career lengths by 5."
+        },
+        {
+            "Name": "Magic sense",
+            "Desc": "Grand elves can sense magic within 10&apos; of them. They can intuitively sense the presence of magic, but not the power level, type, direction, or exact location."
+        },
+        {
+            "Name": "Magical",
+            "Desc": "Grand Elves are noted for their magic. When taking a new career, a Grand Elf may optionally exchange one of the listed four attribute increases for MAG, as long as it doesn&apos;t result in a duplicate attribute advancement."
+        },
+        {
+            "Name": "Meditation",
+            "Desc": "Grand elves do not need to sleep. They may sometimes choose to meditate, instead, while their non-elven companions are sleeping, but this is not necessary."
+        },
+        {
+            "Name": "Naturally magical",
+            "Desc": "Grand elves begin play with one free spell-path."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 2,
@@ -198,6 +344,20 @@ var race_old_human = {
     "available_skills": [
         "any"
     ],
+    "exploits": [
+        {
+            "Name": "Enduring",
+            "Desc": "Humans may not be the fastest or the strongest, but they are known for their resilience. Humans get +1 to their 1d6 die roll to shake off a temporary condition."
+        },
+        {
+            "Name": "Explorers",
+            "Desc": "Driven by an inquisitive, exploratory nature, Humans recharge their LUC pool every time they take a wilderness journey of more than one week&apos;s length."
+        },
+        {
+            "Name": "Varied",
+            "Desc": "Humans boast more variation within their species than most. Add 2 to any attribute, and add a further +1 to one other attribute (noted above)."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 0,
@@ -215,7 +375,7 @@ var race_old_human = {
 };
 var race_old_flint_dwarf = {
     "name": "Flint Dwarf",
-    "description": "Crafted from an adaptable, yet flaky stone, Flint Dwarves are physically strong but emotionally volatile. Flint Dwarves now dwell in isolated pockets of wilderness not claimed by anyone else and have come to be known as &quot;wild dwarves.&quot;\n\nThe Flint Dwarves were instilled with the spirit of adaptability and survivability. They were given a jovial temperament to serve as the mediators between dwarven tribes, but their mistreatment at the hands of their kin has made the flint dwarves volatile and wild. While they are leaner and less sturdy than other dwarves, they are still strong and stout-hearted. Yet, some dwarves were wary of their slim-featured cousins, and decided they did not want the odd-looking, talkative flint dwarves to be their emissaries to human lands, and banished them.\n\nToday, Flint Dwarves can be found living in small stone huts in the wild areas of the world, and their unkempt appearance suggests they have adapted well to their new homes.",
+    "description": "Crafted from an adaptable, yet flaky stone, Flint Dwarves are physically strong but emotionally volatile. Flint Dwarves now dwell in isolated pockets of wilderness not claimed by anyone else and have come to be known as \u201cwild dwarves.&quot;\n\nThe Flint Dwarves were instilled with the spirit of adaptability and survivability. They were given a jovial temperament to serve as the mediators between dwarven tribes, but their mistreatment at the hands of their kin has made the flint dwarves volatile and wild. While they are leaner and less sturdy than other dwarves, they are still strong and stout-hearted. Yet, some dwarves were wary of their slim-featured cousins, and decided they did not want the odd-looking, talkative flint dwarves to be their emissaries to human lands, and banished them.\n\nToday, Flint Dwarves can be found living in small stone huts in the wild areas of the world, and their unkempt appearance suggests they have adapted well to their new homes.",
     "size": "small",
     "available_skills": [
         "carousing",
@@ -224,6 +384,20 @@ var race_old_flint_dwarf = {
         "navigation",
         "negotiating",
         "survival"
+    ],
+    "exploits": [
+        {
+            "Name": "Darksight",
+            "Desc": "Like most dwarves, Flint Dwarves can see in the dark to a distance of 60&apos;."
+        },
+        {
+            "Name": "Inner fire",
+            "Desc": "Flint Dwarves gain +5 to all DEFENSEs against magical effects."
+        },
+        {
+            "Name": "Survivalist",
+            "Desc": "It&apos;s hard to kill a Flint Dwarf. They do not fall unconscious when at negative HEALTH (although they still form a death pool as normal) and are do not suffer conditions from environmental effects. Additionally, they are immune to all diseases."
+        }
     ],
     "stats": {
         "strength": 2,
@@ -242,7 +416,7 @@ var race_old_flint_dwarf = {
 };
 var race_old_jade_dwarf = {
     "name": "Jade Dwarf",
-    "description": "In many lands, jade is valued as protection against corruption and disease. Jade Dwarves were created from this stone as personification of this ability to withstand foul energies. Sometimes called &quot;celestial&quot; or &quot;exalted,&quot; Dade Dwarves are rare and their holds are always found bordering regions that are cursed, overrun with undead or fiends, or tainted in some other way. They are almost otherworldly in nature and consider themselves the supreme guardians of civilization and all that is good.\n\nBeautiful is not a word commonly associated with dwarves, but it is embodied in the Jade Dwarves and everything they create. Whilst most craftsdwarves&apos; art favors functionality over form, Jade Dwarves approach all their creations with an equal measure of beauty. Jade Dwarf halls are immense structures of unparalleled splendor.\n\nJade Dwarves view the people of the world as members of their clan, and they are willing to lay down their lives for their family. Their society teaches that even the most depraved mortal can be redeemed, but that monsters and beasts are beyond salvation.\n\nA Jade Dwarf&apos;s skin can range from mint green to green-grey, and their dark eyes have no pupils. Their hair varies from brown to grey, but can also be streaked with green, or totally dark green if they are member of a noble house.",
+    "description": "In many lands, jade is valued as protection against corruption and disease. Jade Dwarves were created from this stone as personification of this ability to withstand foul energies. Sometimes called \u201ccelestial&quot; or \u201cexalted,&quot; Dade Dwarves are rare and their holds are always found bordering regions that are cursed, overrun with undead or fiends, or tainted in some other way. They are almost otherworldly in nature and consider themselves the supreme guardians of civilization and all that is good.\n\nBeautiful is not a word commonly associated with dwarves, but it is embodied in the Jade Dwarves and everything they create. Whilst most craftsdwarves&apos; art favors functionality over form, Jade Dwarves approach all their creations with an equal measure of beauty. Jade Dwarf halls are immense structures of unparalleled splendor.\n\nJade Dwarves view the people of the world as members of their clan, and they are willing to lay down their lives for their family. Their society teaches that even the most depraved mortal can be redeemed, but that monsters and beasts are beyond salvation.\n\nA Jade Dwarf&apos;s skin can range from mint green to green-grey, and their dark eyes have no pupils. Their hair varies from brown to grey, but can also be streaked with green, or totally dark green if they are member of a noble house.",
     "size": "small",
     "available_skills": [
         "[artistic]",
@@ -251,6 +425,24 @@ var race_old_jade_dwarf = {
         "medicine",
         "religion",
         "swords"
+    ],
+    "exploits": [
+        {
+            "Name": "Darksight",
+            "Desc": "Like most dwarves, Jade Dwarves can see in the dark to a distance of 60&apos;."
+        },
+        {
+            "Name": "Exalted",
+            "Desc": "Jade Dwarves can sense the presence of (but not the direction or exact location of the Evil virtue within 60&apos;."
+        },
+        {
+            "Name": "Healing touch",
+            "Desc": "A Jade Dwarf can heal by touch, automatically granting 2d6 HEALTH with a single action. This same touch can be used to do 2d6 holy damage to the undead, a spirit, or any creature with the Evil virtue."
+        },
+        {
+            "Name": "Incorruptible body",
+            "Desc": "Jade Dwarves are immune to non-magical diseases."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -279,6 +471,24 @@ var race_old_minotaur = {
         "sailing",
         "scent",
         "tracking"
+    ],
+    "exploits": [
+        {
+            "Name": "Charge",
+            "Desc": "Minotaurs gain the Charge exploit for free."
+        },
+        {
+            "Name": "Direction sense",
+            "Desc": "A minotaur always knows which direction is which, and how deep it is below ground or how far it is above ground. A minotaur never becomes lost when travelling."
+        },
+        {
+            "Name": "Horns",
+            "Desc": "A minotaur has horns which can be used in combat. The minotaur&apos;s unarmed (natural) damage increases by +1d6 and becomes piercing damage."
+        },
+        {
+            "Name": "Stoic",
+            "Desc": " Minotaurs are honor-bound and brought up to never show pain. When taking a new career, a Minotaur may optionally exchange one of the listed four attribute increases for END, as long as it doesn&apos;t result in a duplicate attribute advancement."
+        }
     ],
     "stats": {
         "strength": 2,
@@ -309,6 +519,32 @@ var race_old_mountain_dwarf = {
         "hammers",
         "mining"
     ],
+    "exploits": [
+        {
+            "Name": "Darksight",
+            "Desc": "Mountain Dwarves can see in the dark to a distance of 60&apos;."
+        },
+        {
+            "Name": "Earthy",
+            "Desc": "Mountain Dwarves automatically know the secret of earth, although Dwarves with MAGIC attributes are rare."
+        },
+        {
+            "Name": "Iron constitution",
+            "Desc": "Mountain Dwarves are not affected by non-magical poisons, with the exception of alcohol"
+        },
+        {
+            "Name": "Long-lived",
+            "Desc": "When creating a Mountain Dwarf character, multiply their career lengths by 3."
+        },
+        {
+            "Name": "Stubborn",
+            "Desc": "Mountain Dwarves are noted for their stubborn demeanour. When taking a new career, a Mountain Dwarf may optionally exchange one of the listed four attribute increases for WIL, as long as it doesn&apos;t result in a duplicate attribute advancement."
+        },
+        {
+            "Name": "Sturdy",
+            "Desc": "With a low center of gravity, it is hard to knock a dwarf down. Any attempt to do so suffers a -2d6 die penalty."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 0,
@@ -338,6 +574,24 @@ var race_old_night_elf = {
         "swords",
         "thievery"
     ],
+    "exploits": [
+        {
+            "Name": "Darksight",
+            "Desc": "Night Elves have superior darksight, able to see in darkness as though it were daylight."
+        },
+        {
+            "Name": "Deceitful",
+            "Desc": "When night elves make CHA checks to deceive, the dice pool is considered an exploding dice pool."
+        },
+        {
+            "Name": "Night affinity",
+            "Desc": "All Night Elves know the secret of shadow. In dim light or darker, Night Elves can become invisible for one minute once per day."
+        },
+        {
+            "Name": "Poisoners",
+            "Desc": "Accustomed to handling poison, night elves have a natural SOAK 10 (poison). Additionally, at-will, they can add the poison damage type to their melee weapons, as long as they are wielding the weapon themself."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 1,
@@ -363,6 +617,28 @@ var race_old_obsidian_dwarf = {
         "intimidation",
         "knives",
         "religion"
+    ],
+    "exploits": [
+        {
+            "Name": "Cold sensitivity",
+            "Desc": "Obsidian dwarves suffer from vulnerability 1d6 (cold)."
+        },
+        {
+            "Name": "Darksight",
+            "Desc": "Like most dwarves, obsidian dwarves can see in the dark to a distance of 60&apos;."
+        },
+        {
+            "Name": "Magma born",
+            "Desc": "Obsidian dwarves are immune to fire and are immune to the effects of hot environments."
+        },
+        {
+            "Name": "Obsidian skin",
+            "Desc": "An obsidian&apos;s dwarf&apos;s glassy skin is surprisingly hard, giving the dwarf +4 natural SOAK."
+        },
+        {
+            "Name": "Secret of fire",
+            "Desc": "Obsidian dwarves automatically know the secret of fire."
+        }
     ],
     "stats": {
         "strength": 0,
@@ -390,6 +666,28 @@ var race_old_ogre = {
         "carrying",
         "hardy",
         "intimidate"
+    ],
+    "exploits": [
+        {
+            "Name": "Acid blood",
+            "Desc": "Ogres have acidic blood. In addition to gaining an additional 5 SOAK (acid), melee attackers which cause more than 10 slashing or piercing damage in a single blow take 1d6 acid damage from the blood splash."
+        },
+        {
+            "Name": "Darksight",
+            "Desc": "Ogres can see in the dark as though it were normal daylight."
+        },
+        {
+            "Name": "Smelly",
+            "Desc": "No matter what they do, ogres smell bad. They take a permanent -1d6 penalty to any attempts at stealth."
+        },
+        {
+            "Name": "Strong",
+            "Desc": "Ogres are noted for their strength. When taking a new career, an Ogre may optionally exchange one of the listed four attribute increases for STR, as long as it doesn&apos;t result in a duplicate attribute advancement."
+        },
+        {
+            "Name": "Thick hide",
+            "Desc": "Ogres are extremely tough, with leathery skin. They gain 2 natural SOAK to physical attacks"
+        }
     ],
     "stats": {
         "strength": 3,
@@ -420,6 +718,20 @@ var race_old_orc = {
         "running",
         "tactics",
         "tracking"
+    ],
+    "exploits": [
+        {
+            "Name": "Bloodlust",
+            "Desc": "Once per day an orc can drink fresh blood to recover 2d6 HEALTH. This takes an action. The blood must come from a creature slain in the last hour."
+        },
+        {
+            "Name": "Darksight",
+            "Desc": "Orcs can see clearly in the dark as though it were daylight. However, bright sunlight hurts their eyes, inflicting a -2 DEFENSE penalty."
+        },
+        {
+            "Name": "Glory",
+            "Desc": "Orcs take pleasure in battle, and pride in their wounds. When reduced to below half HEALTH, they gain a +1d6 die bonus to attack rolls."
+        }
     ],
     "stats": {
         "strength": 2,
@@ -452,6 +764,16 @@ var race_old_smallfolk = {
         "slings",
         "stealth"
     ],
+    "exploits": [
+        {
+            "Name": "Evasion",
+            "Desc": "Smallfolk are nimble and adept at dodging. They gain a +5 bonus to their DEFENSE."
+        },
+        {
+            "Name": "Stubborn",
+            "Desc": "Smallfolk are difficult to enchant. They gain a +5 bonus to their MENTAL DEFENSE."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 2,
@@ -482,6 +804,40 @@ var race_old_sylvan_elf = {
         "survival",
         "tracking"
     ],
+    "exploits": [
+        {
+            "Name": "Agile",
+            "Desc": "Sylvan Elves are noted for their dexterity. When taking a new career, a Sylvan Elf may optionally exchange one of the listed four attribute increases for AGI, as long as it doesn&apos;t result in a duplicate attribute advancement."
+        },
+        {
+            "Name": "Fey",
+            "Desc": "Elves of all types are considered Fey."
+        },
+        {
+            "Name": "Healthy",
+            "Desc": "Sylvan elves are completely immune to illness and disease of a non-magical nature."
+        },
+        {
+            "Name": "Long-lived",
+            "Desc": "When creating a Sylvan Elf character, multiply their career lengths by 4."
+        },
+        {
+            "Name": "Nature affinity",
+            "Desc": "All sylvan elves know either the secret of plants or the secret of beasts."
+        },
+        {
+            "Name": "Trance",
+            "Desc": "Sylvan elves do not need to sleep. They may choose to meditate, instead, while their non-elven companions are sleeping, but this is not necessary."
+        },
+        {
+            "Name": "Tree-dwellers",
+            "Desc": "Sylvan elves gain a climb speed equal to their regular speed."
+        },
+        {
+            "Name": "Unimpeded",
+            "Desc": "Sylvan elves are not affected or slowed by difficult terrain while outdoors."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 2,
@@ -509,6 +865,32 @@ var race_old_water_nymph = {
         "religion",
         "singing"
     ],
+    "exploits": [
+        {
+            "Name": "Aquatic",
+            "Desc": "You can breathe underwater. You also have a SWIM speed equal to your regular SPEED."
+        },
+        {
+            "Name": "Fey",
+            "Desc": "As a fey creature, you can sense the presence of (but not the location or type of) magic within 10&apos;, and are vulnerable (1d6) to cold iron."
+        },
+        {
+            "Name": "Fey grace",
+            "Desc": "You are immune to the Charmed condition."
+        },
+        {
+            "Name": "Nautral allure",
+            "Desc": "ou can spend two actions making a MAG mental attack at a humanoid creature within 30&apos;. If successful, the target gains the Charmed condition. If unsuccessful, you may not try again with the same target."
+        },
+        {
+            "Name": "Voice of nature",
+            "Desc": "You know the secret of water."
+        },
+        {
+            "Name": "Watery step",
+            "Desc": "You can walk on water and other liquids."
+        }
+    ],
     "stats": {
         "strength": 0,
         "agility": 0,
@@ -526,23 +908,23 @@ var race_old_water_nymph = {
 };
 
 var race_old_dict = {
-    "race_old_clockman": "race_old_clockman",
-    "race_old_danuki": "race_old_danuki",
-    "race_old_deepling": "race_old_deepling",
-    "race_old_earth_nymph": "race_old_earth_nymph",
-    "race_old_forest_nymph": "race_old_forest_nymph",
-    "race_old_goblin": "race_old_goblin",
-    "race_old_grand_elf": "race_old_grand_elf",
-    "race_old_human": "race_old_human",
-    "race_old_flint_dwarf": "race_old_flint_dwarf",
-    "race_old_jade_dwarf": "race_old_jade_dwarf",
-    "race_old_minotaur": "race_old_minotaur",
-    "race_old_mountain_dwarf": "race_old_mountain_dwarf",
-    "race_old_night_elf": "race_old_night_elf",
-    "race_old_obsidian_dwarf": "race_old_obsidian_dwarf",
-    "race_old_ogre": "race_old_ogre",
-    "race_old_orc": "race_old_orc",
-    "race_old_smallfolk": "race_old_smallfolk",
-    "race_old_sylvan_elf": "race_old_sylvan_elf",
-    "race_old_water_nymph": "race_old_water_nymph"
+    "race_old_clockman": race_old_clockman,
+    "race_old_danuki": race_old_danuki,
+    "race_old_deepling": race_old_deepling,
+    "race_old_earth_nymph": race_old_earth_nymph,
+    "race_old_forest_nymph": race_old_forest_nymph,
+    "race_old_goblin": race_old_goblin,
+    "race_old_grand_elf": race_old_grand_elf,
+    "race_old_human": race_old_human,
+    "race_old_flint_dwarf": race_old_flint_dwarf,
+    "race_old_jade_dwarf": race_old_jade_dwarf,
+    "race_old_minotaur": race_old_minotaur,
+    "race_old_mountain_dwarf": race_old_mountain_dwarf,
+    "race_old_night_elf": race_old_night_elf,
+    "race_old_obsidian_dwarf": race_old_obsidian_dwarf,
+    "race_old_ogre": race_old_ogre,
+    "race_old_orc": race_old_orc,
+    "race_old_smallfolk": race_old_smallfolk,
+    "race_old_sylvan_elf": race_old_sylvan_elf,
+    "race_old_water_nymph": race_old_water_nymph,
 }
