@@ -13,15 +13,87 @@
   <body>
     <div class="container">
       <nav class="nav nav-tabs">
-          <a href="overview.html" class="nav-item nav-link">Overview</a>
-          <a href="race.html" class="nav-item nav-link">Race</a>
-          <a href="homeworld.html" class="nav-item nav-link">Homeworld</a>
-          <a href="careers.html" class="nav-item nav-link active">Careers</a>
-          <a href="exploits.html" class="nav-item nav-link">Exploits</a>
-          <a href="equipment.html" class="nav-item nav-link">Equipment</a>
+        <a href="overview.html" class="nav-item nav-link">Overview</a>
+        <a href="race.html" class="nav-item nav-link">Race</a>
+        <a href="homeworld.html" class="nav-item nav-link">Homeworld</a>
+        <a href="careers.html" class="nav-item nav-link active">Careers</a>
+        <a href="exploits.html" class="nav-item nav-link">Exploits</a>
+        <a href="equipment.html" class="nav-item nav-link">Equipment</a>
       </nav>
 
-    Careers Content Here
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Careers</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <ul id="car_career_list"></ul>
+            <select class="form-control" id="car_career_select"></select>
+            <button type="button" class="btn btn-success" id="car_btn_add_career">Add</button>
+            <button type="button" class="btn btn-danger" id="car_btn_remove_career">Remove</button>
+            <button type="button" class="btn btn-primary" id="car_btn_remove_career">⬆️ Move Up</button>
+            <button type="button" class="btn btn-primary" id="car_btn_remove_career">⬇️ Move Down</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Skills</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <ul id="car_skills_list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Exploits</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <ul id="car_exploits_list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Stats</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">STR</th>
+                  <th scope="col">AGI</th>
+                  <th scope="col">END</th>
+                  <th scope="col">INT</th>
+                  <th scope="col">LOG</th>
+                  <th scope="col">WIL</th>
+                  <th scope="col">CHA</th>
+                  <th scope="col">LUC</th>
+                  <th scope="col">REP</th>
+                  <th scope="col">MAG</th>
+                  <th scope="col">CHI</th>
+                  <th scope="col">PSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="car_strength"></td>
+                  <td id="car_agility"></td>
+                  <td id="car_endurance"></td>
+                  <td id="car_intuition"></td>
+                  <td id="car_logic"></td>
+                  <td id="car_willpower"></td>
+                  <td id="car_charisma"></td>
+                  <td id="car_luck"></td>
+                  <td id="car_reputation"></td>
+                  <td id="car_magic"></td>
+                  <td id="car_chi"></td>
+                  <td id="car_psionics"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
     <!--End container-->
     </div>
