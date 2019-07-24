@@ -53,11 +53,7 @@ function select_race_modal() {
 }
 
 function race_modal_select_source() {
-    // console.log('race_modal_select_source called');
     let source_val = $("#rce_select_race_modal_source").val();
-    console.log(source_val);
-    console.log(race_dict[source_val]);
-    console.log(race_dict);
     $("#rce_select_race_modal_race").empty();
     for (race in race_dict[source_val]) {
         $("#rce_select_race_modal_race").append($('<option>', {

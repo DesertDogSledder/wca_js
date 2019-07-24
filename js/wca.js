@@ -19,7 +19,20 @@ var exploit_dict = {
     'psionic': exploits_psionic,
     'traits': exploits_traits,
     'universal': exploits_universal,
+    'origins': exploits_origins,
+    'old': exploits_careers_old,
+    'now': exploits_careers_now,
+    'new': exploits_careers_now,
+    'martial_arts': exploits_careers_martial_arts,
 };
+
+var career_dict = {
+    'origins': career_woin_origin_dict,
+    'old': career_old_dict,
+    'now': career_now_dict,
+    'new': career_new_dict,
+    'martial_arts': career_ma_dict,
+}
 
 function calc_dice_pool_size(raw_score) {
     var dice_pool_size = 0;
