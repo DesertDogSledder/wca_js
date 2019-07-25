@@ -6,6 +6,14 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "herbalism, alchemy",
         "description": "Alchemists mix potions and substances, and transforms substances from one to another. Creating elixirs of life in bubbling cauldrons and seeking the secrets of magical chemistry, alchemists are true creators. Many make a living selling their concoctions. Unlike herbalism, alchemy involves a touch of magic. For each alchemical concoction, you should roll and note down an Alchemical Science result. This describes the nature of the concoction, whether it requires you to dilute amber in a jade keg, or cool mercury in a ruby flute.",
+        "available_skills": [
+            "alchemy",
+            "animal handling",
+            "brewing",
+            "concentration",
+            "cooking",
+            "healing"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -27,6 +35,12 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "AGI 3+",
         "description": "You joined the army as an archer, manning walls and front lines in times of war.",
+        "available_skills": [
+            "bows",
+            "carousing",
+            "perception",
+            "survival"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -48,6 +62,16 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth",
         "description": "A killer for hire, you mastered the skills of assassination.",
+        "available_skills": [
+            "[melee weapon]",
+            "[ranged weapon]",
+            "disguise",
+            "herbalism",
+            "intimidate",
+            "perception",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -69,6 +93,15 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Tribal warriors from the very fringes of civilization, barbarians are wild and uncouth. Barbarians exemplify physical prowess and natural prowess, but can feel uncomfortable in enclosed spaces.",
+        "available_skills": [
+            "[outdoor]",
+            "[physical]",
+            "axes",
+            "hardy",
+            "herbalism",
+            "spears",
+            "swords"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -90,6 +123,14 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "STR 6+, Feral exploit",
         "description": "Some barbarians become berserkers \u2013 raging warriors of fury.",
+        "available_skills": [
+            "[physical]",
+            "[unarmed]",
+            "axe",
+            "hardy",
+            "spear",
+            "sword"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -111,6 +152,16 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth",
         "description": "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums and high security vaults.",
+        "available_skills": [
+            "acrobatics",
+            "appraisal",
+            "climbing",
+            "computers",
+            "escape artist",
+            "jumping",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -132,6 +183,17 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion",
         "description": "The cleric devotes his or her life to a higher power, hoping to serve that power&apos;s will. Whether the cleric serves a noble god or a vicious demon lord, he or she gains power from faith, and learns to wield powerful magic in the service of his or her deity. Clerics are also trained to be capable warriors, able to defend themselves physically if their spells fail them. Since clerics deal more in abstract realms of the soul and the spirit, their magic has a definite slant toward the intangible, generally eschewing direct offensive magic in favor of spells that affect creatures&apos; essence and behavior, or that make creatures more or less able to battle. Most clerics worship one specific deity from a pantheon, but still respect other members of that pantheon, even if they are not actual followers. The agendas of deities&apos; worshippers may conflict in the realm of mortals, but it is folly to defy even enemy deities. Thus, though a cleric may choose to change the deity he or she reveres, if the clerics truly abandons the pantheon, he or she will never be accepted by any deity, being forced to rely on mortal magic alone.",
+        "available_skills": [
+            "[magical]",
+            "healing",
+            "herbalism",
+            "history",
+            "leadership",
+            "local knowledge",
+            "maces",
+            "religion",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -153,6 +215,16 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion, secret of evil",
         "description": "A diabolist consorts with the infernal, and dabbles in the darkest and most dangerous of magical arts \u2013 he deals with demons and devils, risking his very soul in the process. A diabolist needs a strong will, for devils and demons know the powers of temptation, deceit, and the lure of pure evil. A diabolist knows how to summon infernal creatures and bind them to his will.",
+        "available_skills": [
+            "[magical]",
+            "[social]",
+            "alchemy",
+            "concentration",
+            "knives",
+            "law",
+            "linguistics",
+            "religion"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -174,6 +246,15 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "nature",
         "description": "Guardians of nature, druids are attuned with the natural forces of the world. Plants and animals are their allies, and druids frequently live in the wild, deep within forests. A druid typically wields a staff or sickle.",
+        "available_skills": [
+            "[crafting]",
+            "[magical]",
+            "[outdoor]",
+            "healing",
+            "herbalism",
+            "nature",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -195,6 +276,15 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "secret of fire.",
         "description": "Firemages are fascinated by fire. They love the way it flickers and dances; they excel at creating flames, throwing fire, and delight in creating and controlling infernos and conflagrations. Firemages can sometimes be identified by a slight sent of sulfur.",
+        "available_skills": [
+            "[crafting]",
+            "[lore]",
+            "[magical]",
+            "bluffing",
+            "knives",
+            "perception",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -216,6 +306,14 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You fought in an arena for money and fame with a flashy combat style and a few dirty tricks.",
+        "available_skills": [
+            "[combat]",
+            "acrobatics",
+            "dancing",
+            "intimidation",
+            "reactions",
+            "storytelling"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -237,6 +335,16 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "INT 4+",
         "description": "An herbalist knows how to gather, store, prepare, and administer herbs and herbal concoctions which have a wide variety of effects. An expert herbalist can, merely from gathering resources found in nature, create ointments and mixtures which protect, heal, or ward. For each herbal mixture, you should roll and note down an Herbal Science result. This describes the nature of the mixture, whether it is soup of the spirit-wood weed, or incense from the blue-vine nut.",
+        "available_skills": [
+            "brewing",
+            "cooking",
+            "gardening",
+            "healing",
+            "herbalism",
+            "nature",
+            "perception",
+            "survival"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -258,6 +366,17 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "law, divination",
         "description": "Inquisitors are magical bodyguards and interrogators skilled in uncovering plots and opposing enemy magic. Inquisitorial magic is subtle in its effects, with few sensory cues, but very distinctive with regard to its caster. Inquisitors learn to use their force of will to intimidate foes, and so they typically growl their spells loudly and gesture clearly at their spell&apos;s targets. They use few directly offensive spells, though many can create flaming barriers for defense or to trap foes. Inquisitors are easily recognized for their masks, which they claim protect their souls from enemy magic. Most Inquisitor masks are wood or stone carved in the shape of bearskulls, and many Inquisitors favor bearskin cloaks. They seldom arm themselves with more than a claw-shaped dagger. Inquisitors learn their spells from copies of old spellbooks, scribed by the founders of the Inquisitorial order centuries ago. These spellbooks are written in a civilized form of Orcish, and are closely protected by the order that owns them. Experienced Inquisitors also usually study the magic of other groups to be better able to counterspell it.",
+        "available_skills": [
+            "abjuration",
+            "compulsion",
+            "divination",
+            "interrogation",
+            "intimidation",
+            "knives",
+            "law",
+            "religion",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -279,6 +398,18 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "heraldry",
         "description": "You became a knight \u2013 a mounted warrior proficient in lance, shield, and sword.",
+        "available_skills": [
+            "animal handling",
+            "bravery",
+            "carousing",
+            "heraldry",
+            "lances",
+            "law",
+            "leadership",
+            "riding",
+            "swords",
+            "tactics"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -300,6 +431,12 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "INT 4+",
         "description": "A loremaster is a scholar and academic expert; years spent in libraries studying ancient texts makes loremasters amongst the most knowledgeable in the world. Loremasters even pick up some minor magical spells which help them in their studies.",
+        "available_skills": [
+            "[artistic]",
+            "[gaming]",
+            "[lore]",
+            "[magical]"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -321,6 +458,13 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "one [magical] skill",
         "description": "You are practiced in the arcane arts, able to wield spells with ease. A mage is a trained magic-user \u2013 sometimes known as a wizard, or sorcerer. Able to cast a variety of spells, and well-versed in a range of lore, the mage is a generalist.",
+        "available_skills": [
+            "[academic]",
+            "[lore]",
+            "[magical]",
+            "prestidigitation",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -342,6 +486,18 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "An infantryman, you fought in battle on the front lines.",
+        "available_skills": [
+            "[unarmed fighting]",
+            "carousing",
+            "carrying",
+            "healing",
+            "leadership",
+            "running",
+            "spears",
+            "survival",
+            "swords",
+            "tactics"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -363,6 +519,12 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "CHA 4+",
         "description": "You used the power of your music to earn a living.",
+        "available_skills": [
+            "[lore]",
+            "[performance skills]",
+            "[social]",
+            "carousing"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -384,6 +546,14 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "AGI or INT 5+",
         "description": "Wielding musket and sword, you became a swashbuckling musketeer.",
+        "available_skills": [
+            "carousing",
+            "heraldry",
+            "intimidate",
+            "muskets",
+            "perception",
+            "swords"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -405,6 +575,14 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "secret of undead.",
         "description": "A master of the dark arts, a necromancer is able to summon, bind, and control the undead. Eventually, a necromancer turns into a terrifying lich, the most powerful of undead. A necromancer knows the ways of disease, poison, and the power of fear.",
+        "available_skills": [
+            "[magical]",
+            "[social]",
+            "alchemy",
+            "healing",
+            "knives",
+            "religion"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -426,6 +604,20 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "sailing",
         "description": "A scourge of the high seas, you plunder for loot and fame.",
+        "available_skills": [
+            "appraisal",
+            "carousing",
+            "climbing",
+            "crossbows",
+            "knives",
+            "law",
+            "leadership",
+            "navigation",
+            "sailing",
+            "swimming",
+            "swords",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -447,6 +639,13 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to survive, although you did make one or two lifelong contacts.",
+        "available_skills": [
+            "[subterfuge]",
+            "[unarmed fighting]",
+            "intimidation",
+            "knives",
+            "survival"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -468,6 +667,19 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "WIL 3+",
         "description": "Woodsman and hunter, you are a master of the outdoors. The ranger is the quintessential outdoorsman.",
+        "available_skills": [
+            "[outdoor]",
+            "bows",
+            "climbing",
+            "herbalism",
+            "local knowledge",
+            "navigation",
+            "running",
+            "stealth",
+            "swimming",
+            "swords",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -489,6 +701,13 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for small amounts of money.",
+        "available_skills": [
+            "brawling",
+            "clubs",
+            "intimidation",
+            "knives",
+            "running"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -510,6 +729,18 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "At home on the sea, you spent time aboard a ship mastering the art of sailing.",
+        "available_skills": [
+            "carousing",
+            "climbing",
+            "clubs",
+            "crossbows",
+            "fishing",
+            "knives",
+            "leadership",
+            "navigation",
+            "sailing",
+            "swimming"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -531,6 +762,11 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "STR 4+",
         "description": "A smith is a master metalwork. Blacksmith, weaponsmith, armorer, a smith is able to create, maintain, and even enchant a warrior&apos;s tools. Many smiths combine traditions of smithing and alchemy to learn how to make magical weapons and armor.",
+        "available_skills": [
+            "[artistic]",
+            "[crafting]",
+            "appraise"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -552,6 +788,16 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You spent time as a squire to a noble knight. While some move straight into knighthood, paying your dues as a squire is the only way to truly rise to the top of the knightly tradition. You can always tell a knight who wasn&apos;t a squire first, as he lacks some of the basics.",
+        "available_skills": [
+            "animal handling",
+            "bravery",
+            "carrying",
+            "healing",
+            "heraldry",
+            "lances",
+            "riding",
+            "swords"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -573,6 +819,15 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion",
         "description": "An expert on the undead, you have vowed to hunt and destroy them. Your academic research and knowledge are powerful weapons against your immortal foes. Many undead hunters choose to learn a little magic, also.",
+        "available_skills": [
+            "abjuration",
+            "herbalism",
+            "history",
+            "linguistics",
+            "medicine",
+            "religion",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -594,6 +849,15 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion or martial arts",
         "description": "You became a member of a militant monastic order, and were trained in philosophy and martial arts.",
+        "available_skills": [
+            "[artistic]",
+            "acrobatics",
+            "dancing",
+            "martial arts",
+            "philosophy",
+            "religion",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -615,6 +879,17 @@ var career_old_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "A town guard or local police force, you enforce the law.",
+        "available_skills": [
+            "clubs",
+            "interrogation",
+            "intimidate",
+            "law",
+            "local knowledge",
+            "perception",
+            "swords",
+            "thievery",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,

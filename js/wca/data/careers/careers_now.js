@@ -6,6 +6,20 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "A star of screen or stage, you make your living pretending to be somebody else. Each time you take this career, roll 1d6. If you roll a 6, you win an award. Roll again: (1) BAFTA, (2) Emmy, (3) Tony, (4) Soap Opera Digest, (5) Razzie, (6) Oscar. An award gives you +1 REP.",
+        "available_skills": [
+            "acting",
+            "bluffing",
+            "carousing",
+            "celebrity trivia",
+            "dancing",
+            "disguise",
+            "flirtation",
+            "linguistics",
+            "movie trivia",
+            "singing",
+            "swords",
+            "theater trivia"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -27,6 +41,18 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "As an archeologist, you explored dark caves, tracked down lost treasures, and dug a lot of holes.",
+        "available_skills": [
+            "appraisal",
+            "archeology",
+            "art",
+            "climbing",
+            "cryptology",
+            "geography",
+            "history",
+            "linguistics",
+            "literature",
+            "theology"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -48,6 +74,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth, tracking, [combat]",
         "description": "A killer for hire, you mastered the skills of assassination.",
+        "available_skills": [
+            "[combat]",
+            "disguise",
+            "intimidate",
+            "perception",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -69,6 +103,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[scientific] or piloting",
         "description": "You trained to become an astronaut and travelled into space, either into orbit or to the moon or a similar body.",
+        "available_skills": [
+            "astronomy",
+            "engineering",
+            "medicine",
+            "physics",
+            "piloting",
+            "zero-g"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -90,6 +132,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[sport] or [physical]",
         "description": "You are a professional athlete, whether that be in a team sport or a track and field event.",
+        "available_skills": [
+            "[physical]",
+            "[sporting]",
+            "[unarmed combat]",
+            "carousing",
+            "flirtation"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -111,6 +160,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Bartending is a great way to pay the bills. Some make a lifelong career of it.",
+        "available_skills": [
+            "[social]",
+            "brawling",
+            "brewing",
+            "carousing",
+            "clubs",
+            "cooking",
+            "perception"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -132,6 +190,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You joined the military and completed basic military training. Some programs send recruits to college to gain degrees before returning to cadet assignments.",
+        "available_skills": [
+            "carrying",
+            "leadership",
+            "pistols",
+            "rifles",
+            "survival",
+            "tactics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -153,6 +219,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You stood guard at the door to a bar, club, or other private venue.",
+        "available_skills": [
+            "brawling",
+            "carousing",
+            "hardy",
+            "insight",
+            "law",
+            "perception",
+            "reactions"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -174,6 +249,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "As a bounty hunter you spent time tracking down and capturing wanted criminals.",
+        "available_skills": [
+            "[combat]",
+            "computers",
+            "intimidate",
+            "law",
+            "perception",
+            "piloting",
+            "stealth",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -195,6 +280,12 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "boxing",
         "description": "The ring is your king. You have been in scores of fights (both sanctioned and otherwise), endured countless days and nights of strenuous physical training, and your body is a shrine to thousands of jabs, hooks, and hastily landed strikes.",
+        "available_skills": [
+            "boxing",
+            "hardy",
+            "intimidate",
+            "reactions"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -216,6 +307,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth",
         "description": "You become a master thief, able to infiltrate the most secure of locations. Some cat burglars work for hire and conduct industrial espionage, while others prefer to steal valuable artifacts and jewels from museums and high security vaults.",
+        "available_skills": [
+            "acrobatics",
+            "appraisal",
+            "climbing",
+            "computers",
+            "escape artist",
+            "jumping",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -237,6 +338,12 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "cooking",
         "description": "You know how to cook, to prepare amazing meals, and to run a kitchen.",
+        "available_skills": [
+            "brewing",
+            "cooking",
+            "gardening",
+            "knives"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -258,6 +365,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You attended a civilian college or university and gained formal qualifications in a chosen area of study. Choose a subject, which can be any skill, but is typically a [scientific], [technical], or [artistic] skill. You can restart this career at any time to gain degrees in additional subjects.",
+        "available_skills": [
+            "[artistic]",
+            "[scientific]",
+            "[social]",
+            "[sporting]",
+            "[technical]",
+            "computers"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -279,6 +394,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "bluffing",
         "description": "You honed your skills and learned how to trick others out of their money with charm, lies, bluffs, disguise, and more. Many career criminals combine the craft of the con man with the skills of the burglar.",
+        "available_skills": [
+            "[gaming]",
+            "[social]",
+            "appraisal",
+            "bribery",
+            "disguise",
+            "forgery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -300,6 +423,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[crafting] or [technical]",
         "description": "You made your living by practising your craft as a carpenter, electrician, mechanic, or other professional skilled worker.",
+        "available_skills": [
+            "[artistic]",
+            "[crafting]",
+            "[technical]"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -321,6 +449,19 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion",
         "description": "You were either part of a cult, or you studied cults or the occult.",
+        "available_skills": [
+            "[social]",
+            "astrology",
+            "disguise",
+            "history",
+            "hypnotism",
+            "knives",
+            "meditation",
+            "occult",
+            "philosophy",
+            "politics",
+            "religion"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -342,6 +483,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth",
         "description": "You prowl the streets at night. More than just a vigilante, you are a symbol. You have learned how to instill fear into the hearts of criminals, and the very mention of your name is enough to make the most hardened of gangs look nervously over their shoulders.",
+        "available_skills": [
+            "[combat]",
+            "acrobatics",
+            "climbing",
+            "intimidation",
+            "jumping",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -363,6 +513,17 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You become a detective, expert at spotting clues and finding your man. Even if you leave the profession, you still retain enough contacts to call in favors and request information.",
+        "available_skills": [
+            "bureaucracy",
+            "driving",
+            "interrogation",
+            "intimidate",
+            "law",
+            "perception",
+            "pistols",
+            "stealth",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -384,6 +545,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[social]",
         "description": "You have represented your planet elsewhere.",
+        "available_skills": [
+            "[social]",
+            "bureaucracy",
+            "law",
+            "local knowledge",
+            "politics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -405,6 +573,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "swimming",
         "description": "Whether it was a commercial job, or for the military or police, you feel most at home in a wetsuit. You became a diver, able to explore the ocean depths.",
+        "available_skills": [
+            "hardy",
+            "oceanography",
+            "perception",
+            "sailing",
+            "swimming"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -426,6 +601,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Somehow you lost your way. Drinking, gambling, with no clear objective, you drifted through the fringes of society. Perhaps you never fitted in; or perhaps you are a war veteran who found home was no longer home.",
+        "available_skills": [
+            "appraisal",
+            "bluffing",
+            "carousing",
+            "flirtation",
+            "gaming",
+            "performing",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -447,6 +631,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "driving",
         "description": "You became a driver. Either a racing driver, such as Formula 1 or NASCAR, or a getaway driver. You may even have been a military driver.",
+        "available_skills": [
+            "driving",
+            "engineering",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -468,6 +657,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "engineering",
         "description": "You became an engineer, proficient at manipulating technology and repairing vehicles, devices and engines. ",
+        "available_skills": [
+            "[technical]",
+            "bureaucracy",
+            "computers"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -489,6 +683,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You were either a bomb disposal or a demolitions expert.You just love the smell of napalm in the morning. Something about the smell of explosives, or maybe the very loud boom they make, is very pleasing to you. Of course, you can&apos;t discount the whiz of shrapnel, oh, and the display, the coruscating fireballs...",
+        "available_skills": [
+            "electronics",
+            "explosives",
+            "hardy",
+            "perception",
+            "reactions",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -510,6 +712,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Fighting fires is a noble calling, putting yourself at risk to help others.",
+        "available_skills": [
+            "carousing",
+            "carrying",
+            "climbing",
+            "explosives",
+            "jumping",
+            "local knowledge"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -531,6 +741,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[gaming]",
         "description": "You became an expert gambler, proficient at games of skill and chance.",
+        "available_skills": [
+            "[gaming]",
+            "[social]",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -552,6 +767,12 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "intimidate",
         "description": "Eventually your life of crime led you to better things as you fell into a gang or crew.",
+        "available_skills": [
+            "driving",
+            "intimidation",
+            "pistols",
+            "thievery"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -573,6 +794,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "survival",
         "description": "Either as a dangerous lone wolf or as part of an organized resistance, you&apos;re experienced with waging war on the go, mounting military strikes that melt away quickly afterward. After taking a grade in this career, roll 1d6; on a 2 or less, the next career you take must be Prison.",
+        "available_skills": [
+            "bravery",
+            "disguise",
+            "perception",
+            "pistols",
+            "rifles",
+            "stealth",
+            "survival",
+            "tactics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -594,6 +825,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "computers",
         "description": "Hacking into computer systems to find information or manipulate events comes easily to you.",
+        "available_skills": [
+            "appraisal",
+            "bureaucracy",
+            "computers",
+            "cryptology",
+            "electronics",
+            "forgery",
+            "linguistics",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -615,6 +856,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "heavy weapons.",
         "description": "A real weapon is the kind that requires a strap, and if it doesn&apos;t kick like a mule when you fire it, the gun just isn&apos;t for you. Whether a specialist for a security team or mercenary group, or party of a a heavy weapons team in the military, you&apos;ve spent plenty of time around big guns.",
+        "available_skills": [
+            "carrying",
+            "engineering",
+            "gunnery",
+            "hardy",
+            "heavy weapons",
+            "running"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -636,6 +885,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth, [combat]",
         "description": "The pinnacle of special operations, either police, military or freelance, the infiltrator aptly describes the occupation of many men and women whose job it is to infiltrate enemy locations and accomplish dangerous missions. An infiltrator needs a range of skills beyond the mere ability to kill that is the hallmark of the assassin.",
+        "available_skills": [
+            "[combat skills]",
+            "acrobatics",
+            "climbing",
+            "escape arts",
+            "stealth",
+            "thievery"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -657,6 +914,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You did a regular physical job, whether skilled or unskilled, performing manual work for a fair wage. You may have been in construction, a gravedigger, even a street-sweeper or cleaner; or perhaps a delivery person, baker, brewer or other worker.",
+        "available_skills": [
+            "[crafting]",
+            "[outdoor]",
+            "[vehicle]",
+            "bureacracy",
+            "carousing",
+            "computers",
+            "engineering",
+            "hardy"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -678,6 +945,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "law",
         "description": "You became a lawyer, learning the complexities of the legal system, and how to get yourself and others out of (or into!) trouble.",
+        "available_skills": [
+            "bluffing",
+            "bureaucracy",
+            "interrogation",
+            "law",
+            "local knowledge",
+            "negotiating"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -699,6 +974,12 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "medicine",
         "description": "You enter the medical profession. If you have gained a doctorate at college, you do so as a doctor; otherwise you are referred to as a nurse or medic.",
+        "available_skills": [
+            "bureaucracy",
+            "computers",
+            "medicine",
+            "psychology"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -720,6 +1001,17 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "There&apos;s nothing like a few years spent down a coalmine to build character.",
+        "available_skills": [
+            "[technical]",
+            "appraising",
+            "carousing",
+            "carrying",
+            "climbing",
+            "hammers",
+            "mining",
+            "picks",
+            "survival"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -741,6 +1033,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "The skills and tactics of Japan&apos;s warriors of subterfuge, sabotage, and deception are known to you, either through a Ninja master that took you in as an apprentice, or by traveling to the ancestral homeland and earning the right to train among those who still practice ninjutsu.",
+        "available_skills": [
+            "acrobatics",
+            "climbing",
+            "disguise",
+            "martial arts",
+            "perception",
+            "stealth"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -762,6 +1062,10 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[performance]",
         "description": "You became a musician or other performer, and made your way working bars, clubs, and theaters.",
+        "available_skills": [
+            "[performance]",
+            "carousing"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -783,6 +1087,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "piloting",
         "description": "You became a pilot, learning to fly aircraft big or small.",
+        "available_skills": [
+            "astronomy",
+            "computers",
+            "gunnery",
+            "navigation",
+            "piloting",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -804,6 +1116,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You join the police or other security force and begin a career as a uniformed officer.",
+        "available_skills": [
+            "bureaucracy",
+            "driving",
+            "interrogation",
+            "intimidate",
+            "law",
+            "perception",
+            "pistols"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -825,6 +1146,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "local knowledge",
         "description": "You entered politics at a local level and started to rise through the ranks.",
+        "available_skills": [
+            "[social]",
+            "economics",
+            "geography",
+            "history",
+            "local knowledge",
+            "politics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -846,6 +1175,18 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion",
         "description": "You joined the clergy and practised religion, tending to your flock.",
+        "available_skills": [
+            "[trivia]",
+            "bureaucracy",
+            "crafting",
+            "cryptology",
+            "leadership",
+            "linguistics",
+            "meditation",
+            "perception",
+            "performing",
+            "religion"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -867,6 +1208,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Your life of crime ended you up in prison where you served time; or perhaps you were a political prisoner, a hostage, or a prisoner-of-war. It was a tough environment and you spent most of your time just trying to survive, although you did make one or two lifelong contacts.",
+        "available_skills": [
+            "[subterfuge skills]",
+            "[unarmed fighting]",
+            "intimidation",
+            "knives",
+            "survival"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -888,6 +1236,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You snoop, bribe, tail, and occasionally get socked a few times a month in order to pay the bills. You know all the shady spots in town.",
+        "available_skills": [
+            "[subterfuge]",
+            "bluffing",
+            "bribery",
+            "insight",
+            "intimidate",
+            "perception",
+            "pistols",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -909,6 +1267,19 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "As an intrepid reporter, you are skilled at getting to the truth.",
+        "available_skills": [
+            "carousing",
+            "economics",
+            "geography",
+            "insight",
+            "interrogation",
+            "journalism",
+            "law",
+            "linguistics",
+            "literature",
+            "perception",
+            "politics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -930,6 +1301,17 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "At home on the sea, you spent time aboard a ship mastering the art of sailing.",
+        "available_skills": [
+            "carousing",
+            "climbing",
+            "clubs",
+            "fishing",
+            "knives",
+            "leadership",
+            "navigation",
+            "sailing",
+            "swimming"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -951,6 +1333,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "one [scientific] skill",
         "description": "You take your science with you as investigate phenomena in strange locations. Field scientists are viewed by academia as adventurous types, and include archaeologists, meteorologists, zoologists, oceanographers, geologists, botanists, astrophysicists, and much more.",
+        "available_skills": [
+            "[scientific]",
+            "[technical]",
+            "computers",
+            "perception",
+            "survival"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -972,6 +1361,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth, tracking",
         "description": "You became a scout \u2013 a specialized special forces soldier able to operate alone and perform reconnaissance.",
+        "available_skills": [
+            "climbing",
+            "perception",
+            "running",
+            "stealth",
+            "survival",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -993,6 +1390,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts 3 ranks",
         "description": "You run a dojo, wu kwan, or kwoon, teaching others the martial arts.",
+        "available_skills": [
+            "insight",
+            "leadership",
+            "local knowledge",
+            "martial arts",
+            "philosophy",
+            "tactics",
+            "teaching"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -1014,6 +1420,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "piloting or sailing",
         "description": "You spent time as a smuggler, moving stolen or illegal goods from one country to another.",
+        "available_skills": [
+            "appraisal",
+            "bluffing",
+            "carousing",
+            "navigation",
+            "piloting",
+            "pistols",
+            "sailing",
+            "thievery"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -1035,6 +1451,13 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "stealth, rifles",
         "description": "You mastered the art of lying very still for long periods of time and shooting people a long way away. Sniping is a job which requires great endurance, patience, and accuracy.",
+        "available_skills": [
+            "climbing",
+            "concentration",
+            "perception",
+            "rifles",
+            "stealth"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1056,6 +1479,9 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "[social]",
         "description": "You aim be famous for being famous, and mastered the art of networking.",
+        "available_skills": [
+            "[social]"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1077,6 +1503,16 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "must have completed one year in Boot Camp",
         "description": "A tour of duty in the army means a deployment to a probably dangerous environment where you engaged enemy forces in infantry based ground battles. The army prides itself on their sense of duty and their courage. With each tour, roll 1d6. On a roll of 6, you gain a medal and a bonus +1 REP.",
+        "available_skills": [
+            "[combat]",
+            "bravery",
+            "carousing",
+            "carrying",
+            "hardy",
+            "leadership",
+            "perception",
+            "survival"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -1098,6 +1534,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You&apos;re a spy. This may be MI6, CIA, KGB, or some other force. You have a wide remit, dealing with both domestic and external threats, and perform undercover investigations into military and civilian issues.",
+        "available_skills": [
+            "[gaming]",
+            "[social]",
+            "[subterfuge]",
+            "computers",
+            "interrogation",
+            "law",
+            "pistols"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -1119,6 +1564,14 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You fell into the fringes of society and ended up as a thug on the street, committing petty crimes for small amounts of money.",
+        "available_skills": [
+            "brawling",
+            "clubs",
+            "intimidation",
+            "knives",
+            "pistols",
+            "running"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -1140,6 +1593,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "18 years of age or under",
         "description": "High School, or its equivalent, is a place of learning... and sometimes of adventure!",
+        "available_skills": [
+            "[academic]",
+            "[scientific]",
+            "[sporting]"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1161,6 +1619,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "You&apos;ve rolled cars, jumped off buildings, jumped open drawbridges, even set yourself on fire in the name of entertainment.",
+        "available_skills": [
+            "[physical]",
+            "[vehicle]",
+            "hardy"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -1182,6 +1645,22 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "any [outdoor] skill",
         "description": "Some choose to spend time in the wild, testing their mind and body against nature, living off the land, and existing with animals.",
+        "available_skills": [
+            "[crafting]",
+            "animal handling",
+            "carrying",
+            "climbing",
+            "cooking",
+            "fishing",
+            "geography",
+            "hunting",
+            "medicine",
+            "navigation",
+            "reactions",
+            "survival",
+            "swimming",
+            "tracking"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1203,6 +1682,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "any [academic], [artistic], [performance] or [scientific skill], or linguistics",
         "description": "Your calling is teaching others. You are a mentor figure, a font of learning, and a source of inspiration.",
+        "available_skills": [
+            "[academic]",
+            "[artistic]",
+            "[scientific]",
+            "insight",
+            "leadership",
+            "linguistics",
+            "teaching"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1224,6 +1712,18 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Life as a trader can mean profit, but it can also bring ruin.",
+        "available_skills": [
+            "[crafting]",
+            "[social]",
+            "accounting",
+            "appraisal",
+            "bribery",
+            "bureaucracy",
+            "carousing",
+            "forgery",
+            "law",
+            "local knowledge"
+        ],
         "stats": {
             "strength": 0,
             "agility": 0,
@@ -1245,6 +1745,11 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "none",
         "description": "Something about the world calls to you, asking\u2014no, demanding\u2014that you rise above the law to accomplish some task. You might battle crime, fight against a corrupt corporation, or work to clean the world of dirty politicians, but you are often at odds with the law, using measures they&apos;re unable to utilize to get the job done.",
+        "available_skills": [
+            "[combat]",
+            "[subterfuge]",
+            "intimidation"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -1266,6 +1771,15 @@ var career_now_dict = {
         "career_time_unit": "years",
         "prerequisites": "religion or martial arts",
         "description": "You became a member of a martial monastic order, and were trained in philosophy and martial arts. You should also take grades in a martial arts career.",
+        "available_skills": [
+            "[artistic]",
+            "acrobatics",
+            "dancing",
+            "martial arts",
+            "philosophy",
+            "religion",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,

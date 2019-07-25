@@ -6,6 +6,12 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Blending the force of your attacker with your own movements, you have mastered the art of redirecting a foe&apos;s movement to your advantage, placing them in disadvantageous positions with joint locks and a chilling understanding of functional anatomy.",
+        "available_skills": [
+            "acrobatics",
+            "escape artist",
+            "martial arts",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -27,6 +33,11 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Taking your opponents down with expert technique and leverage, you take them to the ground, where you are a master combatant.",
+        "available_skills": [
+            "acrobatics",
+            "martial arts",
+            "meditation"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -48,6 +59,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "dancing, martial arts",
         "description": "Training with a capoeira master, you&apos;ve become more adept at the acrobatic martial art, able to tumble, cartwheel, and flip around your enemies with ease.",
+        "available_skills": [
+            "acrobatics",
+            "dancing",
+            "jumping",
+            "martial arts",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -69,6 +87,14 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "pistols",
         "description": "You have mastered the synthesis of modern weaponry with ancient martial arts, able to maximize the power and accuracy of firearms by integrating the forms of various styles into one terrifying dance of explosive death. ",
+        "available_skills": [
+            "jumping",
+            "martial arts",
+            "pistols",
+            "reactions",
+            "running",
+            "tactics"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -90,6 +116,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "pistols",
         "description": "You have learned the unusual but beautiful art of melee gun combat, where the gun is considered a total weapon and katas are performed which statistically inflict the maximum damage on the largest number of targets while avoiding statistically likely trajectories of return fire.",
+        "available_skills": [
+            "acrobatics",
+            "dancing",
+            "martial arts",
+            "pistols",
+            "reactions"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -111,6 +144,12 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Trained in fighting an armed opponent with your feet and fists, you are a fluid warrior in combat, adapting to best use your enemy&apos;s movements against them.",
+        "available_skills": [
+            "martial arts",
+            "meditation",
+            "melee weapon",
+            "stealth"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -132,6 +171,10 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "You learned a striking art which focuses on punches, kicks, and knee and able strikes, as well as open hand strikes.",
+        "available_skills": [
+            "martial arts",
+            "meditation"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -153,6 +196,12 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Studying one of the newest and most practical martial arts has taught you to end a fight as soon as it starts (if it has to) and to make the most out of your attacks with the least effort.",
+        "available_skills": [
+            "martial arts",
+            "perception",
+            "reactions",
+            "throwing"
+        ],
         "stats": {
             "strength": 1,
             "agility": 1,
@@ -174,6 +223,14 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Through intense and dedicated training, you&apos;ve begun to unlock the secrets of the ancient martial arts of China. You can sense and feel the essence of your being and are able to manipulate not only that life energy, but also your body, to its maximum effect. With these skills at your disposal, you are a fearsome opponent in combat and able to perform feats of finesse and strength that dazzle your peers.",
+        "available_skills": [
+            "acrobatics",
+            "martial arts",
+            "meditation",
+            "perception",
+            "reactions",
+            "staves"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -195,6 +252,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Dedicated conditioning is a part of your daily routine, and you cannot count the number of times you&apos;ve struck out against a tree trunk with your leg, but it doesn&apos;t matter: your body truly is a living weapon. You have mastered the art of Thai boxing.",
+        "available_skills": [
+            "acrobatics",
+            "climbing",
+            "jumping",
+            "martial arts",
+            "reactions"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -216,6 +280,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Focusing on the use of your legs and staying quick on your feet, you practice styles like Baguazhang, Eagle Claw, Northern Praying Mantis, or Ch\u00e1ngqu\u00e1n.",
+        "available_skills": [
+            "hardy",
+            "martial arts",
+            "melee weapon",
+            "nature",
+            "running"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -237,6 +308,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts or boxing",
         "description": "The truest expression of a person&apos;s fighting ability, some would say, is the ancient art of wrestling\u2014you count yourself among their number. After hundreds of matches, you know exactly the best way to grapple and pin an opponent in any situation.",
+        "available_skills": [
+            "acrobatics",
+            "boxing",
+            "climbing",
+            "reactions",
+            "running"
+        ],
         "stats": {
             "strength": 1,
             "agility": 0,
@@ -258,6 +336,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Training with a champion of the sport or learning the hard way on the meaner streets in Marseille or Paris, you&apos;ve studied the martial art of France and can put it to great use.",
+        "available_skills": [
+            "acrobatics",
+            "climbing",
+            "jumping",
+            "martial arts",
+            "running"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
@@ -279,6 +364,13 @@ var career_ma_dict = {
         "career_time_unit": "years",
         "prerequisites": "martial arts",
         "description": "Your body is a weapon, and your hands are deadly indeed. Using styles like Fujian White Crane, Wing Chun, Southern Praying Mantis, Bak Mei and Dragon, you are a master of Nanquan\u2014the Southern Fist.",
+        "available_skills": [
+            "climbing",
+            "hardy",
+            "martial arts",
+            "melee weapon",
+            "nature"
+        ],
         "stats": {
             "strength": 0,
             "agility": 1,
