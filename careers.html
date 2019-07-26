@@ -26,14 +26,18 @@
         <div class="card-body">
           <div class="mb-2">
             <div class="form-group">
-              <ul id="car_career_list"></ul>
+              <b>Career List:</b>
+              <ol id="car_career_list"></ol>
+            </div>
+            <div class="form-group">
+              <b>Selected Career:</b>
               <select class="form-control" id="car_career_select"></select>
             </div>
             <div class="form-group">
               <button type="button" class="btn btn-success" id="car_btn_add_career">Add</button>
               <button type="button" class="btn btn-danger" id="car_btn_remove_career">Remove</button>
-              <button type="button" class="btn btn-primary" id="car_btn_remove_career">⬆️ Move Up</button>
-              <button type="button" class="btn btn-primary" id="car_btn_remove_career">⬇️ Move Down</button>    
+              <button type="button" class="btn btn-primary" id="car_btn_move_career_up">⬆️ Move Up</button>
+              <button type="button" class="btn btn-primary" id="car_btn_move_career_down">⬇️ Move Down</button>    
             </div>
           </div>
         </div>
