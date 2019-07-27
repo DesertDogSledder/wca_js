@@ -71,47 +71,6 @@ function get_user_character() {
 }
 
 function new_character() {
-    // let user_character = {
-    //     'name': 'unset',
-    //     'race': {
-    //         'source': 'new',
-    //         'id': 'race_new_human',
-    //         'stats': {
-    //             'strength': 0,
-    //             'agility': 0,
-    //             'endurance': 0,
-    //             'intuition': 0,
-    //             'logic': 0,
-    //             'willpower': 0,
-    //             'charisma': 0,
-    //             'luck': 2,
-    //             'reputation': 0,
-    //             'magic': 0,
-    //             'chi': 0,
-    //             'psionics': 0
-    //         },
-    //         'size': 'medium',
-    //         'skills': {},
-    //     },
-    //     'homeworld': {
-    //         'source': 'new',
-    //         'id': 'homeworld_none',
-    //         'stats': {},
-    //         'skills': [],
-    //     },
-    //     'career_track': [],
-    //     'notes': '',
-    //     'trait': {},
-    //     'misc_exploits': [],
-    //     'defense_skills': {
-    //         'melee': '',
-    //         'ranged': '',
-    //         'mental': '',
-    //         'vital': '',
-    //     },
-    //     'age_descriptor': 'unset',
-    //     'equipment': [],
-    // };
     let user_character = {
         'name': 'unset',
         'race': {
@@ -172,7 +131,8 @@ function set_career(user_character, career_source, career_id) {
     for (stat in career_dict[career_source][career_id].stats) {
         career_stats[stat] = career_dict[career_source][career_id].stats[stat];
     }
-    user_character.career_track.push({'source': career_source, 'id': career_id, 'stats': career_stats, 'skills': {}});
+    user_character.career_track.push({
+        'source': career_source, 'id': career_id, 'stats': career_stats, 'exploits': {}, 'skills': {}});
 }
 
 function calc_stat_total(user_character)
@@ -209,7 +169,6 @@ function calc_stat_total(user_character)
         }
     }
 
-    // console.log(stat_total);
     return stat_total;
 }
 
@@ -232,7 +191,7 @@ function calc_skill_total(user_character)
     // Career skill tally
     for (career in user_character.career_track)
     {
-        for (skill in user_character.career_track.skills)
+        for (skill in user_character.career_track[career].skills)
         {
             if (skill in skill_total) skill_total[skill] += career.skills[skill];
             else skill_total[skill] = career.skills[skill];    

@@ -11,6 +11,11 @@ $("#car_select_career_modal_source").on("change", career_modal_select_source);
 $("#car_select_career_modal_career").on("change", career_modal_select_career);
 $("#car_select_career_modal_save").on("click", select_career_modal_accept);
 
+$("#car_btn_edit_skills").on("click", edit_career_exploits_modal);
+$("#car_edit_exploits_modal_add").on("click", edit_career_exploits_modal_add);
+$("#car_edit_exploits_modal_remove").on("click", edit_career_exploits_modal_remove);
+$("#car_edit_exploits_modal_save").on("click", edit_career_exploits_modal_accept);
+
 $("#car_btn_edit_skills").on("click", edit_career_skills_modal);
 $("#car_edit_skils_modal_add").on("click", edit_career_skills_modal_add);
 $("#car_edit_skils_modal_remove").on("click", edit_career_skills_modal_remove);
@@ -60,14 +65,17 @@ function on_career_select() {
     $("#car_btn_remove_career").prop("disabled", false);
     $("#car_btn_move_career_up").prop("disabled", false);
     $("#car_btn_move_career_down").prop("disabled", false);
+    $("#car_btn_edit_exploits").prop("disabled", false);
+    $("#car_btn_edit_skills").prop("disabled", false);
     $("#car_btn_edit_stats").prop("disabled", false);
     $("#car_skills_list").html('');
-    
 
     if (selected_career == null) {
         $("#car_btn_move_career_up").prop("disabled", true);
         $("#car_btn_move_career_down").prop("disabled", true);
         $("#car_btn_remove_career").prop("disabled", true);
+        $("#car_btn_edit_exploits").prop("disabled", true);
+        $("#car_btn_edit_skills").prop("disabled", true);
         $("#car_btn_edit_stats").prop("disabled", true);
         
         for (stat in stat_names) {
@@ -188,6 +196,97 @@ function select_career_modal_accept() {
     refresh_careers();
     $("#car_career_select").val(String(user_character.career_track.length-1));
     on_career_select();
+}
+
+////////////////////
+// Exploits Modal //
+////////////////////
+function edit_career_exploits_modal() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let curr_exploit = null;
+    temp_exploits = new Map();
+    for (let exploit in user_character.career_track[selected_career].exploits) {
+        curr_exploit = user_character.misc_exploits[exploit];
+        temp_exploits.set(exploit_dict[curr_exploit.source][curr_exploit.id]['name'], curr_exploit);
+    }
+    $("#car_edit_exploits_modal").modal();
+    $("#car_edit_exploits_modal_source").val("career");
+    edit_career_exploits_modal_source();
+    edit_career_exploits_modal_refresh();
+    enable_tooltips();
+}
+
+function edit_career_exploits_modal_source() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let exploit_source = $("#car_edit_exploits_modal_source").val();
+
+    $("#car_edit_exploits_modal_exploit").empty();
+    if (exploit_source == 'career') {
+        let career_source = user_character.career_track[selected_career].source;
+        let career_id = user_character.career_track[selected_career].id;
+        for (let exploit in exploit_dict[career_source][career_id]) {
+            $("#car_edit_exploits_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[career_source][career_id][exploit]['name'] + '</option>'));
+        }
+    } else {
+        for (let exploit in exploit_dict[exploit_source]) {
+            $("#car_edit_exploits_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[exploit_source][exploit]['name'] + '</option>'));
+        }
+    }
+    edit_career_exploits_modal_exploit();
+}
+
+function edit_career_exploits_modal_exploit() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let exploit_source = $("#car_edit_exploits_modal_source").val();
+    let selected_exploit = $("#car_edit_exploits_modal_exploit").val();
+    
+    if (exploit_source == 'career') {
+        let career_source = user_character.career_track[selected_career].source;
+        let career_id = user_character.career_track[selected_career].id;
+        $("#car_edit_exploits_modal_exploit_desc").html(exploit_dict[career_source][career_id][selected_exploit]['desc']);
+    } else {
+        $("#car_edit_exploits_modal_exploit_desc").html(exploit_dict[exploit_source][selected_exploit]['desc']);
+    }
+}
+
+function edit_career_exploits_modal_add() {
+    let exploit_source = $("#car_edit_exploits_modal_source").val();
+    let selected_exploit = $("#car_edit_exploits_modal_exploit").val();
+    temp_exploits = temp_exploits.set(exploit_dict[exploit_source][selected_exploit]['name'], {'source': exploit_source, 'id': selected_exploit});
+    temp_exploits = new Map([...temp_exploits.entries()].sort());
+    edit_exploits_modal_refresh();
+}
+
+function edit_career_exploits_modal_remove() {
+    let selected_curr_exploits = $("#car_edit_exploits_modal_exploits_list").val();
+    if (selected_curr_exploits.length > 0) {
+        for (let exploit in selected_curr_exploits) {
+            temp_exploits.delete(selected_curr_exploits[exploit]);
+        }
+        edit_exploits_modal_refresh();
+    }
+}
+
+function edit_career_exploits_modal_refresh() {
+    $("#car_edit_exploits_modal_exploits_list").empty();
+    for (let exploit of temp_exploits.values()) {
+        $("#car_edit_exploits_modal_exploits_list").append($('<option data-value=' + exploit + '>' + exploit_dict[exploit.source][exploit.id]['name'] + '</option>'));
+    }
+}
+
+function edit_career_exploits_modal_accept() {
+    let user_character = get_user_character();
+    let new_misc_exploits = [];
+    for (let exploit of temp_exploits.values()) {
+        new_misc_exploits.push(exploit);
+    }
+    user_character.misc_exploits = new_misc_exploits;
+    save_character(user_character);
+    $("#car_edit_exploits_modal").modal('toggle');
+    refresh_exploits();
 }
 
 //////////////////
