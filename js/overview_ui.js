@@ -1,8 +1,14 @@
 // Event bindings
-$("#ovr_btn_edit_name").on("click", edit_name_modal);
-$("#ovr_edit_name_modal_btn_save").on("click", edit_name_modal_accept);
 $("#ovr_btn_new_character").on("click", new_character_modal);
 $("#ovr_new_character_modal_btn_save").on("click", new_character_modal_accept);
+
+$("#ovr_btn_edit_name").on("click", edit_name_modal);
+$("#ovr_edit_name_modal_btn_save").on("click", edit_name_modal_accept);
+
+$("#ovr_btn_edit_trait").on("click", edit_trait_modal);
+
+$("#ovr_btn_edit_hook").on("click", edit_hook_modal);
+$("#ovr_edit_hook_modal_btn_save").on("click", edit_hook_modal_accept);
 
 function refresh_overview () {
     let user_character = get_user_character();
@@ -12,6 +18,8 @@ function refresh_overview () {
     $("#ovr_name_val").html(user_character.name);
     $("#ovr_race_val").html(character_race.name);
     $("#ovr_homeworld_val").html(character_homeworld.name);
+    $("#ovr_trait_val").html('');
+    $("#ovr_hook_val").html(user_character.hook);
 
     stat_total = calc_stat_total(user_character);
     for (stat in stat_total) {
@@ -50,6 +58,9 @@ function refresh_overview () {
     enable_tooltips();
 }
 
+/////////////////////////
+// New Character Modal //
+/////////////////////////
 function new_character_modal() {
     $("#ovr_new_character_modal").modal();
 }
@@ -60,6 +71,9 @@ function new_character_modal_accept() {
     refresh_overview();
 }
 
+/////////////////////
+// Edit Name Modal //
+/////////////////////
 function edit_name_modal() {
     let user_character = get_user_character();
     $("#ovr_edit_name_modal").modal();
@@ -71,5 +85,94 @@ function edit_name_modal_accept() {
     user_character.name = $("#ovr_edit_name_input").val();
     save_character(user_character);
     $("#ovr_edit_name_modal").modal('toggle');
+    refresh_overview();
+}
+
+//////////////////////
+// Edit Trait Modal //
+//////////////////////
+function edit_trait_modal() {
+    let user_character = get_user_character();
+    let curr_exploit = null;
+
+    $("#ovr_edit_trait_modal_source").empty();
+    $("#ovr_edit_trait_modal_source").append($('<option value=traits>Traits</option>'));
+    $("#ovr_edit_trait_modal_source").
+
+    temp_exploits = new Map();
+    for (let exploit in user_character.career_track[selected_career].exploits) {
+        curr_exploit = user_character.career_track[selected_career].exploits[exploit];
+        temp_exploits.set(exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['name'], curr_exploit);
+    }
+    $("#ovr_edit_trait_modal").modal();
+    $("#ovr_edit_trait_modal_source").val("career");
+    edit_trait_modal_source();
+}
+
+function edit_trait_modal_source() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let exploit_source = $("#ovr_edit_trait_modal_source").val();
+
+    $("#ovr_edit_trait_modal_exploit").empty();
+    if (exploit_source == 'career') {
+        let career_source = user_character.career_track[selected_career].source;
+        let career_id = user_character.career_track[selected_career].id;
+        for (let exploit in exploit_dict[career_source][career_id]) {
+            $("#ovr_edit_trait_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[career_source][career_id][exploit]['name'] + '</option>'));
+        }
+    } else {
+        for (let exploit in exploit_dict[exploit_source][exploit_source]) {
+            $("#ovr_edit_trait_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[exploit_source][exploit_source][exploit]['name'] + '</option>'));
+        }
+    }
+    edit_trait_modal_exploit();
+}
+
+function edit_trait_modal_exploit() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let exploit_source = $("#ovr_edit_trait_modal_source").val();
+    let selected_exploit = $("#ovr_edit_trait_modal_exploit").val();
+    
+    if (exploit_source == 'career') {
+        let career_source = user_character.career_track[selected_career].source;
+        let career_id = user_character.career_track[selected_career].id;
+        $("#ovr_edit_trait_modal_exploit_desc").html(exploit_dict[career_source][career_id][selected_exploit]['desc']);
+    } else {
+        $("#ovr_edit_trait_modal_exploit_desc").html(exploit_dict[exploit_source][exploit_source][selected_exploit]['desc']);
+    }
+}
+
+function edit_trait_modal_accept() {
+    let user_character = get_user_character();
+    let selected_career = parseInt($("#car_career_select").val());
+    let new_career_exploits = [];
+    for (let exploit of temp_exploits.values()) {
+        new_career_exploits.push(exploit);
+    }
+    user_character.career_track[selected_career].exploits = new_career_exploits;
+    save_character(user_character);
+    $("#ovr_edit_trait_modal").modal('toggle');
+    refresh_careers();
+    $("#car_career_select").val(String(selected_career));
+    on_career_select();
+}
+
+
+/////////////////////
+// Edit Hook Modal //
+/////////////////////
+function edit_hook_modal() {
+    let user_character = get_user_character();
+    $("#ovr_edit_hook_modal").modal();
+    $("#ovr_edit_hook_input").val(user_character.hook);
+}
+
+function edit_hook_modal_accept() {
+    let user_character = get_user_character();
+    user_character.hook = $("#ovr_edit_hook_input").val();
+    save_character(user_character);
+    $("#ovr_edit_hook_modal").modal('toggle');
     refresh_overview();
 }

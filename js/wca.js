@@ -22,7 +22,7 @@ var exploit_dict = {
     'origins': exploits_origins,
     'old': exploits_careers_old,
     'now': exploits_careers_now,
-    'new': exploits_careers_now,
+    'new': exploits_careers_new,
     'martial_arts': exploits_careers_martial_arts,
 };
 
@@ -89,6 +89,7 @@ function new_character() {
         'career_track': [],
         'notes': '',
         'trait': {},
+        'hook': '',
         'misc_exploits': [],
         'defense_skills': {
             'melee': '',
@@ -191,10 +192,12 @@ function calc_skill_total(user_character)
     // Career skill tally
     for (career in user_character.career_track)
     {
-        for (skill in user_character.career_track[career].skills)
-        {
-            if (skill in skill_total) skill_total[skill] += career.skills[skill];
-            else skill_total[skill] = career.skills[skill];    
+        if (user_character.career_track[career].skills){
+            for (skill in user_character.career_track[career].skills)
+            {
+                if (skill in skill_total) skill_total[skill] += user_character.career_track[career].skills[skill];
+                else skill_total[skill] = user_character.career_track[career].skills[skill];    
+            }
         }
     }
 
@@ -207,9 +210,22 @@ function calc_exploit_total(user_character)
 {
     let exploit_total = {};
     let race_exploits = race_exploits_dict[user_character.race.source][user_character.race.id];
+    let curr_exploit = null;
 
     for (let exploit in race_exploits) {
         exploit_total[race_exploits[exploit]['name']] = race_exploits[exploit]['desc'];
+    }
+
+    for (let career in user_character.career_track) {
+        for (exploit in user_character.career_track[career].exploits) {
+            curr_exploit = user_character.career_track[career].exploits[exploit];
+            exploit_total[exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['name']] = exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['desc'];
+        }
+    }
+
+    for (exploit in user_character.misc_exploits) {
+        curr_exploit = user_character.misc_exploits[exploit];
+        exploit_total[exploit_dict[curr_exploit.source][curr_exploit.source][curr_exploit.id]['name']] = exploit_dict[curr_exploit.source][curr_exploit.source][curr_exploit.id]['desc'];
     }
 
     let sorted_exploit_total = sort_object(exploit_total);

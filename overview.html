@@ -27,27 +27,25 @@
           <div class="mb-2">
             <b>Name:</b>
             <span id=ovr_name_val></span>
-            <button type="button" class="btn btn-warning" id="ovr_btn_edit_name"><img src="/octicon/svg/pencil.svg" alt="edit name"></button>
+            <button type="button" class="btn btn-warning" id="ovr_btn_edit_name">✏️</button>
           </div>
           <div class="mb-2">
             <b>Race:</b>
             <span id="ovr_race_val"></span>
-            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit race"></button>
           </div>
           <div class="mb-2">
             <b>Homeworld:</b>
             <span id="ovr_homeworld_val"></span>
-            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit homeworld"></button>
           </div>
           <div class="mb-2">
             <b>Trait: </b>
             <span id="ovr_trait_val"></span>
-            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit trait"></button>
+            <button type="button" class="btn btn-warning" id="ovr_btn_edit_trait">✏️</button>
           </div>
           <div class="mb-2">
             <b>Hook: </b>
             <span id="ovr_hook_val"></span>
-            <button type="button" class="btn btn-warning"><img src="/octicon/svg/pencil.svg" alt="edit hook"></button>
+            <button type="button" class="btn btn-warning" id="ovr_btn_edit_hook">✏️</button>
           </div>
         </div>
       </div>
@@ -213,6 +211,65 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <button type="button" class="btn btn-primary" id="ovr_edit_name_modal_btn_save">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Career Exploits-->
+    <div class="modal fade" id="car_edit_exploits_modal" tabindex="-1" role="dialog" aria-labelledby="edit_exploits_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="car_edit_exploits_modal_label">Edit Exploits</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="car_edit_exploits_modal_source"><b>Source:</b></label>
+              <select class="form-control" id="car_edit_exploits_modal_source"></select>
+            </div>
+            <div class="form-group">
+              <label for="car_edit_exploits_modal_exploit"><b>Exploit:</b></label>
+              <select class="form-control" id="car_edit_exploits_modal_exploit"></select>
+            </div>
+            <div class="form-group">
+              <label><b>Description:</b></label>
+              <p id="car_edit_exploits_modal_exploit_desc"></p>
+              <button type="button" class="btn btn-success" id="car_edit_exploits_modal_add">Add</button>
+            </div>
+            <div class="form-group">
+              <b>Current Exploits:</b>
+              <select class="form-control" id="car_edit_exploits_modal_exploits_list" multiple></select>
+              <button type="button" class="btn btn-danger" id="car_edit_exploits_modal_remove">Remove Selected</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="car_edit_exploits_modal_save">Save Exploits</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Hook-->
+    <div class="modal fade" id="ovr_edit_hook_modal" tabindex="-1" role="dialog" aria-labelledby="edit_hook_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovr_edit_hook_modal_label">Edit Hook</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="ovr_edit_hook_input">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovr_edit_hook_modal_btn_save">Save</button>
           </div>
         </div>
       </div>

@@ -21,8 +21,8 @@
         <a href="equipment.html" class="nav-item nav-link">Equipment</a>
       </nav>
 
-      <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Careers</h5></div>
+      <div class="card bg-light border-dark mb-3" id="car_careers_div">
+        <div class="card-header"><h5 id="car_careers_header">Careers</h5></div>
         <div class="card-body">
           <div class="mb-2">
             <div class="form-group">
@@ -43,8 +43,8 @@
         </div>
       </div>
 
-      <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Skills</h5> <button type="button" class="btn btn-warning" id="car_btn_edit_skills">✏️</button></div>
+      <div class="card bg-light border-dark mb-3" id="car_skills_div">
+        <div class="card-header"><h5 id="car_skills_header">Skills</h5> <button type="button" class="btn btn-warning" id="car_btn_edit_skills">✏️</button></div>
         <div class="card-body">
           <div class="mb-2">
             <ul id="car_skills_list"></ul>
@@ -52,8 +52,8 @@
         </div>
       </div>
 
-      <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Exploits</h5> <button type="button" class="btn btn-warning" id="car_btn_edit_exploits">✏️</button></div>
+      <div class="card bg-light border-dark mb-3" id="car_exploits_div">
+        <div class="card-header"><h5 id="car_exploits_header">Exploits</h5> <button type="button" class="btn btn-warning" id="car_btn_edit_exploits">✏️</button></div>
         <div class="card-body">
           <div class="mb-2">
             <ul id="car_exploits_list"></ul>
@@ -61,8 +61,8 @@
         </div>
       </div>
 
-      <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>Stats</h5>  <button type="button" class="btn btn-warning" id="car_btn_edit_stats">✏️</button></div>
+      <div class="card bg-light border-dark mb-3" id="car_stats_div">
+        <div class="card-header"><h5 id="car_stats_header">Stats</h5>  <button type="button" class="btn btn-warning" id="car_btn_edit_stats">✏️</button></div>
         <div class="card-body">
           <div class="mb-2">
             <table class="table">
@@ -200,10 +200,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="car_edit_exploits_modal_source"><b>Source:</b></label>
-              <select class="form-control" id="car_edit_exploits_modal_source">
-                <option value="career">Career</option>
-                <option value="universal">Universal</option>
-              </select>
+              <select class="form-control" id="car_edit_exploits_modal_source"></select>
             </div>
             <div class="form-group">
               <label for="car_edit_exploits_modal_exploit"><b>Exploit:</b></label>
