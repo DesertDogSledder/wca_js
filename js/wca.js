@@ -167,6 +167,14 @@ function set_homeworld(user_character, homeworld_source, homeworld_id) {
     }
 }
 
+function set_career(user_character, career_source, career_id) {
+    let career_stats = {};
+    for (stat in career_dict[career_source][career_id].stats) {
+        career_stats[stat] = career_dict[career_source][career_id].stats[stat];
+    }
+    user_character.career_track.push({'source': career_source, 'id': career_id, 'stats': career_stats, 'skills': {}});
+}
+
 function calc_stat_total(user_character)
 {
     // Base stats
