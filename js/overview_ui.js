@@ -6,6 +6,11 @@ $("#ovr_btn_edit_name").on("click", edit_name_modal);
 $("#ovr_edit_name_modal_btn_save").on("click", edit_name_modal_accept);
 
 $("#ovr_btn_edit_trait").on("click", edit_trait_modal);
+$("#ovr_edit_trait_modal_exploit").on("change", edit_trait_modal_exploit);
+$("#ovr_edit_trait_modal_save").on("click", edit_trait_modal_accept);
+
+$("#ovr_btn_edit_defenses").on("click", edit_defenses_modal);
+$("#ovr_edit_defenses_modal_btn_save").on("click", edit_defenses_modal_accept);
 
 $("#ovr_btn_edit_hook").on("click", edit_hook_modal);
 $("#ovr_edit_hook_modal_btn_save").on("click", edit_hook_modal_accept);
@@ -14,12 +19,19 @@ function refresh_overview () {
     let user_character = get_user_character();
     let character_race = race_dict[user_character.race.source][user_character.race.id];
     let character_homeworld = homeworld_dict[user_character.homeworld.source][user_character.homeworld.id];
+    let exploit_source = 'traits';
 
     $("#ovr_name_val").html(user_character.name);
     $("#ovr_race_val").html(character_race.name);
     $("#ovr_homeworld_val").html(character_homeworld.name);
     $("#ovr_trait_val").html('');
+    $("#ovr_trait_val").attr("title", '');
     $("#ovr_hook_val").html(user_character.hook);
+
+    if (user_character.trait) {
+        $("#ovr_trait_val").html(exploit_dict[exploit_source][exploit_source][user_character.trait].name);
+        $("#ovr_trait_val").attr("title", exploit_dict[exploit_source][exploit_source][user_character.trait].desc);
+    }
 
     stat_total = calc_stat_total(user_character);
     for (stat in stat_total) {
@@ -56,6 +68,7 @@ function refresh_overview () {
     $("#ovr_defense_vital").html(derived_stats['Vital Defense']);
 
     enable_tooltips();
+    console.log(user_character);
 }
 
 /////////////////////////
@@ -93,72 +106,41 @@ function edit_name_modal_accept() {
 //////////////////////
 function edit_trait_modal() {
     let user_character = get_user_character();
-    let curr_exploit = null;
+    let exploit_source = 'traits';
 
     $("#ovr_edit_trait_modal_source").empty();
     $("#ovr_edit_trait_modal_source").append($('<option value=traits>Traits</option>'));
-    $("#ovr_edit_trait_modal_source").
-
-    temp_exploits = new Map();
-    for (let exploit in user_character.career_track[selected_career].exploits) {
-        curr_exploit = user_character.career_track[selected_career].exploits[exploit];
-        temp_exploits.set(exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['name'], curr_exploit);
-    }
-    $("#ovr_edit_trait_modal").modal();
-    $("#ovr_edit_trait_modal_source").val("career");
-    edit_trait_modal_source();
-}
-
-function edit_trait_modal_source() {
-    let user_character = get_user_character();
-    let selected_career = parseInt($("#car_career_select").val());
-    let exploit_source = $("#ovr_edit_trait_modal_source").val();
-
     $("#ovr_edit_trait_modal_exploit").empty();
-    if (exploit_source == 'career') {
-        let career_source = user_character.career_track[selected_career].source;
-        let career_id = user_character.career_track[selected_career].id;
-        for (let exploit in exploit_dict[career_source][career_id]) {
-            $("#ovr_edit_trait_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[career_source][career_id][exploit]['name'] + '</option>'));
-        }
-    } else {
-        for (let exploit in exploit_dict[exploit_source][exploit_source]) {
-            $("#ovr_edit_trait_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[exploit_source][exploit_source][exploit]['name'] + '</option>'));
-        }
+
+    for (let exploit in exploit_dict[exploit_source][exploit_source]) {
+        $("#ovr_edit_trait_modal_exploit").append($('<option value=' + exploit + '>' + exploit_dict[exploit_source][exploit_source][exploit]['name'] + '</option>'));
+    }
+
+    $("#ovr_edit_trait_modal").modal();
+
+    if (user_character.trait) {
+        $("#ovr_edit_trait_modal_exploit").val(user_character.trait);
     }
     edit_trait_modal_exploit();
 }
 
 function edit_trait_modal_exploit() {
     let user_character = get_user_character();
-    let selected_career = parseInt($("#car_career_select").val());
-    let exploit_source = $("#ovr_edit_trait_modal_source").val();
+    let exploit_source = 'traits';
     let selected_exploit = $("#ovr_edit_trait_modal_exploit").val();
     
-    if (exploit_source == 'career') {
-        let career_source = user_character.career_track[selected_career].source;
-        let career_id = user_character.career_track[selected_career].id;
-        $("#ovr_edit_trait_modal_exploit_desc").html(exploit_dict[career_source][career_id][selected_exploit]['desc']);
-    } else {
-        $("#ovr_edit_trait_modal_exploit_desc").html(exploit_dict[exploit_source][exploit_source][selected_exploit]['desc']);
-    }
+    $("#ovr_edit_trait_modal_exploit_desc").html(exploit_dict[exploit_source][exploit_source][selected_exploit]['desc']);
 }
 
 function edit_trait_modal_accept() {
     let user_character = get_user_character();
-    let selected_career = parseInt($("#car_career_select").val());
-    let new_career_exploits = [];
-    for (let exploit of temp_exploits.values()) {
-        new_career_exploits.push(exploit);
-    }
-    user_character.career_track[selected_career].exploits = new_career_exploits;
+    let selected_exploit = $("#ovr_edit_trait_modal_exploit").val();
+
+    user_character.trait = selected_exploit;
     save_character(user_character);
     $("#ovr_edit_trait_modal").modal('toggle');
-    refresh_careers();
-    $("#car_career_select").val(String(selected_career));
-    on_career_select();
+    refresh_overview();
 }
-
 
 /////////////////////
 // Edit Hook Modal //
@@ -174,5 +156,50 @@ function edit_hook_modal_accept() {
     user_character.hook = $("#ovr_edit_hook_input").val();
     save_character(user_character);
     $("#ovr_edit_hook_modal").modal('toggle');
+    refresh_overview();
+}
+
+/////////////////////////
+// Edit Defenses Modal //
+/////////////////////////
+function edit_defenses_modal() {
+    let user_character = get_user_character();
+    let skill_total = calc_skill_total(user_character);
+
+    $("#ovr_edit_defenses_modal_melee").empty();
+    $("#ovr_edit_defenses_modal_ranged").empty();
+    $("#ovr_edit_defenses_modal_mental").empty();
+    $("#ovr_edit_defenses_modal_vital").empty();
+
+    $("#ovr_edit_defenses_modal_melee").append('<option value=""></option>');
+    $("#ovr_edit_defenses_modal_ranged").append('<option value=""></option>');
+    $("#ovr_edit_defenses_modal_mental").append('<option value=""></option>');
+    $("#ovr_edit_defenses_modal_vital").append('<option value=""></option>');
+
+    for (skill in skill_total) {
+        $("#ovr_edit_defenses_modal_melee").append('<option value=' + skill + '>' + skill + ' (' + skill_total[skill] + ')</option>');
+        $("#ovr_edit_defenses_modal_ranged").append('<option value=' + skill + '>' + skill + ' (' + skill_total[skill] + ')</option>');
+        $("#ovr_edit_defenses_modal_mental").append('<option value=' + skill + '>' + skill + ' (' + skill_total[skill] + ')</option>');
+        $("#ovr_edit_defenses_modal_vital").append('<option value=' + skill + '>' + skill + ' (' + skill_total[skill] + ')</option>');
+    }
+
+    $("#ovr_edit_defenses_modal_melee").val(user_character.defense_skills.melee);
+    $("#ovr_edit_defenses_modal_ranged").val(user_character.defense_skills.ranged);
+    $("#ovr_edit_defenses_modal_mental").val(user_character.defense_skills.mental);
+    $("#ovr_edit_defenses_modal_vital").val(user_character.defense_skills.vital);
+
+    $("#ovr_edit_defenses_modal").modal();
+}
+
+function edit_defenses_modal_accept() {
+    let user_character = get_user_character();
+
+    user_character.defense_skills.melee = $("#ovr_edit_defenses_modal_melee").val();
+    user_character.defense_skills.ranged = $("#ovr_edit_defenses_modal_ranged").val();
+    user_character.defense_skills.mental = $("#ovr_edit_defenses_modal_mental").val();
+    user_character.defense_skills.vital = $("#ovr_edit_defenses_modal_vital").val();
+
+    save_character(user_character);
+    $("#ovr_edit_defenses_modal").modal('toggle');
     refresh_overview();
 }

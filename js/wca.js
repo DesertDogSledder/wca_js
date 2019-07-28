@@ -88,7 +88,7 @@ function new_character() {
         },
         'career_track': [],
         'notes': '',
-        'trait': {},
+        'trait': null,
         'hook': '',
         'misc_exploits': [],
         'defense_skills': {
@@ -211,6 +211,7 @@ function calc_exploit_total(user_character)
     let exploit_total = {};
     let race_exploits = race_exploits_dict[user_character.race.source][user_character.race.id];
     let curr_exploit = null;
+    let trait_source = 'traits';
 
     for (let exploit in race_exploits) {
         exploit_total[race_exploits[exploit]['name']] = race_exploits[exploit]['desc'];
@@ -226,6 +227,10 @@ function calc_exploit_total(user_character)
     for (exploit in user_character.misc_exploits) {
         curr_exploit = user_character.misc_exploits[exploit];
         exploit_total[exploit_dict[curr_exploit.source][curr_exploit.source][curr_exploit.id]['name']] = exploit_dict[curr_exploit.source][curr_exploit.source][curr_exploit.id]['desc'];
+    }
+
+    if (user_character.trait) {
+        exploit_total[exploit_dict[trait_source][trait_source][user_character.trait]['name']] = exploit_dict[trait_source][trait_source][user_character.trait]['desc']
     }
 
     let sorted_exploit_total = sort_object(exploit_total);
@@ -446,9 +451,9 @@ function calc_derived_stats(user_character)
     derived_stats['Mental Defense'] = Math.max(cha_dice_pool, wil_dice_pool);
     derived_stats['Vital Defense'] = end_dice_pool;
 
-    if (user_character.defense_skills['Melee'] != '' && user_character.defense_skills['Melee'] in skill_total)
+    if (user_character.defense_skills.melee != '' && user_character.defense_skills.melee in skill_total)
     {
-        defense_skills_melee_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Melee']]);
+        defense_skills_melee_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills.melee]);
         // Cap dice pool here
         // var defense_skills_melee_dice_pool = (defense_skills_melee_dice_pool_size <= maxDicePool) ? defense_skills_melee_dice_pool_size : maxDicePool;
 
@@ -457,9 +462,9 @@ function calc_derived_stats(user_character)
 
         derived_stats['Melee Defense'] += defense_skills_melee_dice_pool;
     }
-    if (user_character.defense_skills['Ranged'] != '' && user_character.defense_skills['Ranged'] in skill_total)
+    if (user_character.defense_skills.ranged != '' && user_character.defense_skills.ranged in skill_total)
     {
-        defense_skills_ranged_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Ranged']]);
+        defense_skills_ranged_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills.ranged]);
         // Cap dice pool here
         // var defense_skills_ranged_dice_pool = (defense_skills_ranged_dice_pool_size <= maxDicePool) ? defense_skills_ranged_dice_pool_size : maxDicePool;
 
@@ -468,9 +473,9 @@ function calc_derived_stats(user_character)
 
         derived_stats['Ranged Defense'] += defense_skills_ranged_dice_pool;
     }
-    if (user_character.defense_skills['Mental'] != '' && user_character.defense_skills['Mental'] in skill_total)
+    if (user_character.defense_skills.mental != '' && user_character.defense_skills.mental in skill_total)
     {
-        defense_skills_mental_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Mental']]);
+        defense_skills_mental_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills.mental]);
         // Cap dice pool here
         // var defense_skills_mental_dice_pool = (defense_skills_mental_dice_pool_size <= maxDicePool) ? defense_skills_mental_dice_pool_size : maxDicePool;
 
@@ -479,9 +484,9 @@ function calc_derived_stats(user_character)
 
         derived_stats['Mental Defense'] += defense_skills_mental_dice_pool;
     }
-    if (user_character.defense_skills['Vital'] != '' && user_character.defense_skills['Vital'] in skill_total)
+    if (user_character.defense_skills.vital != '' && user_character.defense_skills.vital in skill_total)
     {
-        defense_skills_vital_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills['Vital']]);
+        defense_skills_vital_dice_pool_size = calc_dice_pool_size(skill_total[user_character.defense_skills.vital]);
         // Cap dice pool here
         // var defense_skills_vital_dice_pool = (defense_skills_vital_dice_pool_size <= maxDicePool) ? defense_skills_vital_dice_pool_size : maxDicePool;
 
