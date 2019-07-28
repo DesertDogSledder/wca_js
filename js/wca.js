@@ -107,8 +107,21 @@ function new_character() {
     localStorage.setItem('user_character', JSON.stringify(user_character));
 }
 
+function load_character(character_json) {
+    try {
+        JSON.parse(character_json);
+        localStorage.setItem('user_character', character_json);
+    } catch (err) {
+        alert(err);
+    }
+}
+
 function save_character(user_character) {
     localStorage.setItem('user_character', JSON.stringify(user_character));
+}
+
+function export_character(user_character) {
+    return JSON.stringify(user_character);
 }
 
 function set_race(user_character, race_source, race_id) {

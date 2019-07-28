@@ -10,7 +10,6 @@ $("#hmw_select_homeworld_modal").on('shown.bs.modal', enable_tooltips);
 
 function refresh_homeworld() {
     let user_character = get_user_character();
-    console.log(homeworld_dict[user_character.homeworld.source][user_character.homeworld.id]);
     $("#hmw_name_val").html(homeworld_dict[user_character.homeworld.source][user_character.homeworld.id].name);
 
     $("#hmw_selected_skills_list").empty();
@@ -18,7 +17,6 @@ function refresh_homeworld() {
         $("#hmw_selected_skills_list").append('<li>' + skill + ' (' + user_character.homeworld.skills[skill] + ')');
     }
 
-    console.log(user_character.homeworld.stats);
     for (stat in user_character.homeworld.stats) {
         $("#hmw_" + stat).html(format_num(user_character.homeworld.stats[stat]));
     }
@@ -38,7 +36,6 @@ function edit_homeworld_skills_modal() {
     }
 
     homeworld_skills = user_character.homeworld.skills;
-    console.log(homeworld_skills);
     
     edit_homeworld_skills_modal_refresh_curr_skills();
 }
@@ -57,7 +54,6 @@ function edit_homeworld_skills_modal_refresh_curr_skills() {
 function edit_homeworld_skills_modal_add() {
     let skill_name = $("#hmw_edit_skills_modal_skill").val().toLowerCase();
     let skill_rank = parseInt($("#hmw_edit_skills_modal_rank").val());
-    // console.log(skill_name + ": " + skill_rank);
 
     if (skill_name != '') {
         // Remove existing skill if setting rank to 0
@@ -71,7 +67,6 @@ function edit_homeworld_skills_modal_add() {
         homeworld_skills = sort_object(homeworld_skills);
         edit_homeworld_skills_modal_refresh_curr_skills();
     }
-    // console.log(homeworld_skills);
 }
 
 function edit_homeworld_skills_modal_remove() {

@@ -22,7 +22,12 @@
       </nav>
       <!--Overview Card-->
       <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><button type="button" class="btn btn-danger" id="ovr_btn_new_character">New Character</button><h5>Overview</h5></div>
+        <div class="card-header">
+          <h5>Overview</h5>
+          <button type="button" class="btn btn-danger" id="ovr_btn_new_character">New Character</button>
+          <button type="button" class="btn btn-warning" id="ovr_btn_load_character">Load Character</button>
+          <button type="button" class="btn btn-success" id="ovr_btn_save_character">Save Character</button>
+        </div>
         <div class="card-body">
           <div class="mb-2">
             <b>Name:</b>
@@ -195,6 +200,74 @@
     </div>
 
     <!--Modals-->
+    <!--New Character-->
+    <div class="modal fade" id="ovr_new_character_modal" tabindex="-1" role="dialog" aria-labelledby="new_character_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovr_new_character_modal_label">Create New Character</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            All data will be lost. Proceed?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovr_new_character_modal_btn_save">New Character</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Load Character-->
+    <div class="modal fade" id="ovr_load_character_modal" tabindex="-1" role="dialog" aria-labelledby="load_character_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovr_load_character_modal_label">Load Character JSON</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="ovr_load_character_json_textarea">Paste the character JSON to load:</label>
+              <textarea class="form-control" id="ovr_load_character_json_textarea"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovr_load_character_modal_btn_load">Load Character</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Save Character-->
+    <div class="modal fade" id="ovr_save_character_modal" tabindex="-1" role="dialog" aria-labelledby="save_character_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovr_save_character_modal_label">Export Character</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="ovr_save_character_json_textarea">Copy and save the following JSON:</label>
+              <textarea readonly class="form-control" id="ovr_save_character_json_textarea"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Edit Name-->
     <div class="modal fade" id="ovr_edit_name_modal" tabindex="-1" role="dialog" aria-labelledby="edit_name_modal" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -311,26 +384,6 @@
       </div>
     </div>
 
-    <!--New Character-->
-    <div class="modal fade" id="ovr_new_character_modal" tabindex="-1" role="dialog" aria-labelledby="new_character_modal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ovr_new_character_modal_label">Create New Character</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            All data will be lost. Proceed?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="ovr_new_character_modal_btn_save">New Character</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -2,6 +2,11 @@
 $("#ovr_btn_new_character").on("click", new_character_modal);
 $("#ovr_new_character_modal_btn_save").on("click", new_character_modal_accept);
 
+$("#ovr_btn_load_character").on("click", load_character_modal);
+$("#ovr_load_character_modal_btn_load").on("click", load_character_modal_accept);
+
+$("#ovr_btn_save_character").on("click", save_character_modal);
+
 $("#ovr_btn_edit_name").on("click", edit_name_modal);
 $("#ovr_edit_name_modal_btn_save").on("click", edit_name_modal_accept);
 
@@ -68,7 +73,6 @@ function refresh_overview () {
     $("#ovr_defense_vital").html(derived_stats['Vital Defense']);
 
     enable_tooltips();
-    console.log(user_character);
 }
 
 /////////////////////////
@@ -82,6 +86,28 @@ function new_character_modal_accept() {
     new_character();
     $("#ovr_new_character_modal").modal('toggle');
     refresh_overview();
+}
+//////////////////////////
+// Load Character Modal //
+//////////////////////////
+function load_character_modal() {
+    $("#ovr_load_character_json_textarea").val('');
+    $("#ovr_load_character_modal").modal();
+}
+
+function load_character_modal_accept() {
+    load_character($("#ovr_load_character_json_textarea").val());
+    $("#ovr_load_character_modal").modal('toggle');
+    refresh_overview();
+}
+
+//////////////////////////
+// Save Character Modal //
+//////////////////////////
+function save_character_modal() {
+    let user_character = get_user_character();
+    $("#ovr_save_character_modal").modal();
+    $("#ovr_save_character_json_textarea").text(export_character(user_character));
 }
 
 /////////////////////
@@ -125,7 +151,6 @@ function edit_trait_modal() {
 }
 
 function edit_trait_modal_exploit() {
-    let user_character = get_user_character();
     let exploit_source = 'traits';
     let selected_exploit = $("#ovr_edit_trait_modal_exploit").val();
     
