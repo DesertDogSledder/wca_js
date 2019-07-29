@@ -32,7 +32,39 @@ var career_dict = {
     'now': career_now_dict,
     'new': career_new_dict,
     'martial_arts': career_ma_dict,
-}
+};
+
+var general_gear_dict = {
+    'general_gear': general_gear_dict
+};
+
+var armor_dict = {
+    'archaic_armor': archaic_armor_dict,
+    'archaic_shields': archaic_shields_dict,
+    'eastern_armor': eastern_armor_dict,
+    'future_armor': future_armor_dict,
+    'future_shields': future_shields_dict
+};
+
+var weapons_dict = {
+    'archaic_axes': archaic_axes_dict,
+    'archaic_gunpowder': archaic_gunpowder_dict,
+    'archaic_misc': archaic_misc_dict,
+    'archaic_polearm': archaic_polearm_dict,
+    'archaic_ranged': archaic_ranged_dict,
+    'archaic_swords': archaic_swords_dict,
+    'eastern_melee': eastern_melee_dict,
+    'future_explosive_ordnance': future_explosive_ordnance_dict,
+    'future_exotic_melee': future_exotic_melee_dict,
+    'future_exotic_ranged': future_exotic_ranged_dict,
+    'future_melee': future_melee_dict,
+    'future_ranged': future_ranged_dict,
+    'laser_swords': laser_swords_dict,
+    'modern_firearms': modern_firearms_dict,
+    'western_handguns': western_handguns_dict,
+    'western_logarms': western_longarms_dict,
+    'ww2_firearms': ww2_firearms_dict
+};
 
 function calc_dice_pool_size(raw_score) {
     var dice_pool_size = 0;
