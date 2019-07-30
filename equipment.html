@@ -49,9 +49,7 @@
                   <th scope="col">Name</th>
                   <th scope="col">Soak</th>
                   <th scope="col">Defense</th>
-                  <th scope="col">Cost</th>
                   <th scope="col">Type</th>
-                  <th scope="col">Weight</th>
                   <th scope="col">Vulnerable</th>
                   <th scope="col">Speed</th>
                   <th scope="col">Special</th>
@@ -62,7 +60,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td id="ovr_strength"></td>
+                  <td id="eqp_armor_name"></td>
                   <td id="ovr_agility"></td>
                   <td id="ovr_endurance"></td>
                   <td id="ovr_intuition"></td>
@@ -72,10 +70,9 @@
                   <td id="ovr_luck"></td>
                   <td id="ovr_reputation"></td>
                   <td id="ovr_magic"></td>
-                  <td id="ovr_chi"></td>
-                  <td id="ovr_psionics"></td>
                 </tr>
               </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -87,7 +84,7 @@
     <!--Modals-->
     <!--Armor Modal-->
     <div class="modal fade" id="eqp_edit_armor_modal" tabindex="-1" role="dialog" aria-labelledby="edit_armor_modal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="eqp_edit_armor_modal_label">Edit Armor</h5>
@@ -97,13 +94,50 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="eqp_edit_armor_modal_source"><b>Source:</b></label>
+              <label for="eqp_edit_armor_modal_source"><b>Category:</b></label>
               <select class="form-control" id="eqp_edit_armor_modal_source">
+                <option value="archaic_armor">Archaic Armor</option>
+                <option value="archaic_shields">Archaic Shields</option>
+                <option value="eastern_armor">Eastern Armor</option>
+                <option value="future_armor">Future Armor</option>
+                <option value="future_shields">Future Shields</option>
               </select>
             </div>
             <div class="form-group">
               <label for="eqp_edit_armor_modal_armor"><b>Armor:</b></label>
               <select class="form-control" id="eqp_edit_armor_modal_armor"></select>
+            </div>
+            <div class="form-group">
+              <table class="table" id="eqp_armor_info">
+                  <thead>
+                    <tr>
+                      <th scope="col">Soak</th>
+                      <th scope="col">Defense</th>
+                      <th scope="col">Cost</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Weight</th>
+                      <th scope="col">Vulnerable</th>
+                      <th scope="col">Speed</th>
+                      <th scope="col">Special</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="eqp_edit_armor_modal_soak"></td>
+                      <td id="eqp_edit_armor_modal_defense"></td>
+                      <td id="eqp_edit_armor_modal_cost"></td>
+                      <td id="eqp_edit_armor_modal_type"></td>
+                      <td id="eqp_edit_armor_modal_weight"></td>
+                      <td id="eqp_edit_armor_modal_vulnerable"></td>
+                      <td id="eqp_edit_armor_modal_speed"></td>
+                      <td id="eqp_edit_armor_modal_special"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+              <label for="eqp_edit_armor_modal_quantity"><b>Quantity:</b></label>
+              <input class="form-control" type="number" id="eqp_edit_armor_modal_quantity">
             </div>
           </div>
           <div class="modal-footer">
@@ -144,6 +178,10 @@
     <script src="js/wca/data/exploits/exploits_careers_now.js"></script>
     <script src="js/wca/data/exploits/exploits_careers_new.js"></script>
     <script src="js/wca/data/exploits/exploits_origins.js"></script>
+
+    <script src="js/wca/data/equipment/armor.js"></script>
+    <script src="js/wca/data/equipment/general_gear.js"></script>
+    <script src="js/wca/data/equipment/weapons.js"></script>
 
     <script src="js/wca/lib/helpers.js"></script>
     <script src="js/wca.js"></script>
