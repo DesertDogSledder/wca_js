@@ -1,7 +1,11 @@
 // Event bindings
+$("#eqp_btn_edit_general_gear").on("click", edit_general_gear_modal);
+$("#eqp_edit_general_gear_modal_gear").on("change", edit_general_gear_modal_gear);
+$("#eqp_edit_general_gear_modal_btn_save").on("click", edit_general_gear_modal_accept);
+
 $("#eqp_btn_edit_weapons").on("click", edit_weapons_modal);
 $("#eqp_edit_weapons_modal_source").on("change", edit_weapons_modal_source);
-$("#eqp_edit_weapons_modal_armor").on("change", edit_weapons_modal_armor);
+$("#eqp_edit_weapons_modal_weapon").on("change", edit_weapons_modal_weapon);
 $("#eqp_edit_weapons_modal_btn_save").on("click", edit_weapons_modal_accept);
 
 $("#eqp_btn_edit_armor").on("click", edit_armor_modal);
@@ -18,6 +22,26 @@ function refresh_equipment() {
     let armor_val = '';
     let quantity = 0;
 
+    $("#eqp_general_gear_table tbody").html('');
+    for (item in user_character.equipment.general_gear) {
+        source_val = user_character.equipment.general_gear[item].source;
+        weapon_val = user_character.equipment.general_gear[item].id;
+        quantity = user_character.equipment.general_gear[item].quantity;
+        curr_item = general_gear_dict[source_val][weapon_val];
+
+        table_row = '<tr>' +
+        '<td>' + curr_item.name + '</td>' +
+        '<td>' + curr_item.tech_level + '(' + curr_item.genre + ')' + '</td>' +
+        '<td>' + quantity + '</td>' +
+        '<td>' + (quantity * curr_item.cost) + '</td>' +
+        '<td>' + (quantity * curr_item.weight) + '</td>' +
+        '<td>' + '<button class="btn btn-danger" id="btn_general_gear_del_' + item + '">❌</button>' + '</td>' +
+        '</tr>';
+
+        $("#eqp_general_gear_table tbody").append(table_row);
+        $("#btn_general_gear_del_" + item).on("click", {'item_index': item}, remove_gear);
+    }
+
     $("#eqp_weapons_table tbody").html('');
     for (item in user_character.equipment.weapons) {
         source_val = user_character.equipment.weapons[item].source;
@@ -33,7 +57,7 @@ function refresh_equipment() {
         '<td>' + curr_item.size + '</td>' +
         '<td>' + curr_item.special + '</td>' +
         '<td>' + curr_item.tech_level + '(' + curr_item.genre + ')' + '</td>' +
-        '<td>' + curr_item.quantity + '</td>' +
+        '<td>' + quantity + '</td>' +
         '<td>' + (quantity * curr_item.cost) + '</td>' +
         '<td>' + (quantity * curr_item.weight) + '</td>' +
         '<td>' + '<button class="btn btn-danger" id="btn_weapon_del_' + item + '">❌</button>' + '</td>' +
@@ -58,7 +82,7 @@ function refresh_equipment() {
         '<td>' + curr_item.vulnerable + '</td>' +
         '<td>' + curr_item.speed + '</td>' +
         '<td>' + curr_item.special + '</td>' +
-        '<td>' + curr_item.quantity + '</td>' +
+        '<td>' + quantity + '</td>' +
         '<td>' + (quantity * curr_item.cost) + '</td>' +
         '<td>' + (quantity * curr_item.weight) + '</td>' +
         '<td>' + '<button class="btn btn-danger" id="btn_armor_del_' + item + '">❌</button>' + '</td>' +
@@ -83,6 +107,54 @@ function remove_weapon(e) {
     refresh_equipment();
 }
 
+function remove_gear(e) {
+    let user_character = get_user_character();
+    user_character.equipment.general_gear.splice(e.data.item_index, 1);
+    save_character(user_character);
+    refresh_equipment();
+}
+
+/////////////////////////////
+// Edit General Gear Modal //
+/////////////////////////////
+function edit_general_gear_modal() {
+    let source_val = 'general_gear';
+    $("#eqp_edit_general_gear_modal_gear").empty();
+    for (let item in general_gear_dict[source_val]) {
+        $("#eqp_edit_general_gear_modal_gear").append('<option value=' + item + '>' + general_gear_dict[source_val][item].name + '</option>');
+    }
+    $("#eqp_edit_general_gear_modal_quantity").val(1);
+    $("#eqp_edit_general_gear_modal").modal();
+    edit_general_gear_modal_gear();
+}
+
+function edit_general_gear_modal_gear() {
+    let source_val = 'general_gear';
+    let gear_val = $("#eqp_edit_general_gear_modal_gear").val();
+    let selected_gear = general_gear_dict[source_val][gear_val];
+    
+    $("#eqp_edit_general_gear_modal_cost").text(selected_gear.cost);
+    $("#eqp_edit_general_gear_modal_weight").text(selected_gear.weight);
+    $("#eqp_edit_general_gear_modal_tech_level_genre").text(selected_gear.tech_level + '(' + selected_gear.genre + ')');
+}
+
+function edit_general_gear_modal_accept() {
+    let user_character = get_user_character();
+    let source_val = 'general_gear';
+    let gear_val = $("#eqp_edit_general_gear_modal_gear").val();
+
+    user_character.equipment.general_gear.push({
+        'source': source_val,
+        'id': gear_val,
+        'quantity': $("#eqp_edit_general_gear_modal_quantity").val()
+    });
+
+    save_character(user_character);
+
+    $("#eqp_edit_general_gear_modal").modal('toggle');
+    refresh_equipment();
+}
+
 ////////////////////////
 // Edit Weapons Modal //
 ////////////////////////
@@ -94,7 +166,7 @@ function edit_weapons_modal() {
 
 function edit_weapons_modal_source() {
     let source_val = $("#eqp_edit_weapons_modal_source").val();
-    $("#eqp_edit_weapons_modal_armor").empty()
+    $("#eqp_edit_weapons_modal_weapon").empty()
     for (let item in weapons_dict[source_val]) {
         $("#eqp_edit_weapons_modal_weapon").append('<option value=' + item + '>' + weapons_dict[source_val][item].name + '</option>');
     }
@@ -104,7 +176,7 @@ function edit_weapons_modal_source() {
 function edit_weapons_modal_weapon() {
     let source_val = $("#eqp_edit_weapons_modal_source").val();
     let weapon_val = $("#eqp_edit_weapons_modal_weapon").val();
-    selected_weapon = weapons_dict[source_val][weapon_val];
+    let selected_weapon = weapons_dict[source_val][weapon_val];
 
     $("#eqp_edit_weapons_modal_damage").text(selected_weapon.damage);
     $("#eqp_edit_weapons_modal_range").text(selected_weapon.range);
@@ -120,20 +192,6 @@ function edit_weapons_modal_accept() {
     let user_character = get_user_character();
     let source_val = $("#eqp_edit_weapons_modal_source").val();
     let weapon_val = $("#eqp_edit_weapons_modal_weapon").val();
-    selected_weapon = weapons_dict[source_val][weapon_val];
-
-    // user_character.equipment.weapons.push({
-    //     'name': selected_weapon.name,
-    //     'soak': selected_weapon.soak,
-    //     'defense': selected_weapon.defense,
-    //     'cost': selected_weapon.cost,
-    //     'type': selected_weapon.type,
-    //     'weight': selected_weapon.weight,
-    //     'vulnerable': selected_weapon.vulnerable,
-    //     'speed': selected_weapon.speed,
-    //     'special': selected_weapon.special,
-    //     'quantity': $("#eqp_edit_weapons_modal_quantity").val()
-    // });
 
     user_character.equipment.weapons.push({
         'source': source_val,
@@ -168,7 +226,7 @@ function edit_armor_modal_source() {
 function edit_armor_modal_armor() {
     let source_val = $("#eqp_edit_armor_modal_source").val();
     let armor_val = $("#eqp_edit_armor_modal_armor").val();
-    selected_armor = armor_dict[source_val][armor_val];
+    let selected_armor = armor_dict[source_val][armor_val];
 
     $("#eqp_edit_armor_modal_soak").text(selected_armor.soak);
     $("#eqp_edit_armor_modal_defense").text(selected_armor.defense);
@@ -184,20 +242,6 @@ function edit_armor_modal_accept() {
     let user_character = get_user_character();
     let source_val = $("#eqp_edit_armor_modal_source").val();
     let armor_val = $("#eqp_edit_armor_modal_armor").val();
-    selected_armor = armor_dict[source_val][armor_val];
-
-    // user_character.equipment.armor.push({
-    //     'name': selected_armor.name,
-    //     'soak': selected_armor.soak,
-    //     'defense': selected_armor.defense,
-    //     'cost': selected_armor.cost,
-    //     'type': selected_armor.type,
-    //     'weight': selected_armor.weight,
-    //     'vulnerable': selected_armor.vulnerable,
-    //     'speed': selected_armor.speed,
-    //     'special': selected_armor.special,
-    //     'quantity': $("#eqp_edit_armor_modal_quantity").val()
-    // });
 
     user_character.equipment.armor.push({
         'source': source_val,

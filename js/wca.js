@@ -224,7 +224,6 @@ function calc_stat_total(user_character)
 
 function calc_skill_total(user_character)
 {
-    console.log('calc_skill_total called')
     let skill_total = {};
     // Racial skill tally
     for (skill in user_character.race.skills)

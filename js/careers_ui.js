@@ -30,6 +30,7 @@ $("#car_edit_stats_modal_save").on("click", edit_career_stats_modal_accept);
 function refresh_careers() {
     let user_character = get_user_character();
     let stat_names = ['strength', 'agility', 'endurance', 'intuition', 'logic', 'willpower', 'charisma', 'luck', 'reputation', 'magic', 'chi', 'psionics']
+    let curr_career = null;
     
     for (stat in stat_names) {
         $("#car_" + stat).html('');
@@ -46,7 +47,7 @@ function refresh_careers() {
         // $("#car_btn_remove_career").prop("disabled", false);
     }
 
-    for (career in user_character.career_track) {
+    for (let career in user_character.career_track) {
         curr_career = user_character.career_track[career];
         $("#car_career_select").append($('<option>', {
             value: career,

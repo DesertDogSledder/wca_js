@@ -10,6 +10,9 @@ $("#ovr_btn_save_character").on("click", save_character_modal);
 $("#ovr_btn_edit_name").on("click", edit_name_modal);
 $("#ovr_edit_name_modal_btn_save").on("click", edit_name_modal_accept);
 
+$("#ovr_btn_edit_age").on("click", edit_age_modal);
+$("#ovr_edit_age_modal_btn_save").on("click", edit_age_modal_accept);
+
 $("#ovr_btn_edit_trait").on("click", edit_trait_modal);
 $("#ovr_edit_trait_modal_exploit").on("change", edit_trait_modal_exploit);
 $("#ovr_edit_trait_modal_save").on("click", edit_trait_modal_accept);
@@ -27,6 +30,7 @@ function refresh_overview () {
     let exploit_source = 'traits';
 
     $("#ovr_name_val").html(user_character.name);
+    $("#ovr_age_val").html(user_character.age_descriptor);
     $("#ovr_race_val").html(character_race.name);
     $("#ovr_homeworld_val").html(character_homeworld.name);
     $("#ovr_trait_val").html('');
@@ -87,6 +91,7 @@ function new_character_modal_accept() {
     $("#ovr_new_character_modal").modal('toggle');
     refresh_overview();
 }
+
 //////////////////////////
 // Load Character Modal //
 //////////////////////////
@@ -124,6 +129,23 @@ function edit_name_modal_accept() {
     user_character.name = $("#ovr_edit_name_input").val();
     save_character(user_character);
     $("#ovr_edit_name_modal").modal('toggle');
+    refresh_overview();
+}
+
+/////////////////////
+// Edit Age Modal //
+/////////////////////
+function edit_age_modal() {
+    let user_character = get_user_character();
+    $("#ovr_edit_age_modal").modal();
+    $("#ovr_edit_age_input").val(user_character.age_descriptor);
+}
+
+function edit_age_modal_accept() {
+    let user_character = get_user_character();
+    user_character.age_descriptor = $("#ovr_edit_age_input").val().toLowerCase();
+    save_character(user_character);
+    $("#ovr_edit_age_modal").modal('toggle');
     refresh_overview();
 }
 

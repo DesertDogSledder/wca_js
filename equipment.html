@@ -22,7 +22,7 @@
       </nav>
 
       <div class="card bg-light border-dark mb-3">
-        <div class="card-header"><h5>General Gear</h5><button type="button" class="btn btn-warning" id="eqp_btn_edit_gear">✏️</button></div>
+        <div class="card-header"><h5>General Gear</h5><button type="button" class="btn btn-warning" id="eqp_btn_edit_general_gear">✏️</button></div>
         <div class="card-body">
           <div class="mb-2">
             <table class="table" id="eqp_general_gear_table">
@@ -33,6 +33,7 @@
                   <th scope="col">Quantity</th>
                   <th scope="col">Total Cost</th>
                   <th scope="col">Total Weight</th>
+                  <th scope="col">Delete?</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,11 +55,12 @@
                   <th scope="col">Range</th>
                   <th scope="col">Type</th>
                   <th scope="col">Size</th>
-                  <th scope="col">Tech Level (Genre)</th>
                   <th scope="col">Special</th>
+                  <th scope="col">Tech Level (Genre)</th>
                   <th scope="col">Quantity</th>
                   <th scope="col">Total Cost</th>
                   <th scope="col">Total Weight</th>
+                  <th scope="col">Delete?</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,6 +87,7 @@
                   <th scope="col">Quantity</th>
                   <th scope="col">Total Cost</th>
                   <th scope="col">Total Weight</th>
+                  <th scope="col">Delete?</th>
                 </tr>
               </thead>
               <tbody>
@@ -99,6 +102,52 @@
     </div>
 
     <!--Modals-->
+    <!--General Gear Modal-->
+    <div class="modal fade" id="eqp_edit_general_gear_modal" tabindex="-1" role="dialog" aria-labelledby="edit_general_gear_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eqp_edit_general_gear_modal_label">Add General Gear</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="eqp_edit_general_gear_modal_gear"><b>Armor:</b></label>
+              <select class="form-control" id="eqp_edit_general_gear_modal_gear"></select>
+            </div>
+            <div class="form-group">
+              <table class="table" id="eqp_general_gear_info">
+                  <thead>
+                    <tr>
+                      <th scope="col">Cost</th>
+                      <th scope="col">Weight</th>
+                      <th scope="col">Tech Level (Genre)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="eqp_edit_general_gear_modal_cost"></td>
+                      <td id="eqp_edit_general_gear_modal_weight"></td>
+                      <td id="eqp_edit_general_gear_modal_tech_level_genre"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+              <label for="eqp_edit_general_gear_modal_quantity"><b>Quantity:</b></label>
+              <input class="form-control" type="number" id="eqp_edit_general_gear_modal_quantity" min="1", value="1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="eqp_edit_general_gear_modal_btn_save">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Weapons Modal-->
     <div class="modal fade" id="eqp_edit_weapons_modal" tabindex="-1" role="dialog" aria-labelledby="edit_weapons_modal" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -133,32 +182,32 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="eqp_edit_weapons_modal_armor"><b>Armor:</b></label>
-              <select class="form-control" id="eqp_edit_weapons_modal_armor"></select>
+              <label for="eqp_edit_weapons_modal_weapon"><b>Armor:</b></label>
+              <select class="form-control" id="eqp_edit_weapons_modal_weapon"></select>
             </div>
             <div class="form-group">
               <table class="table" id="eqp_armor_info">
                   <thead>
                     <tr>
-                      <th scope="col">Soak</th>
-                      <th scope="col">Defense</th>
+                      <th scope="col">Damage</th>
+                      <th scope="col">Range</th>
                       <th scope="col">Cost</th>
                       <th scope="col">Type</th>
+                      <th scope="col">Size</th>
                       <th scope="col">Weight</th>
-                      <th scope="col">Vulnerable</th>
-                      <th scope="col">Speed</th>
+                      <th scope="col">Tech Level (Genre)</th>
                       <th scope="col">Special</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td id="eqp_edit_weapons_modal_soak"></td>
-                      <td id="eqp_edit_weapons_modal_defense"></td>
+                      <td id="eqp_edit_weapons_modal_damage"></td>
+                      <td id="eqp_edit_weapons_modal_range"></td>
                       <td id="eqp_edit_weapons_modal_cost"></td>
                       <td id="eqp_edit_weapons_modal_type"></td>
+                      <td id="eqp_edit_weapons_modal_size"></td>
                       <td id="eqp_edit_weapons_modal_weight"></td>
-                      <td id="eqp_edit_weapons_modal_vulnerable"></td>
-                      <td id="eqp_edit_weapons_modal_speed"></td>
+                      <td id="eqp_edit_weapons_modal_tech_level_genre"></td>
                       <td id="eqp_edit_weapons_modal_special"></td>
                     </tr>
                   </tbody>
@@ -176,6 +225,7 @@
         </div>
       </div>
     </div>
+
     <!--Armor Modal-->
     <div class="modal fade" id="eqp_edit_armor_modal" tabindex="-1" role="dialog" aria-labelledby="edit_armor_modal" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">

@@ -27,12 +27,18 @@
           <button type="button" class="btn btn-danger" id="ovr_btn_new_character">New Character</button>
           <button type="button" class="btn btn-warning" id="ovr_btn_load_character">Load Character</button>
           <button type="button" class="btn btn-success" id="ovr_btn_save_character">Save Character</button>
+          <a href="character_sheet.html" target="_blank" class="btn btn-info" id="ovr_btn_character_sheet">View Character Sheet</a>
         </div>
         <div class="card-body">
           <div class="mb-2">
             <b>Name:</b>
-            <span id=ovr_name_val></span>
+            <span id="ovr_name_val"></span>
             <button type="button" class="btn btn-warning" id="ovr_btn_edit_name">✏️</button>
+          </div>
+          <div class="mb-2">
+            <b>Age:</b>
+            <span id="ovr_age_val"></span>
+            <button type="button" class="btn btn-warning" id="ovr_btn_edit_age">✏️</button>
           </div>
           <div class="mb-2">
             <b>Race:</b>
@@ -155,7 +161,7 @@
         </div>
       </div>
 
-      <div class="card bg-light border-dark mb-3" id="ovr_homeworld_stats_div">
+      <div class="card bg-light border-dark mb-3" id="ovr_total_stats_div">
         <div class="card-header"><h5>Stats</h5></div>
         <div class="card-body">
           <div class="mb-2">
@@ -289,6 +295,27 @@
       </div>
     </div>
 
+    <div class="modal fade" id="ovr_edit_age_modal" tabindex="-1" role="dialog" aria-labelledby="edit_age_modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ovr_edit_age_modal_label">Edit Age</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="ovr_edit_age_input">Enter an age descriptor (e.g. young, old, adult)</label>
+            <input type="text" id="ovr_edit_age_input">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="ovr_edit_age_modal_btn_save">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Edit Trait-->
     <div class="modal fade" id="ovr_edit_trait_modal" tabindex="-1" role="dialog" aria-labelledby="edit_exploits_modal" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -414,6 +441,10 @@
     <script src="js/wca/data/exploits/exploits_careers_now.js"></script>
     <script src="js/wca/data/exploits/exploits_careers_new.js"></script>
     <script src="js/wca/data/exploits/exploits_origins.js"></script>
+
+    <script src="js/wca/data/equipment/armor.js"></script>
+    <script src="js/wca/data/equipment/general_gear.js"></script>
+    <script src="js/wca/data/equipment/weapons.js"></script>
 
     <script src="js/wca/lib/helpers.js"></script>
     <script src="js/wca.js"></script>

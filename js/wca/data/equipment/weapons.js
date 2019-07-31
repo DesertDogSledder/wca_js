@@ -284,7 +284,7 @@ var archaic_axes_dict = {
         "genre": "A",
         "special": "-"
     },
-    "shepherd\u2019s_axe": {
+    "shepherds_axe": {
         "name": "Shepherd\u2019s axe",
         "damage": "1d6+3",
         "range": "-",
@@ -685,7 +685,7 @@ var archaic_misc_dict = {
         "genre": "A",
         "special": "-"
     },
-    "flail_footman\u2019s_(ball_and_chain)": {
+    "flail_footmans_(ball_and_chain)": {
         "name": "Flail, footman\u2019s (ball-and-chain)",
         "damage": "2d6",
         "range": "-",
@@ -699,7 +699,7 @@ var archaic_misc_dict = {
         "genre": "A",
         "special": "-"
     },
-    "flail_horseman\u2019s": {
+    "flail_horsemans": {
         "name": "Flail, horseman\u2019s",
         "damage": "2d6+4",
         "range": "-",
@@ -797,7 +797,7 @@ var archaic_misc_dict = {
         "genre": "A",
         "special": "Trap"
     },
-    "mace_footman\u2019s": {
+    "mace_footmans": {
         "name": "Mace, footman\u2019s",
         "damage": "2d6+2",
         "range": "-",
@@ -811,7 +811,7 @@ var archaic_misc_dict = {
         "genre": "A",
         "special": "-"
     },
-    "mace_horseman\u2019s": {
+    "mace_horsemans": {
         "name": "Mace, horseman\u2019s",
         "damage": "2d6+4",
         "range": "-",
@@ -1023,7 +1023,7 @@ var archaic_misc_dict = {
         "genre": "A",
         "special": "Reach, Trap"
     },
-    "whip_cat_o\u2019_nine_tails": {
+    "whip_cat_o_nine_tails": {
         "name": "Whip, cat-o\u2019-nine-tails",
         "damage": "1d6",
         "range": "-",
@@ -4600,7 +4600,7 @@ var western_longarms_dict = {
         "genre": "A",
         "special": "Single"
     },
-    "harper\u2019s_ferry_rifle": {
+    "harpers_ferry_rifle": {
         "name": "Harper\u2019s Ferry Rifle",
         "damage": "3d6",
         "range": "14",

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>WOIN Character Assistant</title>
+  </head>
+  <body onload=refresh_character_sheet()>
+    <div class="container">
+      <!-- <nav class="nav nav-tabs">
+        <a href="overview.html" class="nav-item nav-link active">Overview</a>
+        <a href="race.html" class="nav-item nav-link">Race</a>
+        <a href="homeworld.html" class="nav-item nav-link">Homeworld</a>
+        <a href="careers.html" class="nav-item nav-link">Careers</a>
+        <a href="exploits.html" class="nav-item nav-link">Exploits</a>
+        <a href="equipment.html" class="nav-item nav-link">Equipment</a>
+      </nav> -->
+
+      <div class="jumbotron">
+        <h1 class="display-4" id="cs_name_val">Hello, world!</h1>
+        <p class="lead" id="cs_subtitle_val">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      </div>
+
+      <div class="card bg-light border-dark mb-3" id="cs_total_stats_div">
+        <div class="card-header"><h5>Attributes</h5></div>
+        <div class="card-body">
+          <div class="mb-2">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">STR</th>
+                  <th scope="col">AGI</th>
+                  <th scope="col">END</th>
+                  <th scope="col">INT</th>
+                  <th scope="col">LOG</th>
+                  <th scope="col">WIL</th>
+                  <th scope="col">CHA</th>
+                  <th scope="col">LUC</th>
+                  <th scope="col">REP</th>
+                  <th scope="col">MAG</th>
+                  <th scope="col">CHI</th>
+                  <th scope="col">PSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="cs_strength"></td>
+                  <td id="cs_agility"></td>
+                  <td id="cs_endurance"></td>
+                  <td id="cs_intuition"></td>
+                  <td id="cs_logic"></td>
+                  <td id="cs_willpower"></td>
+                  <td id="cs_charisma"></td>
+                  <td id="cs_luck"></td>
+                  <td id="cs_reputation"></td>
+                  <td id="cs_magic"></td>
+                  <td id="cs_chi"></td>
+                  <td id="cs_psionics"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+      <!--Derived Statistics Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Derived Statistics</h5></div>
+        <div class="card-body">
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Health</h5></div>
+            <div class="card-body">
+              <div id="cs_health_info"></div>
+            </div>
+          </div>
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Initiative</h5></div>
+            <div class="card-body">
+              <div id="cs_initiative_info"></div>
+            </div>
+          </div>
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Movement</h5></div>
+            <div class="card-body">
+              <div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Speed</th>
+                      <td id="cs_movement_speed"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Climb</th>
+                      <td id="cs_movement_climb"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Swim</th>
+                      <td id="cs_movement_swim"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Zero/Low/High-G</th>
+                      <td id="cs_movement_g"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">V. Jump (Standing/Running)</th>
+                      <td id="cs_movement_vertical_jump"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">H. Jump (Standing/Running)</th>
+                      <td id="cs_movement_horizontal_jump"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Carry</th>
+                      <td id="cs_movement_carry"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Defenses</h5></div>
+            <div class="card-body">
+              <div>
+                <table class="table">
+                  <tr>
+                    <th scope="row">Melee</th>
+                    <td id="cs_defense_melee"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ranged</th>
+                    <td id="cs_defense_ranged"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mental</th>
+                    <td id="cs_defense_mental"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Vital</th>
+                    <td id="cs_defense_vital"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Skills Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Skills</h5></div>
+        <div class="card-body"><ul id="cs_skill_list"></ul></div>
+      </div>
+    
+      <!--Exploits Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Exploits</h5></div>
+        <div class="card-body"><ul id="cs_exploit_list"></ul></div>
+      </div>
+
+      <!--Careers Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Life Path</h5></div>
+        <div class="card-body"><ol id="cs_career_list"></ol></div>
+      </div>
+
+
+      <!--Equipment Card-->
+      <div class="card bg-light border-dark mb-3">
+        <div class="card-header"><h5>Equipment</h5></div>
+        <div class="card-body">
+          <!--General Gear Card-->
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>General Gear</h5></div>
+            <div class="card-body">
+              <table class="table" id="cs_general_gear_table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Tech Level (Genre)</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Total Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--Weapons Card-->
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Weapons</h5></div>
+            <div class="card-body">
+              <table class="table" id="cs_weapons_table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Damage</th>
+                    <th scope="col">Range</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Special</th>
+                    <th scope="col">Tech Level (Genre)</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Total Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--Armor Card-->
+          <div class="card bg-light border-dark mb-3">
+            <div class="card-header"><h5>Armor</h5></div>
+            <div class="card-body">
+              <table class="table" id="cs_armor_table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Soak</th>
+                    <th scope="col">Defense</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Vulnerable</th>
+                    <th scope="col">Speed</th>
+                    <th scope="col">Special</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Total Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--End of container-->
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="js/wca/data/careers/careers_martial_arts.js"></script>
+    <script src="js/wca/data/careers/careers_new.js"></script>
+    <script src="js/wca/data/careers/careers_now.js"></script>
+    <script src="js/wca/data/careers/careers_old.js"></script>
+    <script src="js/wca/data/careers/origins.js"></script>
+
+    <script src="js/wca/data/races/races_new.js"></script>
+    <script src="js/wca/data/races/races_now.js"></script>
+    <script src="js/wca/data/races/races_old.js"></script>
+
+    <script src="js/wca/data/homeworlds/homeworlds_new.js"></script>
+
+    <script src="js/wca/data/exploits/exploits_android.js"></script>
+    <script src="js/wca/data/exploits/exploits_psionic.js"></script>
+    <script src="js/wca/data/exploits/exploits_traits.js"></script>
+    <script src="js/wca/data/exploits/exploits_universal.js"></script>
+    <script src="js/wca/data/exploits/exploits_races_old.js"></script>
+    <script src="js/wca/data/exploits/exploits_races_now.js"></script>
+    <script src="js/wca/data/exploits/exploits_races_new.js"></script>
+    <script src="js/wca/data/exploits/exploits_careers_martial_arts.js"></script>
+    <script src="js/wca/data/exploits/exploits_careers_old.js"></script>
+    <script src="js/wca/data/exploits/exploits_careers_now.js"></script>
+    <script src="js/wca/data/exploits/exploits_careers_new.js"></script>
+    <script src="js/wca/data/exploits/exploits_origins.js"></script>
+
+    <script src="js/wca/data/equipment/armor.js"></script>
+    <script src="js/wca/data/equipment/general_gear.js"></script>
+    <script src="js/wca/data/equipment/weapons.js"></script>
+
+    <script src="js/wca/lib/helpers.js"></script>
+    <script src="js/wca.js"></script>
+    <script src="js/overview_ui.js"></script>
+    <script src="js/race_ui.js"></script>
+    <script src="js/homeworld_ui.js"></script>
+    <script src="js/careers_ui.js"></script>
+    <script src="js/exploits_ui.js"></script>
+    <script src="js/equipment_ui.js"></script>
+    <script src="js/character_sheet_ui.js"></script>
+  </body>
+</html>
