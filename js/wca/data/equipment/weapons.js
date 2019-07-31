@@ -1038,7 +1038,7 @@ var archaic_misc_dict = {
         "special": "Reach"
     }
 };
-var archaic_polearm_dict = {
+var archaic_polearms_dict = {
     "bardiche": {
         "name": "Bardiche",
         "damage": "2d6",

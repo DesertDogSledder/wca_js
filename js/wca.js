@@ -50,7 +50,7 @@ var weapons_dict = {
     'archaic_axes': archaic_axes_dict,
     'archaic_gunpowder': archaic_gunpowder_dict,
     'archaic_misc': archaic_misc_dict,
-    'archaic_polearm': archaic_polearm_dict,
+    'archaic_polearms': archaic_polearms_dict,
     'archaic_ranged': archaic_ranged_dict,
     'archaic_swords': archaic_swords_dict,
     'eastern_melee': eastern_melee_dict,
@@ -62,7 +62,7 @@ var weapons_dict = {
     'laser_swords': laser_swords_dict,
     'modern_firearms': modern_firearms_dict,
     'western_handguns': western_handguns_dict,
-    'western_logarms': western_longarms_dict,
+    'western_longarms': western_longarms_dict,
     'ww2_firearms': ww2_firearms_dict
 };
 
@@ -130,7 +130,11 @@ function new_character() {
             'vital': '',
         },
         'age_descriptor': 'unset',
-        'equipment': [],
+        'equipment': {
+            'armor': [],
+            'general_gear': [],
+            'weapons': [],
+        },
     };
 
     set_race(user_character, 'new', 'race_new_human');
