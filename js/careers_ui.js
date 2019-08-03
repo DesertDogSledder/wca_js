@@ -115,7 +115,6 @@ function on_career_select() {
 
         for (exploit in user_character.career_track[selected_career].exploits) {
             curr_exploit = user_character.career_track[selected_career].exploits[exploit];
-            console.log(curr_exploit);
             $("#car_exploits_list").append("<li data-toggle='tooltip' data-placement='left' title=\"" + exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['desc'] + "\">" + exploit_dict[curr_exploit.source1][curr_exploit.source2][curr_exploit.id]['name'] + "</li>")
         }
 
@@ -351,7 +350,7 @@ function edit_career_skills_modal() {
     $("#car_edit_skills_modal").modal();
     $("#car_edit_skills_modal_avail_skills").html('');
     $("#car_edit_skills_modal_skill").val('');
-    $("#car_edit_skills_modal_rank").val(0);
+    $("#car_edit_skills_modal_rank").val(1);
     
     for (skill in character_career.available_skills) {
         $("#car_edit_skills_modal_avail_skills").append('<li>' + character_career.available_skills[skill] + '</li>');

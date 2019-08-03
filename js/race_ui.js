@@ -86,12 +86,6 @@ function race_modal_accept() {
     let race_val = $("#rce_select_race_modal_race").val();
     let race_source_val = $("#rce_select_race_modal_source").val();
     set_race(user_character, race_source_val, race_val);
-    // user_character.race.source = $("#rce_select_race_modal_source").val();
-    // user_character.race.id = $("#rce_select_race_modal_race").val();
-    // for (stat in user_character.race.stats) {
-    //     // user_character.race.stats[stat] = $("#rce_select_race_modal" + stat.charAt(0).toUpperCase() + stat.slice(1)).val();
-    //     user_character.race.stats[stat] = race_dict[source_val][race_val].stats[stat];
-    // }
     save_character(user_character);
     $("#rce_select_race_modal").modal('toggle');
     refresh_race();
@@ -117,7 +111,7 @@ function edit_race_skills_modal() {
     $("#rce_edit_skills_modal").modal();
     $("#rce_edit_skills_modal_avail_skills").html('');
     $("#rce_edit_skills_modal_skill").val('');
-    $("#rce_edit_skills_modal_rank").val(0);
+    $("#rce_edit_skills_modal_rank").val(1);
     
     for (skill in character_race.available_skills) {
         $("#rce_edit_skills_modal_avail_skills").append('<li>' + character_race.available_skills[skill] + '</li>');

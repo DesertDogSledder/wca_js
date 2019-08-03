@@ -1,12 +1,14 @@
 var homeworld_skills = {};
 
 // Event bindings
+$("#hmw_btn_edit_homeworld").on("click", select_homeworld_modal);
+$("#hmw_select_homeworld_modal_homeworld").on("change", select_homeworld_modal_homeworld);
+$("#hmw_select_homeworld_modal_save").on("click", select_homeworld_modal_accept);
+
 $("#hmw_btn_edit_skills").on("click", edit_homeworld_skills_modal);
 $("#hmw_edit_skils_modal_add").on("click", edit_homeworld_skills_modal_add);
 $("#hmw_edit_skils_modal_remove").on("click", edit_homeworld_skills_modal_remove);
 $("#hmw_edit_skills_modal_save").on("click", edit_homeworld_skills_modal_accept);
-
-$("#hmw_select_homeworld_modal").on('shown.bs.modal', enable_tooltips);
 
 function refresh_homeworld() {
     let user_character = get_user_character();
@@ -23,13 +25,54 @@ function refresh_homeworld() {
     enable_tooltips();
 }
 
+//////////////////////////
+// Edit Homeworld Modal //
+//////////////////////////
+function select_homeworld_modal() {
+    let source_val = $("#hmw_select_homeworld_modal_source").val();
+    $("#hmw_select_homeworld_modal_homeworld").empty();
+    for (let homeworld in homeworld_dict[source_val]) {
+        $("#hmw_select_homeworld_modal_homeworld").append('<option value=' + homeworld + '>' + homeworld_dict[source_val][homeworld].name + '</option>');
+   }
+    $("#hmw_select_homeworld_modal").modal();
+    select_homeworld_modal_homeworld();
+}
+
+function select_homeworld_modal_homeworld() {
+    let source_val = $("#hmw_select_homeworld_modal_source").val();
+    let homeworld_val = $("#hmw_select_homeworld_modal_homeworld").val();
+    let curr_homeworld = homeworld_dict[source_val][homeworld_val];
+    $("#hmw_select_homeworld_modal_skills").html('');
+    for (let skill in curr_homeworld.available_skills) {
+        $("#hmw_select_homeworld_modal_skills").append('<li>' + curr_homeworld.available_skills[skill] + '</li>');
+    }
+    for (let stat in curr_homeworld.stats) {
+        $("#hmw_select_homeworld_modal_" + stat).text(format_num(curr_homeworld.stats[stat]));
+    }
+}
+
+function select_homeworld_modal_accept() {
+    let user_character = get_user_character();
+    let source_val = $("#hmw_select_homeworld_modal_source").val();
+    let homeworld_val = $("#hmw_select_homeworld_modal_homeworld").val();
+    
+    set_homeworld(user_character, source_val, homeworld_val);
+    save_character(user_character);
+
+    $("#hmw_select_homeworld_modal").modal('toggle');
+    refresh_homeworld();
+}
+
+/////////////////////////////////
+// Edit Homeworld Skills Modal //
+/////////////////////////////////
 function edit_homeworld_skills_modal() {
     let user_character = get_user_character();
     let character_homeworld = homeworld_dict[user_character.homeworld.source][user_character.homeworld.id];
     $("#hmw_edit_skills_modal").modal();
     $("#hmw_edit_skills_modal_avail_skills").html('');
     $("#hmw_edit_skills_modal_skill").val('');
-    $("#hmw_edit_skills_modal_rank").val(0);
+    $("#hmw_edit_skills_modal_rank").val(1);
     
     for (skill in character_homeworld.available_skills) {
         $("#hmw_edit_skills_modal_avail_skills").append('<li>' + character_homeworld.available_skills[skill] + '</li>');
