@@ -8,7 +8,7 @@ function refresh_character_sheet () {
     let max_dice_pool_size = calc_max_dice_pool_size(user_character.career_track.length);
 
     $("#cs_name_val").html(user_character.name);
-    $("#cs_subtitle_val").html('a[n] young ' + exploit_dict[exploit_source][exploit_source][user_character.trait].name + ' ' + character_race.name + ' who ' + user_character.hook + ' (' + max_dice_pool_size + 'd6)');
+    $("#cs_subtitle_val").html('a[n] ' + user_character.age_descriptor + ' ' + exploit_dict[exploit_source][exploit_source][user_character.trait].name + ' ' + character_race.name + ' who ' + user_character.hook + ' (' + max_dice_pool_size + 'd6)');
     $("#cs_homeworld_val").html(character_homeworld.name);
 
     stat_total = calc_stat_total(user_character);

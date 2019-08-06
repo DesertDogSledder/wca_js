@@ -145,7 +145,7 @@ function edit_race_skills_modal_add() {
         } else if (skill_rank > 0) {
             race_skills[skill_name] = skill_rank;
             $("#rce_edit_skills_modal_skill").val('');
-            $("#rce_edit_skills_modal_rank").val(0);
+            $("#rce_edit_skills_modal_rank").val(1);
         }
         race_skills = sort_object(race_skills);
         edit_race_skills_modal_refresh_curr_skills();
