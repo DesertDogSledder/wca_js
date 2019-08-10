@@ -384,7 +384,7 @@ function edit_career_skills_modal_add() {
         } else if (skill_rank > 0) {
             career_skills[skill_name] = skill_rank;
             $("#car_edit_skills_modal_skill").val('');
-            $("#car_edit_skills_modal_rank").val(0);
+            $("#car_edit_skills_modal_rank").val(1);
         }
         career_skills = sort_object(career_skills);
         edit_career_skills_modal_refresh_curr_skills();
