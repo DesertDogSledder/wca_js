@@ -56,7 +56,7 @@ function refresh_careers() {
         $("#car_career_list").append('<li>' + career_dict[curr_career.source][curr_career.id].name + '</li>');
     }
 
-    enable_tooltips();
+    // enable_tooltips();
     on_career_select();
 }
 
@@ -97,9 +97,12 @@ function on_career_select() {
         let source_val = user_character.career_track[selected_career]['source']
         let career_val = user_character.career_track[selected_career]['id']
 
-        $("#car_skills_header").html(career_dict[source_val][career_val].name + ' Skills <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose two of the listed skills and advance each by one point. Note that characters may always select a defensive skill instead.">?</span>');
-        $("#car_exploits_header").html(career_dict[source_val][career_val].name + ' Exploits <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose one new career exploit from the list shown or choose one universal exploit.">?</span>');
-        $("#car_stats_header").html(career_dict[source_val][career_val].name + ' Stats <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Stats are automatically applied when a career is selected. Customizing the stats is entirely optional.">?</span>');
+        // $("#car_skills_header").html(career_dict[source_val][career_val].name + ' Skills <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose two of the listed skills and advance each by one point. Note that characters may always select a defensive skill instead.">?</span>');
+        // $("#car_exploits_header").html(career_dict[source_val][career_val].name + ' Exploits <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose one new career exploit from the list shown or choose one universal exploit.">?</span>');
+        // $("#car_stats_header").html(career_dict[source_val][career_val].name + ' Stats <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Stats are automatically applied when a career is selected. Customizing the stats is entirely optional.">?</span>');
+        $("#car_skills_subheader").html(career_dict[source_val][career_val].name + ' Skills');
+        $("#car_exploits_subheader").html(career_dict[source_val][career_val].name + ' Exploits');
+        $("#car_stats_subheader").html(career_dict[source_val][career_val].name + ' Stats');
 
         if (selected_career == 0) {
             $("#car_btn_move_career_up").prop("disabled", true);

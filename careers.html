@@ -45,10 +45,11 @@
 
       <div class="card bg-light border-dark mb-3" id="car_skills_div">
         <div class="card-header">
-          <h5 id="car_skills_header">Skills</h5>
+          <h5 id="car_skills_header">Skills <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose two of the listed skills and advance each by one point. Note that characters may always select a defensive skill instead.">?</span></h5>
           <button type="button" class="btn btn-warning" id="car_btn_edit_skills">✏️</button>
         </div>
         <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted" id="car_skills_subheader"></h6>
           <div class="mb-2">
             <ul id="car_skills_list"></ul>
           </div>
@@ -57,10 +58,11 @@
 
       <div class="card bg-light border-dark mb-3" id="car_exploits_div">
         <div class="card-header">
-          <h5 id="car_exploits_header">Exploits</h5>
+          <h5 id="car_exploits_header">Exploits <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose one new career exploit from the list shown or choose one universal exploit.">?</span></h5>
           <button type="button" class="btn btn-warning" id="car_btn_edit_exploits">✏️</button>
         </div>
         <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted" id="car_exploits_subheader"></h6>
           <div class="mb-2">
             <ul id="car_exploits_list"></ul>
           </div>
@@ -68,9 +70,12 @@
       </div>
 
       <div class="card bg-light border-dark mb-3" id="car_stats_div">
-        <div class="card-header"><h5 id="car_stats_header">Stats</h5>  <button type="button" class="btn btn-warning" id="car_btn_edit_stats">✏️</button></div>
+        <div class="card-header"><h5 id="car_stats_header">Stats <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Stats are automatically applied when a career is selected. Customizing the stats is entirely optional.">?</span></h5>
+          <button type="button" class="btn btn-warning" id="car_btn_edit_stats">✏️</button>
+        </div>
         <div class="card-body">
           <div class="mb-2">
+          <h6 class="card-subtitle mb-2 text-muted" id="car_stats_subheader"></h6>
             <table class="table table-responsive">
               <thead>
                 <tr>
@@ -198,7 +203,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="car_edit_exploits_modal_label">Edit Exploits</h5>
+            <h5 class="modal-title" id="car_edit_exploits_modal_label">Edit Exploits <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose one new career exploit from the list shown or choose one universal exploit.">?</span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -236,7 +241,7 @@
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="car_edit_skills_label">Select Career Skills</h5>
+            <h5 class="modal-title" id="car_edit_skills_label">Select Career Skills <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Choose two of the listed skills and advance each by one point. Note that characters may always select a defensive skill instead.">?</span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -272,7 +277,7 @@
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="car_edit_stats_modal_label">Edit Career Stats</h5>
+            <h5 class="modal-title" id="car_edit_stats_modal_label">Edit Career Stats <span class="text-primary" data-toggle="tooltip" data-placement="left" title="Stats are automatically applied when a career is selected. Customizing the stats is entirely optional.">?</span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

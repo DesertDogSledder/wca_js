@@ -1,7 +1,7 @@
 
 var career_woin_origin_dict = {
     "career_woin_origin_acoloyte": {
-        "name": "Acoloyte",
+        "name": "Acolyte",
         "career_time": "2d6+6",
         "career_time_unit": "years",
         "prerequisites": "none",
