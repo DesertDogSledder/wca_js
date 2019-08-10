@@ -362,6 +362,7 @@ function edit_career_skills_modal() {
     career_skills = user_character.career_track[selected_career].skills;
     console.log(career_skills);
     
+    enable_tooltips();    
     edit_career_skills_modal_refresh_curr_skills();
 }
 
@@ -429,6 +430,7 @@ function edit_career_stats_modal() {
     for (stat in user_character.career_track[selected_career].stats) {
         $("#car_edit_stats_modal_" + stat).val(user_character.career_track[selected_career].stats[stat]);
     }
+    enable_tooltips();
 }
 
 function edit_career_stats_modal_accept() {
